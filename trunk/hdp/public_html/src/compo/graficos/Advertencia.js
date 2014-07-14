@@ -3,7 +3,7 @@
 // Aviso que se anexa al caballo
 // Para usarlo, crear la advertencia y 
 Crafty.c("Advertencia", {
-	tipoAviso: 0, // 0: OK, 1: MAL, 2: Exclamación
+	tipoAviso: -1, // 0: OK, 1: MAL, 2: Exclamación
 	spriteActual: "",
 	duracion: 0, // frames
 	

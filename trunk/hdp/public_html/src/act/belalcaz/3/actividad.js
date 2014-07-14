@@ -19,8 +19,8 @@ var ActBelalcaz3 = function() {
 		});
 		
 		// Anexamos al caballo el indicador de item bueno o malo
-		this.e_caballo.aviso = Crafty.e("B3_Aviso").attr({ x: 140, y: 350, z: 50 });
-		this.e_caballo.attach(this.e_caballo.aviso);
+		this.e_caballo.e_aviso = Crafty.e("Advertencia").attr({ x: 140, y: 350, z: 50 });
+		this.e_caballo.attach(this.e_caballo.e_aviso);
 		
 		guerra.iniciar();
 		
@@ -40,10 +40,10 @@ var ActBelalcaz3 = function() {
 						this.destroy();
 						if (this.espada) {
 							guerra.ventajaEspada();
-							self.e_caballo.aviso.mostrar(true);
+							self.e_caballo.e_aviso.mostrar(0, 30);
 						} else {
 							guerra.ventajaLanza();
-							self.e_caballo.aviso.mostrar(false);
+							self.e_caballo.e_aviso.mostrar(1, 30);
 						}
 					});
 		}, 100);
