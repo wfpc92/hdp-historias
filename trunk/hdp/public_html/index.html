@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Historias de Popayán</title> 
+        <meta charset="utf-8">
+
+		<!-- Librerías de CocoonJS -->
+		<script src="lib/CocoonJS.js"></script>
+		<script src="lib/CocoonJS_App.js"></script>
+		<script src="lib/CocoonJS_App_ForCocoonJS.js"></script>
+		
+		<!-- Librerías -->
+        <script src="lib/crafty.js"></script>
+        <script src="lib/Tweener.js"></script>
+        <script src="lib/Box2dWeb-2.1.a.3.min.js"></script>
+        <script src="lib/box2d.js"></script>
+
+        <script src="src/global.js"></script>
+		
+        <!-- Datos -->
+        <script src="src/datos/progreso.js"></script>
+        <script src="src/datos/dbTest.js"></script>
+        <script src="src/datos/nivel0.js"></script>
+        <script src="src/datos/nivel1.js"></script>
+        <script src="src/datos/nivel2.js"></script>
+        <script src="src/datos/nivel3.js"></script>
+        <script src="src/datos/nivel4.js"></script>
+
+        <!-- Componentes genéricos -->
+        <script src="src/compo/Sonido.js"></script>
+        <script src="src/compo/sprites.js"></script>
+        <script src="src/compo/Caballo.js"></script> <!-- TODO: Caballo cuadro belalcazar: Reubicar archivo -->
+
+        <script src="src/compo/graficos/Gesto.js"></script>
+        <script src="src/compo/graficos/Boton.js"></script>
+		<script src="src/compo/graficos/Advertencia.js"></script>
+        <script src="src/compo/graficos/Cortina.js"></script>
+        <script src="src/compo/graficos/Oscilador.js"></script>
+        <script src="src/compo/graficos/CajaTexto.js"></script>
+        <script src="src/compo/graficos/BloqueTexto.js"></script>
+        <script src="src/compo/graficos/Fondo.js"></script>
+        <script src="src/compo/graficos/Particulas.js"></script>
+        <script src="src/compo/graficos/Iluminador.js"></script>
+        <script src="src/compo/graficos/DelayFrame.js"></script>
+
+        <script src="src/compo/interac/AreaRotacion.js"></script>
+        <script src="src/compo/interac/Ventilador.js"></script>
+        <script src="src/compo/interac/ToqueRapido.js"></script>
+
+        <script src="src/compo/fisica/PisoBox2D.js"></script>
+        <script src="src/compo/fisica/B2arrastre.js"></script>
+
+        <script src="src/compo/debug/PuntoCoordenada.js"></script>
+        <script src="src/compo/debug/PuntoCoordRel.js"></script>
+        <script src="src/compo/debug/Ubicador.js"></script>
+
+
+        <!-- Menú principal -->
+        <script src="src/menu-pri/sprites.js" type="text/javascript"></script>
+        <script src="src/menu-pri/comp-config.js" type="text/javascript"></script>
+        <script src="src/menu-pri/componentes.js" type="text/javascript"></script>
+        <script src="src/menu-pri/escena.js" type="text/javascript"></script>
+
+        <!-- Menú de cuadros -->
+        <script src="src/menu-cuadros/sprites.js" type="text/javascript"></script>
+        <script src="src/menu-cuadros/MC_Cuadro.js" type="text/javascript"></script>
+        <script src="src/menu-cuadros/MC_btActiv.js" type="text/javascript"></script>
+        <script src="src/menu-cuadros/componentes.js" type="text/javascript"></script>
+        <script src="src/menu-cuadros/escena.js" type="text/javascript"></script>
+
+        <!-- Escenas -->
+        <script src="src/escenas/EscInicio.js" type="text/javascript"></script>
+
+        <!-- Test -->
+        <script src="src/test/Test.js"></script>
+        <script src="src/test/componentes.js"></script>
+        <script src="src/test/escena.js"></script>
+        <script src="src/test/sprites.js"></script>
+
+        <!-- Archivos base de las actividades -->
+        <script src="src/act/base/AC_Perdiste.js"></script>
+        <script src="src/act/base/AC_Pista.js"></script>
+        <script src="src/act/base/Temporizador.js"></script>
+        <script src="src/act/base/Pausa.js"></script>
+        <script src="src/act/base/Actividad.js"></script>
+        <script src="src/act/base/esc-actividad.js"></script>
+
+        <!-- Pantalla de puntaje -->
+        <script src="src/puntaje/sprites.js"></script>
+        <script src="src/puntaje/componentes.js"></script>
+        <script src="src/puntaje/Puntaje.js"></script>
+
+        <!--Actividades de la primera postal: El morro-->
+        <script src="src/act/morro/1/sprites.js"></script>
+        <script src="src/act/morro/1/componentes.js"></script>
+        <script src="src/act/morro/1/actividad.js"></script>
+
+        <script src="src/act/morro/2/sprites.js"></script>
+        <script src="src/act/morro/2/componentes.js"></script>
+        <script src="src/act/morro/2/actividad.js"></script>
+
+        <script src="src/act/morro/3/sprites.js"></script>
+        <script src="src/act/morro/3/componentes.js"></script>
+        <script src="src/act/morro/3/actividad.js"></script>
+
+        <script src="src/act/morro/4/sprites.js"></script>
+        <script src="src/act/morro/4/componentes.js"></script>
+        <script src="src/act/morro/4/actividad.js"></script>
+
+        <script src="src/act/morro/5/sprites.js"></script>
+        <script src="src/act/morro/5/componentes.js"></script>
+        <script src="src/act/morro/5/actividad.js"></script>
+
+        <script src="src/act/morro/6/sprites.js"></script>
+        <script src="src/act/morro/6/componentes.js"></script>
+        <script src="src/act/morro/6/actividad.js"></script>
+
+        <!-- Actividades de la segunda postal: Belalcazar -->
+        <script src="src/act/belalcaz/1/sprites.js"></script>
+        <script src="src/act/belalcaz/1/componentes.js"></script>
+        <script src="src/act/belalcaz/1/actividad.js"></script>
+
+        <script src="src/act/belalcaz/2/sprites.js"></script>
+        <script src="src/act/belalcaz/2/componentes.js"></script>
+        <script src="src/act/belalcaz/2/actividad.js"></script>
+
+        <script src="src/act/belalcaz/3/B3_Guerra.js"></script>
+        <script src="src/act/belalcaz/3/sprites.js"></script>
+        <script src="src/act/belalcaz/3/componentes.js"></script>
+        <script src="src/act/belalcaz/3/actividad.js"></script>
+
+        <script src="src/act/belalcaz/4/sprites.js"></script>
+        <script src="src/act/belalcaz/4/componentes.js"></script>
+        <script src="src/act/belalcaz/4/actividad.js"></script>
+
+        <script src="src/act/belalcaz/5/sprites.js"></script>
+        <script src="src/act/belalcaz/5/componentes.js"></script>
+        <script src="src/act/belalcaz/5/actividad.js"></script>
+
+        <script src="src/act/belalcaz/6/sprites.js"></script>
+        <script src="src/act/belalcaz/6/componentes.js"></script>
+        <script src="src/act/belalcaz/6/actividad.js"></script>
+
+        <!-- Actividades de la tercera postal: Parque Caldas-->
+        <script src="src/act/parque/1/sprites.js"></script>
+        <script src="src/act/parque/1/componentes.js"></script>
+        <script src="src/act/parque/1/actividad.js"></script>
+
+        <script src="src/act/parque/2/sprites.js"></script>
+        <script src="src/act/parque/2/componentes.js"></script>
+        <script src="src/act/parque/2/actividad.js"></script>
+
+        <script src="src/act/parque/3/sprites.js"></script>
+        <script src="src/act/parque/3/componentes.js"></script>
+        <script src="src/act/parque/3/actividad.js"></script>
+
+        <script src="src/act/parque/4/sprites.js"></script>
+        <script src="src/act/parque/4/componentes.js"></script>
+        <script src="src/act/parque/4/actividad.js"></script>
+
+        <script src="src/act/parque/5/sprites.js"></script>
+        <script src="src/act/parque/5/componentes.js"></script>
+        <script src="src/act/parque/5/actividad.js"></script>
+
+        <script src="src/act/parque/6/sprites.js"></script>
+        <script src="src/act/parque/6/componentes.js"></script>
+        <script src="src/act/parque/6/actividad.js"></script>
+
+        <script src="src/datos/recursos.js"></script>
+
+        <!--Clase principal-->
+        <script src="src/main.js"></script>
+
+        <style>
+            @font-face { font-family: 'Asap'; src: url('fonts/Asap-Regular.ttf'); }
+        </style>
+    </head>
+
+    <body style="padding:0; margin:0;">
+    </body>
+</html>
