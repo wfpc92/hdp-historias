@@ -32,7 +32,10 @@ Crafty.c('Caballo', {
 		}
 		else {
 			this.sprEspada = "";
-			if (this._espada) this._espada.destroy();
+			if (this._espada) {
+				this._espada.destroy();
+				this._espada = null;
+			}
 		}
         /*
 		espada.bind("EnterFrame", function() {
