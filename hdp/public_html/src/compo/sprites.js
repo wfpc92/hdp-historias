@@ -44,6 +44,9 @@ function spritesGlobal() {
 	Crafty.sprite("img/particulas/nube.png", {
 		spr_nube: [0, 0, 96, 94]
 	});
+	Crafty.sprite(23, 21, "img/particulas/corazon.png", {
+		spr_partCorazon: [0, 0]
+	});
 	
 	
 	Crafty.sprite("img/global/bt-atras.png", {

@@ -16157,7 +16157,7 @@ tests[2] = {
 			trampa: ["21 de julio", "31 de junio", "Diseñado"]
 		},
 		{
-			texto: 'El |Obispo| de la ciudad tuvo la idea de agradecer |Públicamente|\na Barbetti por su buen trabajo y 82 personalidades firmaron una nota.',
+			texto: 'El |Obispo| de la ciudad tuvo la idea de agradecer\n|Públicamente| a Barbetti por su buen trabajo y 82\npersonalidades firmaron una nota.',
 			trampa: ["Alcalde", "Solemnemente", "Regidor"]
 		},
 		{
@@ -16165,27 +16165,27 @@ tests[2] = {
 			trampa: ["Trece", "Quince", "Edificio"]
 		},
 		{
-			texto: 'El Puente del humilladero fue construido para unir el |Sector|\nde |El Callejón| -hoy barrio Bolívar- y el centro de la ciudad,\nque se encuentra atravesado por el Río |Molino|.',
+			texto: 'El Puente del humilladero fue construido para unir el\n|Sector| de |El Callejón| -hoy barrio Bolívar- y el\ncentro de la ciudad, que se encuentra atravesado por el\nRío |Molino|.',
 			trampa: ["El Placer", "Mirador", "El Poblado", "Ejido", "Viaducto"]
 		},
 		{
-			texto: 'Barbetti le dio forma al puente con los |Ladrillos| que se\ndescartaron de la reconstrucción de la |Catedral| de Popayán\n-destruida por el terremoto de 1736- y las obras de la\nTorre del Reloj.',
+			texto: 'Barbetti le dio forma al puente con los |Ladrillos| que se\ndescartaron de la reconstrucción de la |Catedral| de\nPopayán -destruida por el terremoto de 1736- y las obras de\nla Torre del Reloj.',
 			trampa: ["Implementos", "Diócesis", "Alcaldía", "Penitenciaria", "1736", "1735"]
 		},
 		{
-			texto: 'La mezcla usada para |Pegar| los ladrillos del Puente del\nHumilladero era de |Cal y barro| pero le agregaron |Sangre|\nde bueyes para que los ladrillos se adhieran más.',
+			texto: 'La mezcla usada para |Pegar| los ladrillos del Puente\ndel Humilladero era de |Cal y barro| pero le agregaron\n|Sangre| de bueyes para que los ladrillos se adhieran más.',
 			trampa: ["Cal y yeso", "Saliva", "Cal y arena", "Alisar", "Cal y estuco"]
 		},
 		{
-			texto: 'Para |Inaugurar| el Puente del Humilladero Barbetti hizo pasar una\nrecua de |Mulas| cargadas y |Almorzó| bajo el arco principal.',
+			texto: 'Para |Inaugurar| el Puente del Humilladero Barbetti hizo\npasar una recua de |Mulas| cargadas y |Almorzó| bajo el\narco principal.',
 			trampa: ["Acampó", "Ovejas", "Clausurar", "Durmió", "Vacas"]
 		},
 		{
-			texto: 'Se dice que lo del "Humilladero" se debe a que las |Personas|\nque por allí subían al |Centro| lo hacían casi |Arrodillados|.',
+			texto: 'Se dice que lo del "Humilladero" se debe a que las\n|Personas| que por allí subían al |Centro| lo\nhacían casi |Arrodillados|.',
 			trampa: ["Llorando", "Arrastrados", "Desesperados", "Norte", "Caravanas"]
 		},
 		{
-			texto: 'En |1883| la Legislatura del |Estado| lo bautizó como\n|Puente Bolívar|.',
+			texto: 'En |1883| la Legislatura del |Estado| lo\nbautizó como |Puente Bolívar|.',
 			trampa: ["1884", "Puente Cauca", "Puente Mayor", "Puente Central", "Cauca"]
 		}
 	]
@@ -16197,43 +16197,43 @@ tests[3] = {
 	numPreguntas: 4,
 	pregunta: [
 		{
-			texto: 'El Parque Francisco José de Caldas se creó con la fundación de Popayán, en |1537|.',
+			texto: 'El Parque Francisco José de Caldas se creó con la fundación\nde Popayán, en |1537|.',
 			trampa: ["1535", "1536", "1539"]
 		},
 		{
-			texto: 'En las ciudades fundadas los |Conquistadores| españoles elegían un espacio amplio y trazaban a partir suyo las calles, y edificaban alrededor |Casonas| gubernamentales, una iglesia católica y las |Viviendas| de los nuevos pobladores.',
+			texto: 'En las ciudades fundadas los |Conquistadores| españoles\nelegían un espacio amplio y trazaban a partir suyo las calles,\ny edificaban alrededor |Casonas| gubernamentales, una\niglesia católica y las |Viviendas| de los nuevos pobladores.',
 			trampa: ["Haciendas", "Pacificadores", "Huertas"]
 		},
 		{
-			texto: 'En el centro del Parque Caldas hay un |Monumento| al prócer Francisco José de Caldas, llamado también el |Sabio| Caldas.',
+			texto: 'En el centro del Parque Caldas hay un |Monumento| al\nprócer Francisco José de Caldas, llamado también el\n|Sabio| Caldas.',
 			trampa: ["Busto", "General", "Capitán", "Poema", "Obelisco"]
 		},
 		{
-			texto: 'Caldas es uno de los |Hijos| ilustres de Popayán y fue |Reconocido| también por sus estudios en |Botánica y astronomía|.',
+			texto: 'Caldas es uno de los |Hijos| ilustres de\nPopayán y fue |Reconocido| también por sus\nestudios en |Botánica y astronomía|.',
 			trampa: ["Botánica y Matemáticas", "Botánica e ingeniería", "Ovacionado", "Botánica y arquitectura", "Señores", "Políticos"]
 		},
 		{
-			texto: 'La estatua de Caldas que adorna el Parque se construyó para conmemorar los |100 años| de la independencia de Colombia.',
+			texto: 'La estatua de Caldas que adorna el Parque se construyó para\nconmemorar los |100 años| de la independencia de Colombia.',
 			trampa: ["80 años", "90 años", "99 años", "98 años"]
 		},
 		{
-			texto: 'Las |Placas| de la estatua de Caldas tienen su firma, una muestra de |La planta| Bomarea caldasii -llamada así en su honor- e imágenes de un octante y un |Hipsómetro|, su invento para determinar la |Altitud| de un lugar sobre el nivel del mar mediante la ebullición del agua.',
+			texto: 'Las |Placas| de la estatua de Caldas tienen su firma, una\nmuestra de |La planta| Bomarea caldasii -llamada así en su\nhonor- e imágenes de un octante y un |Hipsómetro|, su invento\npara determinar la |Altitud| de un lugar sobre el nivel del\nmar mediante la ebullición del agua.',
 			trampa: ["Barómetro", "Embudo", "El hongo", "La roca", "Bielas", "Longitud", "Acidez"]
 		},
 		{
-			texto: 'A 10 metros del parque se encuentra el Panteón de los |Próceres|, un monumento que contiene los sepulcros de |15| hijos ilustres de Popayán: |Camilo| Torres, Tomás Cipriano de Mosquera y Francisco José de Caldas, entre otros.',
+			texto: 'A 10 metros del parque se encuentra el Panteón de los\n|Próceres|, un monumento que contiene los sepulcros\nde |15| hijos ilustres de Popayán: |Camilo| Torres,\nTomás Cipriano de Mosquera y Francisco José de Caldas,\nentre otros.',
 			trampa: ["Alejandro", "Maestros", "13", "Caudillos", "16", "Francisco"]
 		},
 		{
-			texto: 'Frente al parque se levanta la Torre |Del Reloj|, uno de los |Símbolos| más representativos de Popayán que se terminó de construir en |1682|.',
+			texto: 'Frente al parque se levanta la Torre |Del Reloj|, uno\nde los |Símbolos| más representativos de Popayán\nque se terminó de construir en |1682|.',
 			trampa: ["1690", "Lugares", "del Gobernador ", "del Parque", "1684", "1680", "Espacios"]
 		},
 		{
-			texto: 'En 1737 se le adjuntó a la torre junto al parque un reloj de fabricación |Inglesa|, que funcionaría continuamente hasta 1814, cuando se le extrajeron sus |Pesas| para hacer |Municiones|.',
+			texto: 'En 1737 se le adjuntó a la torre junto al parque un reloj de\nfabricación |Inglesa|, que funcionaría continuamente\nhasta 1814, cuando se le extrajeron sus |Pesas| para\nhacer |Municiones|.',
 			trampa: ["Estribos", "Japonesa", "Claustros", "Tornillos", "Francesa", "Resortes", "Suiza", "Cuchillos"]
 		},
 		{
-			texto: 'Junto al parque está la Catedral Basílica Nuestra |Señora| de la Asunción, una iglesia |Católica| ofrendada a la Virgen María terminada de construir en |Junio de 1906| sobre los cimientos de antiguas iglesias.',
+			texto: 'Junto al parque está la Catedral Basílica Nuestra |Señora|\nde la Asunción, una iglesia |Católica| ofrendada a la\nVirgen María terminada de construir en |Junio de 1906| sobre\nlos cimientos de antiguas iglesias.',
 			trampa: ["Madre", "Gótica", "Hermana", "Junio de 1907", "Junio de 1905", "Antigua"]
 		}
 	]
@@ -16246,31 +16246,31 @@ tests[4] = {
 	numPreguntas: 5,
 	pregunta: [
 		{
-			texto: 'La |Casona| donde vivió y murió Guillermo Valencia es monumento nacional por Ley 80 de diciembre de 1943. Funciona allí el Museo |Nacional| Guillermo Valencia y exhibe, entre otras reliquias, |retratos| de amigos y personajes que él admiraba, obras de arte de La Colonia y La Independencia, y una biblioteca con más de |7.000| libros.',
+			texto: 'La |Casona| donde vivió y murió Guillermo Valencia\nes monumento nacional por Ley 80 de diciembre de 1943.\nFunciona allí el Museo |Nacional| Guillermo Valencia\ny exhibe, entre otras reliquias, |retratos| de amigos y\npersonajes que él admiraba, obras de arte de La Colonia y\nLa Independencia, y una biblioteca con más de |7.000|\nlibros.',
 			trampa: ["Moderno", "6.000", "Departamental", "8.000", "Estancia", "Joyas ", "Hacienda", "Objetos", "6.500"]
 		},
 		{
-			texto: 'Guillermo Valencia fue uno de los payaneses más ilustres del último |Siglo|. Nació en |1873|, y como fue un gran |Orador| obtuvo reconocimiento |Político| desde muy joven.',
+			texto: 'Guillermo Valencia fue uno de los payaneses más ilustres\ndel último |Siglo|. Nació en |1873|, y\ncomo fue un gran |Orador| obtuvo reconocimiento\n|Político| desde muy joven.',
 			trampa: ["Administrativo", "Encomendador", "Académico", "1871", "1870", "Decenio", "1870", "Terrateniente", "1872", "Social", "Lustro"]
 		},
 		{
-			texto: 'Aunque Valencia fue un |Poeta| prodigioso la mayoría de su obra se condensa en |Ritos|, un libro |Publicado| en 1899, cuando tenía |25| años.',
+			texto: 'Aunque Valencia fue un |Poeta| prodigioso la mayoría\nde su obra se condensa en |Ritos|, un libro |Publicado|\nen 1899, cuando tenía |25| años.',
 			trampa: ["Editado ", "Literato", "Impreso", "Nostalgias", "Escritor", "Sueños", "26", "Humanista", "27", "Misterios"]
 		},
 		{
-			texto: 'Su hijo Guillermo León fue presidente de Colombia entre |1962 y 1966|, y su hija Josefina fue la primera mujer en ser |Gobernadora| del Cauca y ministra de Educación.',
+			texto: 'Su hijo Guillermo León fue presidente de Colombia entre\n|1962 y 1966|, y su hija Josefina fue la primera mujer en\nser |Gobernadora| del Cauca y ministra de Educación.',
 			trampa: ["1966 y 1970", "Intendente", "Minas y energía", "1958 y 1962", "Senadora", "Concejal", "Cultura", "1960 y 1964", "Educación", "Regente", "Desarrollo"]
 		},
 		{
-			texto: 'A la vuelta de la Casa Museo Valencia está ubicada la |Casona| donde nació y vivió el |General| Tomas Cipriano de Mosquera, donde funcionan actualmente la Casa Museo Mosquera y el |Centro| de Investigaciones |Históricas| José María |Arboleda| Llorente.',
+			texto: 'A la vuelta de la Casa Museo Valencia está ubicada la\n|Casona| donde nació y vivió el |General| Tomas\nCipriano de Mosquera, donde funcionan actualmente la Casa\nMuseo Mosquera y el |Centro| de Investigaciones\n|Históricas| José María |Arboleda| Llorente.',
 			trampa: ["Capitán", "Sociales", "Gobernador", "Mosquera", "López", "Módulo", "Médicas", "Edificio", "Hacienda", "Científicas"]
 		},
 		{
-			texto: 'Hay una estatua del Maestro Valencia vigilando la entrada del Puente del |Humilladero|, recurrente en miles de registros |fotográficos|. Fue construida por Victorio Macho, el mismo |escultor| del monumento a Sebastián de Belalcázar que |Reposa| en el Morro de Tulcán.',
-			trampa: ["Amor", "Victorino", "Judiciales", "Pintor", "Decorador", "Bolívar", "Victorio", "Adorna", "Gubernamentales", "Banco", "Diseñador", "Florentino"]
+			texto: 'Hay una estatua del Maestro Valencia vigilando la entrada\ndel Puente del |Humilladero|, recurrente en miles de registros\n|fotográficos|. Fue construida por Victorio Macho, el mismo\n|escultor| del monumento a Sebastián de Belalcázar\nque |Reposa| en el Morro de Tulcán.',
+			trampa: ["Amor", "Victorino", "Judiciales", "Pintor", "Decorador", "Bolívar", "Adorna", "Banco", "Diseñador", "Florentino"]
 		},
 		{
-			texto: 'Valencia escribió el |Himno| de la Universidad del Cauca y para musicalizarlo invitó al |Compositor| caucano |Avelino Paz|. Lo |Interpretaron| por primera vez el 11 de noviembre de 1922 en la coronación del |Reinado| universitario.',
+			texto: 'Valencia escribió el |Himno| de la Universidad del\nCauca y para musicalizarlo invitó al |Compositor| caucano\n|Avelino Paz|. Lo |Interpretaron| por primera vez el 11\nde noviembre de 1922 en la coronación del |Reinado|\nuniversitario.',
 			trampa: ["Avelino Pérez", "Periódico", "Socializaron", "Avelino Pasos", "Músico", "Cantaron", "Reglamento ", "Carnaval", "Arreglista", "Avelino Páez", "Desfile"]
 		}
 	]
@@ -16431,7 +16431,7 @@ niveles[1] = {
 			duracion: 17000,
 			fondo: 'img/act/belalcaz/6/fondo.jpg',
 			dato: 'Murió de avanzada edad, a causa de una\n \benfermedad\b mientras preparaba su\núltimo viaje a España, en \bCartagena\n de Indias\b en 1551.',
-			pista: { ladoIzq: true, y: 250 },
+			pista: { ladoIzq: false, y: 30 },
 			actividad: function() {
 				var actividad = new ActBelalcaz6();
 				return actividad;
@@ -16523,15 +16523,16 @@ niveles[2] = {
 /*C:\uniserver\www\hdp\public_html\src/datos/nivel3.js*/
 
 niveles[3] = {
-	nombre: '',
+	nombre: 'Puente Humilladero',
 	subnivel: [
 		{
 			id: 1,
-			duracion: 200000,
-			fondo: 'img/puente/1/fondo.png',
-			dato: 'Es un viaducto estilo romano con doce arcos y una longitud de 240 metros, construido para unir el sector de El Callejón -hoy barrio Bolívar- y el centro de la ciudad, que se encuentra atravesado por el Río Molino.',
+			duracion: 25000,
+			fondo: '',
+			dato: 'Es un viaducto estilo romano con doce\narcos y una longitud de 240 metros,\nconstruido para unir el sector de\nEl Callejón -hoy barrio Bolívar- y el\ncentro de la ciudad, que se encuentra\natravesado por el Río Molino.',
+			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActPuente1();
 				return actividad;
 			}
 		},
@@ -16539,9 +16540,10 @@ niveles[3] = {
 			id: 2,
 			duracion: 200000,
 			fondo: 'img/puente/2/fondo.png',
-			dato: 'Fue levantado bajo la dirección de Fray Serafín Barbetti y se inauguró el 31 de julio de 1873. El obispo de la ciudad tuvo la idea de agradecer públicamente a Barbetti y 82 personalidades firmaron una nota.',
+			dato: 'Fue levantado bajo la dirección de\nFray Serafín Barbetti y se inauguró el\n31 de julio de 1873. El obispo de la\nciudad tuvo la idea de agradecer\npúblicamente a Barbetti y 82\npersonalidades firmaron una nota.',
+			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActPuente2();
 				return actividad;
 			}
 		},
@@ -16549,9 +16551,10 @@ niveles[3] = {
 			id: 3,
 			duracion: 200000,
 			fondo: 'img/puente/3/fondo.png',
-			dato: 'Barbetti le dio forma al puente con los ladrillos que se descartaron de la reconstrucción de la Catedral de Popayán -destruida por el terremoto de 1736- y las obras de la Torre del Reloj.',
+			dato: 'Barbetti le dio forma al puente con los\nladrillos que se descartaron de la\nreconstrucción de la Catedral de\nPopayán -destruida por el terremoto\nde 1736- y las obras de la\nTorre del Reloj.',
+			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActPuente3();
 				return actividad;
 			}
 		},
@@ -16559,9 +16562,10 @@ niveles[3] = {
 			id: 4,
 			duracion: 2000000000,
 			fondo: 'img/puente/4/fondo.png',
-			dato: 'La mezcla usada para pegar los ladrillos del puente era de cal y barro, pero le agregaron sangre de bueyes para que los ladrillos se adhieran más entre sí.',
+			dato: 'La mezcla usada para pegar los ladrillos\ndel puente era de cal y barro, pero le\nagregaron sangre de bueyes para que\nlos ladrillos se adhieran más entre sí.',
+			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActPuente4();
 				return actividad;
 			}
 		},
@@ -16569,9 +16573,10 @@ niveles[3] = {
 			id: 5,
 			duracion: 2000000000,
 			fondo: 'img/puente/5/fondo.png',
-			dato: 'Para inaugurar el Puente del Humilladero, Barbetti hizo pasar una recua de mulas cargadas y almorzó bajo el arco principal, desafiando una denuncia -hecha por un profesor ante las autoridades gubernamentales- de que la obra colapsaría.',
+			dato: 'Para inaugurar el Puente del\nHumilladero, Barbetti hizo pasar una\nrecua de mulas cargadas y almorzó\nbajo el arco principal, desafiando una\ndenuncia -hecha por un profesor ante\nlas autoridades gubernamentales- de\nque la obra colapsaría.',
+			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActPuente5();
 				return actividad;
 			}
 		},
@@ -16579,9 +16584,10 @@ niveles[3] = {
 			id: 6,
 			duracion: 2000000000,
 			fondo: 'img/puente/6/fondo.png',
-			dato: 'Se cree que el nombre "Puente del humilladero" se debe a que las personas que por allí subían al centro lo hacían casi de rodillas. En 1883 la Legislatura del Estado lo bautizó como ‘Puente Bolívar’.',
+			dato: 'Se cree que el nombre "Puente del\nhumilladero" se debe a que las personas\nque por allí subían al centro lo hacían\ncasi de rodillas. En 1883 la Legislatura\ndel Estado lo bautizó como\n"Puente Bolívar".',
+			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActPuente6();
 				return actividad;
 			}
 		}
@@ -16600,7 +16606,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/1/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia1();
 				return actividad;
 			}
 		},
@@ -16610,7 +16616,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/2/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia2();
 				return actividad;
 			}
 		},
@@ -16620,7 +16626,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/3/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia3();
 				return actividad;
 			}
 		},
@@ -16630,7 +16636,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/4/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia4();
 				return actividad;
 			}
 		},
@@ -16640,7 +16646,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/5/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia5();
 				return actividad;
 			}
 		},
@@ -16650,7 +16656,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/6/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia6();
 				return actividad;
 			}
 		}
@@ -16960,7 +16966,7 @@ Crafty.c("Gesto", {
 		
 		if (numTipo === 1) {
 			this.requires("sprGL_gestoTap");
-			this.e_mano.attr({ x: 13, y: 28 });
+			this.e_mano.attr({ x: 20, y: 28 });
 		}
 		else if (numTipo === 2) {
 			this.requires("sprGL_gestoDrag");
@@ -17012,7 +17018,16 @@ Crafty.c("Gesto", {
 		return this;
 	},
 	
-	// Animación de gesto de topque rápido
+	/*
+	 * Animación de gesto de toque rápido
+	 * Configuración:
+	 * coords: Coordenadas del centro de rotación
+	 * duracion: Frames de duración del gesto
+	 * retardo: Retardo en iniciar el gesto
+	 * deltaX: Cambio en x por frame
+	 * deltaY: Cambio en y por frame
+	 * repetirX: Cambio en X por repetición
+	 */
 	animToqueRapido: function() {
 		var self = this;
 		this.visible = true;
@@ -18370,10 +18385,6 @@ Crafty.c("Ventilador", {
  */
 
 Crafty.c('Arrastrable', {
-	encontrado: false,
-	//numero: 0, // identificador, sirve para 
-	maxY: 450,
-	
 	mouseIniX: 0, // Coordenadas del mouse
 	mouseIniY: 0,
 	
@@ -18381,13 +18392,12 @@ Crafty.c('Arrastrable', {
 	vy: 0.0,
 	vx: 0.0,
 	ay: 0.8,
-	atenua: 0.4, // (porcentaje) atenuación por choque con el suelo
-	cayendo: true, // true si el número está cayendo o rebotando
+	
+	art_cayendo: false, // true si el número está cayendo o rebotando
 	ini: false, //true si el componente a acabo de ser soltado.
 	presionado: false, //verdadero si el componente esta presionado
 	areaCajon: null, //(obligatorio) referencia a entidad AreaCajon 
 	act: null, //(obligatorio) objeto que implementa funcion que se ejecuta luego de ajustar la entidad al cajon
-	spr: '', //(obligatorio) sprite del componente 
 
 	eventoMove: "mousemove", // Nombres de los eventos de mouse asociados
 	eventoUp: "mouseup",
@@ -18395,41 +18405,26 @@ Crafty.c('Arrastrable', {
 	init: function() {
 		this.requires('2D, Canvas, Tweener, Mouse')
 			.bind('MouseDown', function(e) {
-				this.cayendo = false;
+				this.art_cayendo = false;
 				this.presionado = true;
+				this.vy = 0;
 				
 				// Configuramos los eventos para esta entidad
 				if (cocoon) { this.eventoMove = "touchmove"; this.eventoUp = "touchend"; }
 		
-				Crafty.addEvent(this, Crafty.stage.elem, this.eventoMove, this.arrastrar);
-				Crafty.addEvent(this, Crafty.stage.elem, this.eventoUp, this.soltar);
+				Crafty.addEvent(this, Crafty.stage.elem, this.eventoMove, this.Art_arrastrar);
+				Crafty.addEvent(this, Crafty.stage.elem, this.eventoUp, this.Art_soltar);
 
 				
 				var pos = mouseCoords(e);
 				this.mouseIniX = pos.x;
 				this.mouseIniY = pos.y;
 			})
-			.bind('MouseUp', function(e) {
-				this.cayendo = true;
-				this.presionado = false;
-				this.ini = true;
-
-				var pos = mouseCoords(e);
-				this.mXSol = pos.x;
-				this.mYSol = pos.y;
-			})
 			.bind("EnterFrame", this.eventoFrame);
-			/*
-			.bind('MouseOut', function(e) {
-				this.cayendo = true;
-				this.presionado = false;
-			})
-			*/
 	},
 	
 	// Asociada al MouseMove
-	arrastrar: function(e) {
-		console.log("arrastrar()")
+	Art_arrastrar: function(e) {
 		if (this.presionado) {
 			var nuevaPos = mouseCoords(e);
 
@@ -18442,18 +18437,34 @@ Crafty.c('Arrastrable', {
 		}
 	},
 	
-	soltar: function(e) {
-		Crafty.removeEvent(this, Crafty.stage.elem, this.eventoMove, this.arrastrar);
-		Crafty.removeEvent(this, Crafty.stage.elem, this.eventoUp, this.soltar);
+	Art_soltar: function(e) {
+		Crafty.removeEvent(this, Crafty.stage.elem, this.eventoMove, this.Art_arrastrar);
+		Crafty.removeEvent(this, Crafty.stage.elem, this.eventoUp, this.Art_soltar);
+		
+		this.art_cayendo = true;
+		this.presionado = false;
+		this.ini = true;
+
+		var pos = mouseCoords(e);
+		this.mXSol = pos.x;
+		this.mYSol = pos.y;
+		
 		return this;
 	},
 	
 	eventoFrame: function() {
 		// caer si es necesario
-		if (this.cayendo) {
+		if (this.art_cayendo) {
 			this.vy += this.ay;
 			this.y = this._y + this.vy;
-
+			
+			// si se sale de la pantalla, dejar de caer y resetear variables
+			if (this._y > 800) {
+				this.art_cayendo = false;
+				this.visible = false;
+				this.vy = 0;
+			}
+			
 			// Si choca contra el suelo, atenuar y rebotar
 			if (this.y >= this.maxY && this.vy > 0) {
 				this.vy = -(this.vy - this.atenua * this.vy);
@@ -18461,7 +18472,7 @@ Crafty.c('Arrastrable', {
 
 				// Si la velocidad es demasiado pequeña, dejar de caer
 				if (this.vy > -0.3 && this.vy < 1) {
-					//this.cayendo = false;
+					//this.art_cayendo = false;
 					this.ini = false;
 				}
 			}
@@ -18482,19 +18493,21 @@ Crafty.c('Arrastrable', {
 			if (this.mXSol > this.areaCajon.x && this.mXSol < (this.areaCajon.x + this.areaCajon.w)
 					&& this.mYSol > this.areaCajon.y && this.mYSol < (this.areaCajon.y + this.areaCajon.h)) {
 				this.areaCajon.encontrado = true;
-				//construir nuevo elemento
-				var nvaEnt = Crafty.e("2D, Canvas, Completo, Tweener, " + this.spr)
-						.attr({x: this.x, y: this.y, z: this.z - 1});
-				nvaEnt.rotation = this.rotation;
-				//destruir el elemento actual para evitar problemas con el evento ondrag
-				this.destroy();
+				
 				var act = this.act;
 				var areaCajon = this.areaCajon;
-				//efecto de ajustarse a los punticos
-				var velTw = 15;
-				nvaEnt.addTween({x: this.areaCajon.x, y: this.areaCajon.y, rotation: 0}, 'easeOutCubic', velTw, function() {
+				Crafty.removeEvent(this, Crafty.stage.elem, this.eventoMove, this.Art_arrastrar);
+				Crafty.removeEvent(this, Crafty.stage.elem, this.eventoUp, this.Art_soltar);
+				this.unbind("EnterFrame", this.eventoFrame);
+				this.unbind("MouseDown");
+				this.unbind("MouseMove");
+				this.unbind("MouseUp");
+				
+				// ajustarse al cajón
+				this.addTween({x: this.areaCajon.x, y: this.areaCajon.y, rotation: 0}, 'easeOutCubic', 15, function() {
+					this.addComponent("Completo");
 					if (act.arrastreCompleto) {
-						act.arrastreCompleto();
+						act.arrastreCompleto(this);
 					}
 					areaCajon.visible = false;
 				});
@@ -18513,12 +18526,6 @@ Crafty.c('AreaCajon', {
 		this.requires('2D, Canvas');
 	}
 });
-
-
-
-
-
-
 /*C:\uniserver\www\hdp\public_html\src/compo/interac/ToqueRapido.js*/
 var ToqueRapido = function() {
 	this.val = 0; // Valor actual
@@ -21119,8 +21126,10 @@ Crafty.c('Temporizador', {
 	tiempoInicial: 0,
 	id: 0,
 	maxAncho: 0, // maximo de tamano de ancho de la barra
-	msIntervalo: 33,
+	anchoBarra : 0, // ancho actual de la barra
+	msIntervalo: 33, // ms por intervalo
 	contadorIntervalos: 0,
+	maxIntervalos: 0, // contadorIntervalos cuenta hasta esto
 	delta: 0,
 	activo: false, // true si está contando tiempo
 	
@@ -21165,6 +21174,66 @@ Crafty.c('Temporizador', {
 		this.ocultar(); // Inicialmente oculto; mostrar manualmente con mostrar()
 	},
 	
+	/**
+	 * Empieza con el temporizador o hace que continue con su ejecucion
+	 * hasta el limite de tiempo. 
+	 * (actua como una funcion toogle de pausa y despausa)
+	 */
+	iniciar: function() {
+		this.activo = true;
+		this.delta = this.maxAncho * this.msIntervalo / this.tiempoInicial;
+		this.maxIntervalos = Math.floor(this.tiempoInicial / this.msIntervalo);
+		// iniciar temporizador de tiempo, cada msIntervalo milisegundos se ejecuta una funcion de actualizacion 
+		var self = this;
+		
+		this.myInterval = setInterval(function() {
+			self.actualizar();
+			// si se llego al limite de tiempo, entonces terminar actividad.
+			if ((++self.contadorIntervalos) >= self.maxIntervalos) {
+				self.parar();
+				gesActividad.mostrarPerdiste();
+			}
+		}, this.msIntervalo);
+		
+		return this;
+	},
+	
+	/**
+	 * Hace cambiar el tamaño de la barra y actualiza el contador. de segundos
+	 * y milisegundos
+	 */
+	actualizar: function() {
+		// disminuir el tamaño de la barra 
+		this.anchoBarra = (this.e_barra.w - this.delta) > 0 ? this.e_barra.w - this.delta : 0;
+		this.e_barra.crop(0, 0, this.anchoBarra, 18);
+		// actualizar reloj para que se posicione siempre 
+		this.e_reloj.x = this.e_barra.x + this.e_barra.w - 25;
+		return this;
+	},
+	
+	/**
+	 * Se llama cuando el tiempo se ha agotado, o cuando la actividad se 
+	 * ha ganado.
+	 */
+	parar: function() {
+		if (this.activo) {
+			clearInterval(this.myInterval);
+			this.activo = false;
+			this.ocultarBtPausa();
+		}
+		return this;
+	},
+	
+	// Reinicia todas las variables del temporizador
+	reset: function() {
+		this.delta = 0;
+		this.activo = false;
+		this.contadorIntervalos = 0;
+		this.e_barra.crop(0, 0, 618, 18);
+		this.actualizar();
+		return this;
+	},
+	
 	// Pausa el juego
 	// La entidad de panel de pausa tiene su propio timer aparte de Crafty
 	pausar: function() {
@@ -21201,55 +21270,21 @@ Crafty.c('Temporizador', {
 		return this;
 	},
 	
+	// Incrementa el tiempo el número de intérvalos dado
+	incrementar: function(ms) {
+		var numInt = Math.floor(ms / this.msIntervalo);
+		this.contadorIntervalos -= numInt;
+		if (this.contadorIntervalos < 0)
+			this.contadorIntervalos = 0;
+		
+		var nuevoAncho = this.anchoBarra + numInt * this.delta;
+		if (nuevoAncho > this.maxAncho) nuevoAncho = this.maxAncho;
+		this.e_barra.crop(0, 0, nuevoAncho, 18);
+		return this;
+	},
+	
 	setDuracion: function(t) {
 		this.tiempoInicial = t;
-		return this;
-	},
-	/**
-	 * Empieza con el temporizador o hace que continue con su ejecucion
-	 * hasta el limite de tiempo. 
-	 * (actua como una funcion toogle de pausa y despausa)
-	 */
-	iniciar: function() {
-		this.activo = true;
-		this.delta = this.maxAncho * this.msIntervalo / this.tiempoInicial;
-		var intervaloFinal = parseInt(this.tiempoInicial / this.msIntervalo);
-		// iniciar temporizador de tiempo, cada msIntervalo milisegundos se ejecuta una funcion de actualizacion 
-		var self = this;
-		
-		this.myInterval = setInterval(function() {
-			self.actualizar();
-			// si se llego al limite de tiempo, entonces terminar actividad.
-			if ((++self.contadorIntervalos) >= intervaloFinal) {
-				self.parar();
-				gesActividad.mostrarPerdiste();
-			}
-		}, this.msIntervalo);
-		
-		return this;
-	},
-	/**
-	 * Hace cambiar el tamaño de la barra y actualiza el contador. de segundos
-	 * y milisegundos
-	 */
-	actualizar: function() {
-		// disminuir el tamaño de la barra 
-		var tamBarra = (this.e_barra.w - this.delta) > 0 ? this.e_barra.w - this.delta : 0;
-		this.e_barra.crop(0, 0, tamBarra, 18);
-		// actualizar reloj para que se posicione siempre 
-		this.e_reloj.x = this.e_barra.x + this.e_barra.w - 25;
-		return this;
-	},
-	/**
-	 * Se llama cuando el tiempo se ha agotado, o cuando la actividad se 
-	 * ha ganado.
-	 */
-	parar: function() {
-		if (this.activo) {
-			clearInterval(this.myInterval);
-			this.activo = false;
-			this.ocultarBtPausa();
-		}
 		return this;
 	},
 	
@@ -21257,6 +21292,7 @@ Crafty.c('Temporizador', {
 		this.e_pausa.visible = true;
 		return this;
 	},
+	
 	ocultarBtPausa: function() {
 		this.e_pausa.visible = false;
 		return this;
@@ -21266,18 +21302,7 @@ Crafty.c('Temporizador', {
 	getTiempoRestante: function() {
 		var tRestante = this.tiempoInicial - this.contadorIntervalos * this.msIntervalo;
 		return tRestante;
-	},
-	
-	// Reinicia todas las variables del temporizador
-	reset: function() {
-		this.delta = 0;
-		this.activo = false;
-		this.contadorIntervalos = 0;
-		this.e_barra.crop(0, 0, 618, 18);
-		this.actualizar();
-		return this;
 	}
-	
 });
 /*C:\uniserver\www\hdp\public_html\src/act/base/Pausa.js*/
 Crafty.c("Pausa", {
@@ -23854,7 +23879,12 @@ function spritesBelalcaz1() {
 }
 /*C:\uniserver\www\hdp\public_html\src/act/belalcaz/1/componentes.js*/
 Crafty.c("B1_Numero", {
+	maxY: 450,
+	atenua: 0.4, // (porcentaje) atenuación por choque con el suelo
 	
+	init: function() {
+		this.requires("Arrastrable");
+	}
 });
 /*C:\uniserver\www\hdp\public_html\src/act/belalcaz/1/actividad.js*/
 /**
@@ -23928,12 +23958,13 @@ var ActBelalcaz1 = function() {
 				var I = parseInt(numI.splice(index, 1));
 
 				//componentes que representan los numeros que son arrastrables
-				numeros[cont] = Crafty.e('Arrastrable, sprB1_numBel' + I);
+				numeros[cont] = Crafty.e('B1_Numero, sprB1_numBel' + I);
 				numeros[cont].attr({x: xPos, y: -numeros[cont].h, z: 3});
 				//asignar una velocidad en x aleatoria para efecto de dispercion
 				numeros[cont].vx = Crafty.math.randomElementOfArray([Crafty.math.randomNumber(-6, -3), Crafty.math.randomNumber(3, 6)]);
 				numeros[cont].spr = "sprB1_numBel" + I;
 				numeros[cont].act = est;
+				numeros[cont].art_cayendo = true;
 
 				//el area es seleccionada solo si es un numero que pertenece al conjunto [1,5,3,7]
 				var k = I === 1 ? 0 :
@@ -23963,23 +23994,21 @@ var ActBelalcaz1 = function() {
 		}
 	};
 
-
-
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
 		return this;
 	};
-
-
 
 	this.ganarActividad = function() {
 		gesActividad.temporizador.parar();
 		var est = this;
 		//ocultar cada numero despues de ganar la actividad. efecto de ocultarse
 		Crafty("Arrastrable").each(function() {
-			this.addTween({x: this.x, y: 800}, 'easeOutQuad', Crafty.math.randomInt(40, 80), function() {
-				this.destroy();
-			});
+			if (!this.has("Completo")) {
+				this.addTween({x: this.x, y: 800}, 'easeOutQuad', Crafty.math.randomInt(40, 80), function() {
+					this.destroy();
+				});
+			}
 		});
 		var caballo = Crafty.e("Caballo").Caballo("sprB1_caballo");
 		var posCX = -caballo.w;
@@ -24140,13 +24169,25 @@ Crafty.c("Tronco", {
 	ay: 0.8, // aceleración gravitacional apra caer
     
 	init: function() {
-		this.requires('Arrastrable, Tweener');
+		this.requires('Arrastrable');
 		//quitar comportamiento de componente arrastrable
-		this.unbind("EnterFrame");
+		//this.unbind("EnterFrame");
+		
+		this.bind("MouseDown", function() {
+			//quitamos comportamiento inicial
+			this.cancelTweener();
+			//this.unbind("EnterFrame", this.caer);
+			this.z = 20;
+			if (this.rotation !== 0) {
+				this.addTween({ rotation: 0}, "linear", 5);
+			}
+			this.tomado = true;
+		});
+		
 		
 		this.bind("MouseUp", function() {
 			this.soltar();
-		})
+		})/*
 		.bind("MouseDown", function() {
 			//quitamos comportamiento inicial
 			this.cancelTweener();
@@ -24161,8 +24202,9 @@ Crafty.c("Tronco", {
 			if (this.tomado) {
 				this.soltar();
 			}
-		});
+		});*/
     },
+	
     //movimiento inicial del tronco, salir y esconderse
     movInicial: function() {
 		this.dejar_caer = false;
@@ -24205,93 +24247,17 @@ Crafty.c("Tronco", {
 			this.addTween({ y: 800 }, "easeInCubic", 60, function() {
 				this.visible = false;
 				this.alpha = 0;
-				console.log(this.visible)
 			});
 		});
-		/*
-		this.unbind("EnterFrame");
-		this.dejar_caer = false;
-		this.y0 = this.y;
-		this.maxY = this.y;
-		var d = Crafty.math.randomInt(90, 100);
-		var posZ = Crafty.math.randomInt(11, 14);
-		var posX, posY;
-		switch (posZ) {
-			case 11:
-				posX = Crafty.math.randomInt(380, 400);
-				posY = Crafty.math.randomInt(502, 610);
-				break;
-			case 12:
-				posX = Crafty.math.randomInt(500, 560);
-				posY = Crafty.math.randomInt(540, 580);
-				break;
-			case 13:
-				posX = Crafty.math.randomInt(944, 986);
-				posY = Crafty.math.randomInt(566, 610);
-				break;
-			case 14:
-				posX = Crafty.math.randomInt(455, 533);
-				posY = Crafty.math.randomInt(586, 610);
-				break;
-		}
-        this.x = posX;
-        this.y = posY;
-        this.z = posZ;
-        this.visible = true;
-        var nvaposx = this.x - d;
-        var nvaposy = this.y - d;
-        this.tvx = Crafty.math.randomNumber(-1.8, -1.0);
-        this.tvy = this.tvx;
-		
-		
-		this.bind("EnterFrame", function() {
-			this.x += this.tvx;
-			this.y += this.tvy;
-			if (this.x < nvaposx && this.y < nvaposy) {
-				this.x = nvaposx;
-				this.y = nvaposy;
-				this.tvx = -this.tvx;
-				this.tvy = -this.tvy;
-			}
-			if (this.x > posX && this.y > posY) {
-				this.unbind("EnterFrame");
-				this.maxY = this.y;
-				this._llamarCaer();
-			}
-		
-		});*/
     },
 	
 	
-    caer: function() {
-		console.log("caer")
-		if (this.cayendo) {
-			this.vy += this.ay;
-			this.y += this.vy;
-		}
-		if (this.y > 800) {
-			this.vy = 0;
-			this.dejar_caer = false;
-			this.visible = false;
-			this.unbind("EnterFrame", this.caer);
-		}
-    },
-    
-	// Cuando se suelta el click del tronco
+   // Cuando se suelta el click del tronco
 	soltar: function() {
-		var enchoclado = this.detectarCajon();
+		this.z = this.zIni;
+		this.cancelTweener();
+		this.tomado = false;
 		
-		if (enchoclado) {
-			// Mostrar la leyenda del tronco
-			this.areaCajon.e_titulo.alpha = 1;
-		} else {
-			// Caer
-			this.z = this.zIni;
-			this.cancelTweener();
-			this.tomado = false;
-			this.dejar_caer = true;
-			this.unbind("EnterFrame", this.caer).bind("EnterFrame", this.caer); // se hace unbind por si ya estaba cayendo
-		}
 		return this;
     }
 	
@@ -24421,7 +24387,6 @@ var ActBelalcaz2 = function() {
 		for (var i = 0; i < 12; i++) {
 			var I = (1 + i);
 			var tr = Crafty.e("Tronco, sprB2_tronco" + String(I));
-			tr.spr = "sprB2_tronco" + I;
 			this.tronco[i] = tr;
 		}
 
@@ -24431,8 +24396,10 @@ var ActBelalcaz2 = function() {
 		this.titulos = [tit_cacique, tit_pioya, tit_tierras];
 	};
 
-	//verificar si ya se han colocados todos los numeros.
-	this.arrastreCompleto = function() {
+	// cada vez que se enchocla un tronco, mostrar su leyenda y verificar si ya están todos
+	this.arrastreCompleto = function(e_tronco) {
+		e_tronco.areaCajon.e_titulo.alpha = 1;
+		
 		this.aciertos = Crafty("Completo").length;
 		if (this.aciertos === this.totAciertos) {
 			this.ganarActividad();
@@ -24549,6 +24516,8 @@ Crafty.c("B3_Guerra", {
 			this.v += this.aIndios;
 		}
 		
+		this.e_belalcazar.e_barra.actualizar(this.v);
+		
 		this.actualizarPos();
 		
 		// Actualizamos framesEspada
@@ -24588,6 +24557,46 @@ function spritesBelalcaz3() {
 }
 
 /*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/componentes.js*/
+// Barra indicadora que acompaña al caballo
+Crafty.c("B3_Barra", {
+	e_barra: null,
+	positivo: true, // false si el valor de al barra es negativo
+	
+	init: function() {
+		this.requires("2D, Canvas, Color").attr({ w: 110, h: 20, z: 49, alpha: 0.5 }).color("#271300");
+		
+		this.e_barra = Crafty.e("2D, Canvas, Color").color("#B58010").attr({ x: 52, y: 2, h: 16, z: 50 });
+		this.e_barra.origin(0, 8);
+		this.e_barra.rotation = 0;
+		this.e_barra.color("#4DB849");
+		
+		this.attach(this.e_barra);
+	},
+	
+	// Actualiza el tamaño de la barra según el valor
+	actualizar: function(v) {
+		var anchoBarra = v * 33;
+		
+		if (anchoBarra > 0) {
+			if (!this.positivo) {
+				this.e_barra.rotation = 0;
+				this.e_barra.color("#4DB849");
+				this.positivo = true;
+			}
+			this.e_barra.w = anchoBarra;
+				
+		}
+		else {
+			if (this.positivo) {
+				this.e_barra.rotation = 180;
+				this.e_barra.color("#AF2800");
+				this.positivo = false;
+			}
+			this.e_barra.w = -anchoBarra;
+		}
+	}
+});
+
 Crafty.c("B3_Indigena", {
 	init: function() {
 		var periodo = randomInt(0, 100) + 750;
@@ -24682,6 +24691,10 @@ var ActBelalcaz3 = function() {
 		// Anexamos al caballo el indicador de item bueno o malo
 		this.e_caballo.e_aviso = Crafty.e("Advertencia").attr({ x: 140, y: 350, z: 50 });
 		this.e_caballo.attach(this.e_caballo.e_aviso);
+		
+		// Anexamos al caballo una barra para mostrar la velocidad
+		this.e_caballo.e_barra = Crafty.e("B3_Barra").attr({ x: 50, y: 360, z: 50 });
+		this.e_caballo.attach(this.e_caballo.e_barra);
 		
 		guerra.iniciar();
 		
@@ -25161,7 +25174,7 @@ function spritesBelalcaz5() {
 
 //Componente del barco, debe poder detectar algunos componentes
 Crafty.c("B5_Barco", {
-	vx: 2,
+	vx: 0,
 	vxmax :2.5,
 	dir : 1,//1 para derecha -1 para izquierda
 	vy: 1,
@@ -25171,46 +25184,11 @@ Crafty.c("B5_Barco", {
 		this.requires("2D, Canvas, sprB5_barco, Mouse, SpriteAnimation");
 		//asignar sombra
 		this.sombra = Crafty.e("2D, Canvas, sprB5_bSombra, Sprite, Tweener")
-				.attr({x: this.x, y: this.y + this.h - 30, z: 21});
+				.attr({x: this.x, y: this.y + this.h - 30, z: 21, visible: false });
 		
 		this.attach(this.sombra);
 		
 		this.corona = Crafty.e("2D, Canvas, sprB5_coronaPequena").attr({ visible: false });
-		
-		//movimiento del barco en dos direcciones al inicio direccion hacia la derecha
-		//cuando llega a la montaña da un giro y se regresa
-		this.bind("EnterFrame", function() {
-			//movimiento en el eje X
-			this.x += this.vx*this.dir;
-			
-			// cuando llega al limite derecho, rota y recoge la corona
-			if (this.dir === 1 && this.x > 1180) {
-				this.dir = -1;
-				this.sprite(1, 0);
-				this.sombra.sprite(1, 0);
-				this.act.coronaGrande.visible = false;
-				this.corona.attr({ x: this.x + this.w / 2 - this.corona.w / 2 + 25, y: this.y - this.corona.h, z: this.z, visible: true });
-				this.attach(this.corona);
-			}
-			else if (this.dir === -1 && this.x < -60) {
-				this.unbind("EnterFrame");
-				this.sprite(0, 0);
-				this.act.ganarActividad();
-			}
-			
-			//movimiento en el ejeY
-			this.y += this.vy;
-			if (this.y > this.y0 + Crafty.math.randomInt(5, 15)) {
-				this.vy = -0.5;
-			}
-			if (this.y < this.y0) {
-				this.vy = Crafty.math.randomNumber(0.2, 1);
-			}
-			
-			if(this.vx > 0){
-				this.vx -= 0.01;
-			}
-		});
 		
 		this.bind("MouseDown",function(){
 			this.vx += 0.15;
@@ -25219,6 +25197,52 @@ Crafty.c("B5_Barco", {
 			}
 		});
 	},
+	
+	// cada frame, actualizar posición del barco
+	//movimiento del barco en dos direcciones al inicio direccion hacia la derecha
+	//cuando llega a la montaña da un giro y se regresa
+	frame: function() {
+		//movimiento en el eje X
+		this.x += this.vx * this.dir;
+
+		// cuando llega al limite derecho, rota y recoge la corona
+		if (this.dir === 1 && this.x > 1180) {
+			this.dir = -1;
+			this.sprite(1, 0);
+			this.sombra.sprite(1, 0);
+			this.act.coronaGrande.visible = false;
+			this.corona.attr({ x: this.x + this.w / 2 - this.corona.w / 2 + 25, y: this.y - this.corona.h, z: this.z, visible: true });
+			this.attach(this.corona);
+		}
+		else if (this.dir === -1 && this.x < -60) {
+			this.unbind("EnterFrame");
+			this.sprite(0, 0);
+			this.act.ganarActividad();
+		}
+
+		//movimiento en el ejeY
+		this.y += this.vy;
+		if (this.y > this.y0 + Crafty.math.randomInt(5, 15)) {
+			this.vy = -0.5;
+		}
+		if (this.y < this.y0) {
+			this.vy = Crafty.math.randomNumber(0.2, 1);
+		}
+
+		if(this.vx > 0){
+			this.vx -= 0.01;
+		}
+	},
+	
+	// mostrar el barco porprimera vez
+	aparecer: function() {
+		this.bind("EnterFrame", this.frame);
+		this.visible = true;
+		this.sombra.visible = true;
+		this.vx = 2;
+		return this;
+	},
+	
 	//funcion invocada para hundir al barco en el mar
 	desaparecer: function() {
 		this.unbind("EnterFrame");
@@ -25489,6 +25513,8 @@ var ActBelalcaz5 = function() {
 	this.actividadGanada = false;
 	//si se ha ganado la actividad
 	this.aciertos = 0;
+	
+	this.barco = null; // referencia a la entidad barco
 
 	this.init = function() {
 
@@ -25513,15 +25539,25 @@ var ActBelalcaz5 = function() {
 		this.elem[0].bind("EnterFrame", movAgua);
 		this.elem[1].bind("EnterFrame", movAgua);
 
+		this.barco = Crafty.e("B5_Barco").attr({ visible: false });
+
 		Crafty.e("DelayFrame").delay(function() {
 			self.elem[2].addTween({y: self.elem[2].y + self.elem[2].h}, 'easeOutQuad', 70);
 			self.elem[3].addTween({x: -self.elem[3].w}, 'easeOutQuad', 55);
 			self.elem[4].addTween({x: 1280}, 'easeOutQuad', 40);
 			self.elem[5].addTween({x: 1160}, 'easeOutQuad', 50, function() {
 				
-				self.barco = Crafty.e("B5_Barco");
-				self.barco.attr({ x: -self.barco.w + 50, y: 198, z: 10 });
+				self.barco.attr({ x: -self.barco.w + 50, y: 198, z: 10, visible: true });
 				self.barco.act = self;
+				self.barco.aparecer();
+				
+				// 2 gestos: uno para el barco y otro para los barriles
+				var g = Crafty.e("Gesto")
+					.Gesto(1, { coords: [self.barco._x + 230, self.barco._y + 200], duracion: 180, retardo: 40 });
+				self.barco.attach(g);
+				
+				Crafty.e("Gesto")
+						.Gesto(1, { coords: [230, 60], duracion: 180, retardo: 40, deltaX: 180 });
 				
 				//ojo que sale del mar y verifica que toque el barco para que la bestia se coma el barco
 				self.ojo = Crafty.e("B5_Ojo")
@@ -25529,6 +25565,7 @@ var ActBelalcaz5 = function() {
 						//referencia al barco que debe vigilar,
 						//posicion e y inicial y posicion minima y maxima de desplazamiento sobre eje x
 						.B5_Ojo(self.barco, 323);
+				
 				self.areaBarriles.B5AreaBarriles(self.ojo, self.barco);
 			});
 
@@ -25541,6 +25578,9 @@ var ActBelalcaz5 = function() {
 		this.elem[7].bind("EnterFrame", function() {
 			this.x += 0.2;
 		});
+		
+		
+		
 		return this;
 	};
 
@@ -25598,7 +25638,9 @@ var ActBelalcaz5 = function() {
 function spritesBelalcaz6() {
 	Crafty.sprite("img/act/belalcaz/6/elementos.png", {
 		sprB6_corazon: [81, 77, 59, 48],
-		sprB6_sol: [6, 77, 58, 59]
+		sprB6_sol: [0, 77, 80, 90],
+		sprB6_cartagena: [0, 173, 98, 249],
+		sprB6_tumba: [154, 142, 228, 247]
 	});
 
 	Crafty.sprite(76, 76, "img/act/belalcaz/6/elementos.png", {
@@ -25615,6 +25657,7 @@ Crafty.c("Laberinto_cabeza", {
 	init: function() {
 		this.requires("2D, Canvas, Tweener");
 	},
+	
 	Laberinto_cabeza: function(spr) {
 		this._spr = spr;
 		this.requires(spr);
@@ -25622,20 +25665,20 @@ Crafty.c("Laberinto_cabeza", {
 		this.buscarPosIni();
 		return this;
 	},
+	
 	//buscar una posicion inicial donde se pueda arrancar
 	buscarPosIni: function() {
-		//this.fila = Crafty.math.randomInt(0, this.m.length - 1);
-		//this.columna = Crafty.math.randomInt(0, this.m[0].length - 1);
-		this.fila = 3;
-		this.columna = 6;
-		if (this.m[this.fila][this.columna].d === null) {
-			//se llama a esta funcion de nuevo en caso que no se encuentre en una posicion valida.
-			this.buscarPosIni();
-		}
+		// Elegimos una posición de inicio aleatoria
+		var arrPosIni = [[1,0],[2,1],[4,3],[4,7],[2,6]];
+		var posIni = arrPosIni[randomInt(0, 4)];
+		this.fila = posIni[0];
+		this.columna = posIni[1];
+
 		var posx = this.m[this.fila][this.columna].posCab.x;
 		var posy = this.m[this.fila][this.columna].posCab.y;
 		this.attr({x: posx, y: posy, z: 15});
 		this.direccion = "";
+		
 		//poner en posicion los 5 corazones: 
 		this.cor[0] = Crafty.e("Corazon").posicionInicial(0, 0);
 		this.cor[1] = Crafty.e("Corazon").posicionInicial(0, 5);
@@ -25650,6 +25693,7 @@ Crafty.c("Laberinto_cabeza", {
 		this.m[5][9].corazon = this.cor[4];
 		return this.sigPos();//dibujar las posiciones que se puedan realizar	
 	},
+	
 	//por cada posicion siguiente 
 	sigPos: function() {
 		var self = this;
@@ -25661,28 +25705,27 @@ Crafty.c("Laberinto_cabeza", {
 		for (var i = 0; i < destinos.length; i++) {
 			var destinoX = destinos[i][0];
 			var destinoY = destinos[i][1];
-			//console.log(destinoX + " " + destinoY);
-			var posxsol = 152 + destinoX * 105;
-			var posysol = 78 + destinoY * 105;
+			var posxsol = 140 + destinoX * 105;
+			var posysol = 62 + destinoY * 105;
 
 			var destinoSol = Crafty.e("2D, Canvas, sprB6_sol, Soles, Mouse, Tweener")
 					.attr({x: posxsol, y: posysol, z: this.z - 3});
 			destinoSol.fila = destinoY;
 			destinoSol.columna = destinoX;
+			
 			destinoSol.bind("MouseDown", function() {
-				var self2 = this;
 				Crafty("Soles").each(function() {
 					this.unbind("MouseDown");
 					this.addTween({alpha: 0}, 'easeInOutQuad', 20, function() {
 						this.destroy();
 					});
 				});
-				self.determinarDireccion(this.columna)
-						.mover(this.fila, this.columna);
+				self.determinarDireccion(this.columna).mover(this.fila, this.columna);
 			});
 		}
 		return this;
 	},
+	
 	/**
 	 * mover la cabeza hacia una posicion en la matriz
 	 * @param {type} posX posicion equivalente a al fila en la matriz
@@ -25697,23 +25740,37 @@ Crafty.c("Laberinto_cabeza", {
 		//this.attr({x: sigposx, y: sigposy});
 		//this.sigPos();
 
-		this.addTween({x: sigposx, y: sigposy}, 'easeInOutQuad', 20, function() {
+		this.addTween({ x: sigposx, y: sigposy }, 'easeInOutQuad', 20, function() {
 			var cor = self.m[fila][columna].corazon;
-			if (cor != null) {
+			if (cor !== null) {
+				// Ocultamos el corazón e incrementamos el tiempo
+				gesActividad.temporizador.incrementar(4000);
 				cor.ocultar();
-                                self.m[fila][columna].corazon = null;
+				self.m[fila][columna].corazon = null;
 				self.corazones += 1;
-				if (self.corazones == 5) {
-					console.log("gana actividad");
-					self.actividad.ganarActividad();
+				
+				if (self.corazones === 5) {
+					self.actividad.e_cartagena.mostrar();
 				}
 			}
+			
+			if (this.corazones === 5) {
+				var cartag = this.actividad.e_cartagena;
+				
+				if (cartag.fila === this.fila && cartag.col === this.columna) {
+					this.actividad.ganarActividad();
+				}
+			}
+			
 			self.sigPos();
 		});
+		
+		
 	},
+	
 	//determina la direccion de acuerdo a la posicion en X y en Y actuales del componente.
 	determinarDireccion: function(col) {
-		if (this.columna != col) {
+		if (this.columna !== col) {
 			if (this.columna < col) {
 				this.sprite(0, 0);
 			}
@@ -25725,22 +25782,24 @@ Crafty.c("Laberinto_cabeza", {
 	}
 });
 
+
 Crafty.c("Corazon", {
 	init: function() {
 		this.requires("2D, Canvas, sprB6_corazon");
 	},
+	
 	Corazon: function() {
 
 	},
+	
 	posicionInicial: function(fila, columna) {
 		this.fila = fila;
 		this.columna = columna;
-		this.attr({x: 161 + this.columna * 104, y: 85 + this.fila * 105, z: 14});
+		this.attr({x: 128 + 25 + this.columna * 105, y: 53 + 33 + this.fila * 105, z: 14});
 		return this;
 	},
+	
 	ocultar: function() {
-		this.visible = false;
-		console.log("ocultando corzon");
 		this.destroy();
 		return this;
 	}
@@ -25779,7 +25838,7 @@ function matrizLaberinto() {
 			null, //6,1
 			[[5, 1], [7, 0]], //7,1
 			null, //8,1
-			null, //9,1
+			null //9,1
 		],
 		//fila 2:
 		[
@@ -25913,6 +25972,36 @@ function matrizLaberinto() {
 	return this.matriz;
 }
 
+// icono de salida del laberinto
+Crafty.c("B6_Cartagena", {
+	fila: 0, // posición
+	col: 0,
+	x0: 0,
+	y0: 0,
+	
+	init: function() {
+		var arrPosIni = [[1,0],[4,2],[8,0],[1,3]];
+		var posIni = arrPosIni[randomInt(0, 3)];
+		this.col = posIni[0];
+		this.fila = posIni[1];
+		this.x0 = 140 + posIni[0] * 105;
+		this.y0 = 70 + posIni[1] * 105;
+		
+		this.requires("2D, Canvas, sprB6_cartagena, Tweener")
+				.attr({ x: this.x0, y: this.y0, z: 10, alpha: 0, visible: false });
+	},
+	
+	mostrar: function() {
+		this.visible = true;
+		this.addTween({ alpha: 1 }, "linear", 5);
+		this.x -= 50;
+		this.y -= 50;
+		this.w += 100;
+		this.h += 100;
+		this.addTween({ x: this.x0, y: this.y0, w: this._w - 100, h: this._h - 100 }, "easeOutElastic", 70);
+		return this;
+	}
+});
 /*C:\uniserver\www\hdp\public_html\src/act/belalcaz/6/actividad.js*/
 /**
  * Actividad de laberinto de belalcazar
@@ -25927,11 +26016,14 @@ var ActBelalcaz6 = function() {
 	this.actividadGanada = false;
 	//si se ha ganado la actividad
 	this.aciertos = 0;
-
+	this.e_cartagena = null; // salida del laberinto
 
 	this.init = function() {
 		this.iniciarComponentes();
-		var self = this;
+		Crafty("Soles").each(function() {
+			Crafty.e("Gesto")
+						.Gesto(1, { coords: [this.x + 45, this.y + 50], duracion: 90, retardo: 40 });
+		});
 		return this;
 	};
 
@@ -25940,8 +26032,11 @@ var ActBelalcaz6 = function() {
 		Crafty.e("2D, Canvas, Image").image("img/act/belalcaz/6/fondo.jpg").attr({z: 0});
 		var arbusto = Crafty.e("2D, Canvas, Image").image("img/act/belalcaz/6/plano1_arbusto.png");
 		arbusto.attr({x: 0, y: 800 - arbusto.h, z: 20});
-		this.cab = Crafty.e("Laberinto_cabeza").Laberinto_cabeza("sprB6_cabeza");
-		this.cab.actividad = this;
+		this.cabeza = Crafty.e("Laberinto_cabeza").Laberinto_cabeza("sprB6_cabeza");
+		this.cabeza.actividad = this;
+		
+		// Agregamos la salida del laberinto (cartagena)
+		this.e_cartagena = Crafty.e("B6_Cartagena");
 	};
 
 	//verificar si ya se han colocados todos los numeros.
@@ -25954,12 +26049,35 @@ var ActBelalcaz6 = function() {
 
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
+		Crafty("Soles").each(function() {
+			this.destroy();
+		});
+		this.cabeza.destroy();
 		return this;
 	};
 
 	this.ganarActividad = function() {
-		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
+		Crafty("Soles").each(function() {
+			this.destroy();
+		});
+		
+		var cabeza = this.cabeza;
+		var e_tumba = Crafty.e("2D, Canvas, Tweener, sprB6_tumba").attr({ alpha: 0, z: 15 });
+		e_tumba.x = cabeza._x + 10;
+		e_tumba.y = cabeza._y - 30;
+		
+		// Mostramos la cortina negra
+		Crafty.e("2D, Canvas, Color, Tweener")
+				.color("#000000")
+				.attr({ w: 1280, h: 800, z: 14, alpha: 0 })
+				.addTween({ alpha: 1 }, "linear", 10, function() {
+					cabeza.addTween({ y: this._y - 50, alpha: 0 }, "easeInQuart", 60, function() {
+						e_tumba.addTween({ alpha: 1 }, "linear", 30, function() {
+							gesActividad.temporizador.parar();
+							gesActividad.mostrarPuntaje();
+						});
+					});
+				});
 	};
 };
 /*C:\uniserver\www\hdp\public_html\src/act/parque/1/sprites.js*/
@@ -28040,6 +28158,478 @@ var ActParque6 = function() {
 	 return this;
 	 };
 };
+/*C:\uniserver\www\hdp\public_html\src/act/puente/1/sprites.js*/
+function spritesPuente1() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/puente/1/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/puente/1/actividad.js*/
+/**
+ * 
+ */
+var ActPuente1 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/puente/2/sprites.js*/
+function spritesPuente2() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/puente/2/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/puente/2/actividad.js*/
+/**
+ * Actividad parque caldas, armar la estructura monumento del FJCaldas
+ * @returns {ActParque1}
+ */
+var ActPuente2 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/puente/3/sprites.js*/
+function spritesPuente3() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/puente/3/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/puente/3/actividad.js*/
+/**
+ */
+var ActPuente3 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/puente/4/sprites.js*/
+function spritesPuente4() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/puente/4/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/puente/4/actividad.js*/
+/**
+ */
+var ActPuente4 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/puente/5/sprites.js*/
+function spritesPuente5() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/puente/5/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/puente/5/actividad.js*/
+/**
+ */
+var ActPuente5 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/puente/6/sprites.js*/
+function spritesPuente6() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/puente/6/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/puente/6/actividad.js*/
+/**
+ */
+var ActPuente6 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/1/sprites.js*/
+function spritesValencia1() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/1/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/1/actividad.js*/
+/**
+ * 
+ */
+var ActValencia1 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/2/sprites.js*/
+function spritesValencia2() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/2/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/2/actividad.js*/
+/**
+ */
+var ActValencia2 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/3/sprites.js*/
+function spritesValencia3() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/3/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/3/actividad.js*/
+/**
+ */
+var ActValencia3 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/4/sprites.js*/
+function spritesValencia4() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/4/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/4/actividad.js*/
+/**
+ */
+var ActValencia4 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/5/sprites.js*/
+function spritesValencia5() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/5/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/5/actividad.js*/
+/**
+ */
+var ActValencia5 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/6/sprites.js*/
+function spritesValencia6() {
+}
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/6/componentes.js*/
+
+/*C:\uniserver\www\hdp\public_html\src/act/valencia/6/actividad.js*/
+/**
+ */
+var ActValencia6 = function() {
+	//con esta cantidad se gana la actividad
+	this.totAciertos = 4;
+	//tiempo en que se cambia de un topo a otro (milisegundos)
+	this.duracion = 20000;
+	//si se ha ganado la actividad
+	this.actividadGanada = false;
+	//si se ha ganado la actividad
+	this.aciertos = 0;
+
+	this.init = function() {
+		this.crearEntidades();
+		this.ganarActividad();
+		return this;
+	};
+
+	this.crearEntidades = function() {
+
+	};
+
+	// Siempre invocada al terminar la actividad
+	this.terminarActividad = function() {
+		return this;
+	};
+
+	this.ganarActividad = function() {
+		gesActividad.temporizador.parar();
+		gesActividad.mostrarPuntaje();
+		return this;
+	};
+};
 /*C:\uniserver\www\hdp\public_html\src/datos/recursos.js*/
 // Contiene arreglos de recursos a cargar y descargar
 var Recursos = {
@@ -28058,9 +28648,9 @@ var Recursos = {
 			"img/global/pau-botones.png", "img/global/pau-arbol.png", "img/global/pau-hoja.png", "img/global/pau-leyenda.png",
 			"img/global/perdiste.png",
 			"img/global/mano.png", "img/global/gestos.png", "img/global/advertencias.png",
-			"img/test/linea.png", "img/test/numeros.png", 
+			"img/test/linea.png", "img/test/numeros.png",
 			"img/carga/pajaro.png", "img/carga/cargando.png", "img/carga/logo.png"
-			
+
 		],
 		initSprites: spritesGlobal
 	},
@@ -28088,7 +28678,6 @@ var Recursos = {
 			"img/menu-cuadros/c1desv.jpg", "img/menu-cuadros/c2desv.jpg", "img/menu-cuadros/c3desv.jpg", "img/menu-cuadros/c4desv.jpg", "img/menu-cuadros/c5desv.jpg"],
 		initSprites: spritesMenuCuadros
 	},
-	
 	// Escena de test
 	test: {
 		cargado: false,
@@ -28101,7 +28690,6 @@ var Recursos = {
 		],
 		initSprites: spritesTest
 	},
-	
 	// Subniveles morro
 	morro: [
 		{
@@ -28428,6 +29016,163 @@ var Recursos = {
 			musica: ["parque6", "audio/act/parque/parque3.ogg"],
 			initSprites: spritesParque6
 		}
+	],
+	puente: [
+		{
+			act: 1,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/1/fondo.jpg",
+				"img/act/puente/1/partes_puente.png",
+				"img/act/puente/1/personajes.png",
+				"img/act/puente/1/primer_plano.png"
+			],
+			musica: ["puente1", "audio/act/puente/puente1.ogg"],
+			initSprites: spritesPuente1
+		},
+		{
+			act: 2,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/2/fondo.jpg",
+				"img/act/puente/2/hoja.png",
+				"img/act/puente/2/indicador.png",
+				"img/act/puente/2/numeros.png",
+				"img/act/puente/1/personajes.png"
+			],
+			musica: ["puente2", "audio/act/puente/puente2.ogg"],
+			initSprites: spritesPuente2
+		},
+		{
+			act: 3,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/3/fondo.png",
+				"img/act/puente/3/ladrillo.png",
+				"img/act/puente/3/ladrillo_sombra.png",
+				"img/act/puente/3/lanzar.png",
+				"img/act/puente/3/mesa.png",
+				"img/act/puente/3/nube.png",
+				"img/act/puente/3/primer_plano.png",
+				"img/act/puente/3/puente_partes.png",
+				"img/act/puente/3/torre_dividida.png"
+			],
+			musica: ["puente3", "audio/act/puente/puente3.ogg"],
+			initSprites: spritesPuente3
+		},
+		{
+			act: 4,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/4/barro.png",
+				"img/act/puente/4/barro_cal.png",
+				"img/act/puente/4/cal.png",
+				"img/act/puente/4/fondo.jpg",
+				"img/act/puente/4/fondo_azul.png",
+				"img/act/puente/4/iconos.png",
+				"img/act/puente/4/mezcla_final.png",
+				"img/act/puente/4/particula.png",
+				"img/act/puente/4/sangre.png",
+				"img/act/puente/4/sangre_barrro.png",
+				"img/act/puente/4/sangre_cal.png",
+				"img/act/puente/4/vasijas.png"
+			],
+			musica: ["puente4", "audio/act/puente/puente4.ogg"],
+			initSprites: spritesPuente4
+		},
+		{
+			act: 5,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/5/fondo.png",
+				"img/act/puente/5/nube.png",
+				"img/act/puente/5/personajes.png",
+				"img/act/puente/5/primer_plano.png",
+				"img/act/puente/5/puente.png",
+				"img/act/puente/5/segundo_plano.png"
+			],
+			musica: ["puente5", "audio/act/puente/puente5.ogg"],
+			initSprites: spritesPuente5
+		},
+		{
+			act: 6,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/6/fondo.jpg",
+				"img/act/puente/6/barra.png",
+				"img/act/puente/6/brazos.png",
+				"img/act/puente/6/indicador.png",
+				"img/act/puente/6/nubes_1.png",
+				"img/act/puente/6/nubes_2.png",
+				"img/act/puente/6/personaje.png",
+				"img/act/puente/6/pimer_plano.png",
+				"img/act/puente/6/rotar.png"
+			],
+			musica: ["puente6", "audio/act/puente/puente2.ogg"],
+			initSprites: spritesPuente6
+		}
+	],
+	valencia: [
+		{
+			act: 1,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia1", "audio/act/valencia/valencia1.ogg"],
+			initSprites: spritesValencia1
+		},
+		{
+			act: 2,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia2", "audio/act/valencia/valencia2.ogg"],
+			initSprites: spritesValencia2
+		},
+		{
+			act: 3,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia3", "audio/act/valencia/valencia3.ogg"],
+			initSprites: spritesValencia3
+		},
+		{
+			act: 4,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia4", "audio/act/valencia/valencia4.ogg"],
+			initSprites: spritesValencia4
+		},
+		{
+			act: 5,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia5", "audio/act/valencia/valencia5.ogg"],
+			initSprites: spritesValencia5
+		},
+		{
+			act: 6,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia6", "audio/act/valencia/valencia6.ogg"],
+			initSprites: spritesValencia6
+		},
 	]
 };
 
@@ -28447,20 +29192,20 @@ window.onload = function() {
 	Crafty.timer.FPS(60);
 	Crafty.timer.steptype("variable"); // variable, fixed, semifixed
 
-	// Inicializamos el objeto Ãºnico global Box2D
+	// Inicializamos el objeto único global Box2D
 	Crafty.box2D.init(0, 10, 32, true);
 	world = Crafty.box2D.world;
 	//if (!cocoon) Crafty.box2D.showDebugInfo();
 
 	gesSonido = new Sonido();
 
-	// Cargamos recursos globales (incluÃ­dos sprites) antes de hacer cualquier cosa
+	// Cargamos recursos globales (incluídos sprites) antes de hacer cualquier cosa
 	cargarRecursos(Recursos.global, false, function() {
-		gesActividad = new Actividad(); // sÃ³lo inicializar 1 vez
+		gesActividad = new Actividad(); // sólo inicializar 1 vez
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		gesActividad.ejecutar(1, 0); // Nivel de 0 a 4, Subnivel de 0 a 5
+		gesActividad.ejecutar(1, 5); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		//Crafty.enterScene("Inicio");
 		//gesSonido.silenciar();
@@ -28474,3 +29219,4 @@ window.onload = function() {
 		}
 	}
 };
+4

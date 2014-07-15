@@ -12,10 +12,32 @@ var ActBelalcaz6 = function() {
 	//si se ha ganado la actividad
 	this.aciertos = 0;
 	this.e_cartagena = null; // salida del laberinto
+	this.particulas = null; // corazones que salen al coger uno
 
 	this.init = function() {
 		this.iniciarComponentes();
-		var self = this;
+		Crafty("Soles").each(function() {
+			Crafty.e("Gesto")
+						.Gesto(1, { coords: [this.x + 45, this.y + 50], duracion: 90, retardo: 40 });
+		});
+		
+		// Corazones pequeños que saltan
+		this.particulas = new Particulas({
+			componentes: "spr_partCorazon, SpriteAnimation",
+			z: 600,
+			vx: 0,
+			deltaVx: 1,
+			periodo: 10,
+			deltaOriY: 20, deltaOriX: 10,
+			numParticulas: 4,
+			magnitud: 25,
+			duracion: 45,
+			atenuacion: 22,
+			f_crear: function(ent) {
+				ent.reel("escalar", 400, [[0, 0], [1,0], [2,0], [3,0]]).animate("escalar", -1);
+			}
+		});
+		
 		return this;
 	};
 
@@ -31,13 +53,6 @@ var ActBelalcaz6 = function() {
 		this.e_cartagena = Crafty.e("B6_Cartagena");
 	};
 
-	//verificar si ya se han colocados todos los numeros.
-	this.arrastreCompleto = function() {
-		//contar el numero de entidades de tipo Completo
-		if (this.aciertos === this.totAciertos) {
-			this.ganarActividad();
-		}
-	};
 
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {

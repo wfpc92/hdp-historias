@@ -85,7 +85,16 @@ Crafty.c("Gesto", {
 		return this;
 	},
 	
-	// Animación de gesto de topque rápido
+	/*
+	 * Animación de gesto de toque rápido
+	 * Configuración:
+	 * coords: Coordenadas del centro de rotación
+	 * duracion: Frames de duración del gesto
+	 * retardo: Retardo en iniciar el gesto
+	 * deltaX: Cambio en x por frame
+	 * deltaY: Cambio en y por frame
+	 * repetirX: Cambio en X por repetición
+	 */
 	animToqueRapido: function() {
 		var self = this;
 		this.visible = true;

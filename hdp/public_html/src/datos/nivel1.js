@@ -65,7 +65,7 @@ niveles[1] = {
 			duracion: 17000,
 			fondo: 'img/act/belalcaz/6/fondo.jpg',
 			dato: 'Murió de avanzada edad, a causa de una\n \benfermedad\b mientras preparaba su\núltimo viaje a España, en \bCartagena\n de Indias\b en 1551.',
-			pista: { ladoIzq: true, y: 250 },
+			pista: { ladoIzq: false, y: 30 },
 			actividad: function() {
 				var actividad = new ActBelalcaz6();
 				return actividad;

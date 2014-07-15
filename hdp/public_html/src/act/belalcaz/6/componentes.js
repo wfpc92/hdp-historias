@@ -102,7 +102,13 @@ Crafty.c("Laberinto_cabeza", {
 				if (self.corazones === 5) {
 					self.actividad.e_cartagena.mostrar();
 				}
+				
+				// disparamos las partículas decorativas
+				self.actividad.particulas.x = self.actividad.cabeza._x + 38;
+				self.actividad.particulas.y = self.actividad.cabeza._y + 10;
+				self.actividad.particulas.iniciar();
 			}
+		
 			
 			if (this.corazones === 5) {
 				var cartag = this.actividad.e_cartagena;
