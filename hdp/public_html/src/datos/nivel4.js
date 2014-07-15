@@ -8,7 +8,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/1/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia1();
 				return actividad;
 			}
 		},
@@ -18,7 +18,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/2/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia2();
 				return actividad;
 			}
 		},
@@ -28,7 +28,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/3/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia3();
 				return actividad;
 			}
 		},
@@ -38,7 +38,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/4/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia4();
 				return actividad;
 			}
 		},
@@ -48,7 +48,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/5/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia5();
 				return actividad;
 			}
 		},
@@ -58,7 +58,7 @@ niveles[4] = {
 			fondo: 'img/belalcaz/6/fondo.png',
 			dato : '',
 			actividad: function() {
-				var actividad = new Object();
+				var actividad = new ActValencia6();
 				return actividad;
 			}
 		}

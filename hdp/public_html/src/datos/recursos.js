@@ -15,9 +15,9 @@ var Recursos = {
 			"img/global/pau-botones.png", "img/global/pau-arbol.png", "img/global/pau-hoja.png", "img/global/pau-leyenda.png",
 			"img/global/perdiste.png",
 			"img/global/mano.png", "img/global/gestos.png", "img/global/advertencias.png",
-			"img/test/linea.png", "img/test/numeros.png", 
+			"img/test/linea.png", "img/test/numeros.png",
 			"img/carga/pajaro.png", "img/carga/cargando.png", "img/carga/logo.png"
-			
+
 		],
 		initSprites: spritesGlobal
 	},
@@ -45,7 +45,6 @@ var Recursos = {
 			"img/menu-cuadros/c1desv.jpg", "img/menu-cuadros/c2desv.jpg", "img/menu-cuadros/c3desv.jpg", "img/menu-cuadros/c4desv.jpg", "img/menu-cuadros/c5desv.jpg"],
 		initSprites: spritesMenuCuadros
 	},
-	
 	// Escena de test
 	test: {
 		cargado: false,
@@ -58,7 +57,6 @@ var Recursos = {
 		],
 		initSprites: spritesTest
 	},
-	
 	// Subniveles morro
 	morro: [
 		{
@@ -385,5 +383,162 @@ var Recursos = {
 			musica: ["parque6", "audio/act/parque/parque3.ogg"],
 			initSprites: spritesParque6
 		}
+	],
+	puente: [
+		{
+			act: 1,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/1/fondo.jpg",
+				"img/act/puente/1/partes_puente.png",
+				"img/act/puente/1/personajes.png",
+				"img/act/puente/1/primer_plano.png"
+			],
+			musica: ["puente1", "audio/act/puente/puente1.ogg"],
+			initSprites: spritesPuente1
+		},
+		{
+			act: 2,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/2/fondo.jpg",
+				"img/act/puente/2/hoja.png",
+				"img/act/puente/2/indicador.png",
+				"img/act/puente/2/numeros.png",
+				"img/act/puente/1/personajes.png"
+			],
+			musica: ["puente2", "audio/act/puente/puente2.ogg"],
+			initSprites: spritesPuente2
+		},
+		{
+			act: 3,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/3/fondo.png",
+				"img/act/puente/3/ladrillo.png",
+				"img/act/puente/3/ladrillo_sombra.png",
+				"img/act/puente/3/lanzar.png",
+				"img/act/puente/3/mesa.png",
+				"img/act/puente/3/nube.png",
+				"img/act/puente/3/primer_plano.png",
+				"img/act/puente/3/puente_partes.png",
+				"img/act/puente/3/torre_dividida.png"
+			],
+			musica: ["puente3", "audio/act/puente/puente3.ogg"],
+			initSprites: spritesPuente3
+		},
+		{
+			act: 4,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/4/barro.png",
+				"img/act/puente/4/barro_cal.png",
+				"img/act/puente/4/cal.png",
+				"img/act/puente/4/fondo.jpg",
+				"img/act/puente/4/fondo_azul.png",
+				"img/act/puente/4/iconos.png",
+				"img/act/puente/4/mezcla_final.png",
+				"img/act/puente/4/particula.png",
+				"img/act/puente/4/sangre.png",
+				"img/act/puente/4/sangre_barrro.png",
+				"img/act/puente/4/sangre_cal.png",
+				"img/act/puente/4/vasijas.png"
+			],
+			musica: ["puente4", "audio/act/puente/puente4.ogg"],
+			initSprites: spritesPuente4
+		},
+		{
+			act: 5,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/5/fondo.png",
+				"img/act/puente/5/nube.png",
+				"img/act/puente/5/personajes.png",
+				"img/act/puente/5/primer_plano.png",
+				"img/act/puente/5/puente.png",
+				"img/act/puente/5/segundo_plano.png"
+			],
+			musica: ["puente5", "audio/act/puente/puente5.ogg"],
+			initSprites: spritesPuente5
+		},
+		{
+			act: 6,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+				"img/act/puente/6/fondo.jpg",
+				"img/act/puente/6/barra.png",
+				"img/act/puente/6/brazos.png",
+				"img/act/puente/6/indicador.png",
+				"img/act/puente/6/nubes_1.png",
+				"img/act/puente/6/nubes_2.png",
+				"img/act/puente/6/personaje.png",
+				"img/act/puente/6/pimer_plano.png",
+				"img/act/puente/6/rotar.png"
+			],
+			musica: ["puente6", "audio/act/puente/puente2.ogg"],
+			initSprites: spritesPuente6
+		}
+	],
+	valencia: [
+		{
+			act: 1,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia1", "audio/act/valencia/valencia1.ogg"],
+			initSprites: spritesValencia1
+		},
+		{
+			act: 2,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia2", "audio/act/valencia/valencia2.ogg"],
+			initSprites: spritesValencia2
+		},
+		{
+			act: 3,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia3", "audio/act/valencia/valencia3.ogg"],
+			initSprites: spritesValencia3
+		},
+		{
+			act: 4,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia4", "audio/act/valencia/valencia4.ogg"],
+			initSprites: spritesValencia4
+		},
+		{
+			act: 5,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia5", "audio/act/valencia/valencia5.ogg"],
+			initSprites: spritesValencia5
+		},
+		{
+			act: 6,
+			cargado: false,
+			spritesListas: false,
+			rutas: [
+			],
+			musica: ["valencia6", "audio/act/valencia/valencia6.ogg"],
+			initSprites: spritesValencia6
+		},
 	]
 };
