@@ -7,6 +7,7 @@ Crafty.c("Laberinto_cabeza", {
 	init: function() {
 		this.requires("2D, Canvas, Tweener");
 	},
+	
 	Laberinto_cabeza: function(spr) {
 		this._spr = spr;
 		this.requires(spr);
@@ -14,20 +15,20 @@ Crafty.c("Laberinto_cabeza", {
 		this.buscarPosIni();
 		return this;
 	},
+	
 	//buscar una posicion inicial donde se pueda arrancar
 	buscarPosIni: function() {
-		//this.fila = Crafty.math.randomInt(0, this.m.length - 1);
-		//this.columna = Crafty.math.randomInt(0, this.m[0].length - 1);
-		this.fila = 3;
-		this.columna = 6;
-		if (this.m[this.fila][this.columna].d === null) {
-			//se llama a esta funcion de nuevo en caso que no se encuentre en una posicion valida.
-			this.buscarPosIni();
-		}
+		// Elegimos una posición de inicio aleatoria
+		var arrPosIni = [[1,0],[2,1],[4,3],[4,7],[2,6]];
+		var posIni = arrPosIni[randomInt(0, 4)];
+		this.fila = posIni[0];
+		this.columna = posIni[1];
+
 		var posx = this.m[this.fila][this.columna].posCab.x;
 		var posy = this.m[this.fila][this.columna].posCab.y;
 		this.attr({x: posx, y: posy, z: 15});
 		this.direccion = "";
+		
 		//poner en posicion los 5 corazones: 
 		this.cor[0] = Crafty.e("Corazon").posicionInicial(0, 0);
 		this.cor[1] = Crafty.e("Corazon").posicionInicial(0, 5);
@@ -42,6 +43,7 @@ Crafty.c("Laberinto_cabeza", {
 		this.m[5][9].corazon = this.cor[4];
 		return this.sigPos();//dibujar las posiciones que se puedan realizar	
 	},
+	
 	//por cada posicion siguiente 
 	sigPos: function() {
 		var self = this;
@@ -53,28 +55,27 @@ Crafty.c("Laberinto_cabeza", {
 		for (var i = 0; i < destinos.length; i++) {
 			var destinoX = destinos[i][0];
 			var destinoY = destinos[i][1];
-			//console.log(destinoX + " " + destinoY);
-			var posxsol = 152 + destinoX * 105;
-			var posysol = 78 + destinoY * 105;
+			var posxsol = 140 + destinoX * 105;
+			var posysol = 62 + destinoY * 105;
 
 			var destinoSol = Crafty.e("2D, Canvas, sprB6_sol, Soles, Mouse, Tweener")
 					.attr({x: posxsol, y: posysol, z: this.z - 3});
 			destinoSol.fila = destinoY;
 			destinoSol.columna = destinoX;
+			
 			destinoSol.bind("MouseDown", function() {
-				var self2 = this;
 				Crafty("Soles").each(function() {
 					this.unbind("MouseDown");
 					this.addTween({alpha: 0}, 'easeInOutQuad', 20, function() {
 						this.destroy();
 					});
 				});
-				self.determinarDireccion(this.columna)
-						.mover(this.fila, this.columna);
+				self.determinarDireccion(this.columna).mover(this.fila, this.columna);
 			});
 		}
 		return this;
 	},
+	
 	/**
 	 * mover la cabeza hacia una posicion en la matriz
 	 * @param {type} posX posicion equivalente a al fila en la matriz
@@ -89,23 +90,37 @@ Crafty.c("Laberinto_cabeza", {
 		//this.attr({x: sigposx, y: sigposy});
 		//this.sigPos();
 
-		this.addTween({x: sigposx, y: sigposy}, 'easeInOutQuad', 20, function() {
+		this.addTween({ x: sigposx, y: sigposy }, 'easeInOutQuad', 20, function() {
 			var cor = self.m[fila][columna].corazon;
-			if (cor != null) {
+			if (cor !== null) {
+				// Ocultamos el corazón e incrementamos el tiempo
+				gesActividad.temporizador.incrementar(4000);
 				cor.ocultar();
-                                self.m[fila][columna].corazon = null;
+				self.m[fila][columna].corazon = null;
 				self.corazones += 1;
-				if (self.corazones == 5) {
-					console.log("gana actividad");
-					self.actividad.ganarActividad();
+				
+				if (self.corazones === 5) {
+					self.actividad.e_cartagena.mostrar();
 				}
 			}
+			
+			if (this.corazones === 5) {
+				var cartag = this.actividad.e_cartagena;
+				
+				if (cartag.fila === this.fila && cartag.col === this.columna) {
+					this.actividad.ganarActividad();
+				}
+			}
+			
 			self.sigPos();
 		});
+		
+		
 	},
+	
 	//determina la direccion de acuerdo a la posicion en X y en Y actuales del componente.
 	determinarDireccion: function(col) {
-		if (this.columna != col) {
+		if (this.columna !== col) {
 			if (this.columna < col) {
 				this.sprite(0, 0);
 			}
@@ -117,22 +132,24 @@ Crafty.c("Laberinto_cabeza", {
 	}
 });
 
+
 Crafty.c("Corazon", {
 	init: function() {
 		this.requires("2D, Canvas, sprB6_corazon");
 	},
+	
 	Corazon: function() {
 
 	},
+	
 	posicionInicial: function(fila, columna) {
 		this.fila = fila;
 		this.columna = columna;
-		this.attr({x: 161 + this.columna * 104, y: 85 + this.fila * 105, z: 14});
+		this.attr({x: 128 + 25 + this.columna * 105, y: 53 + 33 + this.fila * 105, z: 14});
 		return this;
 	},
+	
 	ocultar: function() {
-		this.visible = false;
-		console.log("ocultando corzon");
 		this.destroy();
 		return this;
 	}
@@ -171,7 +188,7 @@ function matrizLaberinto() {
 			null, //6,1
 			[[5, 1], [7, 0]], //7,1
 			null, //8,1
-			null, //9,1
+			null //9,1
 		],
 		//fila 2:
 		[
@@ -304,3 +321,34 @@ function matrizLaberinto() {
 	this.matriz = armarMatriz(filas, columnas, celda);
 	return this.matriz;
 }
+
+// icono de salida del laberinto
+Crafty.c("B6_Cartagena", {
+	fila: 0, // posición
+	col: 0,
+	x0: 0,
+	y0: 0,
+	
+	init: function() {
+		var arrPosIni = [[1,0],[4,2],[8,0],[1,3]];
+		var posIni = arrPosIni[randomInt(0, 3)];
+		this.col = posIni[0];
+		this.fila = posIni[1];
+		this.x0 = 140 + posIni[0] * 105;
+		this.y0 = 70 + posIni[1] * 105;
+		
+		this.requires("2D, Canvas, sprB6_cartagena, Tweener")
+				.attr({ x: this.x0, y: this.y0, z: 10, alpha: 0, visible: false });
+	},
+	
+	mostrar: function() {
+		this.visible = true;
+		this.addTween({ alpha: 1 }, "linear", 5);
+		this.x -= 50;
+		this.y -= 50;
+		this.w += 100;
+		this.h += 100;
+		this.addTween({ x: this.x0, y: this.y0, w: this._w - 100, h: this._h - 100 }, "easeOutElastic", 70);
+		return this;
+	}
+});

@@ -33,7 +33,7 @@ Crafty.c("Gesto", {
 		
 		if (numTipo === 1) {
 			this.requires("sprGL_gestoTap");
-			this.e_mano.attr({ x: 13, y: 28 });
+			this.e_mano.attr({ x: 20, y: 28 });
 		}
 		else if (numTipo === 2) {
 			this.requires("sprGL_gestoDrag");

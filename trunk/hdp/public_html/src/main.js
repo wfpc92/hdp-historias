@@ -13,23 +13,23 @@ window.onload = function() {
 	Crafty.timer.FPS(60);
 	Crafty.timer.steptype("variable"); // variable, fixed, semifixed
 
-	// Inicializamos el objeto Ãºnico global Box2D
+	// Inicializamos el objeto único global Box2D
 	Crafty.box2D.init(0, 10, 32, true);
 	world = Crafty.box2D.world;
 	//if (!cocoon) Crafty.box2D.showDebugInfo();
 
 	gesSonido = new Sonido();
 
-	// Cargamos recursos globales (incluÃ­dos sprites) antes de hacer cualquier cosa
+	// Cargamos recursos globales (incluídos sprites) antes de hacer cualquier cosa
 	cargarRecursos(Recursos.global, false, function() {
-		gesActividad = new Actividad(); // sÃ³lo inicializar 1 vez
+		gesActividad = new Actividad(); // sólo inicializar 1 vez
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		//gesActividad.ejecutar(3,5); // Nivel de 0 a 4, Subnivel de 0 a 5
-		gestorTest.iniciarTest(4);
+		gesActividad.ejecutar(1, 4); // Nivel de 0 a 4, Subnivel de 0 a 5
+		//gestorTest.iniciarTest(0);
 		//Crafty.enterScene("Inicio");
-		gesSonido.silenciar();
+		//gesSonido.silenciar();
 	});
 	
 	// Desbloquear todos los niveles en modo debug
@@ -40,3 +40,4 @@ window.onload = function() {
 		}
 	}
 };
+4

@@ -6,8 +6,10 @@ Crafty.c('Temporizador', {
 	tiempoInicial: 0,
 	id: 0,
 	maxAncho: 0, // maximo de tamano de ancho de la barra
-	msIntervalo: 33,
+	anchoBarra : 0, // ancho actual de la barra
+	msIntervalo: 33, // ms por intervalo
 	contadorIntervalos: 0,
+	maxIntervalos: 0, // contadorIntervalos cuenta hasta esto
 	delta: 0,
 	activo: false, // true si está contando tiempo
 	
@@ -52,6 +54,66 @@ Crafty.c('Temporizador', {
 		this.ocultar(); // Inicialmente oculto; mostrar manualmente con mostrar()
 	},
 	
+	/**
+	 * Empieza con el temporizador o hace que continue con su ejecucion
+	 * hasta el limite de tiempo. 
+	 * (actua como una funcion toogle de pausa y despausa)
+	 */
+	iniciar: function() {
+		this.activo = true;
+		this.delta = this.maxAncho * this.msIntervalo / this.tiempoInicial;
+		this.maxIntervalos = Math.floor(this.tiempoInicial / this.msIntervalo);
+		// iniciar temporizador de tiempo, cada msIntervalo milisegundos se ejecuta una funcion de actualizacion 
+		var self = this;
+		
+		this.myInterval = setInterval(function() {
+			self.actualizar();
+			// si se llego al limite de tiempo, entonces terminar actividad.
+			if ((++self.contadorIntervalos) >= self.maxIntervalos) {
+				self.parar();
+				gesActividad.mostrarPerdiste();
+			}
+		}, this.msIntervalo);
+		
+		return this;
+	},
+	
+	/**
+	 * Hace cambiar el tamaño de la barra y actualiza el contador. de segundos
+	 * y milisegundos
+	 */
+	actualizar: function() {
+		// disminuir el tamaño de la barra 
+		this.anchoBarra = (this.e_barra.w - this.delta) > 0 ? this.e_barra.w - this.delta : 0;
+		this.e_barra.crop(0, 0, this.anchoBarra, 18);
+		// actualizar reloj para que se posicione siempre 
+		this.e_reloj.x = this.e_barra.x + this.e_barra.w - 25;
+		return this;
+	},
+	
+	/**
+	 * Se llama cuando el tiempo se ha agotado, o cuando la actividad se 
+	 * ha ganado.
+	 */
+	parar: function() {
+		if (this.activo) {
+			clearInterval(this.myInterval);
+			this.activo = false;
+			this.ocultarBtPausa();
+		}
+		return this;
+	},
+	
+	// Reinicia todas las variables del temporizador
+	reset: function() {
+		this.delta = 0;
+		this.activo = false;
+		this.contadorIntervalos = 0;
+		this.e_barra.crop(0, 0, 618, 18);
+		this.actualizar();
+		return this;
+	},
+	
 	// Pausa el juego
 	// La entidad de panel de pausa tiene su propio timer aparte de Crafty
 	pausar: function() {
@@ -88,55 +150,21 @@ Crafty.c('Temporizador', {
 		return this;
 	},
 	
+	// Incrementa el tiempo el número de intérvalos dado
+	incrementar: function(ms) {
+		var numInt = Math.floor(ms / this.msIntervalo);
+		this.contadorIntervalos -= numInt;
+		if (this.contadorIntervalos < 0)
+			this.contadorIntervalos = 0;
+		
+		var nuevoAncho = this.anchoBarra + numInt * this.delta;
+		if (nuevoAncho > this.maxAncho) nuevoAncho = this.maxAncho;
+		this.e_barra.crop(0, 0, nuevoAncho, 18);
+		return this;
+	},
+	
 	setDuracion: function(t) {
 		this.tiempoInicial = t;
-		return this;
-	},
-	/**
-	 * Empieza con el temporizador o hace que continue con su ejecucion
-	 * hasta el limite de tiempo. 
-	 * (actua como una funcion toogle de pausa y despausa)
-	 */
-	iniciar: function() {
-		this.activo = true;
-		this.delta = this.maxAncho * this.msIntervalo / this.tiempoInicial;
-		var intervaloFinal = parseInt(this.tiempoInicial / this.msIntervalo);
-		// iniciar temporizador de tiempo, cada msIntervalo milisegundos se ejecuta una funcion de actualizacion 
-		var self = this;
-		
-		this.myInterval = setInterval(function() {
-			self.actualizar();
-			// si se llego al limite de tiempo, entonces terminar actividad.
-			if ((++self.contadorIntervalos) >= intervaloFinal) {
-				self.parar();
-				gesActividad.mostrarPerdiste();
-			}
-		}, this.msIntervalo);
-		
-		return this;
-	},
-	/**
-	 * Hace cambiar el tamaño de la barra y actualiza el contador. de segundos
-	 * y milisegundos
-	 */
-	actualizar: function() {
-		// disminuir el tamaño de la barra 
-		var tamBarra = (this.e_barra.w - this.delta) > 0 ? this.e_barra.w - this.delta : 0;
-		this.e_barra.crop(0, 0, tamBarra, 18);
-		// actualizar reloj para que se posicione siempre 
-		this.e_reloj.x = this.e_barra.x + this.e_barra.w - 25;
-		return this;
-	},
-	/**
-	 * Se llama cuando el tiempo se ha agotado, o cuando la actividad se 
-	 * ha ganado.
-	 */
-	parar: function() {
-		if (this.activo) {
-			clearInterval(this.myInterval);
-			this.activo = false;
-			this.ocultarBtPausa();
-		}
 		return this;
 	},
 	
@@ -144,6 +172,7 @@ Crafty.c('Temporizador', {
 		this.e_pausa.visible = true;
 		return this;
 	},
+	
 	ocultarBtPausa: function() {
 		this.e_pausa.visible = false;
 		return this;
@@ -153,16 +182,5 @@ Crafty.c('Temporizador', {
 	getTiempoRestante: function() {
 		var tRestante = this.tiempoInicial - this.contadorIntervalos * this.msIntervalo;
 		return tRestante;
-	},
-	
-	// Reinicia todas las variables del temporizador
-	reset: function() {
-		this.delta = 0;
-		this.activo = false;
-		this.contadorIntervalos = 0;
-		this.e_barra.crop(0, 0, 618, 18);
-		this.actualizar();
-		return this;
 	}
-	
 });

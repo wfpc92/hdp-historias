@@ -3,10 +3,6 @@
  */
 
 Crafty.c('Arrastrable', {
-	encontrado: false,
-	//numero: 0, // identificador, sirve para 
-	maxY: 450,
-	
 	mouseIniX: 0, // Coordenadas del mouse
 	mouseIniY: 0,
 	
@@ -14,13 +10,12 @@ Crafty.c('Arrastrable', {
 	vy: 0.0,
 	vx: 0.0,
 	ay: 0.8,
-	atenua: 0.4, // (porcentaje) atenuación por choque con el suelo
-	cayendo: true, // true si el número está cayendo o rebotando
+	
+	art_cayendo: false, // true si el número está cayendo o rebotando
 	ini: false, //true si el componente a acabo de ser soltado.
 	presionado: false, //verdadero si el componente esta presionado
 	areaCajon: null, //(obligatorio) referencia a entidad AreaCajon 
 	act: null, //(obligatorio) objeto que implementa funcion que se ejecuta luego de ajustar la entidad al cajon
-	spr: '', //(obligatorio) sprite del componente 
 
 	eventoMove: "mousemove", // Nombres de los eventos de mouse asociados
 	eventoUp: "mouseup",
@@ -28,41 +23,26 @@ Crafty.c('Arrastrable', {
 	init: function() {
 		this.requires('2D, Canvas, Tweener, Mouse')
 			.bind('MouseDown', function(e) {
-				this.cayendo = false;
+				this.art_cayendo = false;
 				this.presionado = true;
+				this.vy = 0;
 				
 				// Configuramos los eventos para esta entidad
 				if (cocoon) { this.eventoMove = "touchmove"; this.eventoUp = "touchend"; }
 		
-				Crafty.addEvent(this, Crafty.stage.elem, this.eventoMove, this.arrastrar);
-				Crafty.addEvent(this, Crafty.stage.elem, this.eventoUp, this.soltar);
+				Crafty.addEvent(this, Crafty.stage.elem, this.eventoMove, this.Art_arrastrar);
+				Crafty.addEvent(this, Crafty.stage.elem, this.eventoUp, this.Art_soltar);
 
 				
 				var pos = mouseCoords(e);
 				this.mouseIniX = pos.x;
 				this.mouseIniY = pos.y;
 			})
-			.bind('MouseUp', function(e) {
-				this.cayendo = true;
-				this.presionado = false;
-				this.ini = true;
-
-				var pos = mouseCoords(e);
-				this.mXSol = pos.x;
-				this.mYSol = pos.y;
-			})
 			.bind("EnterFrame", this.eventoFrame);
-			/*
-			.bind('MouseOut', function(e) {
-				this.cayendo = true;
-				this.presionado = false;
-			})
-			*/
 	},
 	
 	// Asociada al MouseMove
-	arrastrar: function(e) {
-		console.log("arrastrar()")
+	Art_arrastrar: function(e) {
 		if (this.presionado) {
 			var nuevaPos = mouseCoords(e);
 
@@ -75,18 +55,34 @@ Crafty.c('Arrastrable', {
 		}
 	},
 	
-	soltar: function(e) {
-		Crafty.removeEvent(this, Crafty.stage.elem, this.eventoMove, this.arrastrar);
-		Crafty.removeEvent(this, Crafty.stage.elem, this.eventoUp, this.soltar);
+	Art_soltar: function(e) {
+		Crafty.removeEvent(this, Crafty.stage.elem, this.eventoMove, this.Art_arrastrar);
+		Crafty.removeEvent(this, Crafty.stage.elem, this.eventoUp, this.Art_soltar);
+		
+		this.art_cayendo = true;
+		this.presionado = false;
+		this.ini = true;
+
+		var pos = mouseCoords(e);
+		this.mXSol = pos.x;
+		this.mYSol = pos.y;
+		
 		return this;
 	},
 	
 	eventoFrame: function() {
 		// caer si es necesario
-		if (this.cayendo) {
+		if (this.art_cayendo) {
 			this.vy += this.ay;
 			this.y = this._y + this.vy;
-
+			
+			// si se sale de la pantalla, dejar de caer y resetear variables
+			if (this._y > 800) {
+				this.art_cayendo = false;
+				this.visible = false;
+				this.vy = 0;
+			}
+			
 			// Si choca contra el suelo, atenuar y rebotar
 			if (this.y >= this.maxY && this.vy > 0) {
 				this.vy = -(this.vy - this.atenua * this.vy);
@@ -94,7 +90,7 @@ Crafty.c('Arrastrable', {
 
 				// Si la velocidad es demasiado pequeña, dejar de caer
 				if (this.vy > -0.3 && this.vy < 1) {
-					//this.cayendo = false;
+					//this.art_cayendo = false;
 					this.ini = false;
 				}
 			}
@@ -115,19 +111,21 @@ Crafty.c('Arrastrable', {
 			if (this.mXSol > this.areaCajon.x && this.mXSol < (this.areaCajon.x + this.areaCajon.w)
 					&& this.mYSol > this.areaCajon.y && this.mYSol < (this.areaCajon.y + this.areaCajon.h)) {
 				this.areaCajon.encontrado = true;
-				//construir nuevo elemento
-				var nvaEnt = Crafty.e("2D, Canvas, Completo, Tweener, " + this.spr)
-						.attr({x: this.x, y: this.y, z: this.z - 1});
-				nvaEnt.rotation = this.rotation;
-				//destruir el elemento actual para evitar problemas con el evento ondrag
-				this.destroy();
+				
 				var act = this.act;
 				var areaCajon = this.areaCajon;
-				//efecto de ajustarse a los punticos
-				var velTw = 15;
-				nvaEnt.addTween({x: this.areaCajon.x, y: this.areaCajon.y, rotation: 0}, 'easeOutCubic', velTw, function() {
+				Crafty.removeEvent(this, Crafty.stage.elem, this.eventoMove, this.Art_arrastrar);
+				Crafty.removeEvent(this, Crafty.stage.elem, this.eventoUp, this.Art_soltar);
+				this.unbind("EnterFrame", this.eventoFrame);
+				this.unbind("MouseDown");
+				this.unbind("MouseMove");
+				this.unbind("MouseUp");
+				
+				// ajustarse al cajón
+				this.addTween({x: this.areaCajon.x, y: this.areaCajon.y, rotation: 0}, 'easeOutCubic', 15, function() {
+					this.addComponent("Completo");
 					if (act.arrastreCompleto) {
-						act.arrastreCompleto();
+						act.arrastreCompleto(this);
 					}
 					areaCajon.visible = false;
 				});
@@ -146,8 +144,3 @@ Crafty.c('AreaCajon', {
 		this.requires('2D, Canvas');
 	}
 });
-
-
-
-
-
