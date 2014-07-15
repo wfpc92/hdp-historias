@@ -16106,44 +16106,44 @@ tests[1] = {
 	numPreguntas: 2,
 	pregunta: [
 		{
-			texto: 'Sebastián de Belalcázar fue el |Conquistador| que |Fundó| la\nciudad de Popayán.',
+			texto: 'Sebastián de Belalcázar fué el |Conquistador| que\n |Fundó| la ciudad de Popayán.',
 			trampa: ["Descubrió", "Emperador"]
 		},
 		{
-			texto: 'El verdadero |Nombre| de Sebastián de Belalcázar era Sebastián\n|Moyano|.',
-			trampa: ["Aguirre ", "Motivo"]
+			texto: 'El verdadero Nombre de Sebastián de Belalcázar\n era |Sebastián| |Moyano|.',
+			trampa: ["Aguirre", "Nicolás", "Cabrera", "Quijote"]
 		},
 		{
-			texto: 'La palabra |Popayán| proviene de "|pop-pioyá-n|".',
-			trampa: ["Papiyón", "Pipián"]
+			texto: 'La palabra \bPopayán\b proviene de "|Pop|-|Pioyá|-|n|".',
+			trampa: ["Pap", "Pa", "Ya", "Pillá"]
 		},
 		{
-			texto: 'Los conquistadores asumieron el nombre Popayán porque sus\n|Intérpretes| Yucatecos las designaron como las "|Tierras|\ndel cacique Pioyán"',
-			trampa: ["Discípulos", "Amigos", "Huestes"]
+			texto: 'Los conquistadores asumieron el nombre \bPopayán\b porque sus\nintérpretes |Yucatecos| las designaron como las \b"Tierras\n del cacique |Pioyán|"\b',
+			trampa: ["Mayas", "Paeces", "Paellán", "Papaya"]
 		},
 		{
-			texto: 'Mientras conquistaba Popayán, Belalcázar |Atravesó| lo que\nhoy se conoce como Timbío -en |Octubre| de 1535-.',
-			trampa: ["Agosto", "Mayo", "Incendió"]
+			texto: 'Mientras conquistaba |Popayán|, Belalcázar Atravesó lo que\n hoy se conoce como |Timbío| -en Octubre de 1535-, donde\n venció a 3,000 indígenas.',
+			trampa: ["Cali", "Neiva", "Quito", "Cartagena"]
 		},
 		{
-			texto: 'Belalcázar venció a |3000| indígenas con un |Ejército| de 100\nhombres.',
-			trampa: ["1000", "2000", "Tumulto"]
+			texto: 'Cuentan los historiadores que en Timbío, Belalcázar venció a\n |3,000| indígenas con un Ejército de |100| hombres.',
+			trampa: ["1,000", "2,000", "10"]
 		},
 		{
-			texto: 'Mientras buscaba el tesoro de El Dorado, también fundó las\nciudades de |Quito y Guayaquil|, en Ecuador, y\n|Santiago de Cali y Popayán|, en Colombia.',
-			trampa: ["Quito y Otavalo", "Guayaquil e Ibarra", "Santiago de Cali y Neiva"]
+			texto: 'Mientras buscaba el tesoro de El Dorado, también fundó las\nciudades de |Quito y Guayaquil|, en Ecuador, y\n|Santiago de Cali y Neiva|, en Colombia.',
+			trampa: ["Quito y Otavalo", "Guayaquil e Ibarra", "Cartagena y Neiva"]
 		},
 		{
-			texto: 'En mayo de |1540| Sebastián de Belalcázar volvió a |España|\npara legitimar sus derechos.',
-			trampa: ["Perú", "Italia", "1537"]
+			texto: 'En mayo de 1540 Sebastián de Belalcázar volvió a |España|\n para legitimar sus |derechos|.',
+			trampa: ["Ecuador", "Portugal", "acciones"]
 		},
 		{
 			texto: 'Belalcázar fue declarado primer |Gobernador| de la Provincia\nde Popayán en la corte de |Carlos I| de España.',
-			trampa: ["Carlos V", "Carlos II", "Emancipador"]
+			trampa: ["Carlos V", "Enrique II", "Campeón", "Caballero"]
 		},
 		{
-			texto: 'Belalcázar murió de avanzada edad, a causa de una enfermedad\nmientras preparaba su último viaje a |España|, en Cartagena de\nIndias en |1551|.',
-			trampa: ["1552", "Italia", "1557"]
+			texto: 'Belalcázar murió de avanzada edad, a causa de una \benfermedad\b\n mientras preparaba su último viaje a |España|, en la\n ciudad de |Cartagena| en 1551.',
+			trampa: ["Ecuador", "Portugal", "Popayán", "Huila"]
 		}
 	]
 };
@@ -16790,6 +16790,9 @@ function spritesGlobal() {
 	});
 	Crafty.sprite("img/particulas/nube.png", {
 		spr_nube: [0, 0, 96, 94]
+	});
+	Crafty.sprite(23, 21, "img/particulas/corazon.png", {
+		spr_partCorazon: [0, 0]
 	});
 	
 	
@@ -21501,6 +21504,7 @@ var Actividad = function() {
 	this.e_pista = Crafty.e("AC_Pista");
 	this.temporizador = Crafty.e("Temporizador");
 	this.panelPerdiste = Crafty.e("AC_Perdiste");
+	this.terminada = false; // True cuando una actividad ya ha terminado (evitar ganar y perder al tiempo)
 
 	this.temporizador.f_cbackTerminar = this.mostrarPerdiste;
 };
@@ -21518,6 +21522,7 @@ Actividad.prototype.ejecutar = function(nivel, subnivel) {
 	// Cargamos la información y el objeto de la actividad
 	this.nivel = nivel;
 	this.subnivel = subnivel;
+	this.terminada = false;
 	this.config = niveles[nivel].subnivel[subnivel];
 	this.objAct = this.config.actividad();
 
@@ -21536,6 +21541,7 @@ Actividad.prototype.ejecutar = function(nivel, subnivel) {
 
 	// Cargar los recursos en RAM antes de iniciar actividad 
 	var self = this;
+	
 	cargarRecursos(recursosAct, true, function() {
 		Crafty.enterScene("Actividad", self);
 		//reproducir el audio de fondo
@@ -21560,6 +21566,7 @@ Actividad.prototype.reiniciar = function() {
 	this.temporizador.setDuracion(duracionAct);
 
 	actPuntaje.ocultar();
+	this.terminada = false;
 	Crafty.enterScene("Actividad", this);
 	
 };
@@ -21578,35 +21585,39 @@ Actividad.prototype.siguienteActiv = function() {
 
 // Calcula y muestra la interfaz de puntaje
 Actividad.prototype.mostrarPuntaje = function() {
-	actPuntaje.puntosMax = 5000;
-	
-	// Calculamos el número de puntos a partir del t restante
-	var tRestante = this.temporizador.getTiempoRestante();
-	var calificacion = tRestante / this.temporizador.tiempoInicial; // [0:1]
-	var puntosObtenidos = Math.floor(calificacion * 6000);
-	console.log(tRestante, this.temporizador.tiempoInicial)
-	
-	// Actualizamos progreso
-	progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
-	progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
-	console.log(progreso[this.nivel])
-	
-	// Desbloquear siguiente nivel si es el caso
-	if (this.subnivel === 5) {
-		if (this.nivel < 4) {
-			progreso[this.nivel + 1].bloqueado = false;
+	if (!this.terminada) {
+		this.terminada = true;
+		actPuntaje.puntosMax = 5000;
+
+		// Calculamos el número de puntos a partir del t restante
+		var tRestante = this.temporizador.getTiempoRestante();
+		var calificacion = tRestante / this.temporizador.tiempoInicial; // [0:1]
+		var puntosObtenidos = Math.floor(calificacion * 6000);
+		
+		// Actualizamos progreso
+		progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
+		progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
+
+		// Desbloquear siguiente nivel si es el caso
+		if (this.subnivel === 5) {
+			if (this.nivel < 4) {
+				progreso[this.nivel + 1].bloqueado = false;
+			}
 		}
+
+		actPuntaje.puntos = puntosObtenidos;
+		actPuntaje.animMostrar();
 	}
-	
-	actPuntaje.puntos = puntosObtenidos;
-	actPuntaje.animMostrar();
 };
 
 // Muestra la interfaz de perdiste
 Actividad.prototype.mostrarPerdiste = function() {
-	this.detener();
-	this.panelPerdiste.mostrar();
-	this.temporizador.ocultarBtPausa();
+	if (!this.terminada) {
+		this.terminada = true;
+		this.detener();
+		this.panelPerdiste.mostrar();
+		this.temporizador.ocultarBtPausa();
+	}
 	return this;
 };
 
@@ -21625,6 +21636,7 @@ Actividad.prototype.detener = function() {
 
 // Detener la actividad y ocultar el temporizador
 Actividad.prototype.terminar = function() {
+	this.terminada = true;
 	this.detener();
 	this.temporizador.ocultar();
 	return this;
@@ -25639,8 +25651,8 @@ function spritesBelalcaz6() {
 	Crafty.sprite("img/act/belalcaz/6/elementos.png", {
 		sprB6_corazon: [81, 77, 59, 48],
 		sprB6_sol: [0, 77, 80, 90],
-		sprB6_cartagena: [0, 173, 98, 249],
-		sprB6_tumba: [154, 142, 228, 247]
+		sprB6_cartagena: [0, 177, 96, 66],
+		sprB6_tumba: [156, 143, 55, 79]
 	});
 
 	Crafty.sprite(76, 76, "img/act/belalcaz/6/elementos.png", {
@@ -25749,12 +25761,18 @@ Crafty.c("Laberinto_cabeza", {
 				self.m[fila][columna].corazon = null;
 				self.corazones += 1;
 				
-				if (self.corazones === 5) {
+				if (self.corazones === 1) {
 					self.actividad.e_cartagena.mostrar();
 				}
+				
+				// disparamos las partículas decorativas
+				self.actividad.particulas.x = self.actividad.cabeza._x + 38;
+				self.actividad.particulas.y = self.actividad.cabeza._y + 10;
+				self.actividad.particulas.iniciar();
 			}
+		
 			
-			if (this.corazones === 5) {
+			if (this.corazones === 1) {
 				var cartag = this.actividad.e_cartagena;
 				
 				if (cartag.fila === this.fila && cartag.col === this.columna) {
@@ -26017,6 +26035,7 @@ var ActBelalcaz6 = function() {
 	//si se ha ganado la actividad
 	this.aciertos = 0;
 	this.e_cartagena = null; // salida del laberinto
+	this.particulas = null; // corazones que salen al coger uno
 
 	this.init = function() {
 		this.iniciarComponentes();
@@ -26024,6 +26043,26 @@ var ActBelalcaz6 = function() {
 			Crafty.e("Gesto")
 						.Gesto(1, { coords: [this.x + 45, this.y + 50], duracion: 90, retardo: 40 });
 		});
+		
+		//this.ganarActividad();
+		
+		// Corazones pequeños que saltan
+		this.particulas = new Particulas({
+			componentes: "spr_partCorazon, SpriteAnimation",
+			z: 600,
+			vx: 0,
+			deltaVx: 1,
+			periodo: 10,
+			deltaOriY: 20, deltaOriX: 10,
+			numParticulas: 4,
+			magnitud: 25,
+			duracion: 45,
+			atenuacion: 22,
+			f_crear: function(ent) {
+				ent.reel("escalar", 400, [[0, 0], [1,0], [2,0], [3,0]]).animate("escalar", -1);
+			}
+		});
+		
 		return this;
 	};
 
@@ -26039,13 +26078,6 @@ var ActBelalcaz6 = function() {
 		this.e_cartagena = Crafty.e("B6_Cartagena");
 	};
 
-	//verificar si ya se han colocados todos los numeros.
-	this.arrastreCompleto = function() {
-		//contar el numero de entidades de tipo Completo
-		if (this.aciertos === this.totAciertos) {
-			this.ganarActividad();
-		}
-	};
 
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
@@ -26063,19 +26095,22 @@ var ActBelalcaz6 = function() {
 		
 		var cabeza = this.cabeza;
 		var e_tumba = Crafty.e("2D, Canvas, Tweener, sprB6_tumba").attr({ alpha: 0, z: 15 });
-		e_tumba.x = cabeza._x + 10;
-		e_tumba.y = cabeza._y - 30;
+		e_tumba.x = cabeza._x;
+		e_tumba.y = cabeza._y - 5;
+		
+		var e_cortinaNegra = Crafty.e("2D, Canvas, Color, Tweener")
+									.color("#000000")
+									.attr({ w: 1280, h: 800, z: 14, alpha: 0 });
+		
+		this.e_cartagena.visible = false;
 		
 		// Mostramos la cortina negra
-		Crafty.e("2D, Canvas, Color, Tweener")
-				.color("#000000")
-				.attr({ w: 1280, h: 800, z: 14, alpha: 0 })
-				.addTween({ alpha: 1 }, "linear", 10, function() {
-					cabeza.addTween({ y: this._y - 50, alpha: 0 }, "easeInQuart", 60, function() {
-						e_tumba.addTween({ alpha: 1 }, "linear", 30, function() {
-							gesActividad.temporizador.parar();
-							gesActividad.mostrarPuntaje();
-						});
+		e_cortinaNegra.addTween({ alpha: 0.8 }, "linear", 10, function() {
+					cabeza.addTween({ y: cabeza._y - 250, alpha: 0 }, "easeInQuart", 60);
+					// Mostramos la tumba y terminamos
+					e_tumba.addTween({ alpha: 1 }, "easeOutCubic", 30, function() {
+						gesActividad.temporizador.parar();
+						//gesActividad.mostrarPuntaje();
 					});
 				});
 	};
@@ -28643,7 +28678,11 @@ var Recursos = {
 			"img/global/temporizador.png",
 			"img/global/fondo-pistas.png", "img/global/pistas.png",
 			"img/puntaje/botones.png", "img/puntaje/blo-rojo.png", "img/puntaje/muy-bien.png", "img/puntaje/txt-puntuacion.png", "img/puntaje/cortinas.png", "img/puntaje/digitos.png", "img/puntaje/baudilio.png",
-			"img/particulas/triangulo.png", "img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png",
+			
+			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png","img/particulas/star.png","img/particulas/triangulo.png",
+			
+			"img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png",
+			
 			"img/global/myriad.png", "img/global/font-asap36.png", "img/global/font-asap36bold.png",
 			"img/global/pau-botones.png", "img/global/pau-arbol.png", "img/global/pau-hoja.png", "img/global/pau-leyenda.png",
 			"img/global/perdiste.png",
@@ -29182,7 +29221,7 @@ var gesActividad; // Inicia las actividades
 var actPuntaje; // Muestra el panel de puntaje y dato
 var gesSonido; // Gestor de audios
 var world = null; // Mundo Box2D
-var debug = true; // True para activar el modo desarrollador
+var debug = false; // True para activar el modo desarrollador
 
 window.onload = function() {
 	Crafty.init(1280, 800);
@@ -29206,7 +29245,7 @@ window.onload = function() {
 		gestorTest = new Test(); //gestor de tests
 
 		gesActividad.ejecutar(1, 5); // Nivel de 0 a 4, Subnivel de 0 a 5
-		//gestorTest.iniciarTest(0);
+		//gestorTest.iniciarTest(1);
 		//Crafty.enterScene("Inicio");
 		//gesSonido.silenciar();
 	});

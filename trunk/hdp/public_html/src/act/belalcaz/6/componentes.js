@@ -99,7 +99,7 @@ Crafty.c("Laberinto_cabeza", {
 				self.m[fila][columna].corazon = null;
 				self.corazones += 1;
 				
-				if (self.corazones === 5) {
+				if (self.corazones === 1) {
 					self.actividad.e_cartagena.mostrar();
 				}
 				
@@ -110,7 +110,7 @@ Crafty.c("Laberinto_cabeza", {
 			}
 		
 			
-			if (this.corazones === 5) {
+			if (this.corazones === 1) {
 				var cartag = this.actividad.e_cartagena;
 				
 				if (cartag.fila === this.fila && cartag.col === this.columna) {

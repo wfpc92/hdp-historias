@@ -11,6 +11,7 @@ var Actividad = function() {
 	this.e_pista = Crafty.e("AC_Pista");
 	this.temporizador = Crafty.e("Temporizador");
 	this.panelPerdiste = Crafty.e("AC_Perdiste");
+	this.terminada = false; // True cuando una actividad ya ha terminado (evitar ganar y perder al tiempo)
 
 	this.temporizador.f_cbackTerminar = this.mostrarPerdiste;
 };
@@ -28,6 +29,7 @@ Actividad.prototype.ejecutar = function(nivel, subnivel) {
 	// Cargamos la información y el objeto de la actividad
 	this.nivel = nivel;
 	this.subnivel = subnivel;
+	this.terminada = false;
 	this.config = niveles[nivel].subnivel[subnivel];
 	this.objAct = this.config.actividad();
 
@@ -46,6 +48,7 @@ Actividad.prototype.ejecutar = function(nivel, subnivel) {
 
 	// Cargar los recursos en RAM antes de iniciar actividad 
 	var self = this;
+	
 	cargarRecursos(recursosAct, true, function() {
 		Crafty.enterScene("Actividad", self);
 		//reproducir el audio de fondo
@@ -70,6 +73,7 @@ Actividad.prototype.reiniciar = function() {
 	this.temporizador.setDuracion(duracionAct);
 
 	actPuntaje.ocultar();
+	this.terminada = false;
 	Crafty.enterScene("Actividad", this);
 	
 };
@@ -88,35 +92,39 @@ Actividad.prototype.siguienteActiv = function() {
 
 // Calcula y muestra la interfaz de puntaje
 Actividad.prototype.mostrarPuntaje = function() {
-	actPuntaje.puntosMax = 5000;
-	
-	// Calculamos el número de puntos a partir del t restante
-	var tRestante = this.temporizador.getTiempoRestante();
-	var calificacion = tRestante / this.temporizador.tiempoInicial; // [0:1]
-	var puntosObtenidos = Math.floor(calificacion * 6000);
-	console.log(tRestante, this.temporizador.tiempoInicial)
-	
-	// Actualizamos progreso
-	progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
-	progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
-	console.log(progreso[this.nivel])
-	
-	// Desbloquear siguiente nivel si es el caso
-	if (this.subnivel === 5) {
-		if (this.nivel < 4) {
-			progreso[this.nivel + 1].bloqueado = false;
+	if (!this.terminada) {
+		this.terminada = true;
+		actPuntaje.puntosMax = 5000;
+
+		// Calculamos el número de puntos a partir del t restante
+		var tRestante = this.temporizador.getTiempoRestante();
+		var calificacion = tRestante / this.temporizador.tiempoInicial; // [0:1]
+		var puntosObtenidos = Math.floor(calificacion * 6000);
+		
+		// Actualizamos progreso
+		progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
+		progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
+
+		// Desbloquear siguiente nivel si es el caso
+		if (this.subnivel === 5) {
+			if (this.nivel < 4) {
+				progreso[this.nivel + 1].bloqueado = false;
+			}
 		}
+
+		actPuntaje.puntos = puntosObtenidos;
+		actPuntaje.animMostrar();
 	}
-	
-	actPuntaje.puntos = puntosObtenidos;
-	actPuntaje.animMostrar();
 };
 
 // Muestra la interfaz de perdiste
 Actividad.prototype.mostrarPerdiste = function() {
-	this.detener();
-	this.panelPerdiste.mostrar();
-	this.temporizador.ocultarBtPausa();
+	if (!this.terminada) {
+		this.terminada = true;
+		this.detener();
+		this.panelPerdiste.mostrar();
+		this.temporizador.ocultarBtPausa();
+	}
 	return this;
 };
 
@@ -135,6 +143,7 @@ Actividad.prototype.detener = function() {
 
 // Detener la actividad y ocultar el temporizador
 Actividad.prototype.terminar = function() {
+	this.terminada = true;
 	this.detener();
 	this.temporizador.ocultar();
 	return this;
