@@ -63,44 +63,44 @@ tests[1] = {
 	numPreguntas: 2,
 	pregunta: [
 		{
-			texto: 'Sebastián de Belalcázar fue el |Conquistador| que |Fundó| la\nciudad de Popayán.',
+			texto: 'Sebastián de Belalcázar fué el |Conquistador| que\n |Fundó| la ciudad de Popayán.',
 			trampa: ["Descubrió", "Emperador"]
 		},
 		{
-			texto: 'El verdadero |Nombre| de Sebastián de Belalcázar era Sebastián\n|Moyano|.',
-			trampa: ["Aguirre ", "Motivo"]
+			texto: 'El verdadero Nombre de Sebastián de Belalcázar\n era |Sebastián| |Moyano|.',
+			trampa: ["Aguirre", "Nicolás", "Cabrera", "Quijote"]
 		},
 		{
-			texto: 'La palabra |Popayán| proviene de "|pop-pioyá-n|".',
-			trampa: ["Papiyón", "Pipián"]
+			texto: 'La palabra \bPopayán\b proviene de "|Pop|-|Pioyá|-|n|".',
+			trampa: ["Pap", "Pa", "Ya", "Pillá"]
 		},
 		{
-			texto: 'Los conquistadores asumieron el nombre Popayán porque sus\n|Intérpretes| Yucatecos las designaron como las "|Tierras|\ndel cacique Pioyán"',
-			trampa: ["Discípulos", "Amigos", "Huestes"]
+			texto: 'Los conquistadores asumieron el nombre \bPopayán\b porque sus\nintérpretes |Yucatecos| las designaron como las \b"Tierras\n del cacique |Pioyán|"\b',
+			trampa: ["Mayas", "Paeces", "Paellán", "Papaya"]
 		},
 		{
-			texto: 'Mientras conquistaba Popayán, Belalcázar |Atravesó| lo que\nhoy se conoce como Timbío -en |Octubre| de 1535-.',
-			trampa: ["Agosto", "Mayo", "Incendió"]
+			texto: 'Mientras conquistaba |Popayán|, Belalcázar Atravesó lo que\n hoy se conoce como |Timbío| -en Octubre de 1535-, donde\n venció a 3,000 indígenas.',
+			trampa: ["Cali", "Neiva", "Quito", "Cartagena"]
 		},
 		{
-			texto: 'Belalcázar venció a |3000| indígenas con un |Ejército| de 100\nhombres.',
-			trampa: ["1000", "2000", "Tumulto"]
+			texto: 'Cuentan los historiadores que en Timbío, Belalcázar venció a\n |3,000| indígenas con un Ejército de |100| hombres.',
+			trampa: ["1,000", "2,000", "10"]
 		},
 		{
-			texto: 'Mientras buscaba el tesoro de El Dorado, también fundó las\nciudades de |Quito y Guayaquil|, en Ecuador, y\n|Santiago de Cali y Popayán|, en Colombia.',
-			trampa: ["Quito y Otavalo", "Guayaquil e Ibarra", "Santiago de Cali y Neiva"]
+			texto: 'Mientras buscaba el tesoro de El Dorado, también fundó las\nciudades de |Quito y Guayaquil|, en Ecuador, y\n|Santiago de Cali y Neiva|, en Colombia.',
+			trampa: ["Quito y Otavalo", "Guayaquil e Ibarra", "Cartagena y Neiva"]
 		},
 		{
-			texto: 'En mayo de |1540| Sebastián de Belalcázar volvió a |España|\npara legitimar sus derechos.',
-			trampa: ["Perú", "Italia", "1537"]
+			texto: 'En mayo de 1540 Sebastián de Belalcázar volvió a |España|\n para legitimar sus |derechos|.',
+			trampa: ["Ecuador", "Portugal", "acciones"]
 		},
 		{
 			texto: 'Belalcázar fue declarado primer |Gobernador| de la Provincia\nde Popayán en la corte de |Carlos I| de España.',
-			trampa: ["Carlos V", "Carlos II", "Emancipador"]
+			trampa: ["Carlos V", "Enrique II", "Campeón", "Caballero"]
 		},
 		{
-			texto: 'Belalcázar murió de avanzada edad, a causa de una enfermedad\nmientras preparaba su último viaje a |España|, en Cartagena de\nIndias en |1551|.',
-			trampa: ["1552", "Italia", "1557"]
+			texto: 'Belalcázar murió de avanzada edad, a causa de una \benfermedad\b\n mientras preparaba su último viaje a |España|, en la\n ciudad de |Cartagena| en 1551.',
+			trampa: ["Ecuador", "Portugal", "Popayán", "Huila"]
 		}
 	]
 };

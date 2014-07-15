@@ -49,9 +49,13 @@ var ActBelalcaz5 = function() {
 				self.barco.act = self;
 				self.barco.aparecer();
 				
+				// 2 gestos: uno para el barco y otro para los barriles
 				var g = Crafty.e("Gesto")
-					.Gesto(1, { coords: [self.barco._x + 160, self.barco._y + 130], duracion: 180, retardo: 40 });
+					.Gesto(1, { coords: [self.barco._x + 230, self.barco._y + 200], duracion: 180, retardo: 40 });
 				self.barco.attach(g);
+				
+				Crafty.e("Gesto")
+						.Gesto(1, { coords: [230, 60], duracion: 180, retardo: 40, deltaX: 180 });
 				
 				//ojo que sale del mar y verifica que toque el barco para que la bestia se coma el barco
 				self.ojo = Crafty.e("B5_Ojo")

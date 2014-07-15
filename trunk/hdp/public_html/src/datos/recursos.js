@@ -10,7 +10,11 @@ var Recursos = {
 			"img/global/temporizador.png",
 			"img/global/fondo-pistas.png", "img/global/pistas.png",
 			"img/puntaje/botones.png", "img/puntaje/blo-rojo.png", "img/puntaje/muy-bien.png", "img/puntaje/txt-puntuacion.png", "img/puntaje/cortinas.png", "img/puntaje/digitos.png", "img/puntaje/baudilio.png",
-			"img/particulas/triangulo.png", "img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png",
+			
+			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png","img/particulas/star.png","img/particulas/triangulo.png",
+			
+			"img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png",
+			
 			"img/global/myriad.png", "img/global/font-asap36.png", "img/global/font-asap36bold.png",
 			"img/global/pau-botones.png", "img/global/pau-arbol.png", "img/global/pau-hoja.png", "img/global/pau-leyenda.png",
 			"img/global/perdiste.png",
