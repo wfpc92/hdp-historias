@@ -11,6 +11,8 @@ var ActBelalcaz5 = function() {
 	this.actividadGanada = false;
 	//si se ha ganado la actividad
 	this.aciertos = 0;
+	
+	this.barco = null; // referencia a la entidad barco
 
 	this.init = function() {
 
@@ -35,15 +37,21 @@ var ActBelalcaz5 = function() {
 		this.elem[0].bind("EnterFrame", movAgua);
 		this.elem[1].bind("EnterFrame", movAgua);
 
+		this.barco = Crafty.e("B5_Barco").attr({ visible: false });
+
 		Crafty.e("DelayFrame").delay(function() {
 			self.elem[2].addTween({y: self.elem[2].y + self.elem[2].h}, 'easeOutQuad', 70);
 			self.elem[3].addTween({x: -self.elem[3].w}, 'easeOutQuad', 55);
 			self.elem[4].addTween({x: 1280}, 'easeOutQuad', 40);
 			self.elem[5].addTween({x: 1160}, 'easeOutQuad', 50, function() {
 				
-				self.barco = Crafty.e("B5_Barco");
-				self.barco.attr({ x: -self.barco.w + 50, y: 198, z: 10 });
+				self.barco.attr({ x: -self.barco.w + 50, y: 198, z: 10, visible: true });
 				self.barco.act = self;
+				self.barco.aparecer();
+				
+				var g = Crafty.e("Gesto")
+					.Gesto(1, { coords: [self.barco._x + 160, self.barco._y + 130], duracion: 180, retardo: 40 });
+				self.barco.attach(g);
 				
 				//ojo que sale del mar y verifica que toque el barco para que la bestia se coma el barco
 				self.ojo = Crafty.e("B5_Ojo")
@@ -51,6 +59,7 @@ var ActBelalcaz5 = function() {
 						//referencia al barco que debe vigilar,
 						//posicion e y inicial y posicion minima y maxima de desplazamiento sobre eje x
 						.B5_Ojo(self.barco, 323);
+				
 				self.areaBarriles.B5AreaBarriles(self.ojo, self.barco);
 			});
 
@@ -63,6 +72,9 @@ var ActBelalcaz5 = function() {
 		this.elem[7].bind("EnterFrame", function() {
 			this.x += 0.2;
 		});
+		
+		
+		
 		return this;
 	};
 

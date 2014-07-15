@@ -11,7 +11,7 @@ var ActBelalcaz6 = function() {
 	this.actividadGanada = false;
 	//si se ha ganado la actividad
 	this.aciertos = 0;
-
+	this.e_cartagena = null; // salida del laberinto
 
 	this.init = function() {
 		this.iniciarComponentes();
@@ -24,8 +24,11 @@ var ActBelalcaz6 = function() {
 		Crafty.e("2D, Canvas, Image").image("img/act/belalcaz/6/fondo.jpg").attr({z: 0});
 		var arbusto = Crafty.e("2D, Canvas, Image").image("img/act/belalcaz/6/plano1_arbusto.png");
 		arbusto.attr({x: 0, y: 800 - arbusto.h, z: 20});
-		this.cab = Crafty.e("Laberinto_cabeza").Laberinto_cabeza("sprB6_cabeza");
-		this.cab.actividad = this;
+		this.cabeza = Crafty.e("Laberinto_cabeza").Laberinto_cabeza("sprB6_cabeza");
+		this.cabeza.actividad = this;
+		
+		// Agregamos la salida del laberinto (cartagena)
+		this.e_cartagena = Crafty.e("B6_Cartagena");
 	};
 
 	//verificar si ya se han colocados todos los numeros.
@@ -38,11 +41,34 @@ var ActBelalcaz6 = function() {
 
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
+		Crafty("Soles").each(function() {
+			this.destroy();
+		});
+		this.cabeza.destroy();
 		return this;
 	};
 
 	this.ganarActividad = function() {
-		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
+		Crafty("Soles").each(function() {
+			this.destroy();
+		});
+		
+		var cabeza = this.cabeza;
+		var e_tumba = Crafty.e("2D, Canvas, Tweener, sprB6_tumba").attr({ alpha: 0, z: 15 });
+		e_tumba.x = cabeza._x + 10;
+		e_tumba.y = cabeza._y - 30;
+		
+		// Mostramos la cortina negra
+		Crafty.e("2D, Canvas, Color, Tweener")
+				.color("#000000")
+				.attr({ w: 1280, h: 800, z: 14, alpha: 0 })
+				.addTween({ alpha: 1 }, "linear", 10, function() {
+					cabeza.addTween({ y: this._y - 50, alpha: 0 }, "easeInQuart", 60, function() {
+						e_tumba.addTween({ alpha: 1 }, "linear", 30, function() {
+							gesActividad.temporizador.parar();
+							gesActividad.mostrarPuntaje();
+						});
+					});
+				});
 	};
 };

@@ -22,6 +22,10 @@ var ActBelalcaz3 = function() {
 		this.e_caballo.e_aviso = Crafty.e("Advertencia").attr({ x: 140, y: 350, z: 50 });
 		this.e_caballo.attach(this.e_caballo.e_aviso);
 		
+		// Anexamos al caballo una barra para mostrar la velocidad
+		this.e_caballo.e_barra = Crafty.e("B3_Barra").attr({ x: 50, y: 360, z: 50 });
+		this.e_caballo.attach(this.e_caballo.e_barra);
+		
 		guerra.iniciar();
 		
 		Crafty.e("DelayFrame").interval(function() {

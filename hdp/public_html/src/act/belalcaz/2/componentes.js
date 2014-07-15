@@ -39,13 +39,25 @@ Crafty.c("Tronco", {
 	ay: 0.8, // aceleración gravitacional apra caer
     
 	init: function() {
-		this.requires('Arrastrable, Tweener');
+		this.requires('Arrastrable');
 		//quitar comportamiento de componente arrastrable
-		this.unbind("EnterFrame");
+		//this.unbind("EnterFrame");
+		
+		this.bind("MouseDown", function() {
+			//quitamos comportamiento inicial
+			this.cancelTweener();
+			//this.unbind("EnterFrame", this.caer);
+			this.z = 20;
+			if (this.rotation !== 0) {
+				this.addTween({ rotation: 0}, "linear", 5);
+			}
+			this.tomado = true;
+		});
+		
 		
 		this.bind("MouseUp", function() {
 			this.soltar();
-		})
+		})/*
 		.bind("MouseDown", function() {
 			//quitamos comportamiento inicial
 			this.cancelTweener();
@@ -60,8 +72,9 @@ Crafty.c("Tronco", {
 			if (this.tomado) {
 				this.soltar();
 			}
-		});
+		});*/
     },
+	
     //movimiento inicial del tronco, salir y esconderse
     movInicial: function() {
 		this.dejar_caer = false;
@@ -104,93 +117,17 @@ Crafty.c("Tronco", {
 			this.addTween({ y: 800 }, "easeInCubic", 60, function() {
 				this.visible = false;
 				this.alpha = 0;
-				console.log(this.visible)
 			});
 		});
-		/*
-		this.unbind("EnterFrame");
-		this.dejar_caer = false;
-		this.y0 = this.y;
-		this.maxY = this.y;
-		var d = Crafty.math.randomInt(90, 100);
-		var posZ = Crafty.math.randomInt(11, 14);
-		var posX, posY;
-		switch (posZ) {
-			case 11:
-				posX = Crafty.math.randomInt(380, 400);
-				posY = Crafty.math.randomInt(502, 610);
-				break;
-			case 12:
-				posX = Crafty.math.randomInt(500, 560);
-				posY = Crafty.math.randomInt(540, 580);
-				break;
-			case 13:
-				posX = Crafty.math.randomInt(944, 986);
-				posY = Crafty.math.randomInt(566, 610);
-				break;
-			case 14:
-				posX = Crafty.math.randomInt(455, 533);
-				posY = Crafty.math.randomInt(586, 610);
-				break;
-		}
-        this.x = posX;
-        this.y = posY;
-        this.z = posZ;
-        this.visible = true;
-        var nvaposx = this.x - d;
-        var nvaposy = this.y - d;
-        this.tvx = Crafty.math.randomNumber(-1.8, -1.0);
-        this.tvy = this.tvx;
-		
-		
-		this.bind("EnterFrame", function() {
-			this.x += this.tvx;
-			this.y += this.tvy;
-			if (this.x < nvaposx && this.y < nvaposy) {
-				this.x = nvaposx;
-				this.y = nvaposy;
-				this.tvx = -this.tvx;
-				this.tvy = -this.tvy;
-			}
-			if (this.x > posX && this.y > posY) {
-				this.unbind("EnterFrame");
-				this.maxY = this.y;
-				this._llamarCaer();
-			}
-		
-		});*/
     },
 	
 	
-    caer: function() {
-		console.log("caer")
-		if (this.cayendo) {
-			this.vy += this.ay;
-			this.y += this.vy;
-		}
-		if (this.y > 800) {
-			this.vy = 0;
-			this.dejar_caer = false;
-			this.visible = false;
-			this.unbind("EnterFrame", this.caer);
-		}
-    },
-    
-	// Cuando se suelta el click del tronco
+   // Cuando se suelta el click del tronco
 	soltar: function() {
-		var enchoclado = this.detectarCajon();
+		this.z = this.zIni;
+		this.cancelTweener();
+		this.tomado = false;
 		
-		if (enchoclado) {
-			// Mostrar la leyenda del tronco
-			this.areaCajon.e_titulo.alpha = 1;
-		} else {
-			// Caer
-			this.z = this.zIni;
-			this.cancelTweener();
-			this.tomado = false;
-			this.dejar_caer = true;
-			this.unbind("EnterFrame", this.caer).bind("EnterFrame", this.caer); // se hace unbind por si ya estaba cayendo
-		}
 		return this;
     }
 	

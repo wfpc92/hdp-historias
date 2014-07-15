@@ -118,7 +118,6 @@ var ActBelalcaz2 = function() {
 		for (var i = 0; i < 12; i++) {
 			var I = (1 + i);
 			var tr = Crafty.e("Tronco, sprB2_tronco" + String(I));
-			tr.spr = "sprB2_tronco" + I;
 			this.tronco[i] = tr;
 		}
 
@@ -128,8 +127,10 @@ var ActBelalcaz2 = function() {
 		this.titulos = [tit_cacique, tit_pioya, tit_tierras];
 	};
 
-	//verificar si ya se han colocados todos los numeros.
-	this.arrastreCompleto = function() {
+	// cada vez que se enchocla un tronco, mostrar su leyenda y verificar si ya están todos
+	this.arrastreCompleto = function(e_tronco) {
+		e_tronco.areaCajon.e_titulo.alpha = 1;
+		
 		this.aciertos = Crafty("Completo").length;
 		if (this.aciertos === this.totAciertos) {
 			this.ganarActividad();

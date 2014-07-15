@@ -69,12 +69,13 @@ var ActBelalcaz1 = function() {
 				var I = parseInt(numI.splice(index, 1));
 
 				//componentes que representan los numeros que son arrastrables
-				numeros[cont] = Crafty.e('Arrastrable, sprB1_numBel' + I);
+				numeros[cont] = Crafty.e('B1_Numero, sprB1_numBel' + I);
 				numeros[cont].attr({x: xPos, y: -numeros[cont].h, z: 3});
 				//asignar una velocidad en x aleatoria para efecto de dispercion
 				numeros[cont].vx = Crafty.math.randomElementOfArray([Crafty.math.randomNumber(-6, -3), Crafty.math.randomNumber(3, 6)]);
 				numeros[cont].spr = "sprB1_numBel" + I;
 				numeros[cont].act = est;
+				numeros[cont].art_cayendo = true;
 
 				//el area es seleccionada solo si es un numero que pertenece al conjunto [1,5,3,7]
 				var k = I === 1 ? 0 :
@@ -104,23 +105,21 @@ var ActBelalcaz1 = function() {
 		}
 	};
 
-
-
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
 		return this;
 	};
-
-
 
 	this.ganarActividad = function() {
 		gesActividad.temporizador.parar();
 		var est = this;
 		//ocultar cada numero despues de ganar la actividad. efecto de ocultarse
 		Crafty("Arrastrable").each(function() {
-			this.addTween({x: this.x, y: 800}, 'easeOutQuad', Crafty.math.randomInt(40, 80), function() {
-				this.destroy();
-			});
+			if (!this.has("Completo")) {
+				this.addTween({x: this.x, y: 800}, 'easeOutQuad', Crafty.math.randomInt(40, 80), function() {
+					this.destroy();
+				});
+			}
 		});
 		var caballo = Crafty.e("Caballo").Caballo("sprB1_caballo");
 		var posCX = -caballo.w;

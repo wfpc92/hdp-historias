@@ -1,3 +1,43 @@
+// Barra indicadora que acompaña al caballo
+Crafty.c("B3_Barra", {
+	e_barra: null,
+	positivo: true, // false si el valor de al barra es negativo
+	
+	init: function() {
+		this.requires("2D, Canvas, Color").attr({ w: 110, h: 20, z: 49, alpha: 0.5 }).color("#271300");
+		
+		this.e_barra = Crafty.e("2D, Canvas, Color").color("#B58010").attr({ x: 52, y: 2, h: 16, z: 50 });
+		this.e_barra.origin(0, 8);
+		this.e_barra.rotation = 0;
+		this.e_barra.color("#4DB849");
+		
+		this.attach(this.e_barra);
+	},
+	
+	// Actualiza el tamaño de la barra según el valor
+	actualizar: function(v) {
+		var anchoBarra = v * 33;
+		
+		if (anchoBarra > 0) {
+			if (!this.positivo) {
+				this.e_barra.rotation = 0;
+				this.e_barra.color("#4DB849");
+				this.positivo = true;
+			}
+			this.e_barra.w = anchoBarra;
+				
+		}
+		else {
+			if (this.positivo) {
+				this.e_barra.rotation = 180;
+				this.e_barra.color("#AF2800");
+				this.positivo = false;
+			}
+			this.e_barra.w = -anchoBarra;
+		}
+	}
+});
+
 Crafty.c("B3_Indigena", {
 	init: function() {
 		var periodo = randomInt(0, 100) + 750;

@@ -1,7 +1,7 @@
 
 //Componente del barco, debe poder detectar algunos componentes
 Crafty.c("B5_Barco", {
-	vx: 2,
+	vx: 0,
 	vxmax :2.5,
 	dir : 1,//1 para derecha -1 para izquierda
 	vy: 1,
@@ -11,46 +11,11 @@ Crafty.c("B5_Barco", {
 		this.requires("2D, Canvas, sprB5_barco, Mouse, SpriteAnimation");
 		//asignar sombra
 		this.sombra = Crafty.e("2D, Canvas, sprB5_bSombra, Sprite, Tweener")
-				.attr({x: this.x, y: this.y + this.h - 30, z: 21});
+				.attr({x: this.x, y: this.y + this.h - 30, z: 21, visible: false });
 		
 		this.attach(this.sombra);
 		
 		this.corona = Crafty.e("2D, Canvas, sprB5_coronaPequena").attr({ visible: false });
-		
-		//movimiento del barco en dos direcciones al inicio direccion hacia la derecha
-		//cuando llega a la montaña da un giro y se regresa
-		this.bind("EnterFrame", function() {
-			//movimiento en el eje X
-			this.x += this.vx*this.dir;
-			
-			// cuando llega al limite derecho, rota y recoge la corona
-			if (this.dir === 1 && this.x > 1180) {
-				this.dir = -1;
-				this.sprite(1, 0);
-				this.sombra.sprite(1, 0);
-				this.act.coronaGrande.visible = false;
-				this.corona.attr({ x: this.x + this.w / 2 - this.corona.w / 2 + 25, y: this.y - this.corona.h, z: this.z, visible: true });
-				this.attach(this.corona);
-			}
-			else if (this.dir === -1 && this.x < -60) {
-				this.unbind("EnterFrame");
-				this.sprite(0, 0);
-				this.act.ganarActividad();
-			}
-			
-			//movimiento en el ejeY
-			this.y += this.vy;
-			if (this.y > this.y0 + Crafty.math.randomInt(5, 15)) {
-				this.vy = -0.5;
-			}
-			if (this.y < this.y0) {
-				this.vy = Crafty.math.randomNumber(0.2, 1);
-			}
-			
-			if(this.vx > 0){
-				this.vx -= 0.01;
-			}
-		});
 		
 		this.bind("MouseDown",function(){
 			this.vx += 0.15;
@@ -59,6 +24,52 @@ Crafty.c("B5_Barco", {
 			}
 		});
 	},
+	
+	// cada frame, actualizar posición del barco
+	//movimiento del barco en dos direcciones al inicio direccion hacia la derecha
+	//cuando llega a la montaña da un giro y se regresa
+	frame: function() {
+		//movimiento en el eje X
+		this.x += this.vx * this.dir;
+
+		// cuando llega al limite derecho, rota y recoge la corona
+		if (this.dir === 1 && this.x > 1180) {
+			this.dir = -1;
+			this.sprite(1, 0);
+			this.sombra.sprite(1, 0);
+			this.act.coronaGrande.visible = false;
+			this.corona.attr({ x: this.x + this.w / 2 - this.corona.w / 2 + 25, y: this.y - this.corona.h, z: this.z, visible: true });
+			this.attach(this.corona);
+		}
+		else if (this.dir === -1 && this.x < -60) {
+			this.unbind("EnterFrame");
+			this.sprite(0, 0);
+			this.act.ganarActividad();
+		}
+
+		//movimiento en el ejeY
+		this.y += this.vy;
+		if (this.y > this.y0 + Crafty.math.randomInt(5, 15)) {
+			this.vy = -0.5;
+		}
+		if (this.y < this.y0) {
+			this.vy = Crafty.math.randomNumber(0.2, 1);
+		}
+
+		if(this.vx > 0){
+			this.vx -= 0.01;
+		}
+	},
+	
+	// mostrar el barco porprimera vez
+	aparecer: function() {
+		this.bind("EnterFrame", this.frame);
+		this.visible = true;
+		this.sombra.visible = true;
+		this.vx = 2;
+		return this;
+	},
+	
 	//funcion invocada para hundir al barco en el mar
 	desaparecer: function() {
 		this.unbind("EnterFrame");

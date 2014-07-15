@@ -88,6 +88,8 @@ Crafty.c("B3_Guerra", {
 			this.v += this.aIndios;
 		}
 		
+		this.e_belalcazar.e_barra.actualizar(this.v);
+		
 		this.actualizarPos();
 		
 		// Actualizamos framesEspada
