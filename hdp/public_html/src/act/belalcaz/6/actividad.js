@@ -21,6 +21,8 @@ var ActBelalcaz6 = function() {
 						.Gesto(1, { coords: [this.x + 45, this.y + 50], duracion: 90, retardo: 40 });
 		});
 		
+		//this.ganarActividad();
+		
 		// Corazones pequeños que saltan
 		this.particulas = new Particulas({
 			componentes: "spr_partCorazon, SpriteAnimation",
@@ -70,19 +72,24 @@ var ActBelalcaz6 = function() {
 		
 		var cabeza = this.cabeza;
 		var e_tumba = Crafty.e("2D, Canvas, Tweener, sprB6_tumba").attr({ alpha: 0, z: 15 });
-		e_tumba.x = cabeza._x + 10;
-		e_tumba.y = cabeza._y - 30;
+		e_tumba.x = cabeza._x;
+		e_tumba.y = cabeza._y - 5;
+		
+		var e_cortinaNegra = Crafty.e("2D, Canvas, Color, Tweener")
+									.color("#000000")
+									.attr({ w: 1280, h: 800, z: 14, alpha: 0 });
+		
+		this.e_cartagena.visible = false;
 		
 		// Mostramos la cortina negra
-		Crafty.e("2D, Canvas, Color, Tweener")
-				.color("#000000")
-				.attr({ w: 1280, h: 800, z: 14, alpha: 0 })
-				.addTween({ alpha: 1 }, "linear", 10, function() {
-					cabeza.addTween({ y: this._y - 50, alpha: 0 }, "easeInQuart", 60, function() {
-						e_tumba.addTween({ alpha: 1 }, "linear", 30, function() {
-							gesActividad.temporizador.parar();
+		gesActividad.temporizador.parar();
+		e_cortinaNegra.addTween({ alpha: 0.8 }, "linear", 10, function() {
+					cabeza.addTween({ y: cabeza._y - 250, alpha: 0 }, "easeInQuart", 60);
+					// Mostramos la tumba y terminamos
+					e_tumba.addTween({ alpha: 1 }, "easeOutCubic", 30, function() {
+						Crafty.e("DelayFrame").delay(function() {
 							gesActividad.mostrarPuntaje();
-						});
+						}, 60);
 					});
 				});
 	};
