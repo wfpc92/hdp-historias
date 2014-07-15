@@ -1,0 +1,2 @@
+function spritesPuente2() {
+}

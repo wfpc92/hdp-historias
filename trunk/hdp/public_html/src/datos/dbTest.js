@@ -114,7 +114,7 @@ tests[2] = {
 			trampa: ["21 de julio", "31 de junio", "Diseñado"]
 		},
 		{
-			texto: 'El |Obispo| de la ciudad tuvo la idea de agradecer |Públicamente|\na Barbetti por su buen trabajo y 82 personalidades firmaron una nota.',
+			texto: 'El |Obispo| de la ciudad tuvo la idea de agradecer\n|Públicamente| a Barbetti por su buen trabajo y 82\npersonalidades firmaron una nota.',
 			trampa: ["Alcalde", "Solemnemente", "Regidor"]
 		},
 		{
@@ -122,27 +122,27 @@ tests[2] = {
 			trampa: ["Trece", "Quince", "Edificio"]
 		},
 		{
-			texto: 'El Puente del humilladero fue construido para unir el |Sector|\nde |El Callejón| -hoy barrio Bolívar- y el centro de la ciudad,\nque se encuentra atravesado por el Río |Molino|.',
+			texto: 'El Puente del humilladero fue construido para unir el\n|Sector| de |El Callejón| -hoy barrio Bolívar- y el\ncentro de la ciudad, que se encuentra atravesado por el\nRío |Molino|.',
 			trampa: ["El Placer", "Mirador", "El Poblado", "Ejido", "Viaducto"]
 		},
 		{
-			texto: 'Barbetti le dio forma al puente con los |Ladrillos| que se\ndescartaron de la reconstrucción de la |Catedral| de Popayán\n-destruida por el terremoto de 1736- y las obras de la\nTorre del Reloj.',
+			texto: 'Barbetti le dio forma al puente con los |Ladrillos| que se\ndescartaron de la reconstrucción de la |Catedral| de\nPopayán -destruida por el terremoto de 1736- y las obras de\nla Torre del Reloj.',
 			trampa: ["Implementos", "Diócesis", "Alcaldía", "Penitenciaria", "1736", "1735"]
 		},
 		{
-			texto: 'La mezcla usada para |Pegar| los ladrillos del Puente del\nHumilladero era de |Cal y barro| pero le agregaron |Sangre|\nde bueyes para que los ladrillos se adhieran más.',
+			texto: 'La mezcla usada para |Pegar| los ladrillos del Puente\ndel Humilladero era de |Cal y barro| pero le agregaron\n|Sangre| de bueyes para que los ladrillos se adhieran más.',
 			trampa: ["Cal y yeso", "Saliva", "Cal y arena", "Alisar", "Cal y estuco"]
 		},
 		{
-			texto: 'Para |Inaugurar| el Puente del Humilladero Barbetti hizo pasar una\nrecua de |Mulas| cargadas y |Almorzó| bajo el arco principal.',
+			texto: 'Para |Inaugurar| el Puente del Humilladero Barbetti hizo\npasar una recua de |Mulas| cargadas y |Almorzó| bajo el\narco principal.',
 			trampa: ["Acampó", "Ovejas", "Clausurar", "Durmió", "Vacas"]
 		},
 		{
-			texto: 'Se dice que lo del "Humilladero" se debe a que las |Personas|\nque por allí subían al |Centro| lo hacían casi |Arrodillados|.',
+			texto: 'Se dice que lo del "Humilladero" se debe a que las\n|Personas| que por allí subían al |Centro| lo\nhacían casi |Arrodillados|.',
 			trampa: ["Llorando", "Arrastrados", "Desesperados", "Norte", "Caravanas"]
 		},
 		{
-			texto: 'En |1883| la Legislatura del |Estado| lo bautizó como\n|Puente Bolívar|.',
+			texto: 'En |1883| la Legislatura del |Estado| lo\nbautizó como |Puente Bolívar|.',
 			trampa: ["1884", "Puente Cauca", "Puente Mayor", "Puente Central", "Cauca"]
 		}
 	]
@@ -154,43 +154,43 @@ tests[3] = {
 	numPreguntas: 4,
 	pregunta: [
 		{
-			texto: 'El Parque Francisco José de Caldas se creó con la fundación de Popayán, en |1537|.',
+			texto: 'El Parque Francisco José de Caldas se creó con la fundación\nde Popayán, en |1537|.',
 			trampa: ["1535", "1536", "1539"]
 		},
 		{
-			texto: 'En las ciudades fundadas los |Conquistadores| españoles elegían un espacio amplio y trazaban a partir suyo las calles, y edificaban alrededor |Casonas| gubernamentales, una iglesia católica y las |Viviendas| de los nuevos pobladores.',
+			texto: 'En las ciudades fundadas los |Conquistadores| españoles\nelegían un espacio amplio y trazaban a partir suyo las calles,\ny edificaban alrededor |Casonas| gubernamentales, una\niglesia católica y las |Viviendas| de los nuevos pobladores.',
 			trampa: ["Haciendas", "Pacificadores", "Huertas"]
 		},
 		{
-			texto: 'En el centro del Parque Caldas hay un |Monumento| al prócer Francisco José de Caldas, llamado también el |Sabio| Caldas.',
+			texto: 'En el centro del Parque Caldas hay un |Monumento| al\nprócer Francisco José de Caldas, llamado también el\n|Sabio| Caldas.',
 			trampa: ["Busto", "General", "Capitán", "Poema", "Obelisco"]
 		},
 		{
-			texto: 'Caldas es uno de los |Hijos| ilustres de Popayán y fue |Reconocido| también por sus estudios en |Botánica y astronomía|.',
+			texto: 'Caldas es uno de los |Hijos| ilustres de\nPopayán y fue |Reconocido| también por sus\nestudios en |Botánica y astronomía|.',
 			trampa: ["Botánica y Matemáticas", "Botánica e ingeniería", "Ovacionado", "Botánica y arquitectura", "Señores", "Políticos"]
 		},
 		{
-			texto: 'La estatua de Caldas que adorna el Parque se construyó para conmemorar los |100 años| de la independencia de Colombia.',
+			texto: 'La estatua de Caldas que adorna el Parque se construyó para\nconmemorar los |100 años| de la independencia de Colombia.',
 			trampa: ["80 años", "90 años", "99 años", "98 años"]
 		},
 		{
-			texto: 'Las |Placas| de la estatua de Caldas tienen su firma, una muestra de |La planta| Bomarea caldasii -llamada así en su honor- e imágenes de un octante y un |Hipsómetro|, su invento para determinar la |Altitud| de un lugar sobre el nivel del mar mediante la ebullición del agua.',
+			texto: 'Las |Placas| de la estatua de Caldas tienen su firma, una\nmuestra de |La planta| Bomarea caldasii -llamada así en su\nhonor- e imágenes de un octante y un |Hipsómetro|, su invento\npara determinar la |Altitud| de un lugar sobre el nivel del\nmar mediante la ebullición del agua.',
 			trampa: ["Barómetro", "Embudo", "El hongo", "La roca", "Bielas", "Longitud", "Acidez"]
 		},
 		{
-			texto: 'A 10 metros del parque se encuentra el Panteón de los |Próceres|, un monumento que contiene los sepulcros de |15| hijos ilustres de Popayán: |Camilo| Torres, Tomás Cipriano de Mosquera y Francisco José de Caldas, entre otros.',
+			texto: 'A 10 metros del parque se encuentra el Panteón de los\n|Próceres|, un monumento que contiene los sepulcros\nde |15| hijos ilustres de Popayán: |Camilo| Torres,\nTomás Cipriano de Mosquera y Francisco José de Caldas,\nentre otros.',
 			trampa: ["Alejandro", "Maestros", "13", "Caudillos", "16", "Francisco"]
 		},
 		{
-			texto: 'Frente al parque se levanta la Torre |Del Reloj|, uno de los |Símbolos| más representativos de Popayán que se terminó de construir en |1682|.',
+			texto: 'Frente al parque se levanta la Torre |Del Reloj|, uno\nde los |Símbolos| más representativos de Popayán\nque se terminó de construir en |1682|.',
 			trampa: ["1690", "Lugares", "del Gobernador ", "del Parque", "1684", "1680", "Espacios"]
 		},
 		{
-			texto: 'En 1737 se le adjuntó a la torre junto al parque un reloj de fabricación |Inglesa|, que funcionaría continuamente hasta 1814, cuando se le extrajeron sus |Pesas| para hacer |Municiones|.',
+			texto: 'En 1737 se le adjuntó a la torre junto al parque un reloj de\nfabricación |Inglesa|, que funcionaría continuamente\nhasta 1814, cuando se le extrajeron sus |Pesas| para\nhacer |Municiones|.',
 			trampa: ["Estribos", "Japonesa", "Claustros", "Tornillos", "Francesa", "Resortes", "Suiza", "Cuchillos"]
 		},
 		{
-			texto: 'Junto al parque está la Catedral Basílica Nuestra |Señora| de la Asunción, una iglesia |Católica| ofrendada a la Virgen María terminada de construir en |Junio de 1906| sobre los cimientos de antiguas iglesias.',
+			texto: 'Junto al parque está la Catedral Basílica Nuestra |Señora|\nde la Asunción, una iglesia |Católica| ofrendada a la\nVirgen María terminada de construir en |Junio de 1906| sobre\nlos cimientos de antiguas iglesias.',
 			trampa: ["Madre", "Gótica", "Hermana", "Junio de 1907", "Junio de 1905", "Antigua"]
 		}
 	]
@@ -203,31 +203,31 @@ tests[4] = {
 	numPreguntas: 5,
 	pregunta: [
 		{
-			texto: 'La |Casona| donde vivió y murió Guillermo Valencia es monumento nacional por Ley 80 de diciembre de 1943. Funciona allí el Museo |Nacional| Guillermo Valencia y exhibe, entre otras reliquias, |retratos| de amigos y personajes que él admiraba, obras de arte de La Colonia y La Independencia, y una biblioteca con más de |7.000| libros.',
+			texto: 'La |Casona| donde vivió y murió Guillermo Valencia\nes monumento nacional por Ley 80 de diciembre de 1943.\nFunciona allí el Museo |Nacional| Guillermo Valencia\ny exhibe, entre otras reliquias, |retratos| de amigos y\npersonajes que él admiraba, obras de arte de La Colonia y\nLa Independencia, y una biblioteca con más de |7.000|\nlibros.',
 			trampa: ["Moderno", "6.000", "Departamental", "8.000", "Estancia", "Joyas ", "Hacienda", "Objetos", "6.500"]
 		},
 		{
-			texto: 'Guillermo Valencia fue uno de los payaneses más ilustres del último |Siglo|. Nació en |1873|, y como fue un gran |Orador| obtuvo reconocimiento |Político| desde muy joven.',
+			texto: 'Guillermo Valencia fue uno de los payaneses más ilustres\ndel último |Siglo|. Nació en |1873|, y\ncomo fue un gran |Orador| obtuvo reconocimiento\n|Político| desde muy joven.',
 			trampa: ["Administrativo", "Encomendador", "Académico", "1871", "1870", "Decenio", "1870", "Terrateniente", "1872", "Social", "Lustro"]
 		},
 		{
-			texto: 'Aunque Valencia fue un |Poeta| prodigioso la mayoría de su obra se condensa en |Ritos|, un libro |Publicado| en 1899, cuando tenía |25| años.',
+			texto: 'Aunque Valencia fue un |Poeta| prodigioso la mayoría\nde su obra se condensa en |Ritos|, un libro |Publicado|\nen 1899, cuando tenía |25| años.',
 			trampa: ["Editado ", "Literato", "Impreso", "Nostalgias", "Escritor", "Sueños", "26", "Humanista", "27", "Misterios"]
 		},
 		{
-			texto: 'Su hijo Guillermo León fue presidente de Colombia entre |1962 y 1966|, y su hija Josefina fue la primera mujer en ser |Gobernadora| del Cauca y ministra de Educación.',
+			texto: 'Su hijo Guillermo León fue presidente de Colombia entre\n|1962 y 1966|, y su hija Josefina fue la primera mujer en\nser |Gobernadora| del Cauca y ministra de Educación.',
 			trampa: ["1966 y 1970", "Intendente", "Minas y energía", "1958 y 1962", "Senadora", "Concejal", "Cultura", "1960 y 1964", "Educación", "Regente", "Desarrollo"]
 		},
 		{
-			texto: 'A la vuelta de la Casa Museo Valencia está ubicada la |Casona| donde nació y vivió el |General| Tomas Cipriano de Mosquera, donde funcionan actualmente la Casa Museo Mosquera y el |Centro| de Investigaciones |Históricas| José María |Arboleda| Llorente.',
+			texto: 'A la vuelta de la Casa Museo Valencia está ubicada la\n|Casona| donde nació y vivió el |General| Tomas\nCipriano de Mosquera, donde funcionan actualmente la Casa\nMuseo Mosquera y el |Centro| de Investigaciones\n|Históricas| José María |Arboleda| Llorente.',
 			trampa: ["Capitán", "Sociales", "Gobernador", "Mosquera", "López", "Módulo", "Médicas", "Edificio", "Hacienda", "Científicas"]
 		},
 		{
-			texto: 'Hay una estatua del Maestro Valencia vigilando la entrada del Puente del |Humilladero|, recurrente en miles de registros |fotográficos|. Fue construida por Victorio Macho, el mismo |escultor| del monumento a Sebastián de Belalcázar que |Reposa| en el Morro de Tulcán.',
-			trampa: ["Amor", "Victorino", "Judiciales", "Pintor", "Decorador", "Bolívar", "Victorio", "Adorna", "Gubernamentales", "Banco", "Diseñador", "Florentino"]
+			texto: 'Hay una estatua del Maestro Valencia vigilando la entrada\ndel Puente del |Humilladero|, recurrente en miles de registros\n|fotográficos|. Fue construida por Victorio Macho, el mismo\n|escultor| del monumento a Sebastián de Belalcázar\nque |Reposa| en el Morro de Tulcán.',
+			trampa: ["Amor", "Victorino", "Judiciales", "Pintor", "Decorador", "Bolívar", "Adorna", "Banco", "Diseñador", "Florentino"]
 		},
 		{
-			texto: 'Valencia escribió el |Himno| de la Universidad del Cauca y para musicalizarlo invitó al |Compositor| caucano |Avelino Paz|. Lo |Interpretaron| por primera vez el 11 de noviembre de 1922 en la coronación del |Reinado| universitario.',
+			texto: 'Valencia escribió el |Himno| de la Universidad del\nCauca y para musicalizarlo invitó al |Compositor| caucano\n|Avelino Paz|. Lo |Interpretaron| por primera vez el 11\nde noviembre de 1922 en la coronación del |Reinado|\nuniversitario.',
 			trampa: ["Avelino Pérez", "Periódico", "Socializaron", "Avelino Pasos", "Músico", "Cantaron", "Reglamento ", "Carnaval", "Arreglista", "Avelino Páez", "Desfile"]
 		}
 	]
