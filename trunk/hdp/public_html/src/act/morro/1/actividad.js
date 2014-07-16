@@ -9,6 +9,7 @@ function ActMorro1() {
 	this.toque = null;
 	this.arrCapas = new Array(21);
 	this.particulas = null;
+	this.numCapaActual = 0; // Número de la capa superior actualmente visible
 
 	this.e_morroVerde = null;
 	this.e_obrero = null;
@@ -26,7 +27,7 @@ function ActMorro1() {
 		}
 
 		this.toque = new ToqueRapido();
-		this.toque.incremento = ((debug) ? 4 : 4);
+		this.toque.incremento = ((debug) ? 8 : 7);
 		this.toque
 				.init(this)
 				.callbackCambio(this.cambioVal)
@@ -58,7 +59,7 @@ function ActMorro1() {
 			deltaVx: 2,
 			periodo: 90,
 			deltaOriY: 10, deltaOriX: 430,
-			numParticulas: 3,
+			numParticulas: 1,
 			magnitud: 10,
 			duracion: 33,
 			atenuacion: 12,
@@ -79,13 +80,26 @@ function ActMorro1() {
 		var val = this.val;
 		var numCapa = Math.floor(val / 5);
 		this._padre.mostrarCapa(numCapa);
+		this._padre.numCapaActual = numCapa;
+		
+		// mostramos particulas de polvo
+		var self = this._padre;
+		var ultcapa = self.numCapaActual;
+		var e_ultcapa = self.arrCapas[ultcapa];
+		self.particulas.y = e_ultcapa._y - 20;
+		self.particulas.x = self.coordsX[ultcapa][0];
+		self.particulas.deltaOriX = self.coordsX[ultcapa][1];
+		self.particulas.deltaOriY = e_ultcapa._h / 2;
+		self.particulas.iniciar();
 	};
 
 	this.mostrarCapa = function mostrarCapa(n) {
 		var i;
 		if (n > 20)
 			n = 20; // máximo 20
-
+		
+		this.numCapaActual = n;
+		
 		if (this.arrCapas[n].estado === 2) {
 			// capa ya visible; asegurarnos de que las capas de arriba se oculten
 			for (i = 20; i > n; i--) {
@@ -101,14 +115,6 @@ function ActMorro1() {
 					this.arrCapas[i].mostrar();
 				}
 			}
-			
-			var ultcapa = n;
-			var e_ultcapa = this.arrCapas[ultcapa];
-			this.particulas.y = e_ultcapa._y - 20;
-			this.particulas.x = this.coordsX[ultcapa][0];
-			this.particulas.deltaOriX = this.coordsX[ultcapa][1];
-			this.particulas.deltaOriY = e_ultcapa._h / 2;
-			this.particulas.iniciar();
 		}
 	};
 

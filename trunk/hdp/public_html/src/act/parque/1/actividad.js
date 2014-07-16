@@ -11,58 +11,39 @@ var ActParque1 = function() {
 	this.actividadGanada = false;
 	//si se ha ganado la actividad
 	this.aciertos = 0;
+	this.movDesordenar = 20; // Movimientos restantes por desordenar
+	this.ultFicha = -1; // número de la última ficha accionada
 
 	this.init = function() {
 		var self = this;
 		Crafty.e('2D, Canvas, Color')
 				.attr({x: 0, y: 0, z: 0, h: 800, w: 1280})
 				.color("#1A1A1A");
+		
+		Crafty.e('2D, Canvas, Image')
+				.attr({x: 300, y: 0, z: 0, h: 800, w: 1280})
+				.image("img/act/parque/1/fondo.png");
 
 		this.crearEntidades();
-		//cambiar la velocidad con la que se mueve 
-		//animacion inicial, revolver
-		this.juegoB.manzanas[7].mover(2, 2, function() {
-			self.juegoB.manzanas[4].mover(2, 1, function() {
-				self.juegoB.manzanas[5].mover(1, 1, function() {
-					self.juegoB.manzanas[2].mover(1, 2, function() {
-						self.juegoB.manzanas[1].mover(0, 2, function() {
-							self.juegoB.manzanas[0].mover(0, 1, function() {
-								self.juegoB.manzanas[3].mover(0, 0, function() {
-									self.juegoB.manzanas[6].mover(1, 0, function() {
-										self.juegoB.manzanas[4].mover(2, 0, function() {
-											self.juegoB.manzanas[5].mover(2, 1, function() {
-												self.juegoB.manzanas[2].mover(1, 1, function() {
-													self.juegoB.manzanas[1].mover(1, 2, function() {
-														self.juegoB.manzanas[0].mover(0, 2, function() {
-															self.juegoB.manzanas[3].mover(0, 1, function() {
-																Crafty("P1BloqueManz").each(function() {
-																	this.velMov = 25;
-																	this.iniciar();
-																	this.mostrarNumero();
-																});
-																self.e_btPregunta.bind("MouseDown", function() {
-																	Crafty("P1BloqueManz").each(function() {
-																		this.mostrarNumero(true);
-																		var self = this;
-																		setTimeout(function() {
-																			self.mostrarNumero(false);
-																		}, 1500);
-																	});
-																});
-															});
-														});
-													});
-												});
-											});
-										});
-									});
-								});
-							});
-						});
-					});
-				});
+		
+		// Para el desordenar, cambiar la velocidad con la que se mueve 
+		Crafty("P1BloqueManz").each(function() {
+			this.velMov = 5;
+		});
+		
+		this.desordenar();
+		
+		
+		this.e_btPregunta.bind("MouseDown", function() {
+			Crafty("P1BloqueManz").each(function() {
+				this.mostrarNumero(true);
+				var self = this;
+				Crafty.e("DelayFrame").delay(function() {
+					self.mostrarNumero(false);
+				}, 90);
 			});
 		});
+		
 		Crafty("P1Nube").each(function() {
 			this.x0 = this.x;
 			this.vx = Crafty.math.randomNumber(0.05, 0.5);
@@ -83,9 +64,9 @@ var ActParque1 = function() {
 		//objeto indicador de posiciones del juego
 		this.juegoB = {
 			posiciones: [
-				[{x: 215, y: 3, z: 10}, {x: 487, y: 3, z: 10}, {x: 759, y: 3, z: 10}],
-				[{x: 215, y: 269, z: 10}, {x: 487, y: 269, z: 10}, {x: 759, y: 269, z: 10}],
-				[{x: 215, y: 535, z: 10}, {x: 487, y: 535, z: 10}, {x: 759, y: 535, z: 10}]
+				[{x: 320, y: 0, z: 10}, {x: 549, y: 0, z: 10}, {x: 778, y: 0, z: 10}],
+				[{x: 320, y: 233, z: 10}, {x: 549, y: 233, z: 10}, {x: 778, y: 233, z: 10}],
+				[{x: 320, y: 465, z: 10}, {x: 549, y: 465, z: 10}, {x: 778, y: 465, z: 10}]
 			],
 			matriz: [[1, 1, 1], [1, 1, 1], [1, 1, 0]],
 			manzanas: [],
@@ -102,11 +83,10 @@ var ActParque1 = function() {
 				var posy = this.juegoB.posiciones[i][j].y;
 				var posz = this.juegoB.posiciones[i][j].z;
 				//dibujar fondo del juego
-				this.manzFondo[i] = Crafty.e("2D, Canvas, Image")
-						.image("img/act/parque/1/manzana9.png")
+				this.manzFondo[i] = Crafty.e("2D, Canvas")
 						.attr({x: posx, y: posy, z: posz - 1});
-
-				if (this.juegoB.matriz[i][j] == 1) {
+				
+				if (this.juegoB.matriz[i][j] === 1) {
 					this.juegoB.manzanas[count] = Crafty.e("P1BloqueManz")
 							.attr({x: posx, y: posy, z: posz})
 							.P1BloqueManz(count, this.juegoB, i, j);
@@ -120,9 +100,54 @@ var ActParque1 = function() {
 		Crafty.e("2D, Canvas, sprP1_nube1, P1Nube").attr({x: 941, y: 237, z: 50});
 		Crafty.e("2D, Canvas, sprP1_nube2, P1Nube").attr({x: 532, y: 510, z: 50});
 		Crafty.e("2D, Canvas, sprP1_nube2, P1Nube").attr({x: 766, y: 411, z: 50});
+		
 		//dibujar el boton de ayuda
-		this.e_btPregunta = Crafty.e('Boton, Tweener').attr({z: 60})
-				.Boton("sprP1_btPregunta", "sprP1_btPregunta2").posIni(1127, 540);
+		this.e_btPregunta = Crafty.e('Boton, Tweener')
+				.attr({ z: 60, visible: false })
+				.Boton("sprP1_btPregunta", "sprP1_btPregunta2")
+				.posIni(1094, 540);
+	};
+
+	// Desordena el puzzle aleatoriamente
+	this.desordenar = function() {
+		this.moverAleatorio();
+		this.movDesordenar--;
+		
+		var self = this;
+		if (this.movDesordenar > 0) {
+			Crafty.e("DelayFrame").delay(function() {
+				self.desordenar();
+			}, 5);
+		}
+		else {
+			// ya terminamos de desordenar
+			this.e_btPregunta.visible = true;
+			
+			Crafty("P1BloqueManz").each(function() {
+				this.velMov = 15;
+				this.mostrarNumero(false);
+				this.bloqueado = false;
+				
+				// Mostramos el gesto de tap en las fichas que se puedan mover
+				if (this.puedeMoverse()) {
+					Crafty.e("Gesto")
+						.Gesto(1, { coords: [(this.columna * 236) + 425, (this.fila * 236) + 100], duracion: 100, retardo: 40 });
+				}
+			});
+		}
+	};
+	
+	// Realiza un movimiento aleatorio cualquiera
+	this.moverAleatorio = function() {
+		var movido = false;
+		var posRandom;
+		while (!movido) {
+			posRandom = randomInt(0, 7);
+			if (posRandom !== this.ultFicha) {
+				movido = this.juegoB.manzanas[posRandom].accionar();
+			}
+		}
+		this.ultFicha = posRandom;
 	};
 
 	// Siempre invocada al terminar la actividad
@@ -131,6 +156,10 @@ var ActParque1 = function() {
 	};
 
 	this.ganarActividad = function() {
+		Crafty("P1BloqueManz").each(function() {
+			this.bloqueado = false;
+		});
+		
 		gesActividad.temporizador.parar();
 		gesActividad.mostrarPuntaje();
 	};

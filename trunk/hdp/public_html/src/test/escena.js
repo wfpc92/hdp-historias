@@ -15,7 +15,7 @@ Crafty.defineScene("TestPregunta", function() {
 	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 20, y: 566});
 	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 531, y: 566});
 	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 1042, y: 566}).crop(0, 0, 211, 14);
-	Crafty.e("2D, Canvas, sprTE_numeros").attr({x: 95, y: 70});
+	gestorTest.e_numero = Crafty.e("TE_Numero").attr({x: 95, y: 70});
 	
 	//Crafty.e("2D, Canvas, Color, Mouse").color("#FFFFFF").attr({ w: 30, h: 30, z: 5566}).bind("MouseUp", function() { inicializar(); });
 	

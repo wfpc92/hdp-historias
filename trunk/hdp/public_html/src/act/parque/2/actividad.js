@@ -4,34 +4,56 @@
  */
 var ActParque2 = function() {
 	this.e_piso = null; // Entidad que se pasa como referencia para el MouseBind
+	this.e_fondoColor = null; // Fondo a color
 	this.huecos = Array(8);
 	//con esta cantidad se gana la actividad
 	this.totAciertos = 4;
-	//tiempo en que se cambia de un topo a otro (milisegundos)
 	this.duracion = 20000;
 	//si se ha ganado la actividad
 	this.actividadGanada = false;
 	//si se ha ganado la actividad
 	this.aciertos = 0;
+	
 
 	this.b2a = new B2arrastre();
-
+	
+	// Generador de partículas de polvo
+	this.particulas = new Particulas({
+		componentes: "spr_polvo, SpriteAnimation",
+		z: 500,
+		vx: 0,
+		deltaVx: 2,
+		periodo: 50,
+		numParticulas: 6,
+		magnitud: 10,
+		duracion: 20,
+		atenuacion: 8,
+		f_crear: function(ent) {
+			ent.reel("giro", 400, [[0, 0], [32, 0], [64, 0], [96, 0]]).animate("giro", -1);
+		}
+	});
 	
 	this.init = function() {
 		this.crearEntidades();
+		
 		// Inicializamos el objeto gestor de arrastre de la escena
-
 		this.b2a.init(this.e_piso);
 		this.desMonumento();
-		if (!cocoon) {
-			Crafty.box2D.showDebugInfo();
-		}
+		
 		return this;
 	};
 
 
 	this.crearEntidades = function() {
-		Crafty.e("2D, Canvas, Image").image("img/act/parque/2/fondo.jpg").attr({z: 0});
+		Crafty.e("2D, Canvas, Image").image("img/act/parque/2/fondo.jpg").attr({z: 0 });
+		
+		this.e_fondoColor = Crafty.e("2D, Canvas, Image, Tweener")
+									.attr({ z: 1, alpha: 1 })
+									.image("img/act/parque/2/fondo_color.jpg")
+									.addTween({alpha: 0}, 'linear', 25, function() {
+										this.visible = false;
+									});
+		
 		// Cuerpo del piso 
 		this.e_piso = Crafty.e('2D, Canvas, Box2D')
 				.box2d({
@@ -43,7 +65,9 @@ var ActParque2 = function() {
 		Crafty.e('2D, Canvas, Box2D').box2d({bodyType: 'static', shape: [[0, 0], [0, 800]]});
 		Crafty.e('2D, Canvas, Box2D').box2d({bodyType: 'static', shape: [[1280, 0], [1280, 800]]});
 		Crafty.e('2D, Canvas, Box2D').box2d({bodyType: 'static', shape: [[0, 800], [1280, 800]]});
+		
 		this.crearPartes();
+		
 		return this;
 	};
 
@@ -87,33 +111,43 @@ var ActParque2 = function() {
 		for (var i = 0; i < n; i++) {
 			//crear el hueco para hacer encajar las partes del monumento
 			this.huecos[i] = Crafty.e("P2Hueco")
-					.attr(this.attrPartes[i])
-					.P2Hueco(this, i, "sprP1_estatua" + i);
+				.attr(this.attrPartes[i])
+				.P2Hueco(this, i, "sprP1_estatua" + i);
+			
 			//partes del monumento
 			Crafty.e("P2Bloque")
-					.attr({x: this.attrPartes[i].x, y: this.attrPartes[i].y, z: 10})
+					.attr({ x: this.attrPartes[i].x, y: this.attrPartes[i].y, z: 30 })
 					.P2Bloque(this, //referencia a la actividad padre
-							this.huecos[i], //referencia al hueco donde va a encajar
-							i, //numero asignado como identificador
-							this.attrPartesBloques[i], //figura de componente
-							"sprP1_estatua" + i, //sprite de componente
-							this.bloquesObli[i]);//bloques que deben estar encajados para que encaje
+						this.huecos[i], //referencia al hueco donde va a encajar
+						i, //numero asignado como identificador
+						this.attrPartesBloques[i], //figura de componente
+						"sprP1_estatua" + i, //sprite de componente
+						this.bloquesObli[i]);//bloques que deben estar encajados para que encaje
 		}
 	};
 
-	//Hacer mover los bloques para diferentes partes. (aplicar un impulso)
-	this.desMonumento = function() {
-		var self = this;
-		Crafty.e("2D, Canvas, Color, Ubicador").color("blue").attr({z: 20, h: 10, w: 10})
 
+	// mover los bloques para diferentes partes. (aplicar un impulso)
+	this.desMonumento = function() {
+		var fX, fY, fuerza, pos;
+		var magnitud = 2000 * 32;
+		
 		Crafty.e("Delay").delay(function() {
 			Crafty("P2Bloque").each(function() {
 				//obteniendo la fuerza necesaria para mover los bloques
-				var force = new b2Vec2(
-						(Crafty.math.randomElementOfArray([-1, 1]) * this.body.GetMass() * 10),
-						-this.body.GetMass() * 3);
-				this.body.ApplyImpulse(force, this.body.GetWorldCenter());
+				fX = randomFloat(-1, 1);
+				fY = randomFloat(-1, 0.2);
+				
+				// Aplicar fuerza personalizada a los bloques de la base para más desorden
+				pos = this.body.GetPosition();
+				if (this.num === 0) { fX = -1; fY = 0.5; pos.x = 0; pos.y -= 3; }
+				else if (this.num === 1) { fX = 1; fY = 0.5; pos.x += 5; pos.y -= 3; }
+				
+				fuerza = new b2Vec2(fX * magnitud, fY * magnitud);
+				
+				this.body.ApplyImpulse(fuerza, pos);
 			});
+			
 			Crafty.e("Delay").delay(function() {
 				Crafty("BolaDestroy").each(function() {
 					world.DestroyBody(this.body);
@@ -140,13 +174,10 @@ var ActParque2 = function() {
 
 	this.ganarActividad = function() {
 		gesActividad.temporizador.parar();
-		var self = this;
-		Crafty.e("2D, Canvas, Image, Tweener")
-				.attr({z: 1, alpha: 0})
-				.image("img/act/parque/2/fondo_color.jpg")
-				.addTween({alpha: 1}, 'easeInOutQuad', 25, function() {
-					gesActividad.mostrarPuntaje();
-				});
+		
+		this.e_fondoColor.addTween({ alpha: 1 }, 'linear', 25, function() {
+			//gesActividad.mostrarPuntaje();
+		});
 		return this;
 	};
 };
