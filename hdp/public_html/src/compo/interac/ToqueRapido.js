@@ -46,7 +46,6 @@ var ToqueRapido = function() {
 	this.incrementar = function incrementar() {
 		this.val += this.incremento;
 		if(this._callbackCambio) { this._callbackCambio(); }
-		
 		if (this.val >= this.vMax) {
 			this.maximoAlcanzado();
 		}

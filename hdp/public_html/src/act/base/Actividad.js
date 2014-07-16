@@ -104,6 +104,9 @@ Actividad.prototype.mostrarPuntaje = function() {
 		// Actualizamos progreso
 		progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
 		progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
+		
+		// Guardamos progreso en memoria no volátil
+		
 
 		// Desbloquear siguiente nivel si es el caso
 		if (this.subnivel === 5) {
@@ -135,6 +138,11 @@ Actividad.prototype.detener = function() {
 		this.objAct.b2a.destruir();
 		delete this.objAct.b2a;
 	}
+	
+	Crafty("Tweener").each(function() {
+		this.cancelTweener();
+	});
+	
 	if (this.objAct.terminarActividad)
 		this.objAct.terminarActividad();
 

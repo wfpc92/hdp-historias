@@ -1,13 +1,12 @@
-
 niveles[2] = {
 	nombre: 'Parque Caldas',
 	subnivel: [
 		{
 			id: 1,
-			duracion: 25000,
+			duracion: 50000,
 			fondo: '',
 			dato: "Apareció con la fundación de la ciudad,\nen 1537. Como era costumbre en las\nciudades coloniales españolas, los\nconquistadores elegían un espacio\namplio y trazaban las calles de forma\nperpendicular para edificar los edificios\nque representaban los poderes\nen España.",
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: true, y: 570 },
 			actividad: function() {
 				var actividad = new ActParque1();
 				actividad.totAciertos = 4;
@@ -19,7 +18,7 @@ niveles[2] = {
 			duracion: 12000,
 			fondo: 'img/act/parque/2/fondo.jpg',
 			dato: 'En el centro del parque hay un\nmonumento a Francisco José de Caldas,\nreconocido botánico, astrónomo y\nprócer colombiano (también llamado\n"sabio Caldas"); uno de los grandes\nhijos ilustres de Popayán. Éste\nmonumento se construyó para\nconmemorar los 100 años de la\nindependencia de Colombia.',
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: false, y: 550 },
 			actividad: function() {
 				var actividad = new ActParque2();
 				actividad.totAciertos = 8;

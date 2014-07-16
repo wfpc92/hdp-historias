@@ -14,6 +14,7 @@ Crafty.c("P2Bloque", {
 	destY1: 0,
 	destY2: 0,
 	insertable: true, // false si es una trampa
+	particulas: null, // referencia al generador de partículas
 
 	init: function() {
 		this.requires("B2arrastre, Tweener");
@@ -25,13 +26,13 @@ Crafty.c("P2Bloque", {
 			if (this.insertable) {
 				var pos = mouseCoords(e);
 				if (pos.x > this.destX1 && pos.x < this.destX2 && pos.y > this.destY1 && pos.y < this.destY2) {
-					if (self._bloqObliga != null) {
+					if (self._bloqObliga !== null) {
 						var pasa = true;
 						//verificar por cada uno de los bloques que son obligatorios de que esten colocados
 						//para poder ubicarlo en su posicion correcta
 						for (var i = 0; i < self._bloqObliga.length; i++) {
 							Crafty("P2Bloque").each(function() {
-								if (this.num == self._bloqObliga[i]) {
+								if (this.num === self._bloqObliga[i]) {
 									if (this.arrastrable) {
 										pasa = false;
 									}
@@ -80,6 +81,7 @@ Crafty.c("P2Bloque", {
 		this._e_hueco = e_hueco;
 		this._b2shape = b2shape;
 		this._bloqObliga = bloqobli;
+		this.particulas = objPadre.particulas;
 
 		switch (num) {
 			case 0:
@@ -133,46 +135,37 @@ Crafty.c("P2Bloque", {
 	fijar: function() {
 		this.z -= 1; // Detrás de las otras piezas
 		this._e_hueco.visible = false;
-
-		var par = new Particulas({
-			componentes: "spr_polvo, SpriteAnimation",
-			x: this._x, y: this._y, z: 5,
-			vx: 0,
-			deltaVx: 2,
-			periodo: 50,
-			deltaOriY: this._h,
-			deltaOriX: this._w - 40,
-			numParticulas: 6,
-			magnitud: 10,
-			duracion: 20,
-			atenuacion: 8,
-			f_crear: function(ent) {
-				ent.reel("giro", 400, [[0, 0], [32, 0], [64, 0], [96, 0]]).animate("giro", -1);
-			}
-		});
-		par.iniciar();
-		this._padre.bloqueFijado(); // Notificar al padre
+		
+		// disparamos partículas de polvo
+		this.particulas.x = this._x;
+		this.particulas.y = this._y;
+		this.particulas.deltaOriX = this._w - 40;
+		this.particulas.deltaOriY = this._h;
+		this.particulas.iniciar();
+		
+		// Notificar al padre
+		this._padre.bloqueFijado();
 	},
 	//colocar segun sea el bloque la sombra correspondiente
 	ponerSombra: function() {
-		if (this.num == 0) {
+		if (this.num === 0) {
 			Crafty.e("2D, Canvas, sprP1_sombra0, Tweener")
-					.attr({x: 437, y: 533, z: 1, alpha: 0})
+					.attr({x: 437, y: 533, z: 26, alpha: 0})
 					.addTween({alpha: 1}, 'easeInOutQuad', 15);
 		}
-		if (this.num == 1) {
+		if (this.num === 1) {
 			Crafty.e("2D, Canvas, sprP1_sombra1, Tweener")
-					.attr({x: 550, y: 533, z: 1, alpha: 0})
+					.attr({x: 550, y: 533, z: 26, alpha: 0})
 					.addTween({alpha: 1}, 'easeInOutQuad', 15);
 		}
-		if (this.num == 3) {
+		if (this.num === 3) {
 			Crafty.e("2D, Canvas, sprP1_sombra2, Tweener")
-					.attr({x: 439, y: 533, z: 1, alpha: 0})
+					.attr({x: 439, y: 533, z: 26, alpha: 0})
 					.addTween({alpha: 1}, 'easeInOutQuad', 15);
 		}
-		if (this.num == 4) {
+		if (this.num === 4) {
 			Crafty.e("2D, Canvas, sprP1_sombra3, Tweener")
-					.attr({x: 434, y: 533, z: 1, alpha: 0})
+					.attr({x: 434, y: 533, z: 26, alpha: 0})
 					.addTween({alpha: 1}, 'easeInOutQuad', 15);
 		}
 	}

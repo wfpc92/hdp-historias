@@ -4,7 +4,7 @@
 
 //el Morro
 tests[0] = {
-	numPreguntas: 1,
+	numPreguntas: 3,
 	pregunta: [
 		{
 			texto: "El Morro |de Tulcán| es una montaña |Artificial|\nprehispánica.",
@@ -60,7 +60,7 @@ tests[0] = {
 
 //Sebastian de Belalcazar
 tests[1] = {
-	numPreguntas: 2,
+	numPreguntas: 3,
 	pregunta: [
 		{
 			texto: 'Sebastián de Belalcázar fué el |Conquistador| que\n |Fundó| la ciudad de Popayán.',

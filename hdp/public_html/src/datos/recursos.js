@@ -286,15 +286,8 @@ var Recursos = {
 			spritesListas: false,
 			rutas: [
 				"img/act/parque/1/carro.png",
-				"img/act/parque/1/manzana1.png",
-				"img/act/parque/1/manzana2.png",
-				"img/act/parque/1/manzana3.png",
-				"img/act/parque/1/manzana4.png",
-				"img/act/parque/1/manzana5.png",
-				"img/act/parque/1/manzana6.png",
-				"img/act/parque/1/manzana7.png",
-				"img/act/parque/1/manzana8.png",
-				"img/act/parque/1/manzana9.png",
+				"img/act/parque/1/cuadras.png",
+				"img/act/parque/1/fondo.png",
 				"img/act/parque/1/nubes.png",
 				"img/act/parque/1/botones.png",
 				"img/act/parque/1/numerosayuda.png"

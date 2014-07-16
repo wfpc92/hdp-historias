@@ -100,20 +100,17 @@ Crafty.c("Gesto", {
 		this.visible = true;
 
 		this.e_mano.attr({ alpha: 1, visible: true });
-		console.log("animToqueRapido")
 			
 		Crafty.e("DelayFrame").delay(function() {
 			self.visible = false;
-			self.e_mano.addTween({ alpha: 0.1 }, "linear", 8, function() {
+			self.e_mano.addTween({ alpha: 0.1 }, "linear", 7, function() {
 				self.e_delayAnim.delay(function() {
 					if (self.conf.deltaX) { self.x += self.conf.deltaX; }
 					if (self.conf.deltaY) { self.y += self.conf.deltaY; }
 					self.animToqueRapido();
-				}, 8);
+				}, 7);
 			});
-		}, 13);
-		
-		
+		}, 7);
 	},
 	
 	/* Animación de gesto de rotar

@@ -94,12 +94,12 @@ Crafty.c("Laberinto_cabeza", {
 			var cor = self.m[fila][columna].corazon;
 			if (cor !== null) {
 				// Ocultamos el corazón e incrementamos el tiempo
-				gesActividad.temporizador.incrementar(4000);
+				gesActividad.temporizador.incrementar(1150);
 				cor.ocultar();
 				self.m[fila][columna].corazon = null;
 				self.corazones += 1;
 				
-				if (self.corazones === 1) {
+				if (self.corazones === 5) {
 					self.actividad.e_cartagena.mostrar();
 				}
 				
@@ -110,7 +110,7 @@ Crafty.c("Laberinto_cabeza", {
 			}
 		
 			
-			if (this.corazones === 1) {
+			if (this.corazones === 5) {
 				var cartag = this.actividad.e_cartagena;
 				
 				if (cartag.fila === this.fila && cartag.col === this.columna) {

@@ -172,8 +172,8 @@ Crafty.c("TestEspacio", {
 		this.requires("2D, Canvas, Color, Mouse, Tweener")
 			.color("#F6F0BB");
 	
-		this.e_resultado = Crafty.e("2D, Canvas, Tweener")
-									.attr({ y: this._y + 30, z: 30, visible: false, alpha: 0 });
+		this.e_resultado = Crafty.e("Advertencia")
+									.attr({ z: 30 });
 		
 		this.bind("Remove", function() {
 			this.e_resultado.destroy();
@@ -183,17 +183,35 @@ Crafty.c("TestEspacio", {
 	
 	// dibujar si esta bien o si esta mal en las respuestas.
 	mostrarResultado: function() {
+		this.e_resultado.attr({ x: this.e_opcion._x + this.e_opcion._w, y: this._y - 75 });
+		
 		if (this.resultado) {
-			this.e_resultado.requires("sprTE_bien");
+			this.e_resultado.mostrar(0, 60);
 		}
 		else {
-			this.e_resultado.requires("sprTE_mal");
+			this.e_resultado.mostrar(1, 60);
 		}
-		
-		this.e_resultado.attr({ visible: true, x: this.e_opcion._x + this.e_opcion._w })
-						.addTween({ y: this._y - 76, alpha: 1 }, "easeOutBack", 15);
 		
 		return this;
 	}
 
+});
+
+Crafty.c("TE_Numero", {
+	num: 0, // número actualmente representado por esta entidad
+	
+	init: function() {
+		this.requires("2D, Canvas, sprTE_numeros");
+	},
+	
+	TE_Numero: function(num) {
+		this.num = num;
+		this.sprite(0, 60 * num);
+		return this;
+	},
+	
+	incrementar: function() {
+		this.TE_Numero(this.num + 1);
+		return this;
+	}
 });
