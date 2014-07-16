@@ -19,10 +19,10 @@ function spritesPuente1() {
 		sprH1_puente0: [0, 921, 1231, 33]
 	});
 
+
 	Crafty.sprite(40, 63, "img/act/puente/1/personajes.png", {
 		sprH1_personajeAdulto: [0, 0]
 	});
-	
 	Crafty.sprite(32, 63, "img/act/puente/1/personajes.png", {
 		sprH1_personajeNino: [0, 0]
 	});
