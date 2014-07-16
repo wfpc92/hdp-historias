@@ -22,7 +22,7 @@ function ActMorro1() {
 		var yMostrar = [743, 660, 632, 608, 613, 582, 556, 490, 475, 457, 438, 421, 406, 385, 365, 349, 308, 279, 265, 250, 248];
 		var yOcultar = [0, 744, 710, 659, 674, 646, 623, 577, 546, 554, 510, 483, 450, 449, 446, 424, 378, 338, 320, 315, 287];
 		for (i = 0; i < 21; i++) {
-			this.arrCapas[i] = Crafty.e("M1Capa").M1Capa(i + 1, yMostrar[i] + 4, yOcultar[i]).attr({z: 50 - i});
+			this.arrCapas[i] = Crafty.e("M1Capa").M1Capa("sprM1_capa", i + 1, yMostrar[i] + 4, yOcultar[i]).attr({z: 50 - i});
 		}
 
 		this.toque = new ToqueRapido();

@@ -28,7 +28,7 @@ window.onload = function() {
 
 		gesActividad.ejecutar(1, 5); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(1);
-		//Crafty.enterScene("Inicio");
+		Crafty.enterScene("Inicio");
 		//gesSonido.silenciar();
 	});
 	
