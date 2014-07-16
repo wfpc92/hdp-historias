@@ -105,9 +105,7 @@ Actividad.prototype.mostrarPuntaje = function() {
 		progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
 		progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
 		
-		// Guardamos progreso en memoria no volátil
 		
-
 		// Desbloquear siguiente nivel si es el caso
 		if (this.subnivel === 5) {
 			if (this.nivel < 4) {
@@ -115,6 +113,9 @@ Actividad.prototype.mostrarPuntaje = function() {
 			}
 		}
 
+		// Guardamos progreso en memoria no volátil
+		Crafty.storage('progreso', progreso);
+		
 		actPuntaje.puntos = puntosObtenidos;
 		actPuntaje.animMostrar();
 	}

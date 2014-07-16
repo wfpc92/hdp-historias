@@ -138,4 +138,6 @@ function resetProgreso() {
 		progreso[i].puntaje = [0,0,0,0,0,0];
 	}
 	progreso[0].bloqueado = false; // primer nivel
+	
+	Crafty.storage('progreso', progreso);
 }
