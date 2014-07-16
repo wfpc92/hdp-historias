@@ -13,12 +13,11 @@ Crafty.c("M1Capa", {
 		this.visible = false;
 		return this;
 	},
-	
 	// NumCapa: de 0 a 20 (de abajo a arriba).
 	// yMostrar: posición Y de la capa en su lugar adecuado
 	// yOcultar: posición Y de la capa en su lugar oculto
-	M1Capa: function(numCapa, yMostrar, yOcultar) {
-		this.requires("sprM1_capa" + numCapa);
+	M1Capa: function(spr, numCapa, yMostrar, yOcultar) {
+		this.requires(spr + numCapa);
 		this.posYmostrar = yMostrar;
 		this.posYocultar = yOcultar;
 		//this.y = yMostrar;
@@ -43,6 +42,17 @@ Crafty.c("M1Capa", {
 			this.visible = false;
 			this.estado = -2;
 		});
+		return this;
+	}
+});
+
+
+Crafty.c("H1_Personaje", {
+	init: function() {
+		this.requires("2D, Canvas, Tweener");
+	},
+	caminar: function(attr) {
+		this.addTween({x: attr.x, y: attr.y}, "linear", attr.t);
 		return this;
 	}
 });

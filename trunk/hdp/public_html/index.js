@@ -1,5 +1,5 @@
 
-/*C:\uniserver\www\hdp\public_html\lib/CocoonJS.js*/
+/*C:\UniServer\www\hdp\public_html\lib/CocoonJS.js*/
 (function() {
     // There should not be a CocoonJS object when this code is executed.
     // if (typeof window.CocoonJS !== 'undefined') throw("This is strange, a CocoonJS object already exists when trying to create it.");
@@ -313,7 +313,7 @@
     };
 
 })();
-/*C:\uniserver\www\hdp\public_html\lib/CocoonJS_App.js*/
+/*C:\UniServer\www\hdp\public_html\lib/CocoonJS_App.js*/
 (function () {
     // The CocoonJS must exist before creating the extension.
     if (typeof window.CocoonJS === 'undefined' || window.CocoonJS === null) throw("The CocoonJS object must exist and be valid before creating any extension object.");
@@ -1537,7 +1537,7 @@
 
 })();
 
-/*C:\uniserver\www\hdp\public_html\lib/CocoonJS_App_ForCocoonJS.js*/
+/*C:\UniServer\www\hdp\public_html\lib/CocoonJS_App_ForCocoonJS.js*/
 (function()
 {
     if (typeof window.CocoonJS === 'undefined' || window.CocoonJS === null) throw("The CocoonJS object must exist and be valid before adding more functionalities to an extension.");
@@ -1900,7 +1900,7 @@
     
 })();
 
-/*C:\uniserver\www\hdp\public_html\lib/m-crafty.js*/
+/*C:\UniServer\www\hdp\public_html\lib/m-crafty.js*/
 /**
  * crafty 0.6.2
  * http://craftyjs.com/
@@ -14527,7 +14527,7 @@ Crafty.extend({
 });
 
 
-/*C:\uniserver\www\hdp\public_html\lib/Tweener.js*/
+/*C:\UniServer\www\hdp\public_html\lib/Tweener.js*/
 /*============================================================
 TERMS OF USE - EASING EQUATIONS
 a
@@ -14959,7 +14959,7 @@ function tweenerEnterFrame(e) {
 	}
 }
 
-/*C:\uniserver\www\hdp\public_html\lib/Box2dWeb-2.1.a.3.min.js*/
+/*C:\UniServer\www\hdp\public_html\lib/Box2dWeb-2.1.a.3.min.js*/
 var Box2D={};
 (function(F,G){function K(){}if(!(Object.prototype.defineProperty instanceof Function)&&Object.prototype.__defineGetter__ instanceof Function&&Object.prototype.__defineSetter__ instanceof Function)Object.defineProperty=function(y,w,A){A.get instanceof Function&&y.__defineGetter__(w,A.get);A.set instanceof Function&&y.__defineSetter__(w,A.set)};F.inherit=function(y,w){K.prototype=w.prototype;y.prototype=new K;y.prototype.constructor=y};F.generateCallback=function(y,w){return function(){w.apply(y,arguments)}};
 F.NVector=function(y){if(y===G)y=0;for(var w=Array(y||0),A=0;A<y;++A)w[A]=0;return w};F.is=function(y,w){if(y===null)return false;if(w instanceof Function&&y instanceof w)return true;if(y.constructor.__implements!=G&&y.constructor.__implements[w])return true;return false};F.parseUInt=function(y){return Math.abs(parseInt(y))}})(Box2D);var Vector=Array,Vector_a2j_Number=Box2D.NVector;if(typeof Box2D==="undefined")Box2D={};if(typeof Box2D.Collision==="undefined")Box2D.Collision={};
@@ -15406,7 +15406,7 @@ F.prototype.DrawPolygon=function(G,K,y){if(K){var w=this.m_ctx,A=this.m_drawScal
 this._color(w.color,this.m_fillAlpha);A.arc(p,B,K*U,0,Math.PI*2,true);A.moveTo(p,B);A.lineTo((G.x+y.x*K)*U,(G.y+y.y*K)*U);A.closePath();A.fill();A.stroke()}};F.prototype.DrawSegment=function(G,K,y){var w=this.m_ctx,A=this.m_drawScale;w.strokeStyle=this._color(y.color,this.m_alpha);w.beginPath();w.moveTo(G.x*A,G.y*A);w.lineTo(K.x*A,K.y*A);w.closePath();w.stroke()};F.prototype.DrawTransform=function(G){var K=this.m_ctx,y=this.m_drawScale;K.beginPath();K.strokeStyle=this._color(16711680,this.m_alpha);
 K.moveTo(G.position.x*y,G.position.y*y);K.lineTo((G.position.x+this.m_xformScale*G.R.col1.x)*y,(G.position.y+this.m_xformScale*G.R.col1.y)*y);K.strokeStyle=this._color(65280,this.m_alpha);K.moveTo(G.position.x*y,G.position.y*y);K.lineTo((G.position.x+this.m_xformScale*G.R.col2.x)*y,(G.position.y+this.m_xformScale*G.R.col2.y)*y);K.closePath();K.stroke()}})();var i;for(i=0;i<Box2D.postDefs.length;++i)Box2D.postDefs[i]();delete Box2D.postDefs;
 
-/*C:\uniserver\www\hdp\public_html\lib/box2d.js*/
+/*C:\UniServer\www\hdp\public_html\lib/box2d.js*/
 var   b2Vec2 = Box2D.Common.Math.b2Vec2
          	,	b2BodyDef = Box2D.Dynamics.b2BodyDef
          	,	b2Body = Box2D.Dynamics.b2Body
@@ -15868,7 +15868,7 @@ Crafty.extend({
 	}
 });
 
-/*C:\uniserver\www\hdp\public_html\src/global.js*/
+/*C:\UniServer\www\hdp\public_html\src/global.js*/
 // *** Funciones disponibles globalmente para todo el proyecto
 
 // Extrae las coordenadas del mouse de un evento de mouse, esté lanzándose desde Cocoon o en PC
@@ -16010,7 +16010,7 @@ function resetProgreso() {
 	}
 	progreso[0].bloqueado = false; // primer nivel
 }
-/*C:\uniserver\www\hdp\public_html\src/datos/progreso.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/progreso.js*/
 // Conserva el progreso del jugador en el videojuego
 var progreso = [
 	{	// morro
@@ -16040,7 +16040,7 @@ var progreso = [
 	}
 ];
 
-/*C:\uniserver\www\hdp\public_html\src/datos/dbTest.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/dbTest.js*/
 //banco de preguntas del test
 ﻿var tests = [];
 //esta corresponde al banco de preguntas de la primera postal
@@ -16275,7 +16275,7 @@ tests[4] = {
 		}
 	]
 };
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel0.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel0.js*/
 var niveles = [];
 
 niveles[0] = {
@@ -16363,7 +16363,7 @@ niveles[0] = {
 	]
 };
 
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel1.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel1.js*/
 
 niveles[1] = {
 	nombre: 'Sebastian de Belalcazar',
@@ -16441,7 +16441,7 @@ niveles[1] = {
 };
 
 
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel2.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel2.js*/
 
 niveles[2] = {
 	nombre: 'Parque Caldas',
@@ -16520,7 +16520,7 @@ niveles[2] = {
 };
 
 
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel3.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel3.js*/
 
 niveles[3] = {
 	nombre: 'Puente Humilladero',
@@ -16595,7 +16595,7 @@ niveles[3] = {
 };
 
 
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel4.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel4.js*/
 
 niveles[4] = {
 	nombre: '',
@@ -16664,7 +16664,7 @@ niveles[4] = {
 };
 
 
-/*C:\uniserver\www\hdp\public_html\src/compo/Sonido.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/Sonido.js*/
 /**
  * Helper para la gestión de sonidos en Crafty
  */
@@ -16744,7 +16744,7 @@ Sonido.prototype.limpiarTodo = function() {
 	//@TODO: remover de memoria de cocoon todos los audios
 	this.idMusicaActual = "";
 };
-/*C:\uniserver\www\hdp\public_html\src/compo/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/sprites.js*/
 function spritesGlobal() {
 	Crafty.sprite("img/global/temporizador.png", {
 		sprBarraFondo: [0, 0, 628, 26],
@@ -16817,7 +16817,7 @@ function spritesGlobal() {
 
 	spritesPuntaje();
 }
-/*C:\uniserver\www\hdp\public_html\src/compo/Caballo.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/Caballo.js*/
 Crafty.c('Caballo', {
     saltos: 0,
     
@@ -16933,7 +16933,7 @@ Crafty.c('Caballo', {
     },
 });
 
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Gesto.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Gesto.js*/
 // Gesto de indicación en actividad
 Crafty.c("Gesto", {
 	e_mano: null, // Mano del gesto
@@ -17147,7 +17147,7 @@ Crafty.c("Gesto", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Boton.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Boton.js*/
 // Describe un botón con una posición inicial almacenada, que al hacerle click muestra una sprite diferente
 // Tiene un posible estado de bloqueo
 // inicializar con Boton(nomSprNormal, nomSprActivo)
@@ -17225,7 +17225,7 @@ Crafty.c("Boton", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Advertencia.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Advertencia.js*/
 // Globo de advertencia para mostrar
 // Puede mostrar un chulo, una equis o una exclamación, según el estado solicitado
 // Aviso que se anexa al caballo
@@ -17276,7 +17276,7 @@ Crafty.c("Advertencia", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Cortina.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Cortina.js*/
 function Cortina() {
 	this.e_cortina = null; // Referencia a la entidad de la cortina en crafty
 	
@@ -17315,7 +17315,7 @@ Cortina.prototype.desaparecer = function(duracion) {
 			.attr({ alpha:1.0, visible:true })
 			.addTween({ alpha:0.0 }, "easeOutCubic", duracion, function() { this.visible = false; });
 };
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Oscilador.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Oscilador.js*/
 // Agregar este componente para ponerlo a oscilar en una dirección
 Crafty.c("Oscilador", {
 	t: 0, // Cuenta interna para la función
@@ -17393,7 +17393,7 @@ Crafty.c("Oscilador", {
 	}
 	
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/CajaTexto.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/CajaTexto.js*/
 
 Crafty.c("CajaTexto", {
 	colsSprite: 32,
@@ -17728,7 +17728,7 @@ var wPalabra = function(cajaTexto, x0, y0) {
  });*/
 
     
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/BloqueTexto.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/BloqueTexto.js*/
 Crafty.c("BloqueTexto", {
 	anchoCelda: 37,
 	altoCelda: 47,
@@ -18029,7 +18029,7 @@ Crafty.c("BloqueTexto", {
 	
 	getArrEspacios: function() { return this._arrEspacios; }
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Fondo.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Fondo.js*/
 Crafty.c('Fondo', {
 	init: function() {
 		this.requires('2D, Canvas, Image')
@@ -18038,7 +18038,7 @@ Crafty.c('Fondo', {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Particulas.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Particulas.js*/
 Crafty.c("Particula", {
 	yIni: 0, // Posición inicial Y de la partícula
 	vx: 0, // Velocidad en x
@@ -18164,7 +18164,7 @@ Particulas.prototype.crear = function(self) {
 		this.f_crear(e_part);
 	}
 };
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Iluminador.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Iluminador.js*/
 // Permite iluminar un elemento con un overlay semitransparente
 // Evanece y desvanece un bloque de las mismas medidas de la entidad a la que se agrega el iluminador
 // Para usar, invocar la función "iluminar()" con el color HEX, la opacidad (0-1) y el número de frames de animación
@@ -18195,7 +18195,7 @@ Crafty.c("Iluminador", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/DelayFrame.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/DelayFrame.js*/
 /* Retardo basado en un contador de frames
  * Si se destruye esta entidad, no se ejecuta el callback
  * Ejemplo de uso:
@@ -18252,7 +18252,7 @@ Crafty.c("DelayFrame", {
 		}
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/interac/AreaRotacion.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/interac/AreaRotacion.js*/
 Crafty.c('AreaRotacion', {
 	siguienteCuadroActual: 0,
 	cuadroActual: 0,
@@ -18314,7 +18314,7 @@ Crafty.c('AreaRotacion', {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/interac/Ventilador.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/interac/Ventilador.js*/
 Crafty.c("Ventilador", {
 	//velocidad angular
 	va: 0,
@@ -18382,7 +18382,7 @@ Crafty.c("Ventilador", {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/compo/interac/Arrastrable.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/interac/Arrastrable.js*/
 /**
  * Juego de componentes que permite arrastrar y soltar entidades
  */
@@ -18604,7 +18604,7 @@ var ToqueRapido = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/compo/fisica/PisoBox2D.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/fisica/PisoBox2D.js*/
 Crafty.c('PisoBox2D', {
 	coordenadas: [],
 	piso: [],
@@ -18622,7 +18622,7 @@ Crafty.c('PisoBox2D', {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/fisica/B2arrastre.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/fisica/B2arrastre.js*/
 /* 
  * Permite arrastrar una entidad box2D
  * Suponemos que box2D ya se ha inicializado y que "world" es una var. global con Crafty.world
@@ -18745,7 +18745,7 @@ Crafty.c("B2arrastre", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/debug/PuntoCoordenada.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/debug/PuntoCoordenada.js*/
 /*Componenete que permite obtener un array con todos los puntos
  * por los que se ha pasado, presionar una tecla cualquiera para 
  * guardar la coordenada, presionar la tecla E para imprimir las coordenadas */
@@ -18774,7 +18774,7 @@ Crafty.c('PuntoCoordenada', {
 
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/debug/PuntoCoordRel.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/debug/PuntoCoordRel.js*/
 /* Componenete que permite obtener un array con todos los puntos
  * por los que se ha pasado, presionar ESPACIO para 
  * guardar la coordenada, presionar la tecla E para imprimir las coordenadas
@@ -18815,7 +18815,7 @@ Crafty.c('PuntoCoordRel', {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/debug/Ubicador.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/debug/Ubicador.js*/
 /* 
  * Debug: permite arrastrar la entidad e imprime la posición en la que se encuentra
  * También dibuja unas marcas en las esquinas del rectángulo contenedor
@@ -18836,7 +18836,7 @@ Crafty.c("Ubicador", {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/menu-pri/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-pri/sprites.js*/
 // Sprites del menú principal
 function spritesMenuPri() {
 	Crafty.sprite("img/menu-pri/caballo.png", {
@@ -18879,7 +18879,7 @@ function spritesMenuPri() {
 		sprMI_creditos: [0, 0, 512, 548]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/menu-pri/comp-config.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-pri/comp-config.js*/
 // Diálogo de reestablecer progreso
 Crafty.c("MP_DialogReset", {
 	e_texto: null,
@@ -19032,7 +19032,7 @@ Crafty.c("MP_DialogCredi", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-pri/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-pri/componentes.js*/
 // Agrupa algunas funcionalidades comunes a los botones laterales de esta escena
 Crafty.c("MI_btLateral", {
 	init: function() {
@@ -19205,7 +19205,7 @@ Crafty.c("MI_btAtras", {
 			.Boton("sprGL_btAtras", "sprGL_btAtras2");
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-pri/escena.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-pri/escena.js*/
 Crafty.defineScene("menuPrincipal", function() {
 	// Menú principal
 	var e_fondo, e_cielo, e_pisoFondo, e_pisoFrente, e_caballo, e_caballoSomb, e_nubeIzq, e_nubeDer, e_logo; // decoración
@@ -19480,7 +19480,7 @@ Crafty.defineScene("menuPrincipal", function() {
 
 	animEntradaIni();
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/sprites.js*/
 // Sprites del menú de cuadros
 function spritesMenuCuadros() {
 	Crafty.sprite("img/menu-cuadros/candado.png", {
@@ -19537,7 +19537,7 @@ function spritesMenuCuadros() {
 		sprMC_c5desv: [0,0,320,280]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/MC_Cuadro.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/MC_Cuadro.js*/
 /*
  * MC_Cuadro(num, xi, yi, xc, yc, act, grilla)
  * posIni(x, y)
@@ -19776,7 +19776,7 @@ Crafty.c("MC_Cuadro", {
 		this.e_baudilios.numBaudilios(b);
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/MC_btActiv.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/MC_btActiv.js*/
 // Botón de actividad
 Crafty.c("MC_btActiv", {
 	num: 0, // 1-6, ubicación de botón en el sprite
@@ -19933,7 +19933,7 @@ Crafty.c("MC_btActiv", {
 	
 	
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/componentes.js*/
 // Sombra del cuadro grande
 Crafty.c("MC_Sombra", {
 	e_sup: null, e_inf: null, e_izq: null, e_der: null,
@@ -20153,7 +20153,7 @@ Crafty.c("MC_NumBaud", {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/escena.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/escena.js*/
 Crafty.defineScene("MenuCuadros", function() {
 	//boton de atras para la postal
 	var e_btAtrasFondo, e_btAtrasCuadro;
@@ -20335,7 +20335,7 @@ Crafty.defineScene("MenuCuadros", function() {
 		gesSonido.reproducirMusica('m_inicio');
 	});
 });
-/*C:\uniserver\www\hdp\public_html\src/escenas/EscInicio.js*/
+/*C:\UniServer\www\hdp\public_html\src/escenas/EscInicio.js*/
 Crafty.defineScene("Inicio", function() {
 	
 	// Cargamos recursos de esta escena antes de renderizar
@@ -20360,7 +20360,7 @@ Crafty.defineScene("Inicio", function() {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/test/Test.js*/
+/*C:\UniServer\www\hdp\public_html\src/test/Test.js*/
 var Test = function() {
 	this.nivel = 0;
 	this.banco = null;
@@ -20572,7 +20572,7 @@ Test.prototype.finalizarTest = function() {
  };*/
 
 
-/*C:\uniserver\www\hdp\public_html\src/test/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/test/componentes.js*/
 Crafty.c("TestOpcion", {
 	e_espacioVerdad: null, // referencia su espacio correspondiente en el test (null si no tiene)
 	e_bloTexto: null, // bloque de texto
@@ -20772,7 +20772,7 @@ Crafty.c("TestEspacio", {
 	}
 
 });
-/*C:\uniserver\www\hdp\public_html\src/test/escena.js*/
+/*C:\UniServer\www\hdp\public_html\src/test/escena.js*/
 //en esta escena se muestra la pregunta actual del gestor de test
 Crafty.defineScene("TestPregunta", function() {
 	var colorFrente, colorFondo;
@@ -20942,7 +20942,7 @@ Crafty.defineScene("TestPregunta", function() {
 	}
 });
 
-/*C:\uniserver\www\hdp\public_html\src/test/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/test/sprites.js*/
 function spritesTest() {
 	Crafty.sprite("img/test/linea.png", {"sprTE_linea": [0, 0, 511, 14]});
 	Crafty.sprite("img/test/numeros.png", {"sprTE_numeros": [0, 0, 63, 60]});
@@ -20955,7 +20955,7 @@ function spritesTest() {
 	});
 }
 
-/*C:\uniserver\www\hdp\public_html\src/act/base/AC_Perdiste.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/AC_Perdiste.js*/
 Crafty.c("AC_Perdiste", {
 	e_fondo: null, // transparencia que cubre toda la pantalla
 	e_btSalir: null,
@@ -21018,7 +21018,7 @@ Crafty.c("AC_Perdiste", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/base/AC_Pista.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/AC_Pista.js*/
 // Representa el mensaje emergente de pista al principio de cada escena
 Crafty.c("AC_Pista", {
 	e_msg: null, // Sprite de mensaje
@@ -21120,7 +21120,7 @@ Crafty.c("AC_Pista", {
 	}
 });
 
-/*C:\uniserver\www\hdp\public_html\src/act/base/Temporizador.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/Temporizador.js*/
 /**
  * Componente de temporizacion de actividades, esta fuertemente acoplado 
  * con juego.actividad, envia mensajes de terminacion o pausa.
@@ -21291,6 +21291,70 @@ Crafty.c('Temporizador', {
 		return this;
 	},
 	
+	// Reinicia todas las variables del temporizador
+	reset: function() {
+		this.delta = 0;
+		this.activo = false;
+		this.contadorIntervalos = 0;
+		this.e_barra.crop(0, 0, 618, 18);
+		this.actualizar();
+		return this;
+	},
+	
+	// Pausa el juego
+	// La entidad de panel de pausa tiene su propio timer aparte de Crafty
+	pausar: function() {
+		clearInterval(this.myInterval);
+		this.e_pausa.visible = false;
+		Crafty.pause();
+		this.e_panelPausa.mostrar();
+		return this;
+	},
+	
+	// Des-pausa el juego
+	despausar: function() {
+		Crafty.pause();
+		this.iniciar();
+		this.e_pausa.visible = true;
+		return this;
+	},
+	
+	// Muestra el temporizador en pantalla
+	mostrar: function() {
+		this.visible = true;
+		this.e_barra.visible = true;
+		this.e_reloj.visible = true;
+		this.e_pausa.visible = true;
+		return this;
+	},
+	
+	// Oculta el temporizador
+	ocultar: function() {
+		this.visible = false;
+		this.e_barra.visible = false;
+		this.e_reloj.visible = false;
+		this.e_pausa.visible = false;
+		return this;
+	},
+	
+	// Incrementa el tiempo el número de intérvalos dado
+	incrementar: function(ms) {
+		var numInt = Math.floor(ms / this.msIntervalo);
+		this.contadorIntervalos -= numInt;
+		if (this.contadorIntervalos < 0)
+			this.contadorIntervalos = 0;
+		
+		var nuevoAncho = this.anchoBarra + numInt * this.delta;
+		if (nuevoAncho > this.maxAncho) nuevoAncho = this.maxAncho;
+		this.e_barra.crop(0, 0, nuevoAncho, 18);
+		return this;
+	},
+	
+	setDuracion: function(t) {
+		this.tiempoInicial = t;
+		return this;
+	},
+	
 	mostrarBtPausa: function() {
 		this.e_pausa.visible = true;
 		return this;
@@ -21307,7 +21371,7 @@ Crafty.c('Temporizador', {
 		return tRestante;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/base/Pausa.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/Pausa.js*/
 Crafty.c("Pausa", {
 	_objTempo: null, // Referencia al objeto Temporizador (creador)
 	
@@ -21490,7 +21554,7 @@ Crafty.c("PAU_Hoja", {
 		});
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/base/Actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/Actividad.js*/
 /**
  * Objeto global que gestiona las actividades del videojuego
  * Encargado de iniciar y detener las actividades con su puntaje e interfaces
@@ -21641,7 +21705,7 @@ Actividad.prototype.terminar = function() {
 	this.temporizador.ocultar();
 	return this;
 };
-/*C:\uniserver\www\hdp\public_html\src/act/base/esc-actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/esc-actividad.js*/
 // Escena que representa una de las actividades (subniveles)
 Crafty.defineScene("Actividad", function(objActividad) {
 	// Inicializamos esta actividad
@@ -21649,7 +21713,7 @@ Crafty.defineScene("Actividad", function(objActividad) {
 	
 	objActividad.mostrarPista(); // Mostramos la pista (al ocultarse la pista inicia el temporizador)
 });
-/*C:\uniserver\www\hdp\public_html\src/puntaje/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/puntaje/sprites.js*/
 function spritesPuntaje() {
 	Crafty.sprite("img/puntaje/cortinas.png", {
 		sprAP_cortinaSup: [0, 197, 951, 132],
@@ -21686,7 +21750,7 @@ function spritesPuntaje() {
 		sprAP_btSig2: [12, 305, 55, 54]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/puntaje/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/puntaje/componentes.js*/
 // Un baudilio
 Crafty.c("AP_Baudilio", {
 	frame: 0, // fotograma de la animación de llenado [0:5]
@@ -21919,7 +21983,7 @@ Crafty.c("AP_Numero", {
 	}
 	
 });
-/*C:\uniserver\www\hdp\public_html\src/puntaje/Puntaje.js*/
+/*C:\UniServer\www\hdp\public_html\src/puntaje/Puntaje.js*/
 // Objeto que gestiona la pantalla de puntaje
 function ActPuntaje() {
 	this.puntos = -1; // puntuación a mostrar
@@ -22145,7 +22209,7 @@ ActPuntaje.prototype.animMostrar = function() {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/morro/1/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/1/sprites.js*/
 function spritesMorro1() {
 	Crafty.sprite("img/act/morro/1/spr-capas-1.png", {
 		sprM1_capa1: [0,0,1280,59],
@@ -22173,7 +22237,7 @@ function spritesMorro1() {
 		sprM1_capa21: [0,1218,1280,38]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/1/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/1/componentes.js*/
 /**
  * Componentes de Morro - Actividad 1
  */
@@ -22189,12 +22253,11 @@ Crafty.c("M1Capa", {
 		this.visible = false;
 		return this;
 	},
-	
 	// NumCapa: de 0 a 20 (de abajo a arriba).
 	// yMostrar: posición Y de la capa en su lugar adecuado
 	// yOcultar: posición Y de la capa en su lugar oculto
-	M1Capa: function(numCapa, yMostrar, yOcultar) {
-		this.requires("sprM1_capa" + numCapa);
+	M1Capa: function(spr, numCapa, yMostrar, yOcultar) {
+		this.requires(spr + numCapa);
 		this.posYmostrar = yMostrar;
 		this.posYocultar = yOcultar;
 		//this.y = yMostrar;
@@ -22222,7 +22285,18 @@ Crafty.c("M1Capa", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/1/actividad.js*/
+
+
+Crafty.c("H1_Personaje", {
+	init: function() {
+		this.requires("2D, Canvas, Tweener");
+	},
+	caminar: function(attr) {
+		this.addTween({x: attr.x, y: attr.y}, "linear", attr.t);
+		return this;
+	}
+});
+/*C:\UniServer\www\hdp\public_html\src/act/morro/1/actividad.js*/
 /**
  * Actividad 1 Morro
  * Dato: Es una montaña artificial prehispánica -al parecer data del año 1600 - 600 a.C.- de carácter ceremonial funerario, ubicada en el costado noreste de Popayán, considerado el sitio arqueológico más importante de la ciudad.
@@ -22247,7 +22321,7 @@ function ActMorro1() {
 		var yMostrar = [743, 660, 632, 608, 613, 582, 556, 490, 475, 457, 438, 421, 406, 385, 365, 349, 308, 279, 265, 250, 248];
 		var yOcultar = [0, 744, 710, 659, 674, 646, 623, 577, 546, 554, 510, 483, 450, 449, 446, 424, 378, 338, 320, 315, 287];
 		for (i = 0; i < 21; i++) {
-			this.arrCapas[i] = Crafty.e("M1Capa").M1Capa(i + 1, yMostrar[i] + 4, yOcultar[i]).attr({z: 50 - i});
+			this.arrCapas[i] = Crafty.e("M1Capa").M1Capa("sprM1_capa", i + 1, yMostrar[i] + 4, yOcultar[i]).attr({z: 50 - i});
 		}
 
 		this.toque = new ToqueRapido();
@@ -22364,7 +22438,7 @@ function ActMorro1() {
 	};
 }
 ;
-/*C:\uniserver\www\hdp\public_html\src/act/morro/2/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/2/sprites.js*/
 function spritesMorro2() {
 	Crafty.sprite("img/act/morro/2/piezas.png", {
 		sprM2_pieza0: [20, 0, 256, 176],
@@ -22426,7 +22500,7 @@ function spritesMorro2() {
 		sprM2_fijo6: [110, 741, 76, 81]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/2/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/2/componentes.js*/
 /**
  * Componentes de Morro - Actividad 2
  */
@@ -22624,7 +22698,7 @@ Crafty.c("M2Hueco", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/2/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/2/actividad.js*/
 /**
  * Actividad 2 Morro
  * Dato: 
@@ -22741,7 +22815,7 @@ var ActMorro2 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/morro/3/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/3/sprites.js*/
 function spritesMorro3() {
 	Crafty.sprite("img/act/morro/3/piedras.png", {
 		sprM3_piedra1: [0, 4, 84, 83],
@@ -22776,7 +22850,7 @@ function spritesMorro3() {
 		sprM3_LluviaAnimada: [0, 0]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/3/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/3/componentes.js*/
 
 Crafty.c('Nube', {
 	ventilador: null,
@@ -22858,7 +22932,7 @@ Crafty.c('Piedras', {
 		this.pisoBox2D.dibujarPiso();
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/3/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/3/actividad.js*/
 // Actividad lluvia
 
 var ActMorro3 = function() {
@@ -22947,7 +23021,7 @@ var ActMorro3 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/morro/4/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/4/sprites.js*/
 function spritesMorro4() {
 	Crafty.sprite("img/act/morro/4/calaca.png", {
 		sprM4_calavera: [18, 59, 73, 75],
@@ -22962,7 +23036,7 @@ function spritesMorro4() {
 		sprM4_numero: [0, 0]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/4/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/4/componentes.js*/
 Crafty.c("Morrito", {
 	nid: 0, // Identificador del morrito, util para debugging
 	yIni: 0, // Posición y inicial
@@ -23108,7 +23182,7 @@ Crafty.c('Puntaje', {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/4/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/4/actividad.js*/
 var ActMorro4 = function() {
 	this.totAciertos = 0; //con esta cantidad se gana la actividad
 	this.duracion = 0;
@@ -23205,7 +23279,7 @@ var ActMorro4 = function() {
 	};
 };
 
-/*C:\uniserver\www\hdp\public_html\src/act/morro/5/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/5/sprites.js*/
 function spritesMorro5() {
 	Crafty.sprite(1280, 301, "img/act/morro/5/pasto.png", {
 		sprM5_pasto: [0, 0]
@@ -23261,7 +23335,7 @@ function spritesMorro5() {
 		sprM5_piedra4: [225, 30, 63, 46]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/5/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/5/componentes.js*/
 Crafty.c("Vasija", {
 	cuerpoVasija: null,
 	mJoint: null,
@@ -23464,7 +23538,7 @@ Crafty.c('CuerdaAnimada', {
 		this.pauseAnimation();
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/5/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/5/actividad.js*/
 var ActMorro5 = function() {
     //con esta cantidad se gana la actividad
     this.totAciertos = 0;
@@ -23602,7 +23676,7 @@ var ActMorro5 = function() {
         return this;
     };
 };
-/*C:\uniserver\www\hdp\public_html\src/act/morro/6/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/6/sprites.js*/
 function spritesMorro6() {
 	Crafty.sprite("img/act/morro/6/spr-piezas.png", {
 		// nombrado: spr_M6f<num. fila de abajo a arriba, de 0 a 4>c<num. columna de 0 a 6>
@@ -23625,7 +23699,7 @@ function spritesMorro6() {
 		sprM6_f0c5: [0, 946, 100, 85]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/6/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/6/componentes.js*/
 /**
  * Componentes de Morro - Actividad 6
  */
@@ -23678,7 +23752,7 @@ Crafty.c("M6Bloque", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/6/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/6/actividad.js*/
 /**
  * Actividad 6 Morro
  * Dato: 
@@ -23850,7 +23924,7 @@ var ActMorro6 = function() {
 		}
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/1/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/1/sprites.js*/
 function spritesBelalcaz1() {
 	Crafty.sprite("img/act/belalcaz/1/fondo.png", {
 		sprB1_fondo: [0, 0, 1280, 634]
@@ -23889,7 +23963,7 @@ function spritesBelalcaz1() {
 	});
         
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/1/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/1/componentes.js*/
 Crafty.c("B1_Numero", {
 	maxY: 450,
 	atenua: 0.4, // (porcentaje) atenuación por choque con el suelo
@@ -23898,7 +23972,7 @@ Crafty.c("B1_Numero", {
 		this.requires("Arrastrable");
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/1/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/1/actividad.js*/
 /**
  * Actividad de numneros, el jugador debe tomar unos numeros
  * y arrastraslos hacia unas lineas punteadas
@@ -24079,7 +24153,7 @@ var ActBelalcaz1 = function() {
 	};
 
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/2/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/2/sprites.js*/
 function spritesBelalcaz2() {
 	Crafty.sprite("img/act/belalcaz/2/fondo.png", {
         sprB2_fondo: [0, 0, 1280, 578]
@@ -24139,7 +24213,7 @@ function spritesBelalcaz2() {
         sprB2_cocodrilo: [0, 0]
     });//fin recursos usados de otras actividades
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/2/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/2/componentes.js*/
 Crafty.c("Cocodrilo", {
     emerger: false,
     init: function() {
@@ -24437,7 +24511,7 @@ var ActBelalcaz2 = function() {
 		}, 180);
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/B3_Guerra.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/3/B3_Guerra.js*/
 // Gestor de la guerra entre Belalcazar y los indìgenas
 Crafty.c("B3_Guerra", {
 	posBalance: 640, // Posición de choque entre belal y los indios. 0 = equilibrio (1280 / 2).
@@ -24545,7 +24619,7 @@ Crafty.c("B3_Guerra", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/3/sprites.js*/
 function spritesBelalcaz3() {
 	Crafty.sprite("img/act/belalcaz/3/elementos.png", {
         sprB3_lanzaCae: [0, 0, 130, 173],
@@ -24568,7 +24642,47 @@ function spritesBelalcaz3() {
     });
 }
 
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/3/componentes.js*/
+// Barra indicadora que acompaña al caballo
+Crafty.c("B3_Barra", {
+	e_barra: null,
+	positivo: true, // false si el valor de al barra es negativo
+	
+	init: function() {
+		this.requires("2D, Canvas, Color").attr({ w: 110, h: 20, z: 49, alpha: 0.5 }).color("#271300");
+		
+		this.e_barra = Crafty.e("2D, Canvas, Color").color("#B58010").attr({ x: 52, y: 2, h: 16, z: 50 });
+		this.e_barra.origin(0, 8);
+		this.e_barra.rotation = 0;
+		this.e_barra.color("#4DB849");
+		
+		this.attach(this.e_barra);
+	},
+	
+	// Actualiza el tamaño de la barra según el valor
+	actualizar: function(v) {
+		var anchoBarra = v * 33;
+		
+		if (anchoBarra > 0) {
+			if (!this.positivo) {
+				this.e_barra.rotation = 0;
+				this.e_barra.color("#4DB849");
+				this.positivo = true;
+			}
+			this.e_barra.w = anchoBarra;
+				
+		}
+		else {
+			if (this.positivo) {
+				this.e_barra.rotation = 180;
+				this.e_barra.color("#AF2800");
+				this.positivo = false;
+			}
+			this.e_barra.w = -anchoBarra;
+		}
+	}
+});
+
 // Barra indicadora que acompaña al caballo
 Crafty.c("B3_Barra", {
 	e_barra: null,
@@ -24679,7 +24793,7 @@ Crafty.c("B3_Arma", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/3/actividad.js*/
 /** Actividad de guerra de Belalcazar
  */
 var ActBelalcaz3 = function() {
@@ -24813,7 +24927,7 @@ var ActBelalcaz3 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/4/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/4/sprites.js*/
 function spritesBelalcaz4() {
 	Crafty.sprite("img/act/belalcaz/4/fondo.jpg", {
 		sprB4_fondo: [0, 0, 380, 798]
@@ -24867,7 +24981,7 @@ function spritesBelalcaz4() {
             sprB4_espada: [0, 0, 30, 87]
         });
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/4/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/4/componentes.js*/
 Crafty.c("B4_Fecha", {
 	ano: 0,
 	x0: 0,
@@ -25023,7 +25137,7 @@ Crafty.c("B4_Boton", {
 		this.actualizarFiguras(false);
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/4/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/4/actividad.js*/
 /**
  * @returns {ActBelalcaz4}
  */
@@ -25157,7 +25271,7 @@ var ActBelalcaz4 = function() {
 	};
 };
 
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/5/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/5/sprites.js*/
 function spritesBelalcaz5() {
 	Crafty.sprite(333, 249, "img/act/belalcaz/5/barco.png", {
 		sprB5_barco: [0, 0]
@@ -25182,7 +25296,7 @@ function spritesBelalcaz5() {
 	});
 
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/5/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/5/componentes.js*/
 
 //Componente del barco, debe poder detectar algunos componentes
 Crafty.c("B5_Barco", {
@@ -25511,7 +25625,7 @@ Crafty.c("B5_Ojo", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/5/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/5/actividad.js*/
 /**
  * Actividad 5 actividad del barco.
  * @returns {ActBelalcaz5}
@@ -25646,7 +25760,7 @@ var ActBelalcaz5 = function() {
                 return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/6/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/6/sprites.js*/
 function spritesBelalcaz6() {
 	Crafty.sprite("img/act/belalcaz/6/elementos.png", {
 		sprB6_corazon: [81, 77, 59, 48],
@@ -25659,7 +25773,7 @@ function spritesBelalcaz6() {
 		sprB6_cabeza: [0, 0]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/6/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/6/componentes.js*/
 Crafty.c("Laberinto_cabeza", {
 	fila: -1,
 	columna: -1,
@@ -26115,7 +26229,7 @@ var ActBelalcaz6 = function() {
 				});
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/parque/1/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/1/sprites.js*/
 function spritesParque1() {
         Crafty.sprite("img/act/parque/1/nubes.png", {
                 sprP1_nube0: [0, 0, 213, 77],
@@ -26134,7 +26248,7 @@ function spritesParque1() {
 
 
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/1/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/1/componentes.js*/
 
 Crafty.c("P1BloqueManz", {
         juego: {}, //referencia a la matriz representacion matricial del juego
@@ -26240,7 +26354,7 @@ Crafty.c("P1BloqueManz", {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/1/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/1/actividad.js*/
 /**
  * Actividad parque caldas, armar la estructura monumento del FJCaldas
  * @returns {ActParque1}
@@ -26378,7 +26492,7 @@ var ActParque1 = function() {
 		gesActividad.mostrarPuntaje();
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/parque/2/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/2/sprites.js*/
 function spritesParque2() {
 	Crafty.sprite("img/act/parque/2/partes.png", {
 		sprP1_estatua0: [0, 0, 128, 171],
@@ -26398,7 +26512,7 @@ function spritesParque2() {
 		sprP1_sombra3: [0, 514, 308, 207]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/2/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/2/componentes.js*/
 /**
  * Componentes de Parque - Actividad 2
  */
@@ -26602,7 +26716,7 @@ Crafty.c("P2Hueco", {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/2/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/2/actividad.js*/
 /**
  * Actividad parque caldas, armar la estructura monumento del FJCaldas
  * @returns {ActParque1}
@@ -26755,7 +26869,7 @@ var ActParque2 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/parque/3/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/3/sprites.js*/
 function spritesParque3() {
 	Crafty.sprite(119, 95, "img/act/parque/3/hormiga_camina.png", {
 		sprP3_hcamina: [0, 0]
@@ -26786,7 +26900,7 @@ function spritesParque3() {
 		sprP3_crunch: [10, 289, 135, 130],
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/3/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/3/componentes.js*/
 Crafty.c("P3_GeneradorHormigas", {
 	bloqueado: false,
 	x0: 670, //POSICION x DONDE DEBE IR A PARAR LA HORMIGA
@@ -27059,7 +27173,7 @@ Crafty.c("Onomatopeya", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/parque/3/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/3/actividad.js*/
 /**
  * Actividad parque caldas, armar la estructura monumento del FJCaldas
  * @returns {ActParque1}
@@ -27132,7 +27246,7 @@ var ActParque3 = function() {
 	};
 };
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/4/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/4/sprites.js*/
 function spritesParque4() {
 	Crafty.sprite("img/act/parque/4/barras.png", {
 		sprP4_barraE0: [0, 0, 442, 56],
@@ -27144,7 +27258,7 @@ function spritesParque4() {
 		sprP4_cofre: [0, 0, 74, 46]
 	})
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/4/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/4/componentes.js*/
 Crafty.c("P4Barras", {
 	e_barras: [],
 	vx: 1,
@@ -27342,7 +27456,7 @@ Crafty.c("P4Hueco", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/parque/4/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/4/actividad.js*/
 /**
  * Actividad de los ataudes, consiste en arrastrar los ataudes sobre una serie de obstaculos
  * intentar no tocarlos para hacerlos enchoclar sobre los huecos.
@@ -27445,7 +27559,7 @@ var ActParque4 = function() {
                 return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/parque/5/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/5/sprites.js*/
 function spritesParque5() {
 	Crafty.sprite("img/act/parque/5/engranajes.png", {
 		sprP5_engranaje0: [0, 0, 66, 66],
@@ -27469,7 +27583,7 @@ function spritesParque5() {
 		sprP5_hSubeDer: [4, 0]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/5/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/5/componentes.js*/
 Crafty.c("P5_AreaToque", {
 	init: function() {
 		this.requires("2D, Canvas, Mouse");
@@ -27762,7 +27876,7 @@ Crafty.c("P5_Carro", {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/5/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/5/actividad.js*/
 /**
  * Actividad 5 de parque, la idea es con toque rapido generar engranajes para
  * llevarlos hacia una canastica ubicada en el suelo, el juego termina 
@@ -27858,7 +27972,7 @@ var ActParque5 = function() {
 	};
 };
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/6/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/6/sprites.js*/
 function spritesParque6() {
         Crafty.sprite("img/act/parque/6/catedral_partes.png", {
                 sprP6_parte1: [0, 0, 404, 171],
@@ -27877,7 +27991,7 @@ function spritesParque6() {
         });
 
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/6/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/6/componentes.js*/
 // Hueco donde se inserta el bloque
 Crafty.c("P6Hueco", {
 	num: 0, // ID del bloque corespondiente
@@ -28041,7 +28155,7 @@ Crafty.c("P6Parte", {
 		this._padre.bloqueFijado(); // Notificar al padre
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/parque/6/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/6/actividad.js*/
 /**
  * @returns {ActParque1}
  */
@@ -29215,7 +29329,7 @@ var Recursos = {
 	]
 };
 
-/*C:\uniserver\www\hdp\public_html\src/main.js*/
+/*C:\UniServer\www\hdp\public_html\src/main.js*/
 var cocoon = (navigator.isCocoonJS);
 var gesActividad; // Inicia las actividades
 var actPuntaje; // Muestra el panel de puntaje y dato
@@ -29247,7 +29361,7 @@ window.onload = function() {
 		gesActividad.ejecutar(1, 5); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(1);
 		//Crafty.enterScene("Inicio");
-		//gesSonido.silenciar();
+		gesSonido.silenciar();
 	});
 	
 	// Desbloquear todos los niveles en modo debug
