@@ -13,6 +13,12 @@ window.onload = function() {
 	Crafty.timer.FPS(60);
 	Crafty.timer.steptype("variable"); // variable, fixed, semifixed
 
+	// Cargamos progreso de memoria
+	var progresoGuardado = Crafty.storage('progreso');
+	if (progresoGuardado) {
+		progreso = progresoGuardado;
+	}
+	
 	// Inicializamos el objeto único global Box2D
 	Crafty.box2D.init(0, 10, 32, true);
 	world = Crafty.box2D.world;
