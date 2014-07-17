@@ -1,6 +1,6 @@
 /**
  * Actividad parque caldas, armar la estructura monumento del FJCaldas
- * @returns {ActParque1}
+ * @returns {ActParque2}
  */
 var ActParque2 = function() {
 	this.e_piso = null; // Entidad que se pasa como referencia para el MouseBind
@@ -33,12 +33,35 @@ var ActParque2 = function() {
 		}
 	});
 	
+	// Partículas de explosión inicial
+	this.partExplota = new Particulas({
+		componentes: "spr_nube, SpriteAnimation",
+		x: 546, y: 180, z: 600,
+		vx: 0,
+		deltaVx: 4,
+		periodo: 5,
+		deltaOriX: 145, deltaOriY: 360,
+		numParticulas: 9,
+		magnitud: 100,
+		duracion: 20,
+		atenuacion: 80,
+		f_crear: function(ent) {
+			ent.reel("explota", 400, [[0,0],[96,0],[192,0],[288,0]]).animate("explota", -1);
+		}
+	});
+
+	
 	this.init = function() {
 		this.crearEntidades();
 		
 		// Inicializamos el objeto gestor de arrastre de la escena
 		this.b2a.init(this.e_piso);
 		this.desMonumento();
+		
+		Crafty.e("Gesto")
+				.Gesto(2, { coords: [258, 488], coordsFin: [600, 340], repetir: 1, retardo: 80 });
+		Crafty.e("Gesto")
+				.Gesto(2, { coords: [1100, 470], coordsFin: [630, 340], repetir: 1, retardo: 120 });
 		
 		return this;
 	};
@@ -53,7 +76,7 @@ var ActParque2 = function() {
 									.addTween({alpha: 0}, 'linear', 25, function() {
 										this.visible = false;
 									});
-		
+
 		// Cuerpo del piso 
 		this.e_piso = Crafty.e('2D, Canvas, Box2D')
 				.box2d({
@@ -131,8 +154,11 @@ var ActParque2 = function() {
 	this.desMonumento = function() {
 		var fX, fY, fuerza, pos;
 		var magnitud = 2000 * 32;
+		var self = this;
 		
 		Crafty.e("Delay").delay(function() {
+			self.partExplota.iniciar();
+			
 			Crafty("P2Bloque").each(function() {
 				//obteniendo la fuerza necesaria para mover los bloques
 				fX = randomFloat(-1, 1);
@@ -160,7 +186,9 @@ var ActParque2 = function() {
 	//verificar si ya se han colocados todos los numeros.
 	// Invocada por cada bloque al ser fijado
 	this.bloqueFijado = function() {
+		
 		this.aciertos++;
+		console.log(this.aciertos);
 		if (this.aciertos >= this.totAciertos) {
 			this.ganarActividad();
 		}
@@ -175,8 +203,9 @@ var ActParque2 = function() {
 	this.ganarActividad = function() {
 		gesActividad.temporizador.parar();
 		
-		this.e_fondoColor.addTween({ alpha: 1 }, 'linear', 25, function() {
-			//gesActividad.mostrarPuntaje();
+		this.e_fondoColor.visible = true;
+		this.e_fondoColor.addTween({ alpha: 1 }, 'linear', 30, function() {
+			gesActividad.mostrarPuntaje();
 		});
 		return this;
 	};

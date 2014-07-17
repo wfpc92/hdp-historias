@@ -1,7 +1,11 @@
 function spritesPuntaje() {
 	Crafty.sprite("img/puntaje/cortinas.png", {
-		sprAP_cortinaSup: [0, 197, 951, 132],
-		sprAP_cortinaInf: [0, 0, 951, 195]
+		sprAP_cortinaInf: [0, 0, 951, 195],
+		sprAP_cortinaSup: [0, 197, 951, 148]
+	});
+	
+	Crafty.sprite("img/puntaje/titulos.png", {
+		sprAP_titulo: [0, 0, 512, 50]
 	});
 
 	Crafty.sprite("img/puntaje/digitos.png", {

@@ -8,7 +8,7 @@ niveles[0] = {
 			duracion: 8000,
 			//esto se podria simplificar a una variable que se llame PATH
 			fondo: 'img/act/morro/1/fondo.png',
-			dato: "\b< Morro de Tulcán >\b\nEs una \bmontaña artificial\b\n prehispánica -al parecer data del\n año \b1600 - 600 a.C.\b- de carácter\n \bceremonial funerario\b, ubicada en el\n costado noreste de Popayán,\n considerada el \bsitio arqueológico\b\n más importante de la ciudad.",
+			dato: "Es una \bmontaña artificial\b\n prehispánica -al parecer data del\n año \b1600 - 600 a.C.\b- de carácter\n \bceremonial funerario\b, ubicada en el\n costado noreste de Popayán,\n considerada el \bsitio arqueológico\b\n más importante de la ciudad.",
 			pista: { ladoIzq: true, y: 250 },
 			actividad: function() {
 				var actividad = new ActMorro1();

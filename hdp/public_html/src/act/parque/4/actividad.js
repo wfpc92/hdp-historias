@@ -69,7 +69,7 @@ var ActParque4 = function() {
 		Crafty.e('2D, Canvas, Box2D').attr({x:1280,y:0,w:800,h:800}).box2d({bodyType: 'static', shape: 'box'});
 		this.e_piso = Crafty.e('2D, Canvas, Box2D').attr({x:0,y:800,w:1280,h:800}).box2d({bodyType: 'static', shape: 'box'});
 		if (!cocoon) {
-			Crafty.box2D.showDebugInfo();
+			//Crafty.box2D.showDebugInfo();
 		}
 	};
 	//verificar si ya se han colocados todos los numeros.

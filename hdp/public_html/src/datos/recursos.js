@@ -13,7 +13,7 @@ var Recursos = {
 			
 			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png","img/particulas/star.png","img/particulas/triangulo.png",
 			
-			"img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png",
+			"img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png", "img/puntaje/titulos.png",
 			
 			"img/global/myriad.png", "img/global/font-asap36.png", "img/global/font-asap36bold.png",
 			"img/global/pau-botones.png", "img/global/pau-arbol.png", "img/global/pau-hoja.png", "img/global/pau-leyenda.png",

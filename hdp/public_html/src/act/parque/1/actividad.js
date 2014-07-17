@@ -31,9 +31,10 @@ var ActParque1 = function() {
 			this.velMov = 5;
 		});
 		
-		this.desordenar();
-		
-		
+		//this.desordenar();
+		Crafty("P1BloqueManz").each(function() {
+				this.mostrarNumero(false);
+		});
 		this.e_btPregunta.bind("MouseDown", function() {
 			Crafty("P1BloqueManz").each(function() {
 				this.mostrarNumero(true);

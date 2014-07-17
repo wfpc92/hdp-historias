@@ -50,6 +50,10 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 			.attr({x: 0, y: -195, z: 1005, visible: false});
 	this.e_cortinaInf = Crafty.e("2D, Canvas, sprAP_cortinaInf, Tweener, Persist")
 			.attr({x: 0, y: 800, z: 1005, visible: false});
+	this.e_titulo = Crafty.e("2D, Canvas, sprAP_titulo, Tweener, Persist")
+			.attr({x: 400, y: -180, z: 1006, visible: false});
+	this.e_cortinaSup.attach(this.e_titulo);
+	
 	this.e_bloTexto = Crafty.e("2D, Canvas, Image, Tweener, Persist")
 			.attr({x: 1280, y: 0, z: 1001, alpha: 1, visible: false})
 			.image("img/puntaje/fon-texto.png");
@@ -141,41 +145,21 @@ ActPuntaje.prototype.ocultar = function() {
 ActPuntaje.prototype.reset = function ocultar() {
 	this.e_dato.reset();
 	this.ocultar();
-	/*
-	var self = this;
-	// primero deslizamos el bloque rojo para ocultarlo 
-	this.e_bloRojo.addTween({x: 1280 + this.e_bloRojo.w}, "easeOutCubic", 25);
-	self.e_cortinaSup.addTween({x: self.e_cortinaSup.x, y: -self.e_cortinaSup.h}, "easeOutCubic", 45);
-	self.e_cortinaInf.addTween({x: self.e_cortinaInf.x, y: 800 + self.e_cortinaInf.h}, "easeOutCubic", 20);
-	// Deslizamos el bloque de texto para ocultarlo
-	self.e_bloTexto.addTween({x: 1280 + self.e_bloTexto.w}, "easeOutCubic", 20);
-	// ocultar el texto y la imagen del dato
-	self.e_dato.addTween({x: 1280 + self.e_dato.w}, "linear", 30);
-	self.e_datoImg.addTween({y: 800 + self.e_datoImg.h}, "easeOutBack", 50);
-	self.e_btSalir.addTween({y: 800 + self.e_btSalir.h}, "easeOutCubic", 45);
-	self.e_btRepetir.addTween({y: 800 + self.e_btRepetir.h}, "easeOutCubic", 45);
-	self.e_btSiguiente.addTween({x: 800 + self.e_btSiguiente.h}, "easeOutCubic", 45);
-	// ocultar el "muy bien" y la información de puntaje
-	self.e_muyBien.addTween({x: 1280 + self.e_muyBien.w}, "linear", 10);
-	self.e_lblPuntuacion.addTween({x: 1280 + self.e_muyBien.w}, "linear", 10);
-	// Mostramos los baudilios
-	self.e_baudilio1.addTween({x: 1280 + self.e_baudilio1.w}, "linear", 20);
-	self.e_baudilio2.addTween({x: 1280 + self.e_baudilio2.w}, "linear", 20);
-	self.e_baudilio3.addTween({x: 1280 + self.e_baudilio3.w}, "linear", 20);
-	Crafty("AP_Digito").destroy();
-	self.e_numPuntos.destroy();
-	*/
 };
 
 // Animaciòn para mostrar la interfaz de puntaje y dato
 // invocada en mostrarPuntaje()
 ActPuntaje.prototype.animMostrar = function() {
 	var self = this;
-	//mostramos el fondo para evitar eventos no deseados sobre la actividad en primer plano
+	
+	// configuramos el título correcto
+	this.e_titulo.sprite(0, 50 * gesActividad.nivel);
+	//mostramos el fondo transparente para evitar eventos no deseados sobre la actividad en primer plano
 	this.e_fondo.attr({x:0, visible: true});
 	// primero deslizamos el bloque rojo
 	this.e_bloRojo.attr({visible: true}).addTween({x: 938}, "easeOutCubic", 25, function() {
 		// deslizamos las cortinas
+		self.e_titulo.visible = true;
 		self.e_cortinaSup.attr({visible: true}).addTween({x: self.e_cortinaSup.x, y: 0}, "easeOutCubic", 45);
 		self.e_cortinaInf.attr({visible: true}).addTween({x: self.e_cortinaInf.x, y: 605}, "easeOutCubic", 20, function() {
 			// Deslizamos el bloque de texto
