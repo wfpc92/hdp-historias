@@ -27,7 +27,7 @@ function ActMorro1() {
 		}
 
 		this.toque = new ToqueRapido();
-		this.toque.incremento = ((debug) ? 8 : 7);
+		this.toque.incremento = ((debug) ? 40 : 7);
 		this.toque
 				.init(this)
 				.callbackCambio(this.cambioVal)
@@ -70,7 +70,7 @@ function ActMorro1() {
 		
 		Crafty.e("Gesto")
 				.Gesto(1, { coords: [600, 300], duracion: 200, retardo: 40 });
-		
+
 		return this;
 	};
 

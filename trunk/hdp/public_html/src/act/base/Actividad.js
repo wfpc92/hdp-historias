@@ -55,7 +55,7 @@ Actividad.prototype.ejecutar = function(nivel, subnivel) {
 		gesSonido.crear(recursosAct.musica[0], recursosAct.musica[1]);
 		gesSonido.reproducirMusica(recursosAct.musica[0]);
 		
-		//self.mostrarPuntaje();
+		self.mostrarPuntaje();
 	});
 };
 

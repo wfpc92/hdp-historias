@@ -7,7 +7,7 @@ niveles[1] = {
 			duracion: 6000,
 			//duracion: 7000,
 			fondo: 'img/act/belalcaz/1/fondo.png',
-			dato: '\b< Sebastián de Belalcazar >\b\nFué el conquistador español que el \b13\nde enero de 1537\b fundó la ciudad de\n\bPopayán\b, en inmediaciones del valle de\nPubenza.\nSu verdadero nombre fué \bSebastián\n Moyano\b y adoptó el nombre del pueblo\n donde nació (Belalcazar, Andalucía).',
+			dato: 'Fué el conquistador español que el \b13\nde enero de 1537\b fundó la ciudad de\n\bPopayán\b, en inmediaciones del valle de\nPubenza.\n\n Su verdadero nombre fué \bSebastián\n Moyano\b y adoptó el nombre del pueblo\n donde nació (Belalcazar, Andalucía).',
 			pista: { ladoIzq: true, y: 90 },
 			actividad: function() {
 				var actividad = new ActBelalcaz1();
