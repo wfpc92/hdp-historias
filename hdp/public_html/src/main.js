@@ -18,7 +18,7 @@ window.onload = function() {
 	if (progresoGuardado) {
 		progreso = progresoGuardado;
 	}
-	
+
 	// Inicializamos el objeto único global Box2D
 	Crafty.box2D.init(0, 10, 32, true);
 	world = Crafty.box2D.world;
@@ -31,17 +31,17 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		//gesActividad.ejecutar(2, 1); // Nivel de 0 a 4, Subnivel de 0 a 5
+		//gesActividad.ejecutar(0, 4); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		Crafty.enterScene("Inicio");
 		//gesSonido.silenciar();
 	});
-	
+
 	// Desbloquear todos los niveles en modo debug
 	if (debug) {
-		for (i = 0 ; i < 5 ; i++) {
+		for (i = 0; i < 5; i++) {
 			progreso[i].bloqueado = false;
-			progreso[i].puntaje = [1,1,1,1,1,1];
+			progreso[i].puntaje = [1, 1, 1, 1, 1, 1];
 		}
 	}
 };
