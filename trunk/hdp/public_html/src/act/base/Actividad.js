@@ -48,14 +48,14 @@ Actividad.prototype.ejecutar = function(nivel, subnivel) {
 
 	// Cargar los recursos en RAM antes de iniciar actividad 
 	var self = this;
-	
+
 	cargarRecursos(recursosAct, true, function() {
 		Crafty.enterScene("Actividad", self);
 		//reproducir el audio de fondo
 		gesSonido.crear(recursosAct.musica[0], recursosAct.musica[1]);
 		gesSonido.reproducirMusica(recursosAct.musica[0]);
-		
-		self.mostrarPuntaje();
+
+		//self.mostrarPuntaje();
 	});
 };
 
@@ -64,7 +64,7 @@ Actividad.prototype.reiniciar = function() {
 	this.terminar();
 	if (this.objAct.terminarActividad)
 		this.objAct.terminarActividad();
-	
+
 	this.objAct = this.config.actividad();
 	console.log("reiniciar actividad " + this.nivel + " - " + this.subnivel);
 
@@ -75,7 +75,7 @@ Actividad.prototype.reiniciar = function() {
 	actPuntaje.ocultar();
 	this.terminada = false;
 	Crafty.enterScene("Actividad", this);
-	
+
 };
 
 Actividad.prototype.siguienteActiv = function() {
@@ -85,8 +85,15 @@ Actividad.prototype.siguienteActiv = function() {
 	if (this.subnivel >= 5) {
 		gestorTest.iniciarTest(this.nivel);
 	} else {
-		this.ejecutar(this.nivel, this.subnivel + 1);
+		//caso especifico 
+		if (this.subnivel == 0 && this.nivel == 3) {
+			Crafty.scene("MenuCuadros");
+		} else {
+			this.ejecutar(this.nivel, this.subnivel + 1);
+		}
 	}
+
+
 };
 
 
@@ -100,12 +107,12 @@ Actividad.prototype.mostrarPuntaje = function() {
 		var tRestante = this.temporizador.getTiempoRestante();
 		var calificacion = tRestante / this.temporizador.tiempoInicial; // [0:1]
 		var puntosObtenidos = Math.floor(calificacion * 6000);
-		
+
 		// Actualizamos progreso
 		progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
 		progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
-		
-		
+
+
 		// Desbloquear siguiente nivel si es el caso
 		if (this.subnivel === 5) {
 			if (this.nivel < 4) {
@@ -115,7 +122,7 @@ Actividad.prototype.mostrarPuntaje = function() {
 
 		// Guardamos progreso en memoria no volátil
 		Crafty.storage('progreso', progreso);
-		
+
 		actPuntaje.puntos = puntosObtenidos;
 		actPuntaje.animMostrar();
 	}
@@ -139,11 +146,11 @@ Actividad.prototype.detener = function() {
 		this.objAct.b2a.destruir();
 		delete this.objAct.b2a;
 	}
-	
+
 	Crafty("Tweener").each(function() {
 		this.cancelTweener();
 	});
-	
+
 	if (this.objAct.terminarActividad)
 		this.objAct.terminarActividad();
 

@@ -45,14 +45,3 @@ Crafty.c("M1Capa", {
 		return this;
 	}
 });
-
-
-Crafty.c("H1_Personaje", {
-	init: function() {
-		this.requires("2D, Canvas, Tweener");
-	},
-	caminar: function(attr) {
-		this.addTween({x: attr.x, y: attr.y}, "linear", attr.t);
-		return this;
-	}
-});
