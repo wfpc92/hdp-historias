@@ -14,13 +14,18 @@ var ActPuente2 = function() {
 
 	this.init = function() {
 		this.crearEntidades();
-		this.ganarActividad();
 		return this;
 	};
 
 	this.crearEntidades = function() {
+		Crafty.e("2D, Canvas, Image").image("img/act/puente/2/fondo.jpg");
+		Crafty.e("2D, Canvas, Image, Ubicador").image("img/act/puente/2/hoja.png");
+		Crafty.e("2D, Canvas, Image, Ubicador").image("img/act/puente/2/indicador.png");
+		Crafty.e("2D, Canvas, Image, Ubicador").image("img/act/puente/2/indicador.png");
+		Crafty.e("2D, Canvas, sprH2_numero0, Ubicador");		
 
 	};
+
 
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
