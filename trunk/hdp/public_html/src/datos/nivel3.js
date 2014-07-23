@@ -4,7 +4,7 @@ niveles[3] = {
 	subnivel: [
 		{
 			id: 1,
-			duracion: 10000,
+			duracion: 19000,
 			fondo: '',
 			dato: 'Es un viaducto estilo romano con doce\narcos y una longitud de 240 metros,\nconstruido para unir el sector de\nEl Callejón -hoy barrio Bolívar- y el\ncentro de la ciudad, que se encuentra\natravesado por el Río Molino.',
 			pista: {ladoIzq: true, y: 90},

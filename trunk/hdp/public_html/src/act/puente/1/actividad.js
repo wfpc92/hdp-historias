@@ -15,8 +15,14 @@ function ActPuente1() {
 		[-136, 1280], [-136, 1280], [-136, 1280], [-136, 1257], [-136, 1195],
 		[-136, 1217], [-136, 1167], [-136, 1129], [-136, 996], [-136, 949],
 		[-136, 930], [-136, 882], [-136, 840], [-136, 795], [-136, 753],
-		[-136, 708], [-136, 642],
+		[-136, 708], [-136, 642]
 	]; // Coordenadas xIni y xFin de las capas en pantalla
+
+
+	this.arcos = [true, false, false, false, false]
+
+
+
 
 	this.init = function() {
 		Crafty.e("2D, Canvas, Image").image("img/act/puente/1/fondo.jpg");
@@ -24,9 +30,8 @@ function ActPuente1() {
 		pri_plano.attr({x: 0, y: 800 - pri_plano.h, z: 100});
 		for (var i = 0; i < 23; i++) {
 			var y0 = Crafty.math.randomInt(313, 333);
-			Crafty.e("H1_Personaje, Ubicador, sprH1_personajeAdulto").sprite(i, 0).attr({x: -63, y: y0});
+			Crafty.e("H1_Personaje, sprH1_personajeAdulto").sprite(i, 0).attr({x: -63, y: y0});
 		}
-
 
 		// Inicializamos las capas de la construcción
 		var yMostrar = [680, 659, 638, 624, 611, 594, 580, 567, 540, 525, 496, 471, 441, 423, 393, 376, 320];
@@ -57,13 +62,17 @@ function ActPuente1() {
 
 		this.toque = new ToqueRapido();
 		this.toque.incremento = ((debug) ? 10 : 4);
-		this.toque
-				.init(this)
+		this.toque.init(this)
 				.callbackCambio(this.cambioVal)
 				.callbackMaximo(this.ganarActividad);
 		this.toque.val = 10;
 		this.toque.vMin = 10;
-		this.toque.vMax = 440;
+		this.toque.vMax = 440; //este valor es el maximo al completar el morro hasta el final.
+
+		this.toque.e_area.requires("Color, Tweener").color("#bab94c");
+		this.toque.e_area.attr({y: 320, w: 280, h: 400, alpha: 0.1});
+		this.toque.e_area.attrAreaToque = [0, 280, 280 * 2, 280 * 3, 280 * 4];
+		
 		//Inicialmente mostramos las primeras capas
 		for (i = 0; i < 2; i++) {
 			this.arrCapas[i].visible = true;
@@ -86,26 +95,25 @@ function ActPuente1() {
 				ent.reel("giro", 400, [[0, 0], [32, 0], [64, 0], [96, 0]]).animate("giro", -1);
 			}
 		});
-		Crafty.e("Gesto")
-				.Gesto(1, {coords: [600, 300], duracion: 200, retardo: 40});
+		Crafty.e("Gesto").Gesto(1, {coords: [200, 450], duracion: 200, retardo: 40});
 		//para que los personajes se puedan mover se disponen de estas variables
 		var bAvanz = 4;
-		//por cada arco (el ultimo arco lo "ejecuta" this.ganarActividad), se establece un sprite limite para hacer avanzar los personajes
-		this.arrPuntosAvance = [17 + bAvanz, 17 * 2 + bAvanz, 17 * 3 + bAvanz, 17 * 4 + bAvanz];
+		//por cada arco se establece una capa limite para hacer avanzar los personajes
+		//17 es el numero de capas por arco, bAvanz se coloca para que haya tiempo de que los personajes avancen y retrocedan
+		this.arrPuntosAvance = [0, 17 + bAvanz, 17 * 2 + bAvanz, 17 * 3 + bAvanz, 17 * 4 + bAvanz, 17 * 5];
+		//posiciones limites de los personajes sobre el arco del puente.
 		this.attrPersonajes = [
 			//por cada arco hay unos attr de ubicacion de los personajes
-			{xmin: 0, xmax: 279 - 39, ymin: 319, ymax: 327},
-			{xmin: 287, xmax: 557 - 39, ymin: 307, ymax: 312},
-			{xmin: 568, xmax: 835 - 39, ymin: 299, ymax: 309},
-			{xmin: 846, xmax: 1112 - 39, ymin: 291, ymax: 301}
+			{xmin: -63, xmax: -63, ymin: 319, ymax: 327}, //para la parte inferior izquierda
+			{xmin: 0, xmax: 279 - 39, ymin: 319, ymax: 327}, //arco 1
+			{xmin: 287, xmax: 557 - 39, ymin: 307, ymax: 312}, //arco2
+			{xmin: 568, xmax: 835 - 39, ymin: 299, ymax: 309}, //arco3
+			{xmin: 846, xmax: 1112 - 39, ymin: 291, ymax: 301}//arco4
 		];
-		//por cada arco hay unos attr de ubicacion de los personajes
-
-		this.attrPersonajesOcultar = [{xmin: -63, xmax: -63, ymin: 319, ymax: 327}].concat(this.attrPersonajes);
 		return this;
 	};
-	// función a ejecutar cuando cambia el valor del ToqueRapido
-	// su ámbito es el objeto ToqueRapido (referirse a este objeto con this._padre)
+	//función a ejecutar cuando cambia el valor del ToqueRapido
+	//su ámbito es el objeto ToqueRapido (referirse a este objeto con this._padre)
 	this.cambioVal = function cambioVal() {
 		var val = this.val;
 		var numCapa = Math.floor(val / 5);
@@ -114,7 +122,7 @@ function ActPuente1() {
 	this.mostrarCapa = function mostrarCapa(n) {
 		var i, mostrandose = true;
 		if (n > this.arrCapas.length - 1)
-			n = this.arrCapas.length - 1; // máximo 20
+			n = this.arrCapas.length - 1; // máximo 17*5-1
 
 		if (this.arrCapas[n].estado === 2) {
 			// capa ya visible; asegurarnos de que las capas de arriba se oculten
@@ -144,21 +152,58 @@ function ActPuente1() {
 			this.particulas.iniciar();
 		}
 
-
 		//verificar si los personajes deben avanzar o se deben devolver 
 		//si se encuentra dentro de los puntos de avance.
-		var nArco = this.arrPuntosAvance.indexOf(n);
-		if (nArco != -1) { // si el elemento se encuentra en el array
-			var attrP = mostrandose ? this.attrPersonajes[nArco] : this.attrPersonajesOcultar[nArco];
+		var nArco = this.buscarArco(n);
+		if (!this.arcos[nArco]) {
+			//array de banderas que me dice en que arco me encuentro situado.
+			for (var i = 0; i < this.arcos.length; i++) {
+				this.arcos[i] = (i == nArco ? true : false);
+			}
+			//incrementar el numero de capas para que el area de toque permanezca mas tiempo en el nuevo sitio
+			if (mostrandose) {
+				//si el puente va subiendo entonces se incrementan las capas 
+				this.toque.incrementar();
+				this.toque.incrementar();
+				this.toque.incrementar();
+			}
+			this.moverAreaToque(this.toque.e_area.attrAreaToque[nArco]);
+			var attrP = this.attrPersonajes[nArco];
 			Crafty("H1_Personaje").each(function() {
-				this.caminar({
-					//numeros aleatorios
+				this.caminar({//numeros aleatorios
 					x: Crafty.math.randomInt(attrP.xmin, attrP.xmax),
 					y: Crafty.math.randomInt(attrP.ymin, attrP.ymax),
 					t: Crafty.math.randomInt(30, 60)
 				});
-			})
-		}/**/
+			});
+		}
+
+	};
+	//hacer que el area de toque haga un fadeout fadein.
+	this.moverAreaToque = function(newx) {
+		var area = this.toque.e_area;
+		var tTween = 5;
+		var self = this;
+		//area.x = newx;//esto es lo que se quiere al final.
+		area.addTween({alpha: 0.0}, "easeInCubic", tTween, function() {
+			this.x = newx;
+			//this.alpha = 0.1//asi esta ok
+			this.addTween({alpha: 0.1}, "easeInCubic", tTween, function() {
+				Crafty.e("Gesto").Gesto(1, {coords: [newx + 70, 450], duracion: 40, retardo: 0});
+			});
+		});
+		return this;
+	};
+	//buscar dentro del array de puntos de avance para ver donde se encuentra el arco.
+	this.buscarArco = function(capa) {
+		var arco = 0;
+		for (var i = 0; i < this.arrPuntosAvance.length - 1; i++) {
+			if (capa >= this.arrPuntosAvance[i] && capa < this.arrPuntosAvance[i + 1]) {
+				return arco;
+			}
+			arco++;
+		}
+		return -1;
 	};
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
@@ -167,13 +212,15 @@ function ActPuente1() {
 	// Sólo invocada al ganar la actividad
 	this.ganarActividad = function ganarActividad() {
 		gesActividad.temporizador.parar();
+		//hacer que los personajes caminen hacia la parte izquierda para que desaparezcan
 		Crafty("H1_Personaje").each(function() {
 			var newt = Crafty.math.randomInt(100, 250);
 			this.caminar({x: 1280, y: 300, t: newt});
-		})
+		});
 		var self = this;
+		//esperar a que los personajes caminen
 		Crafty.e("Delay").delay(function() {
-			gesActividad.mostrarPuntaje();
+			//gesActividad.mostrarPuntaje();
 		}, 2000);
 		return this;
 	};
