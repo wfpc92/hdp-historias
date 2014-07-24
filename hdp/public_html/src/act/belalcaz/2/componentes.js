@@ -57,22 +57,7 @@ Crafty.c("Tronco", {
 		
 		this.bind("MouseUp", function() {
 			this.soltar();
-		})/*
-		.bind("MouseDown", function() {
-			//quitamos comportamiento inicial
-			this.cancelTweener();
-			this.unbind("EnterFrame", this.caer);
-			this.z = 20;
-			if (this.rotation !== 0) {
-				this.addTween({ rotation: 0}, "linear", 5);
-			}
-			this.tomado = true;
-		})
-		.bind("MouseOut", function() {
-			if (this.tomado) {
-				this.soltar();
-			}
-		});*/
+		});
     },
 	
     //movimiento inicial del tronco, salir y esconderse
@@ -90,7 +75,7 @@ Crafty.c("Tronco", {
 				this.yIni = randomInt(542, 590);
 				break;
 			case 12:
-				this.xIni = randomInt(500, 560);
+				this.xIni = randomInt(900, 960);
 				this.yIni = randomInt(540, 580);
 				break;
 			case 13:
@@ -98,7 +83,7 @@ Crafty.c("Tronco", {
 				this.yIni = randomInt(566, 610);
 				break;
 			case 14:
-				this.xIni = randomInt(455, 533);
+				this.xIni = randomInt(455, 500);
 				this.yIni = randomInt(596, 610);
 				break;
 		}

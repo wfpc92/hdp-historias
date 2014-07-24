@@ -70,7 +70,7 @@ function ActMorro1() {
 		
 		Crafty.e("Gesto")
 				.Gesto(1, { coords: [600, 300], duracion: 200, retardo: 40 });
-
+		
 		return this;
 	};
 

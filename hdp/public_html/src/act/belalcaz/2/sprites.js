@@ -42,10 +42,10 @@ function spritesBelalcaz2() {
         sprB2_espumaAgua1: [0, 0, 817, 418]
     });
     Crafty.sprite("img/act/belalcaz/2/agua_1.png", {
-        sprB2_espumaAgua2: [0, 0, 569, 439],
-        sprB2_espumaAgua3: [0, 437, 569, 366],
-        sprB2_espumaAgua4: [0, 802, 569, 451],
-        sprB2_espumaAgua5: [0, 1249, 569, 377]
+        sprB2_espumaAgua2: [0, 0, 471, 217],
+        sprB2_espumaAgua3: [87, 249, 346, 233],
+        sprB2_espumaAgua4: [61, 497, 393, 273],
+        sprB2_espumaAgua5: [73, 782, 373, 268]
     });
 
     //recursos tomados de otras actividades:

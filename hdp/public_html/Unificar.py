@@ -11,6 +11,7 @@ index = 1
 for line in open('index.html','r'):
 	if line.find('script') != -1:
 		ruta = line.split('"')[1]
+		
 		if ruta == 'lib/crafty.js':
 			ruta = 'lib/m-crafty.js'
 

@@ -45,15 +45,18 @@ function shuffle(o) { //v1.0
 
 // Intenta dejar el mundo Box2D totalmente vacío
 function resetBox2D() {
-	if (world.GetBodyCount() > 0) {
+	if (world.m_bodyCount > 0) {
 		var ventana = world.GetBodyList();
 		var temp;
+		
 		// Iteramos entre todos los cuerpos existentes para destruirlos
 		while (ventana !== null) {
 			temp = ventana;
 			world.DestroyBody(temp);
 			ventana = ventana.m_next;
 		}
+		
+		world.m_bodyList = null;
 	}
 
 	Crafty.box2D.unpause(); // Despausamos por si está pausado
@@ -64,28 +67,36 @@ function resetBox2D() {
 
 // Intenta descargar una lista de recursos de memoria (CocoonJS)
 function limpiarRecurso(datos) {
-
-	var num = datos.rutas.length;
-	var ruta;
-	for (i = 0; i < num; i++) {
-		ruta = datos.rutas[i];
-		// Si el objeto existe,
-		if (!!Crafty.assets[ruta]) {
-			console.log("Desechando " + ruta);
-			if (cocoon)
-				Crafty.assets[ruta].dispose();
-			delete Crafty.assets[ruta];
+	if (datos.cargado) {
+		var num = datos.rutas.length;
+		var ruta;
+		for (i = 0; i < num; i++) {
+			ruta = datos.rutas[i];
+			// Si el objeto existe,
+			if (!!Crafty.assets[ruta]) {
+				console.log("Desechando " + ruta);
+				if (cocoon)
+					Crafty.assets[ruta].dispose();
+				delete Crafty.assets[ruta];
+			}
 		}
+		datos.cargado = false;
 	}
-	datos.cargado = false;
 }
 
 // Intenta limpiar todos los recursos de memoria (excepto los globales)
 function limpiarTodo() {
-	if (Recursos.menuPrincipal.cargado)
-		limpiarRecurso(Recursos.menuPrincipal);
-	if (Recursos.menuCuadros.cargado)
-		limpiarRecurso(Recursos.menuCuadros);
+	limpiarRecurso(Recursos.menuPrincipal);
+	limpiarRecurso(Recursos.menuCuadros);
+	
+	var i;
+	for (i = 0 ; i < 6 ; i++) {
+		limpiarRecurso(Recursos.morro[i]);
+		limpiarRecurso(Recursos.belalcazar[i]);
+		limpiarRecurso(Recursos.parque[i]);
+		limpiarRecurso(Recursos.puente[i]);
+		limpiarRecurso(Recursos.valencia[i]);
+	}
 }
 
 // Carga los recursos descritos en el objeto "datos" (elemento del objeto Recursos)
@@ -141,3 +152,5 @@ function resetProgreso() {
 	
 	Crafty.storage('progreso', progreso);
 }
+
+

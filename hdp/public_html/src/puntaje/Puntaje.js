@@ -75,8 +75,8 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 			.Numero()
 			.baudilios(this.e_baudilio1, this.e_baudilio2, this.e_baudilio3);
 
-	this.e_dato = Crafty.e("BloqueTexto, Persist").attr({ x: 270, y: 170, z: 1025, visible: false });
-	this.e_comillaIni = Crafty.e("2D, Canvas, sprAP_comillaIni, Persist").attr({ x: 220, y: 165, z: 1020, visible: false });
+	this.e_dato = Crafty.e("BloqueTexto, Persist").attr({ x: 260, y: 165, z: 1025, visible: false });
+	this.e_comillaIni = Crafty.e("2D, Canvas, sprAP_comillaIni, Persist").attr({ x: 210, y: 165, z: 1020, visible: false });
 	this.e_comillaFin = Crafty.e("2D, Canvas, sprAP_comillaFin, Persist").attr({ z: 1020, visible: false });
 	
 	this.e_datoImg = Crafty.e("2D, Canvas, sprAP_dato, Tweener, Persist")

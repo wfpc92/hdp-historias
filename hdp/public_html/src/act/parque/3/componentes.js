@@ -32,7 +32,7 @@ Crafty.c("P3_GeneradorHormigas", {
 	generar: function() {
 		var self = this;
                 //generar un numero determinado de hormigas
-                if(Crafty("P3_Hormiga").length < self.numHormigasMax ){
+                if(Crafty("P3_Hormiga").length < self.numHormigasMax) {
                     //bloquear el gnerador de hormigas en caso que se haya excedido el numero de hormigas
                     Crafty.e("Delay").delay(function() {
                                 if (!self.bloqueado) {
@@ -58,9 +58,9 @@ Crafty.c("P3_GeneradorHormigas", {
 	},
 	//intentar generar una hormiga solo si ya se ha llagado al tope de hormigas.
 	hormigaMuerta: function() {
-                if (this.bloqueado) {
-                        this.bloqueado = false;
-                        this.generar();
+		if (this.bloqueado) {
+				this.bloqueado = false;
+				this.generar();
 		}
 		return this;
 	}
@@ -73,105 +73,160 @@ Crafty.c("P3_Hormiga", {
 	spr_caminando: "sprP3_hcamina",
 	spr_muerde: "sprP3_hmuerde",
 	spr_muerta: "sprP3_hmuerta",
+	
 	init: function() {
 		this.requires("2D, Canvas, Hormiga, SpriteAnimation, Mouse, Tweener");
 		return this;
 	},
+	
 	P3_Hormiga: function(e_padre, der) {
 		this.e_padre = e_padre;
 		this.der = der;
 		this.caminar()
 				.bind("MouseDown", function(e) {
 					this.removeComponent("Mouse")
-							.unbind("MouseDown")
-							.cancelTweener()
-							.morir();
-					Crafty.e("Onomatopeya").Onomatopeya(Crafty.math.randomInt(2, 3), {x: this.x, y: this.y});
+						.unbind("MouseDown")
+						.cancelTweener()
+						.morir();
+					
+					Crafty.e("Onomatopeya").Onomatopeya(randomInt(2, 3), {x: this.x, y: this.y });
 				});
 		return this;
 	},
+	
 	caminar: function() {
 		this.addComponent(this.spr_caminando);
-		this.reel("camina", 1000, this.der ? [[0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1]] : [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0]])
+		this.reel("camina", 900, this.der ? [[0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1]] : [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0]])
 				.animate("camina", -1);
 		return this;
 	},
+	
 	comer: function() {
 		this.cancelTweener()
 				.removeComponent(this.spr_caminando)
 				.addComponent(this.spr_muerde)
-				.reel("muerde", 500, this.der ? [[0, 1], [1, 1], [2, 1]] : [[0, 0], [1, 0], [2, 0]])
+				.reel("muerde", 400, this.der ? [[0, 1], [1, 1], [2, 1]] : [[0, 0], [1, 0], [2, 0]])
 				.animate("muerde", -1)
 				.bind("EnterFrame", function() {
 					this.e_padre.rama.hormigaComeRama(this);
 				});
 		return this;
 	},
+	
 	morir: function() {
 		this.removeComponent(this.spr_caminando)
 				.addComponent(this.spr_muerta)
-				.reel("morir", 500, this.der ? [[0, 1], [1, 1], [2, 1]] : [[0, 0], [1, 0], [2, 0]])
+				.reel("morir", 250, this.der ? [[0, 1], [1, 1], [2, 1]] : [[0, 0], [1, 0], [2, 0]])
 				.animate("morir", 1);
 		var self = this;
-		Crafty.e("Delay").delay(function() {
-			self.addTween({x: this.x, y: this.y, alpha: 0.0}, "easeOutSine", 25, function() {
-				this.destroy();
-				//intentar generar una nueva hormiga de acuerdo al numero de hormigas que hay
-				self.e_padre.hormigaMuerta();
-			});
-		}, 2000);
+		
+		self.addTween({x: this.x, y: this.y, alpha: 0.0}, "easeInCubic", 37, function() {
+			this.destroy();
+			//intentar generar una nueva hormiga de acuerdo al numero de hormigas que hay
+			self.e_padre.hormigaMuerta();
+		});
+		
 		return this;
 	}
 });
 
 
-
 Crafty.c("P3_Regadera", {
 	rama: null,
-	count: 0,
+	cuentaGotas: 0, // gotas actualmente en pantalla
+	
 	init: function() {
-		this.requires("2D, Canvas, Image, Mouse").image("img/act/parque/3/regadera.png");
+		this.requires("2D, Canvas, Image, Tweener, Mouse")
+			.image("img/act/parque/3/regadera.png")
+			.attr({ alpha: 0.0, rotation: -15 });
 	},
+	
+	// hace un fadeIn para mostrar la regadera
+	mostrar: function() {
+		var y0 = this._y;
+		var x0 = this._x;
+		this.y = this._y + 100;
+		this.x = this._x - 30;
+		this.addTween({ x: x0, y: y0, alpha: 1, rotation: 0 }, "easeOutCubic", 50);
+		return this;
+	},
+	
 	P3_Regadera: function(rama) {
 		this.rama = rama;
 		this.bind("MouseDown", function() {
-			this.generarGota({x: Crafty.math.randomInt(530, 680), y: Crafty.math.randomInt(153, 213), z: this.z});
-			this.rama.regaderaRociaAgua(this);
-		});
-		return this;
-	},
-	generarGota: function(pos) {
-		var gota = Crafty.e("2D, Canvas, Image, Tweener").image("img/act/parque/3/gota.png")
-				.attr({x: pos.x, y: pos.y, z: 2});
-		gota.vy = 0;
-		gota.bind("EnterFrame", function() {
-			this.vy += 0.5;
-			this.y += this.vy;
-			if (this.y > Crafty.math.randomInt(570, 600)) {
-				this.vy = 0;
-				if (!this.unsolollamado) {
-					this.unsolollamado = true;
-					this.addTween({alpha: 0}, "easeOutSine", 20, function() {
-						this.destroy();
-					});
-				}
+			if (this.cuentaGotas < 10) {
+				this.cuentaGotas++;
+				Crafty.e("P3_Gota")
+						.attr({ z: this._z })
+						.P3_Gota(this, randomInt(560, 578), randomInt(100, 128));
+				this.rama.regaderaRociaAgua(this);
 			}
 		});
 		return this;
 	},
+	
 	pararRegar: function() {
 		this.removeComponent("Mouse").unbind("MouseDown");
 	}
 });
 
+// Una de las gotas que dispara la regadera
+Crafty.c("P3_Gota", {
+	ay: 0.5, // cinemática
+	vy: 0.5, 
+	vx: 0.5,
+	yMax: 0, // y Máxima de la gota antes de desaparecer
+	e_regadera: null, // referencia a regadera
+	
+	init: function() {
+		this.requires("2D, Canvas, Image, Tweener")
+			.image("img/act/parque/3/gota.png")
+			.attr({ z: 2, rotation: -30 });
+	
+		this.vx = randomFloat(0.3, 2);
+		this.yMax = randomInt(550, 590);
+	
+		this.bind("EnterFrame", function() {
+			// si sigue cayendo, desplazar
+			this.vy += this.ay;
+			this.y += this.vy;
+			this.x += this.vx;
+			
+			if (this.rotation <= 0) this.rotation += 1;
+				
+			if (this.y > this.yMax) {
+				this.ay = 0;
+				this.vy = 0;
+				this.vx = 0;
+				this.unbind("EnterFrame");
+				this.addTween({ alpha: 0 }, "linear", 16, function() {
+					this.e_regadera.cuentaGotas--;
+					this.destroy();
+				});
+			}
+		});
+	},
+	
+	P3_Gota: function(e_rega, x0, y0) {
+		this.e_regadera = e_rega;
+		this.attr({ x: x0, y: y0 });
+		return this;
+	}
+});
+
+
 Crafty.c("P3_Rama", {
 	indexEnredadera: -1,
 	posEnredadera: [],
 	enredadera: [],
+	mostrarOnomatopeya: true, // false si no se debe mostrar onomatopeya al comer la hormiga
+	
 	init: function() {
-		this.requires("2D, Canvas, Image").image("img/act/parque/3/rama.png");
+		this.requires("2D, Canvas, Image, Tweener")
+			.image("img/act/parque/3/rama.png");
 		this.indexEnredadera = 0;
 	},
+	
 	P3_Rama: function(actividad, tope, dc, dch) {
 		this.actividad = actividad;
 		var cont = 1;
@@ -185,21 +240,33 @@ Crafty.c("P3_Rama", {
 		this.dc = dc;
 		this.dch = dch;
 		this.crecimiento = this.posEnredadera[0].cre; //el contador que regula en que momento se crece la redadera
-		this.crecerEnredadera();
+		
+		
+		// la rama aparece desde el suelo
+		var y0 = this._y;
+		this.y += 200;
+		this.addTween({ y: y0 }, "easeOutCubic", 30, function() {
+			this.crecerEnredadera();
+		});
+		
 		return this;
 	},
+	
 	regaderaRociaAgua: function(regadera) {
 		var self = this;
 		if (this.indexEnredadera >= this.posEnredadera.length) {
-			//no dejar que la regadera bote mas agua, hay que ahorrar agua.
+			// no dejar que la regadera bote mas agua, hay que ahorrar agua.
 			regadera.pararRegar();
-			//dibujar flores en la punta de la rama.
-			var flor1 = Crafty.e("2D, Canvas, Image, Tweener").image("img/act/parque/3/flor.png")
-					.attr({x: this.x - 35, y: this.y - 30, z: this.z + 10, rotation: 45, alpha: 0});
-			var flor2 = Crafty.e("2D, Canvas, Image, Tweener").image("img/act/parque/3/flor.png")
-					.attr({x: this.x + 35, y: this.y + 20, z: this.z + 10, alpha: 0});
-			flor1.addTween({alpha: 1}, "easeOutSine", 10);
-			flor2.addTween({alpha: 1}, "easeOutSine", 10, function() {
+			// dibujar flores en la punta de la rama.
+			var flor1 = Crafty.e("2D, Canvas, Image, Tweener")
+					.image("img/act/parque/3/flor.png")
+					.attr({x: this.x - 35, y: this.y - 30, z: this.z + 10, rotation: 70, alpha: 0});
+			var flor2 = Crafty.e("2D, Canvas, Image, Tweener")
+					.image("img/act/parque/3/flor.png")
+					.attr({x: this.x + 35, y: this.y + 20, z: this.z + 10, rotation: -20, alpha: 0});
+			
+			flor1.addTween({ alpha: 1, rotation: 45 }, "easeOutElastic", 45);
+			flor2.addTween({ alpha: 1, rotation: 0 }, "easeOutElastic", 65, function() {
 				self.actividad.ganarActividad();
 			});
 		}
@@ -208,23 +275,30 @@ Crafty.c("P3_Rama", {
 		}
 		return this;
 	},
+	
 	hormigaComeRama: function(hormiga) {
 		this.quitarEnredadera();
-		if (Crafty("Onomatopeya").length < 8) {//verificar que no hayan muchas onomatopyeas para evitar que se llene de entidades
-			if (Crafty.math.randomInt(0, 150) == 0) { //como son tantos llamados a esta funcion se debe controlar
-				Crafty.e("Onomatopeya").Onomatopeya(4, {x: hormiga.x + Crafty.math.randomInt(-100, 100), y: hormiga.y - Crafty.math.randomInt(10, 300)});
-			}
+		if (this.mostrarOnomatopeya) {
+			this.mostrarOnomatopeya = false;
+			var e_ono = Crafty.e("Onomatopeya");
+			e_ono.Onomatopeya(4, {x: hormiga.x + randomInt(-50, 50), y: hormiga.y - randomInt(50, 100)});
+			
+			var self = this;
+			Crafty.e("DelayFrame").delay(function() {
+				self.mostrarOnomatopeya = true;
+			}, randomInt(30, 180));
 		}
 		return this;
 	},
+	
 	crecerEnredadera: function() {
 		var pos = this.posEnredadera[this.indexEnredadera];
 		if (pos) {
 			this.crecimiento += this.dc;
 			if (this.crecimiento > pos.cre) {//si el crecimiento supera el tope establecido, crece la redadera
 				this.enredadera[this.indexEnredadera] = Crafty.e("2D, Canvas, Tweener, Enredadera, sprP3_enredadera" + this.indexEnredadera)
-						.attr({x: pos.x, y: pos.y, z: pos.z, alpha: 0})
-						.addTween({alpha: 1}, "easeOutSine", 50);
+						.attr({x: pos.x, y: pos.y + 10, z: pos.z, alpha: 0})
+						.addTween({ y: pos.y, alpha: 1 }, "easeOutCubic", 50);
 				this.indexEnredadera += 1;
 			}
 		}
@@ -258,15 +332,24 @@ Crafty.c("Onomatopeya", {
 		return this;
 	},
 	Onomatopeya: function(codigo, pos) {
-		this.spr = codigo == 1 ? "sprP3_bien"
-				: (codigo == 2 ? "sprP3_splat"
-						: (codigo == 3 ? "sprP3_kapaw"
-								: "sprP3_crunch"));
-		this.requires(this.spr);
-		this.attr({x: pos.x - this.w / 2, y: pos.y - this.h / 2, z: 30})
-				.addTween({alpha: 0}, "easeOutSine", 80, function() {
+		switch (codigo) {
+			case 1: this.spr = "sprP3_bien"; break;
+			case 2: this.spr = "sprP3_splat"; break;
+			case 3: this.spr = "sprP3_kapaw"; break;
+			default: this.spr = "sprP3_crunch"; break;
+		}
+		
+		var x0 = pos.x - this.w / 2;
+		var y0 = pos.y - this.h;
+		
+		this.addComponent(this.spr)
+			.attr({ x: x0, y: y0, z: 30 })
+			.addTween({ y: y0 - 50 }, "easeOutElastic", 30, function() {
+				this.addTween({ alpha: 0 }, "linear", 20, function() {
 					this.destroy();
 				});
+			});
+			
 		return this;
 	}
 });

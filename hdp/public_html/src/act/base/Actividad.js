@@ -31,6 +31,7 @@ Actividad.prototype.ejecutar = function(nivel, subnivel) {
 	this.subnivel = subnivel;
 	this.terminada = false;
 	this.config = niveles[nivel].subnivel[subnivel];
+	delete this.objAct;
 	this.objAct = this.config.actividad();
 
 	// Obtenemos los recursos de la actividad
@@ -92,10 +93,7 @@ Actividad.prototype.siguienteActiv = function() {
 			this.ejecutar(this.nivel, this.subnivel + 1);
 		}
 	}
-
-
 };
-
 
 // Calcula y muestra la interfaz de puntaje
 Actividad.prototype.mostrarPuntaje = function() {

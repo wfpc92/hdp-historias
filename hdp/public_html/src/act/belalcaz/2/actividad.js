@@ -18,7 +18,9 @@ var ActBelalcaz2 = function() {
 	this.init = function() {
 		this.iniciarComponentes();
 
-		this.e_caballo.espada("sprB2_espada");
+		var self = this;
+		this.e_caballo.espada("sprB2_espada")
+		this.e_caballo.addComponent("Mouse").bind("MouseDown", function() { console.log("asdfg"); self.ganarActividad(); });
 
 		var tr = this.tronco;
 		this.e_caballo.caminar({x: 80, y: this.e_caballo.y}, 20, function() {
@@ -88,7 +90,7 @@ var ActBelalcaz2 = function() {
 	this.iniciarComponentes = function() {
 		//colocar fondo de actividad
 		Crafty.e('2D, Canvas, sprB2_fondo');
-		Crafty.e('2D, Canvas, sprB2_cascada').attr({z: 10});
+		Crafty.e('2D, Canvas, sprB2_cascada').attr({ y: 40, z: 10 });
 		Crafty.e('2D, Canvas, sprB2_plano1').attr({z: 20});
 		var caballo = Crafty.e("Caballo").Caballo("sprB2_caballo");
 		caballo.attr({x: -caballo.w, y: 100, z: 9});
@@ -97,19 +99,19 @@ var ActBelalcaz2 = function() {
 		cocodrilo2.attr({x: 367, y: 71, z: 3, w: cocodrilo1.w * 0.8, h: cocodrilo1.h * 0.8});
 
 		var fondoAgua = Crafty.e("2D, Canvas, sprB2_reflejAgua").attr({x: 215, y: 0, z: 1});
-		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua1").attr({x: -151, y: 432, z: 11});
-		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua2").attr({x: 839, y: 546, z: 18 });
-		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua3").attr({x: 540, y: 492, z: 12 });
-		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua4").attr({x: 389, y: 484, z: 15 });
-		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua5").attr({x: 184, y: 532, z: 12 });
+		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua1").attr({x: 0, y: 432, z: 11});
+		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua2").attr({x: 839, y: 580, z: 18 });
+		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua3").attr({x: 620, y: 570, z: 12 });
+		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua4").attr({x: 400, y: 530, z: 15 });
+		Crafty.e("2D, Canvas, Espuma, sprB2_espumaAgua5").attr({x: 184, y: 565, z: 12 });
 		
 		var tit_cacique = Crafty.e("2D, Canvas, Titulo, Tweener, sprB2_granCacique").attr({ x: 350, y: 50, alpha: 0 });
 		var tit_pioya = Crafty.e("2D, Canvas, Titulo, Tweener, sprB2_pioya").attr({ x: 640, y: 76, alpha: 0 });
 		var tit_tierras = Crafty.e("2D, Canvas, Titulo, Tweener, sprB2_tierras").attr({ x: 915, y: 68, alpha: 0 });
 		
-		var trL_cacique = Crafty.e("2D, Canvas, sprB2_troncoLinea1").attr({x: 350, y: 184, z: 10});
-		var trL_pioya = Crafty.e("2D, Canvas, sprB2_troncoLinea2").attr({x: 642, y: 190, z: 10});
-		var trL_tierras = Crafty.e("2D, Canvas, sprB2_troncoLinea3").attr({x: 950, y: 186, z: 10});
+		var trL_cacique = Crafty.e("2D, Canvas, sprB2_troncoLinea1").attr({x: 330, y: 220, z: 10});
+		var trL_pioya = Crafty.e("2D, Canvas, sprB2_troncoLinea2").attr({x: 630, y: 228, z: 10});
+		var trL_tierras = Crafty.e("2D, Canvas, sprB2_troncoLinea3").attr({x: 945, y: 225, z: 10});
 		trL_cacique.e_titulo = tit_cacique;
 		trL_pioya.e_titulo = tit_pioya;
 		trL_tierras.e_titulo = tit_tierras;

@@ -5,7 +5,7 @@ function spritesMenuCuadros() {
 		sprMC_conCandado: [1,78,76,76]
 	});
 	Crafty.sprite("img/menu-cuadros/numeros.png", {
-		sprMC_numBaud: [0,0,14,21]
+		sprMC_numBaud: [0,0,14,20]
 	});
 	Crafty.sprite("img/menu-cuadros/numeros-act.png", {
 		sprMC_numAct: [0,0,60,60]

@@ -20,6 +20,7 @@ Crafty.c("P4Barras", {
 		this.vx = vx;
 		this.desp = desp;
 		this.dir = dir;
+		this.e_barras = new Array(n); // Arreglo de entidades de barras
 
 		for (var i = 0; i < n; i++) {
 			this.e_barras[i] = Crafty.e("P4Barra, Box2D, " + this.spr);
@@ -27,7 +28,7 @@ Crafty.c("P4Barras", {
 					.P4Barra(this.vx, this.dir)
 					.box2d({
 						bodyType: 'kinestatic',
-						shape: this.dir == 0 ? [[0, 0], [442, 0], [442, 24], [0, 24]]
+						shape: this.dir === 0 ? [[0, 0], [442, 0], [442, 24], [0, 24]]
 								: [[0, 0], [this.e_barras[i].w, 0], [this.e_barras[i].w, 24], [0, 24]]
 					});
 		}
@@ -36,21 +37,24 @@ Crafty.c("P4Barras", {
 });
 
 Crafty.c("P4Barra", {
-	dir: "",
+	dir: -1,
 	vx: 0,
 	init: function() {
 		this.requires("2D, Canvas");
 	},
+	
 	P4Barra: function(vx, dir) {
 		this.vx = vx;
 		this.dir = dir;
-                if(this.dir != 0){
-                    this.requires("BarraColision");
-                }
+			if(this.dir !== 0){
+				this.requires("BarraColision");
+			}
 		return this;
 	},
+	
 	arrancar: function() {
-		this.body.SetLinearVelocity(new b2Vec2(this.dir * this.vx, 0))
+		this.body.SetLinearVelocity(new b2Vec2(this.dir * this.vx, 0));
+		
 		this.bind("EnterFrame", function() {
 			if (this.x + this.w < 0) {
 				this.body.SetPosition(new b2Vec2(1280 / 32, this.y / 32));
@@ -59,11 +63,12 @@ Crafty.c("P4Barra", {
 				this.body.SetPosition(new b2Vec2(-this.w / 32, this.y / 32));
 			}
 		});
+		
 		return this;
 	}
 });
 
-// Parte de Monumento de PArque Caldas arrastrable con soporte de física
+// Parte de Monumento de Parque Caldas arrastrable con soporte de física
 Crafty.c("P4Cofre", {
 	num: 0, // ID del bloque
 	b2shape: null, // Arreglo de posiciones [x,y] relativas a la entidad. Describe el polígono de colisión
@@ -79,13 +84,16 @@ Crafty.c("P4Cofre", {
 	init: function() {
 		this.requires("B2arrastre, Tweener, sprP4_cofre");
 		this.arrastrable = true;
+		
 		this.bind("MouseUp", function(e) {
 			var self = this;
 			if (this.insertable) {
 				var pos = mouseCoords(e);
+				
 				// obtenemos las coordenadas de destino
 				var band = false;
 				var self = this;
+				
 				Crafty("P4Hueco").each(function() {
 					var destX1 = this._x;
 					var destY1 = this._y;
@@ -102,19 +110,30 @@ Crafty.c("P4Cofre", {
 					this.enchoclar();
 				}
 			}
+		
 		}).bind("EnterFrame", function() {
-                    //verificar el caso en que se haya salido del cuadro (escena(
-                    //entonces se trae hacia el centro para que se pueda arrastrar ed nuevo.
-                    if(this.y < -50 || this.y > 850 || this.x < -50 || this.x > 1320){
-                        this.body.SetPosition(new b2Vec2(632/32.0, 594/32.0));
-                    } 
-                })
+			//verificar el caso en que se haya salido del cuadro (escena(
+			//entonces se trae hacia el centro para que se pueda arrastrar ed nuevo.
+			if(this.y < -50 || this.y > 850 || this.x < -50 || this.x > 1320){
+				this.body.SetPosition(new b2Vec2(632/32.0, 594/32.0));
+			}
+			
+			if (this.b2a.mJoint) {
+				var mJointLength = this.b2a.mJoint.m_C.x + this.b2a.mJoint.m_C.y;
+				if (mJointLength > 3) {
+					this.b2a.soltar();
+				}
+			}
+		});
+		
 		return this;
 	},
+	
 	P4Cofre: function(objPadre, b2shape) {
 		this._padre = objPadre;
 		this._b2shape = b2shape;
 		this.areaMap([0, 0], [0, this.h], [this.w, this.h], [this.w, 0]);
+		
 		if (b2shape.length > 0) {
 			this.b2shape = b2shape;
 			this.box2d({
@@ -129,30 +148,32 @@ Crafty.c("P4Cofre", {
 		this.B2arrastre(this._padre.b2a);
 		return this;
 	},
-        enchoclar : function(){
-            this.arrastrable = false;
-            this.unbind("MouseUp");
-            this.unbind("MouseDown");
-            this.unbind("MouseMove");
+	
+	enchoclar : function(){
+		this.arrastrable = false;
+		this.unbind("MouseUp");
+		this.unbind("MouseDown");
+		this.unbind("MouseMove");
 
-            world.DestroyBody(this.body);
-            this.body = null;
-            var grados = this.rotation;
-            while (grados < 0) {
-                    grados += 360;
-            }
-            while (grados >= 360) {
-                    grados -= 360;
-            }
-            this.rotation = grados;
-            this.addTween({
-                    rotation: (grados > 180) ? 360 : 0,
-                    x: this.destX1,
-                    y: this.destY1
-            }, 'easeInOutQuad', 25, function() {
-                    this.fijar();
-            });  
-        },
+		world.DestroyBody(this.body);
+		this.body = null;
+		var grados = this.rotation;
+		while (grados < 0) {
+				grados += 360;
+		}
+		while (grados >= 360) {
+				grados -= 360;
+		}
+		this.rotation = grados;
+		this.addTween({
+			rotation: (grados > 180) ? 360 : 0,
+			x: this.destX1,
+			y: this.destY1
+		}, 'easeInOutQuad', 25, function() {
+			this.fijar();
+		});  
+	},
+	
 	// Fijar el bloque en su lugar y no permitir que lo vuelvan a manipular
 	fijar: function() {
 		var par = new Particulas({
@@ -171,6 +192,7 @@ Crafty.c("P4Cofre", {
 				ent.reel("giro", 400, [[0, 0], [32, 0], [64, 0], [96, 0]]).animate("giro", -1);
 			}
 		});
+		
 		par.iniciar();
 		this._padre.bloqueFijado(); // Notificar al padre
 		return this;
