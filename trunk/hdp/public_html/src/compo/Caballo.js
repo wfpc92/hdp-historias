@@ -73,9 +73,9 @@ Crafty.c('Caballo', {
      */
     saltar: function() {
         this.z = 15;
-        this.y -= 100;
-        this.svx = 10;
-        this.oscilarX(90, 28);
+        this.y -= 80;
+        this.svx = 9.2;
+        this.oscilarX(80, 28);
         //Crafty.e("2D,Canvas,Color,Draggable").color('blue').attr({x: this.x, y: this.y, w: 50, h: 50})
         //Crafty.e("2D,Canvas,Color,Draggable").color('blue').attr({x: this.x, y: this.y, w: 70, h: 70})
 
@@ -83,6 +83,7 @@ Crafty.c('Caballo', {
     _calculo: function(t) {
         return 1 - 4 * (t - 0.5) * (t - 0.5);
     },
+	
     // Oscilar un deltaX como máximo alrededor de la posición actual
     oscilarX: function(amplitud, periodo) {
         this.dt = 1 / periodo;

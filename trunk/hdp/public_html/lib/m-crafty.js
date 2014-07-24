@@ -3211,8 +3211,7 @@ Crafty.DrawManager = (function () {
                 current;
 
             //ctx.clearRect(rect._x, rect._y, rect._w, rect._h);
-			ctx.clearRect(0, 0, 1280, 800);
-
+			
             //sort the objects by the global Z
             q.sort(zsort);
             for (; i < l; i++) {
@@ -3277,30 +3276,35 @@ Crafty.DrawManager = (function () {
          */
 
         renderCanvas: function () {
-            var l = changed_objs.length;
-            /*if (!l && !dirtyViewport) {
+            // @danyalejandro: Parece que más FPS se pierde al renderizar por partes que simplemente volviendo a dibujar todo
+			var l = changed_objs.length;
+            if (!l && !dirtyViewport) {
                 return;
-            }*/
+            }
 
-            var i = 0,
+            
+			var i = 0,
                 rect, q,
                 j, len, obj, ent, ctx = Crafty.canvas.context,
                 DM = Crafty.DrawManager;
 
-
-            /*if (dirtyViewport) {
+			
+            if (dirtyViewport) {
                 var view = Crafty.viewport;
                 ctx.setTransform(view._scale, 0, 0, view._scale, view._x*view._scale, view._y*view._scale);
-
-            }*/
+            }
+			
+			Crafty.DrawManager.drawAll();
+			return;
+			
+			/*
             //if the amount of changed objects is over 60% of the total objects
             //do the naive method redrawing
             // TODO: I'm not sure this condition really makes that much sense!
             //if (l / DM.total2D > 0.6 || dirtyViewport) {
-				ctx.fillStyle = "black";
-				ctx.clear();
+				//ctx.clear();
 				DM.drawAll();
-				rectManager.clean();
+				//rectManager.clean();
 				return;
             //}
 
@@ -3381,8 +3385,7 @@ Crafty.DrawManager = (function () {
                 }
             }
             //Clean up lists etc
-            rectManager.clean();
-			*/
+            rectManager.clean();*/
         },
 
         /**@

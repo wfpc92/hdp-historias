@@ -318,6 +318,7 @@ var Recursos = {
 				"img/act/parque/3/flor.png",
 				"img/act/parque/3/fondo.jpg",
 				"img/act/parque/3/gota.png",
+				"img/act/parque/3/etiqueta.png",
 				"img/act/parque/3/hormiga_camina.png",
 				"img/act/parque/3/hormiga_muerde.png",
 				"img/act/parque/3/hormiga_muerta.png",
@@ -371,9 +372,9 @@ var Recursos = {
 			rutas: [
 				"img/act/parque/6/fondo.jpg",
 				"img/act/parque/6/casas.png",
-				"img/act/parque/6/catedral.png",
-				"img/act/parque/6/catedral_cupula.png",
 				"img/act/parque/6/catedral_partes.png",
+				"img/act/parque/6/catedral_partes_normal.png",
+				"img/act/parque/6/catedral_partes_huecos.png",
 				"img/act/parque/6/nubes.png",
 				"img/act/parque/6/piso.png"
 			],

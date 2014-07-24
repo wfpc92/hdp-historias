@@ -110,6 +110,7 @@ Crafty.c("B2arrastre", {
 		this.b2a = objB2A;
 		
 		this.bind("MouseDown", function(e) {
+			console.log("MouseDown")
 			if (this.arrastrable) {
 				var pos = objB2A.b2dPosMouse(e);
 				this.b2a.crearMouseJoint(this, pos.x, pos.y);

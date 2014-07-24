@@ -30,7 +30,7 @@ niveles[2] = {
 			duracion: 32000,
 			fondo: 'img/act/parque/3/fondo.jpg',
 			dato: "Las \bplacas\b que adornan el\n monumento al sabio Caldas exponen\nsu \bfirma\b, una muestra de la planta\n trepadora \bBomarea caldasii\b (llamada\n así en su honor), la figura de un\n \boctante\b y un \bhipsómetro\b, un invento\n suyo.",
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: false, y: 260 },
 			actividad: function() {
 				var actividad = new ActParque3();
 				return actividad;
@@ -63,7 +63,7 @@ niveles[2] = {
 			id: 6,
 			duracion: 40000,
 			fondo: 'img/act/parque/6/fondo.jpg',
-			dato: 'En el parque se encuentra la Catedral\nBasílica Nuestra Señora de la Asunción,\nuna iglesia católica ofrendada a la\nVirgen María terminada de construir en\njunio de 1906 sobre los cimientos de\nantiguas iglesias. Ha sido afectada por\nvarios terremotos, que le han requerido\nvarias reconstrucciones. En ella se\ncentran varios actos religiosos de la\nSemana Santa.',
+			dato: 'En el parque se encuentra la \bCatedral \nBasílica Nuestra Señora de la Asunción\b, \nuna iglesia católica ofrendada a la \n\bVirgen María\b, construída en 1906 sobre \nlos cimientos de antiguas iglesias. \nHa sido afectada por varios \bterremotos\b, \nque le han requerido reconstrucciones. \nEn ella se centran varios actos \nreligiosos de la \bSemana Santa\b.',
 			pista: { ladoIzq: true, y: 90 },
 			actividad: function() {
 				var actividad = new ActParque6();
