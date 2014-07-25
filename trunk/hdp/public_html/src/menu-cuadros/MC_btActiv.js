@@ -20,7 +20,6 @@ Crafty.c("MC_btActiv", {
 		
 		this.bind("MouseUp", function() {
 			if (!this.bloqueado) {
-				console.log("Abriendo actividad " + this.numC + " - " + this.numAct);
 				this.bloqueado = true;
 				
 				this.iluminar("#FFFFFF", 0.5, 5, function() {
@@ -114,7 +113,7 @@ Crafty.c("MC_btActiv", {
 	// actualiza el número de baudilios activados para este botón
 	actualizarBaudAct: function() {
 		this.e_baudiliosActiv.numBaudilios(progreso[this.numC - 1].baudilios[this.numAct]);
-		this.e_numAct.sprite(0, (this.numAct) * 60);
+		this.e_numAct.sprite(0, (this.numAct) * 61);
 		return this;
 	},
 	
@@ -151,6 +150,4 @@ Crafty.c("MC_btActiv", {
 		
 		return this;
 	}
-	
-	
 });

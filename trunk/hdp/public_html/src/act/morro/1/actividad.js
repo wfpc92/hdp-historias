@@ -27,7 +27,7 @@ function ActMorro1() {
 		}
 
 		this.toque = new ToqueRapido();
-		this.toque.incremento = ((debug) ? 40 : 7);
+		this.toque.incremento = ((debug) ? 40 : 6);
 		this.toque
 				.init(this)
 				.callbackCambio(this.cambioVal)
@@ -79,6 +79,8 @@ function ActMorro1() {
 	this.cambioVal = function cambioVal() {
 		var val = this.val;
 		var numCapa = Math.floor(val / 5);
+		if (numCapa > 20) numCapa = 20; // Evitar error JS por seleccionar capas no existentes
+		
 		this._padre.mostrarCapa(numCapa);
 		this._padre.numCapaActual = numCapa;
 		

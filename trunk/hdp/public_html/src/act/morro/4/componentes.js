@@ -14,8 +14,8 @@ Crafty.c("Morrito", {
 		this.e_hueco = Crafty.e('2D, Canvas, sprM4_hueco').attr({ visible: false });
 		this.e_calaca = Crafty.e('2D, Canvas, sprM4_calavera, Tweener').attr({ visible: false });
 		this.reel("saleRaiz", 250, [[0,0],[106,0],[212,0],[318,0],[424,0],[530,0]]);
-		
 		this.areaMap(new Crafty.polygon([5,66], [61,25], [109,86], [101,118], [28,119]));
+		
 		this.bind('MouseUp', this.arrancar);
 	},
 	
@@ -24,6 +24,15 @@ Crafty.c("Morrito", {
 		this.nid = nid;
 		this.e_puntaje = e_punt;
 		this.yIni = yIni;
+		return this;
+	},
+	
+	// animación de elevar y desaparecer la calavera (para el final)
+	elevarCalaca: function() {
+		this.unbind('MouseUp');
+		if (!this.trampa) {
+			this.e_calaca.addTween({ y: this._y - 100, alpha: 0 }, "easeInCubic", 38, function() { this.destroy(); });
+		}
 		return this;
 	},
 	
@@ -42,12 +51,13 @@ Crafty.c("Morrito", {
 			//animar morrito, direccion de movimiento
 			this.bloqueado = true;
 			this.animate("saleRaiz", 1);
-			this.addTween({ y: (this.yIni - 150), alpha: 0 }, 'easeOutCubic', 35, function() {	
+			this.addTween({ y: (this.yIni - 150), alpha: 0 }, 'easeOutCubic', 30, function() {	
+				this.visible = false;
 				if (!this.trampa) {
-					this.e_calaca.addTween({ y: (this.e_calaca.y - 20) }, 'easeOutCubic', 15);
+					this.e_calaca.addTween({ y: (this.e_calaca.y - 20) }, 'easeOutCubic', 10);
 					this.arrancado = true;
 				}
-				this.visible = false;
+				
 				this.e_puntaje.reportarArranque(this);
 			});
 		}
@@ -64,8 +74,8 @@ Crafty.c("Morrito", {
 		this.arrancado = false;
 		this.visible = true;
 		this.reelPosition(0).pauseAnimation();
-		this.e_calaca.addTween({ y: (this.e_calaca.y + 20) }, 'easeInCubic', 10);
-		this.addTween({ y: this.yIni, alpha: 1 }, 'easeInCubic', 15, function() {
+		this.e_calaca.addTween({ y: (this.e_calaca.y + 20) }, 'easeInCubic', 8);
+		this.addTween({ y: this.yIni, alpha: 1 }, 'easeInCubic', 10, function() {
 			this.e_hueco.visible = false;
 			this.e_calaca.visible = false;
 			this.bloqueado = false;
@@ -74,22 +84,67 @@ Crafty.c("Morrito", {
 	}
 });
 
+// Un dígito del puntaje
+Crafty.c("M4_Digito", {
+	num: 1, // número que muestra este dígito
+	y0: 0,
+	
+	init: function() {
+		this.requires("2D, Canvas, Tweener, sprM4_num1");
+	},
+	
+	M4_Digito: function() {
+		// almacena el y inicial
+		this.y0 = this.y;
+		return this;
+	},
+	
+	setDigito: function(num) {
+		
+		if (this.num !== num) {
+			this.cancelTweener();
+			
+			this.addTween({ y: this.y0 - 10, alpha: 0.1 }, "easeInCubic", 5, function() {
+				this.removeComponent("sprM4_num" + this.num).addComponent("sprM4_num" + num);
+				this.num = num;
+				this.addTween({ y: this.y0, alpha: 1 }, "easeOutCubic", 5);
+			});
+		}
+		
+		return this;
+	}
+});
 
-Crafty.c('Puntaje', {
+
+Crafty.c('M4_Puntaje', {
 	numFaltan: 0, // Calaveras que faltan por desenterrar
 	morritos: null, // referencia al arreglo de morritos
 	numArrancados: 0, // cuenta morritos ya arrancados
 	maxEnterrar: 3, // número máximo de morritos a volver a enterrar
 	_padre: null,
 	
+	e_error: null, // Entidad alerta que se muestra en error
+	e_digito0: null, // entidades de los 2 digitos
+	e_digito1: null,
+	
 	init: function() {
 		this.requires("2D");
+		this.e_digito0 = Crafty.e("M4_Digito");
+		this.e_digito1 = Crafty.e("M4_Digito");
+		this.e_error = Crafty.e("Advertencia");
+		this.e_digito1.x += 75;
+		
+		this.attach(this.e_digito0);
+		this.attach(this.e_digito1);
 	},
 	
 	Puntaje: function(padre, numIni) {
 		this._padre = padre;
 		this.morritos = padre.morritos;
 		this.numFaltan = numIni;
+		
+		this.e_digito0.M4_Digito();
+		this.e_digito1.M4_Digito();
 		this.actualizar();
 	},
 	
@@ -110,6 +165,9 @@ Crafty.c('Puntaje', {
 		else {
 			// trampa: volver a enterrar este morro y otros 3 destapados aleatorios
 			var i;
+			
+			// Mostramos la alerta de error
+			this.e_error.attr({ x: morro._x + 70, y: morro._y + 110 }).mostrar(1, 60);
 			
 			morro.enterrar();
 			
@@ -132,12 +190,21 @@ Crafty.c('Puntaje', {
 	},
 	
 	actualizar: function() {
-		Crafty("PuntajeLetra").destroy();
-		var numString = this.numFaltan + '';
-		for (var i = 0; i < numString.length; i++) {
-			var letra = Crafty.e('PuntajeLetra, 2D, Canvas, Sprite, sprM4_numero, PosicionXY');
-			letra.attr({x: this._x + (letra.w * i), y: this._y, z: this._z});
-			letra.sprite(numString[i], 0);
+		console.log("actualizar numFaltan = " + this.numFaltan)
+		if (this.numFaltan > 9) {
+			// Número de 2 digitos
+			if (this.e_digito0.num !== 1) {
+				this.e_digito0.setDigito(1);
+			}
+			
+			var decimas = this.numFaltan - 10;
+			this.e_digito1.visible = true;
+			this.e_digito1.setDigito(decimas);
+		}
+		else {
+			// Número de 1 digito
+			this.e_digito0.setDigito(this.numFaltan);
+			this.e_digito1.visible = false;
 		}
 		
 		return this;

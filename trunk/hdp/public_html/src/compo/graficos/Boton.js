@@ -68,6 +68,12 @@ Crafty.c("Boton", {
 		return this;
 	},
 	
+	// muestra el botón en un fadeIn
+	animMostrar: function() {
+		this.attr({ alpha: 0, visible: true }).addTween({ alpha: 1.0 }, "linear", 5);
+		return this;
+	},
+	
 	// Oculta de inmediato el botón y su entidad de estado activo
 	ocultar: function() {
 		this.visible = false;

@@ -10,11 +10,8 @@ var ActMorro4 = function() {
 	    
     this.init = function() {
 		Crafty.e('Fondo').image(gesActividad.config.fondo);
-		Crafty.e('2D, Canvas, Image')
-				.attr({ z: 2 })
-				.image('img/act/morro/4/montana.png');
 		
-		this.e_puntaje = Crafty.e('Puntaje').attr({ x: 960, y: 21, z: 1 });
+		this.e_puntaje = Crafty.e('M4_Puntaje').attr({ x: 1020, y: 40, z: 1 });
 		this.e_puntaje.numero = 14;
 
 		this.particulas = new Particulas({
@@ -85,7 +82,15 @@ var ActMorro4 = function() {
 
 	this.ganarActividad = function() {
 		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
+		
+		for (i = 0 ; i < 18 ; i++) {
+			this.morritos[i].elevarCalaca();
+		}
+		
+		Crafty.e("DelayFrame").delay(function() {
+			gesActividad.mostrarPuntaje();
+		}, 60);
+		
 	};
 
 	//se invoca cuando se termina el tiempo, se gana o se pierde la actividad

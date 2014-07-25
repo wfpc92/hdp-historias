@@ -25,7 +25,7 @@ Crafty.c("MC_Cuadro", {
 	yCentro: 0,
 	
 	e_cGrande: null, // entidad del cuadro grande
-	ordenActiv: new Array(6), // Orden de las actividades
+	ordenActiv: null, // Orden de las actividades
 	_actividades: null, // Referencia al arreglo de entidades de actividades
 	dirOcultar: 0, // Dirección hacia la cual se desliza el cuadro para ocultarse
 	e_grilla: null, // Referencia a la grilla
@@ -37,6 +37,9 @@ Crafty.c("MC_Cuadro", {
 
 	init: function() {
 		this.requires("2D, Canvas, Tint, Tweener, Mouse");
+		this.e_baudilios = Crafty.e("MC_Baudilios");
+		
+		this.ordenActiv = new Array(6);
 	},
 
 	MC_Cuadro: function(num, xi, yi, xc, yc, act, grilla, sombra) {
@@ -48,38 +51,38 @@ Crafty.c("MC_Cuadro", {
 		this.e_grilla = grilla;
 		this.e_sombra = sombra;
 		
-		this.requires("sprMC_c" + num);
-		
-		this.e_baudilios = Crafty.e("MC_Baudilios");
-		
 		switch (num) {
 			case 1: this.ordenActiv = [3,4,1,6,5,2];
+					this.attr({ w: 367, h: 254 });
 					this.dirOcultar = 0;
 					this.areaMap([38,38],[273,38],[273,180],[38,180]);
-					this.e_baudilios.attr({x: this.x + 78, y: this.y + 190}).MC_Baudilios();
+					
 			break;
 			case 2: this.ordenActiv = [1,3,4,5,2,6];
+					this.attr({ w: 248, h: 343 });
 					this.dirOcultar = 0;
 					this.areaMap([20,21],[178,21],[178,282],[20,282]);
-					this.e_baudilios.attr({x: this.x + 20, y: this.y + 290}).MC_Baudilios();
 					this.vertical = true;
 			break;
 			case 3: this.ordenActiv = [1,2,3,4,5,6];
+					this.attr({ w: 395, h: 256 });	
 					this.dirOcultar = 3;
 					this.areaMap([41,29],[294,29],[294,183],[41,183]);
-					this.e_baudilios.attr({x: this.x + 86, y: this.y + 190}).MC_Baudilios();
 			break;
 			case 4: this.ordenActiv = [1,2,3,4,5,6];
+					this.attr({ w: 376, h: 256 });	
 					this.dirOcultar = 1;
 					this.areaMap([40,39],[280,39],[280,185],[40,185]);
-					this.e_baudilios.attr({x: this.x + 77, y: this.y + 190}).MC_Baudilios();
 			break;
 			case 5: this.ordenActiv = [1,2,3,4,5,6];
+					this.attr({ w: 350, h: 242 });
 					this.dirOcultar = 1;
 					this.areaMap([36,36],[259,36],[259,172],[36,172]);
-					this.e_baudilios.attr({x: this.x + 70, y: this.y + 180}).MC_Baudilios();
 					break;
 		}
+		
+		this.e_baudilios.MC_Baudilios(this.num);
+		this.attach(this.e_baudilios);
 
 		var props = { x: 128, y: 85, z: 90, alpha: 0.0, visible: false };
 		if (this.vertical) props = { x: 385, y: 8, z: 90, alpha: 0.0, visible: false };
@@ -89,8 +92,6 @@ Crafty.c("MC_Cuadro", {
 								.attr(props);
 		this.wIni = this._w;
 		this.hIni = this._h;
-		
-		this.attach(this.e_baudilios);
 		
 		return this;
 	},

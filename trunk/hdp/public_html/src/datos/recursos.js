@@ -11,7 +11,8 @@ var Recursos = {
 			"img/global/fondo-pistas.png", "img/global/pistas.png",
 			"img/puntaje/botones.png", "img/puntaje/blo-rojo.png", "img/puntaje/muy-bien.png", "img/puntaje/txt-puntuacion.png", "img/puntaje/cortinas.png", "img/puntaje/digitos.png", "img/puntaje/baudilio.png",
 			
-			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png","img/particulas/star.png","img/particulas/triangulo.png",
+			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png",
+			"img/particulas/star.png","img/particulas/triangulo.png","img/particulas/cubo40.png",
 			
 			"img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png", "img/puntaje/titulos.png",
 			
@@ -114,7 +115,6 @@ var Recursos = {
 			spritesListas: false,
 			rutas: [
 				"img/act/morro/4/fondo.jpg",
-				"img/act/morro/4/montana.png",
 				"img/act/morro/4/calaca.png",
 				"img/act/morro/4/morrito.png",
 				"img/act/morro/4/numeros.png"
@@ -433,18 +433,10 @@ var Recursos = {
 			cargado: false,
 			spritesListas: false,
 			rutas: [
-				"img/act/puente/4/barro.png",
-				"img/act/puente/4/barro_cal.png",
-				"img/act/puente/4/cal.png",
 				"img/act/puente/4/fondo.jpg",
-				"img/act/puente/4/fondo_azul.png",
-				"img/act/puente/4/iconos.png",
-				"img/act/puente/4/mezcla_final.png",
-				"img/act/puente/4/particula.png",
-				"img/act/puente/4/sangre.png",
-				"img/act/puente/4/sangre_barrro.png",
-				"img/act/puente/4/sangre_cal.png",
-				"img/act/puente/4/vasijas.png"
+				"img/act/puente/4/fichas.png",
+				"img/act/puente/4/olla.png",
+				"img/act/puente/4/tablero.png"
 			],
 			musica: ["puente4", "audio/act/puente/puente4.ogg"],
 			initSprites: spritesPuente4
