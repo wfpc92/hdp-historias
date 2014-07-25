@@ -101,7 +101,7 @@ Crafty.defineScene("menuPrincipal", function() {
 		}, 1000);
 
 		// luego de un momento, los botones aparecen
-		Crafty.e("Delay").delay(function() {
+		Crafty.e("DelayFrame").delay(function() {
 			// btJugar sube detrás de las montañas
 			e_btJugar.animMostrar();
 
@@ -109,7 +109,7 @@ Crafty.defineScene("menuPrincipal", function() {
 			e_btConfig.animMostrar(0);
 			e_btAudio.animMostrar(200);
 			e_btLike.animMostrar(400);
-		}, 2000);
+		}, 120);
 	}
 
 	// Animación de transición desde el menú principal al menú de configuración

@@ -172,9 +172,9 @@ ActPuntaje.prototype.animMostrar = function() {
 				
 				self.e_dato.animMostrar(function() {
 					self.e_comillaFin.visible = true;
-					self.e_btSalir.animMostrar();
-					self.e_btRepetir.animMostrar();
-					self.e_btSiguiente.animMostrar();
+					self.e_btSalir.aparecer();
+					self.e_btRepetir.aparecer();
+					self.e_btSiguiente.aparecer();
 				});	
 	
 				self.e_datoImg.attr({visible: true})

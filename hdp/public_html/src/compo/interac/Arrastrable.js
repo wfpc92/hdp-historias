@@ -32,7 +32,6 @@ Crafty.c('Arrastrable', {
 		
 				Crafty.addEvent(this, Crafty.stage.elem, this.eventoMove, this.Art_arrastrar);
 				Crafty.addEvent(this, Crafty.stage.elem, this.eventoUp, this.Art_soltar);
-
 				
 				var pos = mouseCoords(e);
 				this.mouseIniX = pos.x;
@@ -122,7 +121,7 @@ Crafty.c('Arrastrable', {
 				this.unbind("MouseUp");
 				
 				// ajustarse al cajón
-				this.addTween({x: this.areaCajon.x, y: this.areaCajon.y, rotation: 0}, 'easeOutCubic', 15, function() {
+				this.addTween({x: this.areaCajon.x, y: this.areaCajon.y, rotation: 0}, 'easeOutCubic', 10, function() {
 					this.addComponent("Completo");
 					if (act.arrastreCompleto) {
 						act.arrastreCompleto(this);

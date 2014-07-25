@@ -3,7 +3,7 @@ var gesActividad; // Inicia las actividades
 var actPuntaje; // Muestra el panel de puntaje y dato
 var gesSonido; // Gestor de audios
 var world = null; // Mundo Box2D
-var debug = true; // True para activar el modo desarrollador
+var debug = false; // True para activar el modo desarrollador
 
 window.onload = function() {
 	Crafty.init(1280, 800);
@@ -15,9 +15,7 @@ window.onload = function() {
 
 	// Cargamos progreso de memoria
 	var progresoGuardado = Crafty.storage('progreso');
-	if (progresoGuardado) {
-		progreso = progresoGuardado;
-	}
+	if (progresoGuardado) { progreso = progresoGuardado; }
 
 	// Inicializamos el objeto único global Box2D
 	Crafty.box2D.init(0, 10, 32, true);
@@ -31,10 +29,11 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		gesActividad.ejecutar(3, 2); // Nivel de 0 a 4, Subnivel de 0 a 5
+		//gesActividad.ejecutar(0, 3); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
-		//Crafty.enterScene("Inicio");
-		gesSonido.silenciar();
+		Crafty.enterScene("Inicio");
+		//Crafty.enterScene("MenuCuadros");
+		//gesSonido.silenciar();
 	});
 
 	// Desbloquear todos los niveles en modo debug
@@ -44,4 +43,11 @@ window.onload = function() {
 			progreso[i].puntaje = [1, 1, 1, 1, 1, 1];
 		}
 	}
+	/*
+	if (cocoon) {
+		CocoonJS.App.setAppShouldFinishCallback(function() {
+			alert("Hola mundo!");
+			return false;
+		});
+	}*/
 };

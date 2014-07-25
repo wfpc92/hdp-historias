@@ -186,10 +186,10 @@ Crafty.c("TestEspacio", {
 		this.e_resultado.attr({ x: this.e_opcion._x + this.e_opcion._w, y: this._y - 75 });
 		
 		if (this.resultado) {
-			this.e_resultado.mostrar(0, 60);
+			this.e_resultado.mostrar(0, 90);
 		}
 		else {
-			this.e_resultado.mostrar(1, 60);
+			this.e_resultado.mostrar(1, 90);
 		}
 		
 		return this;

@@ -79,7 +79,7 @@ var ActBelalcaz2 = function() {
 					recursion--;
 				}
 			}
-		}, 40);
+		}, 35);
 		
 		Crafty.e("Gesto")
 				.Gesto(2, { coords: [466, 606], coordsFin: [467, 231], repetir: 2, retardo: 40, desplX: 304 });

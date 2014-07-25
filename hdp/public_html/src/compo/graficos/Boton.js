@@ -69,7 +69,7 @@ Crafty.c("Boton", {
 	},
 	
 	// muestra el botón en un fadeIn
-	animMostrar: function() {
+	aparecer: function() {
 		this.attr({ alpha: 0, visible: true }).addTween({ alpha: 1.0 }, "linear", 5);
 		return this;
 	},
