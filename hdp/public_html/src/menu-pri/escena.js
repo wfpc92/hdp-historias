@@ -231,13 +231,14 @@ Crafty.defineScene("menuPrincipal", function() {
 		this.cambiarSprite(mute);
 	});
 	
-	// Like en facebook?
+	// Like en facebook
 	e_btLike.bind("MouseUp", function() {
 		CocoonJS.App.openURL("https://www.facebook.com/historiaspopayan");
 	});
 	
 	// Al hacer click en btAtras, ocultar el menú de configuración y volver al menú principal
 	e_btAtras.bind("MouseUp", function() {
+		console.log("MouseUp bloqueado=" + this.bloqueado)
 		if (!this.bloqueado) {
 			this.animEsconder(0);
 			animSalirMenuConfig();

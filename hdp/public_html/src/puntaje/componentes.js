@@ -1,20 +1,44 @@
 // Un baudilio
 Crafty.c("AP_Baudilio", {
 	frame: 0, // fotograma de la animación de llenado [0:5]
+	x0: 0, // Coords. iniciales para resetear
+	y0: 0,
+	w0: 0,
+	h0: 0,
+	
 	init: function() {
-		this.requires("2D, Canvas, sprAP_baudilio, Delay, Tweener");
+		this.requires("2D, Canvas, sprAP_baudilio, Tweener");
+		this.attr({ z: 1020, alpha: 0, visible: false });
 	},
+	
+	AP_Baudilio: function(x0, y0) {
+		this.x0 = x0;
+		this.y0 = y0;
+		this.w0 = 107;
+		this.h0 = 99;
+		this.x = x0;
+		this.y = y0;
+		return this;
+	},
+	
 	avanzar: function() {
 		this.frame++;
 		this.sprite(0, (this.frame * 99));
 		return this;
 	},
+	
 	// Destacar el baudilio
 	brillar: function() {
-		this.addTween({x: this._x - 5, y: this._y - 5, w: this._w + 10, h: this._h + 10}, "easeOutBounce", 30);
+		this.cancelTweener().addTween({
+				x: this.x0 - 5,
+				y: this.y0 - 5,
+				w: this.w0 + 10,
+				h: this.h0 + 10
+			}, "easeOutBounce", 30);
+		
 		var part = new Particulas({
 			componentes: "sprAP_particula, SpriteAnimation",
-			x: this._x + 5, y: this._y, z: this._z,
+			x: this.x0 + 5, y: this.y0, z: this._z,
 			vx: 0,
 			deltaVx: 2,
 			periodo: 25,
@@ -28,17 +52,38 @@ Crafty.c("AP_Baudilio", {
 			}
 		});
 		part.iniciar();
+		
+		return this;
 	},
+	
 	lleno: function() {
 		return (this.frame >= 5);
+	},
+	
+	// animación de aparecer
+	// incluye un retardo en delay
+	animAparecer: function(frames) {
+		this.reset();
+		this.visible = true;
+		
+		var self = this;
+		Crafty.e("DelayFrame").delay(function() {
+			self.alpha = 1;
+		}, frames);
+		
+		return this;
 	},
 	
 	// Vacía el baudilio para poder volverse a llenar desde el principio
 	reset: function() {
 		this.frame = 0;
 		this.sprite(0, 0);
-		this.w = 107;
-		this.h = 99;
+		this.x = this.x0;
+		this.y = this.y0;
+		this.w = this.w0;
+		this.h = this.h0;
+		this.alpha = 0;
+		this.visible = false;
 		return this;
 	}
 });
@@ -73,14 +118,6 @@ Crafty.c("AP_Digito", {
 
 		this.numero = num;
 		return this;
-	},
-	// Proxy de funciones de incremento variable
-	incrementar: function(n) {
-		var incr = this.numero + n;
-		if (incr > 9)
-			incr = 0;
-		this.digito(incr);
-		return incr;
 	}
 });
 
@@ -120,33 +157,31 @@ Crafty.c("AP_Numero", {
 		this.e_digito3 = Crafty.e("AP_Digito, Persist").attr({x: this._x + 150, y: this._y, z: this._z, visible: false});
 		return this;
 	},
+	
 	// Incrementar la cuenta del número completo
 	aumentar: function() {
 		var dif = this.total - this.cuenta;
-		var incr;
-		if (dif > 300)
-			incr = 10;
-		else if (dif > 50)
-			incr = 5;
-		else
-			incr = 1;
+		
+		var incr, num;
+		if (dif > 1000) incr = 50;
+		else if (dif > 100) incr = 10;
+		else incr = 1;
 
 		// incrementar contadores
-		this.cuenta = this.cuenta + incr;
-		this.cuentaLlenar = this.cuentaLlenar + incr;
+		this.cuenta += incr;
+		this.cuentaLlenar += incr;
 
-		// actualizar sprite de digitos
-		num = this.e_digito3.incrementar(incr);
-		if (num === 0) {
-			num = this.e_digito2.incrementar(1);
-			if (num === 0) {
-				num = this.e_digito1.incrementar(1);
-				if (num === 0) {
-					this.e_digito0.incrementar(1);
-				}
-			}
-		}
-
+		var d3 = Math.floor(this.cuenta % 10);
+		var d2 = Math.floor((this.cuenta / 10) % 10);
+		var d1 = Math.floor((this.cuenta / 100) % 10);
+		var d0 = Math.floor((this.cuenta / 1000) % 10);
+		
+		// actualizar sprites de los 4 digitos
+		this.e_digito0.digito(d0);
+		this.e_digito1.digito(d1);
+		this.e_digito2.digito(d2);
+		this.e_digito3.digito(d3);
+		
 		// actualizar sprite de baudilios
 		if (this.baudiliosLlenos < 3) {
 			if (this.baudiliosLlenos === 2 && this.e_baud3.frame === 4) {
@@ -182,6 +217,7 @@ Crafty.c("AP_Numero", {
 	},
 	// Inicia el conteo hasta el número total
 	contar: function(total, max) {
+		console.log("Contar hasta " + total);
 		this.cuenta = 0;
 		this.baudiliosLlenos = 0;
 		

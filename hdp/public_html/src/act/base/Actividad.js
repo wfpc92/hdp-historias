@@ -67,7 +67,6 @@ Actividad.prototype.reiniciar = function() {
 		this.objAct.terminarActividad();
 
 	this.objAct = this.config.actividad();
-	console.log("reiniciar actividad " + this.nivel + " - " + this.subnivel);
 
 	this.temporizador.reset();
 	var duracionAct = (debug) ? 100000 : this.config.duracion;
@@ -76,12 +75,11 @@ Actividad.prototype.reiniciar = function() {
 	actPuntaje.ocultar();
 	this.terminada = false;
 	Crafty.enterScene("Actividad", this);
-
 };
 
 Actividad.prototype.siguienteActiv = function() {
 	this.terminar();
-	actPuntaje.ocultar();
+	
 	//verificar si la siguiente actividad corresponde a un test
 	if (this.subnivel >= 5) {
 		gestorTest.iniciarTest(this.nivel);
@@ -109,7 +107,6 @@ Actividad.prototype.mostrarPuntaje = function() {
 		// Actualizamos progreso
 		progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
 		progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
-
 
 		// Desbloquear siguiente nivel si es el caso
 		if (this.subnivel === 5) {

@@ -39,8 +39,8 @@ niveles[3] = {
 			id: 4,
 			duracion: 2000000000,
 			fondo: 'img/puente/4/fondo.png',
-			dato: 'La mezcla usada para pegar los ladrillos\ndel puente era de cal y barro, pero le\nagregaron sangre de bueyes para que\nlos ladrillos se adhieran más entre sí.',
-			pista: {ladoIzq: true, y: 90},
+			dato: 'La mezcla usada para pegar los\n ladrillos del puente era de \bcal\b y \bbarro\b,\n pero le agregaron \bsangre de bueyes\b\n para que los ladrillos se adhieran\n más entre sí.',
+			pista: {ladoIzq: false, y: 500},
 			actividad: function() {
 				var actividad = new ActPuente4();
 				return actividad;

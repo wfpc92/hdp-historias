@@ -36,12 +36,8 @@ ActPuntaje.prototype.init = function init() {
 
 // Crear las entidades de la interfaz de puntaje
 ActPuntaje.prototype.crearEntidades = function crearEntidades() {
-	this.e_fondo = Crafty.e("2D, Canvas, Color, Persist, Mouse")//esta entidad no va a permitir que se ejecuten eventos de clic sobre la actividad
-			.attr({x:0, y:0, z:1010, w:1280, h:800, alpha:0.0, visible:false})
-			.color("#000000")
-			.bind("MouseDown", function(){})
-			.bind("MouseUp", function(){})
-			.bind("MouseMove", function(){})
+	this.e_fondo = Crafty.e("2D, Canvas, Persist, Mouse") //esta entidad no va a permitir que se ejecuten eventos de clic sobre la actividad
+			.attr({ x:0, y:0, z:1000, w:1280, h:800, alpha: 0, visible: false });
 	// contenedores
 	this.e_bloRojo = Crafty.e("2D, Canvas, Image, Tweener, Persist")
 			.attr({x: 1280, y: 0, z: 1010, visible: false})
@@ -66,9 +62,9 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 			.attr({x: 1012, y: 369, z: 1020, alpha: 0.0, visible: false})
 			.image("img/puntaje/txt-puntuacion.png");
 
-	this.e_baudilio1 = Crafty.e("AP_Baudilio, Persist").attr({x: 1000, y: 520, z: 1020, alpha: 0.0, visible: false});
-	this.e_baudilio2 = Crafty.e("AP_Baudilio, Persist").attr({x: 1132, y: 520, z: 1020, alpha: 0.0, visible: false});
-	this.e_baudilio3 = Crafty.e("AP_Baudilio, Persist").attr({x: 1067, y: 627, z: 1020, alpha: 0.0, visible: false});
+	this.e_baudilio1 = Crafty.e("AP_Baudilio, Persist").AP_Baudilio(1000, 520);
+	this.e_baudilio2 = Crafty.e("AP_Baudilio, Persist").AP_Baudilio(1132, 520);
+	this.e_baudilio3 = Crafty.e("AP_Baudilio, Persist").AP_Baudilio(1067, 627);
 
 	this.e_numPuntos = Crafty.e("AP_Numero, Persist")
 			.attr({x: 1020, y: 417, z: 1020})
@@ -95,15 +91,19 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 	
 	//asignar comportamento a los botones
 	var self = this;
+	
 	this.e_btSalir.bind("MouseUp", function() {
 		self.reset();
 		gesActividad.terminar();
 		Crafty.scene("MenuCuadros");
 	});
+	
 	this.e_btRepetir.bind("MouseUp", function() {
 		gesActividad.reiniciar();
 	});
+	
 	this.e_btSiguiente.bind("MouseUp", function() {
+		self.ocultar();
 		gesActividad.siguienteActiv();
 	});
 };
@@ -120,6 +120,8 @@ ActPuntaje.prototype.initDato = function() {
 
 // Resetea el estado y contenido del panel de puntaje
 ActPuntaje.prototype.ocultar = function() {
+	Crafty("DelayFrame").destroy();
+	
 	// Evitamos que se sigan disparando partículas
 	this.e_fondo.attr({ x: 1280, visible: false });
 	this.e_bloRojo.attr({ x: 1280, visible: false });
@@ -128,17 +130,17 @@ ActPuntaje.prototype.ocultar = function() {
 	this.e_bloTexto.attr({ x: 1280, visible: false });
 	this.e_muyBien.attr({ alpha: 0.0, visible: false });
 	this.e_lblPuntuacion.attr({ alpha: 0.0, visible: false });
-	this.e_baudilio1.attr({ alpha: 0.0, visible: false }).reset();
-	this.e_baudilio2.attr({ alpha: 0.0, visible: false }).reset();
-	this.e_baudilio3.attr({ alpha: 0.0, visible: false }).reset();
+	this.e_numPuntos.ocultar(); // También resetea los baudilios
 	this.e_datoImg.attr({ x: 980, visible: false });
 	this.e_dato.ocultar();
+	
 	this.e_btSalir.ocultar();
 	this.e_btRepetir.ocultar();
 	this.e_btSiguiente.ocultar();
-	this.e_numPuntos.ocultar();
+	
 	this.e_comillaIni.visible = false;
 	this.e_comillaFin.visible = false;
+	
 	return this;
 };
 
@@ -155,7 +157,8 @@ ActPuntaje.prototype.animMostrar = function() {
 	// configuramos el título correcto
 	this.e_titulo.sprite(0, 50 * gesActividad.nivel);
 	//mostramos el fondo transparente para evitar eventos no deseados sobre la actividad en primer plano
-	this.e_fondo.attr({x:0, visible: true});
+	this.e_fondo.visible = true;
+	
 	// primero deslizamos el bloque rojo
 	this.e_bloRojo.attr({visible: true}).addTween({x: 938}, "easeOutCubic", 25, function() {
 		// deslizamos las cortinas
@@ -166,19 +169,18 @@ ActPuntaje.prototype.animMostrar = function() {
 			self.e_bloTexto.attr({visible: true}).addTween({x: 179}, "easeOutCubic", 20, function() {
 				// Mostramos el texto y la imagen del dato
 				self.e_comillaIni.attr({ visible: true });
+				
 				self.e_dato.animMostrar(function() {
 					self.e_comillaFin.visible = true;
-					self.e_btSalir.attr({ visible: true }).addTween({ alpha:1 }, "linear", 15);
-					self.e_btRepetir.attr({ visible: true }).addTween({ alpha:1 }, "linear", 15);
-					self.e_btSiguiente.attr({ visible: true }).addTween({ alpha:1 }, "linear", 15);
+					self.e_btSalir.animMostrar();
+					self.e_btRepetir.animMostrar();
+					self.e_btSiguiente.animMostrar();
 				});	
 	
 				self.e_datoImg.attr({visible: true})
 						.addTween({x: 1280 - self.e_bloRojo.w - self.e_datoImg.w + 15}, "easeOutCubic", 50);
 			});
 		});
-
-		
 		
 		// mostramos el "muy bien" y la información de puntaje
 		var yIni = self.e_muyBien._y;
@@ -190,13 +192,9 @@ ActPuntaje.prototype.animMostrar = function() {
 		self.e_lblPuntuacion.attr({visible: true}).addTween({alpha: 1.0}, "linear", 10);
 
 		// Mostramos los baudilios
-		self.e_baudilio1.attr({visible: true}).addTween({alpha: 1.0}, "linear", 20);
-		self.e_baudilio2.attr({visible: true}).delay(function() {
-			this.addTween({alpha: 1.0}, "linear", 20);
-		}, 100);
-		self.e_baudilio3.attr({visible: true}).delay(function() {
-			this.addTween({alpha: 1.0}, "linear", 20);
-		}, 200);
+		self.e_baudilio1.animAparecer(0);
+		self.e_baudilio2.animAparecer(7);
+		self.e_baudilio3.animAparecer(14);
 
 		// Contamos hasta el puntaje total
 		self.e_numPuntos.contar(self.puntos, self.puntosMax);

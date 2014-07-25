@@ -41,7 +41,7 @@ Crafty.c("BloqueTexto", {
 	_arrOpciones: null, // arreglo de opciones de test
 	
 	init: function() {
-		this.requires("2D, Canvas");
+		this.requires("2D");
 		this._arrLetras = [];
 		this._arrEspacios = [];
 		this._arrOpciones = [];
@@ -50,7 +50,6 @@ Crafty.c("BloqueTexto", {
 	BloqueTexto: function(txt, animar) {
 		var i = 0;
 		var letra = '';
-		var code = 0;
 		var fila = 0;
 		var col = 0;
 		this._texto = txt;
@@ -81,7 +80,7 @@ Crafty.c("BloqueTexto", {
 				while (texto.charAt(j) !== '|' && j < len) {
 					j++;
 				}
-				txtOpcion = texto.slice(i+1, j);
+				txtOpcion = texto.slice(i + 1, j);
 				longitudOpcion = txtOpcion.length;
 				
 				// Construimos la opción y su correspondiente espacio
@@ -133,11 +132,17 @@ Crafty.c("BloqueTexto", {
 					if (!this.bold) e_letra.addComponent(this.sprNormal);
 					else e_letra.addComponent(this.sprBold);
 					
-					e_letra.attr({ x: posX, y: posY, z: this._z, w: anchoLetra, h: this.altoCelda, visible: (!this.animar), alpha: 1 })
+					e_letra.attr({
+								x: posX,
+								y: posY,
+								z: this._z,
+								w: anchoLetra,
+								h: this.altoCelda,
+								visible: (!this.animar),
+								alpha: 1 })
 							.sprite(col * this.anchoCelda, fila * this.altoCelda, anchoLetra, this.altoCelda);
 					
 					this._arrLetras.push(e_letra);
-					//console.log(this._arrLetras)
 					
 					// espaciado de letra
 					espaciado = (this.bold) ? anchoLetra + 3.2 : anchoLetra + 3.6;
@@ -187,19 +192,19 @@ Crafty.c("BloqueTexto", {
 	},
 	
 	animMostrar: function(f_cBack) {
-		var self = this;
 		this._numLetraAnim = 0;
-		this._animInterval = setInterval(function() {
-			if (self._numLetraAnim < self._arrLetras.length) {
-				self._arrLetras[self._numLetraAnim].visible = true;
-				self._numLetraAnim++;
+		
+		this.bind("EnterFrame", function() {
+			if (this._numLetraAnim < this._arrLetras.length) {
+				this._arrLetras[this._numLetraAnim].visible = true;
+				this._numLetraAnim++;
 				
 			} else {
-				clearInterval(self._animInterval);
-				self.mostrarEspacios();
+				this.unbind("EnterFrame");
+				this.mostrarEspacios();
 				if (f_cBack) f_cBack();
 			}
-		}, 5);
+		});
 		
 		return this;
 	},

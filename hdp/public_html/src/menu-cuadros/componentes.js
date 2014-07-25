@@ -128,22 +128,37 @@ Crafty.c("MC_BaudiliosAct", {
 
 /* Medidor de baudilios de cada cuadro */
 Crafty.c("MC_Baudilios", {
+	e_monedas: null, // imagen de monedas
 	e_numBaud: null, // numero de baudilios
 	e_numTotal: null, // entidad de num total
 
 	init: function() {
+		this.requires("2D");
+		
 		this.requires("2D, Canvas, Image, Tweener")
 					.image("img/menu-cuadros/monedas.png")
-					.attr({z: 90});
+					.attr({ z: 90 });
+		
 		this.e_numTotal = Crafty.e("2D, Canvas, Image").image("img/menu-cuadros/num-total.png");
 		this.e_numBaud = Crafty.e("MC_NumBaud");
+		
+		this.attach(this.e_numBaud);
+		this.attach(this.e_numTotal);
 	},
 	
-	MC_Baudilios: function() {
-		this.e_numBaud.attr({ x:this.x + 73, y: this.y + 18 });
-		this.attach(this.e_numBaud);
+	MC_Baudilios: function(numCuadro) {
+		// Posicionamos los baudilios relativamente al cuadro
+		switch (numCuadro) {
+			case 1: this.x += 78; this.y += 190; break;
+			case 2: this.x += 20; this.y += 290; break;
+			case 3: this.x += 86; this.y += 190; break;
+			case 4: this.x += 77; this.y += 190; break;
+			case 5: this.x += 70; this.y += 180; break;
+		}
+		
+		this.e_numBaud.attr({ x:this.x + 73, y: this.y + 20 });
 		this.e_numTotal.attr({ x:this.x + 105, y: this.y + 18 });
-		this.attach(this.e_numTotal);
+		
 		return this;
 	},
 	
@@ -184,23 +199,26 @@ Crafty.c("MC_NumBaud", {
 
 	init: function() {
 		this.requires("2D");
-		this.e_digito0 = Crafty.e("2D, Canvas, sprMC_numBaud").attr({ visible: false, h:21 });
-		this.e_digito1 = Crafty.e("2D, Canvas, sprMC_numBaud").attr({ visible: true, x:14, h:21 });
+		this.h = 20;
+		this.e_digito0 = Crafty.e("2D, Canvas, sprMC_numBaud");
+		this.e_digito1 = Crafty.e("2D, Canvas, sprMC_numBaud");
 		this.attach(this.e_digito0);
 		this.attach(this.e_digito1);
+		
+		this.e_digito0.attr({ visible: false });
+		this.e_digito1.attr({ visible: true, x: 14 });
 	},
 	
 	MC_NumBaud: function(num) {
 		this.num = num;
 		
-		this.e_digito1.h = 21; // corregir bug de escalado en attach
 		if (num < 10) {
 			this.e_digito0.visible = false;
-			this.e_digito1.sprite(0, num * 21); // sólo mostrar el segundo dígito
+			this.e_digito1.sprite(0, num * this.e_digito1._h); // sólo mostrar el segundo dígito
 		}
 		else {
-			this.e_digito0.sprite(0, 21).attr({ visible: true, h:21 });
-			this.e_digito1.sprite(0, (num - 10) * 21);
+			this.e_digito0.sprite(0, this.e_digito1._h).attr({ visible: true });
+			this.e_digito1.sprite(0, (num - 10) * this.e_digito1._h);
 		}
 
 		return this;
