@@ -32,7 +32,9 @@ var Recursos = {
 		spritesListas: false,
 		rutas: [
 			"img/menu-pri/fondo.png", "img/menu-pri/piso-frente.png", "img/menu-pri/piso-fondo.png", "img/menu-pri/nube-izq.png", "img/menu-pri/nube-der.png", "img/menu-pri/caballo-somb.png", "img/menu-pri/logo.png", "img/menu-pri/logo-config.png", "img/menu-pri/caballo.png", "img/menu-pri/bt-jugar.png", "img/menu-pri/bt-opciones.png", "img/menu-pri/bt-configurac.png",
-			"img/menu-pri/fon-dialogo.png", "img/menu-pri/creditos.png"
+			"img/menu-pri/fon-dialogo.png", "img/menu-pri/creditos.png",
+			"img/menu-pri/bt-dialogo.png"
+			
 		],
 		initSprites: spritesMenuPri
 	},
@@ -57,7 +59,6 @@ var Recursos = {
 		rutas: [
 			"img/test/linea.png",
 			"img/test/llave.png",
-			"img/menu-pri/bt-dialogo.png",
 			"img/test/prueba_de_nuevo.png"
 		],
 		initSprites: spritesTest

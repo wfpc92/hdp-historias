@@ -45,7 +45,7 @@ niveles[0] = {
 		},
 		{
 			id: 3,
-			duracion: 15000,
+			duracion: 16000,
 			fondo: 'img/act/morro/4/fondo.jpg',
 			dato: 'Investigaciones arqueológicas\n encontraron el interior del morro,\n enterramientos de \b14 tumbas\b con\n esqueletos de niños y adultos de\n hace más de 700 años.\n El arqueólogo \bJulio Cubillos\b entregó\n los restos al Instituto Etnológico de\n la Universidad del Cauca, que\n comprobó su autenticidad.',
 			pista: { ladoIzq: false, y: 510 },

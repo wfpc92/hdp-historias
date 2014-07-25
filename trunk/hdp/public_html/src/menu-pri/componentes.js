@@ -46,8 +46,8 @@ Crafty.c("MI_btJugar", {
 	
 	// desliza hacia arriba y aparece
 	animMostrar: function() {
-		this.attr({ y:488, alpha:0.0, visible:true })
-			.addTween({ y:388, alpha:1.0 }, "easeOutCubic", 80, function() { this.habilitar(); });
+		this.attr({ y: 488, alpha: 0, visible: true })
+			.addTween({ y: 388, alpha: 1.0 }, "easeOutCubic", 80, function() { this.habilitar(); });
 		return this;
 	}
 });
