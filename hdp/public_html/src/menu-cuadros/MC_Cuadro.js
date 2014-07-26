@@ -56,7 +56,6 @@ Crafty.c("MC_Cuadro", {
 					this.attr({ w: 367, h: 254 });
 					this.dirOcultar = 0;
 					this.areaMap([38,38],[273,38],[273,180],[38,180]);
-					
 			break;
 			case 2: this.ordenActiv = [1,3,4,5,2,6];
 					this.attr({ w: 248, h: 343 });
@@ -66,12 +65,12 @@ Crafty.c("MC_Cuadro", {
 			break;
 			case 3: this.ordenActiv = [1,2,3,4,5,6];
 					this.attr({ w: 395, h: 256 });	
-					this.dirOcultar = 3;
+					this.dirOcultar = 1;
 					this.areaMap([41,29],[294,29],[294,183],[41,183]);
 			break;
 			case 4: this.ordenActiv = [1,2,3,4,5,6];
 					this.attr({ w: 376, h: 256 });	
-					this.dirOcultar = 1;
+					this.dirOcultar = 3;
 					this.areaMap([40,39],[280,39],[280,185],[40,185]);
 			break;
 			case 5: this.ordenActiv = [1,2,3,4,5,6];
@@ -220,7 +219,7 @@ Crafty.c("MC_Cuadro", {
 	// Desliza el cuadro desde un lado para mostrarlo en su posicion normal
 	animMostrar: function() {
 		this.visible = true;
-		this.addTween({ x:this.xIni, y:this.yIni}, "easeInQuad", 18, function() {
+		this.addTween({ x: this.xIni, y:  this.yIni }, "easeInQuad", 18, function() {
 			if (!this.candado) this.habilitar();
 		});
 	},

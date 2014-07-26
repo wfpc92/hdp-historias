@@ -33,23 +33,23 @@ Crafty.defineScene("MenuCuadros", function() {
 		// Cuadros en la pared
 		cuadros[0] = Crafty.e("MC_Cuadro")
 							.MC_Cuadro(1, 200, 80, 500, 291, actividades, e_grillaH, e_sombraH)
-							.attr({x: 200, y: -480, w: 367, h: 254})
+							.attr({ x: 200, y: -480, w: 367, h: 254})
 							.crearCandado(2, 0);
 		cuadros[1] = Crafty.e("MC_Cuadro")
-							.MC_Cuadro(2, 550, 50, 542, 248, actividades, e_grillaV, null)
-							.attr({x: 550, y: -400, w: 248, h: 343})
+							.MC_Cuadro(2, 550, 30, 542, 248, actividades, e_grillaV, null)
+							.attr({ x: 550, y: -400, w: 248, h: 343})
 							.crearCandado(-17, -18);
 		cuadros[2] = Crafty.e("MC_Cuadro")
-							.MC_Cuadro(3, 241, 343, 473, 290, actividades, e_grillaH, e_sombraH)
-							.attr({x: 241, y: -300, w: 395, h: 256})
+							.MC_Cuadro(3, 770, 120, 473, 290, actividades, e_grillaH, e_sombraH)
+							.attr({ x: 770, y: -500, w: 395, h: 256})
 							.crearCandado(2, 0);
 		cuadros[3] = Crafty.e("MC_Cuadro")
-							.MC_Cuadro(4, 782, 120, 481, 292, actividades, e_grillaH, e_sombraH)
-							.attr({x: 782, y: -500, w: 376, h: 260})
+							.MC_Cuadro(4, 241, 343, 481, 292, actividades, e_grillaH, e_sombraH)
+							.attr({ x: 241, y: -300, w: 376, h: 260})
 							.crearCandado(2, 0);
 		cuadros[4] = Crafty.e("MC_Cuadro")
-							.MC_Cuadro(5, 741, 365, 494, 304, actividades, e_grillaH, e_sombraH)
-							.attr({x: 741, y: -300, w: 350, h: 242})
+							.MC_Cuadro(5, 730, 365, 494, 304, actividades, e_grillaH, e_sombraH)
+							.attr({ x: 730, y: -300, w: 350, h: 242})
 							.crearCandado(1, 0);
 
 		
