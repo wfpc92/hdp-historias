@@ -47,8 +47,8 @@ var ActPuente4 = function() {
 			} while (numSimbolo === 0);
 			
 			this.e_fichas[i] = Crafty.e("H4_Ficha")
-									.H4_Ficha(i, numSimbolo, this)
-									.attr({ x: posX, y: posY });
+									.attr({ x: posX, y: posY })
+									.H4_Ficha(i, numSimbolo, this);
 			posX += 145;
 			if (posX > 1100) {
 				posX = 65;
@@ -61,7 +61,7 @@ var ActPuente4 = function() {
 	this.fichaDestapada = function(e_ficha) {
 		var self = this;
 		this.numDestapadas++;
-		console.log("destapadas: " + this.numDestapadas)
+		console.log("destapadas: " + this.numDestapadas);
 		
 		if (this.numDestapadas === 1) {
 			this.e_destapada1 = e_ficha;
@@ -69,21 +69,25 @@ var ActPuente4 = function() {
 		else if (this.numDestapadas === 2) {
 			// Hay 2 destapadas, hay que compararlas
 			this.e_destapada2 = e_ficha;
+			var e_ficha1 = this.e_destapada1;
+			var e_ficha2 = this.e_destapada2;
 			
 			// comparar y ocultar
-			if (this.e_destapada1.numSimbolo === this.e_destapada2.numSimbolo) {
+			if (e_ficha1.numSimbolo === e_ficha2.numSimbolo) {
 				this.aciertos++;
 				
 				// Mostrar los avisos de pareja correcta
-				this.e_aviso1.attr({ x: this.e_destapada1._x + 125, y: this.e_destapada1._y - 70 }).mostrar(0, 50);
-				this.e_aviso2.attr({ x: this.e_destapada2._x + 125, y: this.e_destapada2._y - 70 }).mostrar(0, 50);
+				this.e_aviso1.attr({ x: e_ficha1._x + 125, y: e_ficha1._y - 70 }).mostrar(0, 50);
+				this.e_aviso2.attr({ x: e_ficha2._x + 125, y: e_ficha2._y - 70 }).mostrar(0, 50);
+				e_ficha1.ganada = true;
+				e_ficha2.ganada = true;
 				
 				// Si no son sangre cal o barro, ocultarlas
-				var simbolo = this.e_destapada1.numSimbolo;
+				var simbolo = e_ficha1.numSimbolo;
 				if (simbolo < 10) {
 					Crafty.e("DelayFrame").delay(function() {
-						self.e_destapada1.remover();
-						self.e_destapada2.remover();
+						e_ficha1.remover();
+						e_ficha2.remover();
 					}, 50);
 				}
 				else {
@@ -95,23 +99,38 @@ var ActPuente4 = function() {
 					this.e_olla.agregarIngrediente(simbolo - 10);
 				}
 				
-				// Permitir volver a destapar luego de que hayan sido removidas las fichas
-				Crafty.e("DelayFrame").delay(function() {
-					self.numDestapadas = 0;
-				}, 66);
+				this.numDestapadas -= 2;
 				
 				if (this.aciertos === this.totAciertos) {
 					this.ganarActividad();
 				}
 			}
 			else {
+				// Las fichas son diferentes, volverlas a tapar
 				Crafty.e("DelayFrame").delay(function() {
-					self.e_destapada1.tapar();
-					self.e_destapada2.tapar();
-					self.numDestapadas = 0;
+					console.log("tapando automaticamente")
+					e_ficha1.tapar();
+					e_ficha2.tapar();
+					
 				}, 60);
-				
 			}
+		} else if (this.numDestapadas === 3) {
+			// Hay varias destapadas y queremos mostrar otra? forzar tapar las 2 anteriores!
+			var e_ficha1 = this.e_destapada1;
+			var e_ficha2 = this.e_destapada2;
+			console.log("forzar tapar!");
+			console.log("ficha 1 tapada: " + e_ficha1.tapada);
+			console.log("ficha 2 tapada: " + e_ficha2.tapada);
+			var numActual = e_ficha.num;
+			for (i = 0 ; i < 24 ; i++) {
+				if (i !== numActual) { 
+					if (!this.e_fichas[i].tapada && !this.e_fichas[i].ganada) {
+						this.e_fichas[i].tapar();
+					}
+				}
+			}
+			
+			this.e_destapada1 = e_ficha;
 		}
 		
 		return this;

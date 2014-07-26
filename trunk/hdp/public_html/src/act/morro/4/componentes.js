@@ -16,7 +16,7 @@ Crafty.c("Morrito", {
 		this.reel("saleRaiz", 250, [[0,0],[106,0],[212,0],[318,0],[424,0],[530,0]]);
 		this.areaMap(new Crafty.polygon([5,66], [61,25], [109,86], [101,118], [28,119]));
 		
-		this.bind('MouseUp', this.arrancar);
+		this.bind('MouseDown', this.arrancar);
 	},
 	
 	Morrito: function(nid, e_punt, yIni, objPart) {
@@ -50,6 +50,7 @@ Crafty.c("Morrito", {
 					
 			//animar morrito, direccion de movimiento
 			this.bloqueado = true;
+			this.removeComponent("Mouse");
 			this.animate("saleRaiz", 1);
 			this.addTween({ y: (this.yIni - 150), alpha: 0 }, 'easeOutCubic', 30, function() {	
 				this.visible = false;
@@ -79,6 +80,7 @@ Crafty.c("Morrito", {
 			this.e_hueco.visible = false;
 			this.e_calaca.visible = false;
 			this.bloqueado = false;
+			this.addComponent("Mouse");
 		});
 		return this;
 	}

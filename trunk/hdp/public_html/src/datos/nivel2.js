@@ -3,7 +3,7 @@ niveles[2] = {
 	subnivel: [
 		{
 			id: 1,
-			duracion: 15000,
+			duracion: 16000,
 			fondo: '',
 			dato: "Apareció con la fundación de la ciudad,\nen \b1537\b.\n Como era costumbre en las \bciudades\n coloniales españolas\b, los\n conquistadores elegían un espacio\n amplio y trazaban las calles de forma\n \bperpendicular\b para construir los\n edificios que representaban los\n poderes en España.",
 			pista: { ladoIzq: true, y: 570 },
@@ -15,7 +15,7 @@ niveles[2] = {
 		},
 		{
 			id: 2,
-			duracion: 7000,
+			duracion: 10000,
 			fondo: 'img/act/parque/2/fondo.jpg',
 			dato: 'En el centro del parque hay un\n monumento a Francisco José de Caldas\n (también llamado \b"Sabio Caldas"\b),\n  reconocido botánico, astrónomo y\nprócer colombiano; uno de los\n hijos ilustres de Popayán.\n El monumento se construyó para\n conmemorar los \b100 años de la\n independencia\b de Colombia.',
 			pista: { ladoIzq: false, y: 550 },
