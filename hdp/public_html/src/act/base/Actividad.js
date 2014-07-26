@@ -85,7 +85,7 @@ Actividad.prototype.siguienteActiv = function() {
 		gestorTest.iniciarTest(this.nivel);
 	} else {
 		//caso especifico 
-		if (this.subnivel == 0 && this.nivel == 3) {
+		if (this.subnivel == 3 && this.nivel == 3) {
 			Crafty.scene("MenuCuadros");
 		} else {
 			this.ejecutar(this.nivel, this.subnivel + 1);

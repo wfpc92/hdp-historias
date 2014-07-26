@@ -61,7 +61,7 @@ niveles[2] = {
 		},
 		{
 			id: 6,
-			duracion: 40000,
+			duracion: 34000,
 			fondo: 'img/act/parque/6/fondo.jpg',
 			dato: 'En el parque se encuentra la \bCatedral \nBasílica Nuestra Señora de la Asunción\b, \nuna iglesia católica ofrendada a la \n\bVirgen María\b, construída en 1906 sobre \nlos cimientos de antiguas iglesias. \nHa sido afectada por varios \bterremotos\b, \nque le han requerido reconstrucciones. \nEn ella se centran varios actos \nreligiosos de la \bSemana Santa\b.',
 			pista: { ladoIzq: true, y: 90 },

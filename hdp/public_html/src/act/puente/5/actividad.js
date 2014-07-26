@@ -11,9 +11,8 @@ var ActPuente5 = function() {
 	this.aciertos = 0;
 
 	this.init = function() {
-		this.crearEntidades();
-		this.ganarActividad();
-		return this;
+		Crafty.scene("MenuCuadros");
+                return this;
 	};
 
 	this.crearEntidades = function() {

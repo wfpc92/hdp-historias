@@ -164,10 +164,10 @@ var ActPuente4 = function() {
 	};
 
 	this.ganarActividad = function() {
-		gesActividad.temporizador.parar();
+		/*gesActividad.temporizador.parar();
 		Crafty.e("DelayFrame").delay(function() {
 			gesActividad.mostrarPuntaje();
-		}, 60);
+		}, 60);*/
 		
 		return this;
 	};
