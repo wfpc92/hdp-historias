@@ -107,17 +107,17 @@ Crafty.defineScene("menuPrincipal", function() {
 
 			// Los botones laterales se deslizan desde su borde de la pantalla
 			e_btConfig.animMostrar(0);
-			e_btAudio.animMostrar(200);
-			e_btLike.animMostrar(400);
+			e_btAudio.animMostrar(10);
+			e_btLike.animMostrar(20);
 		}, 120);
 	}
 
 	// Animación de transición desde el menú principal al menú de configuración
 	function animEntrarMenuConfig() {
 		// Los botones se repliegan de donde salieron
-		e_btAudio.animEsconder(120);
-		e_btLike.animEsconder(240);
-		e_btJugar.animEsconder();
+		e_btAudio.animEsconder(10);
+		e_btLike.animEsconder(20);
+		e_btJugar.animEsconder(0);
 
 		// el logo se desvanece, y aparece su versión del menú de config
 		e_logo.addTween({alpha: 0.0}, "linear", 50, function() {
@@ -165,12 +165,12 @@ Crafty.defineScene("menuPrincipal", function() {
 		e_pisoFrente.addTween({x: (e_pisoFrente._x - 35)}, "easeOutCubic", 70);
 
 		// Mostramos el boton jugar y los botones de opciones
-		Crafty.e("Delay").delay(function() {
+		Crafty.e("DelayFrame").delay(function() {
 			e_btConfig.animMostrar(0);
-			e_btAudio.animMostrar(200);
-			e_btLike.animMostrar(400);
+			e_btAudio.animMostrar(10);
+			e_btLike.animMostrar(20);
 			e_btJugar.animMostrar();
-		}, 1200);
+		}, 70);
 	}
 
 
@@ -179,8 +179,8 @@ Crafty.defineScene("menuPrincipal", function() {
 	function transicionJugar() {
 		// Escondemos los botones laterales
 		e_btConfig.animEsconder(0);
-		e_btAudio.animEsconder(40);
-		e_btLike.animEsconder(80);
+		e_btAudio.animEsconder(10);
+		e_btLike.animEsconder(20);
 
 		// desplazamos los terrenos y las nubes hacia abajo
 		e_pisoFrente.addTween({y: 1000}, "easeInCubic", 75);
@@ -192,9 +192,9 @@ Crafty.defineScene("menuPrincipal", function() {
 		e_btJugar.animEsconder();
 		e_logo.addTween({alpha: 0.0}, "linear", 40);
 
-		Crafty.e("Delay").delay(function() {
+		Crafty.e("DelayFrame").delay(function() {
 			objCortina.aparecer(60, "MenuCuadros");
-		}, 250);
+		}, 15);
 	}
 	
 	// Bloquear los botones del menú de configuración
@@ -218,12 +218,10 @@ Crafty.defineScene("menuPrincipal", function() {
 	crearEntidades();
 
 	// Mostrar menu de configuracíon al hacer click en el botón config
-	e_btConfig.bind("MouseUp", function() {
-		if (!this.bloqueado) {
-			this.animEsconder(30);
-			animEntrarMenuConfig();
-		}
-	});
+	e_btConfig.f_callback = function() {
+		e_btConfig.animEsconder(0);
+		animEntrarMenuConfig();
+	};
 
 	// Mostrar menu de configuracíon al hacer click en el botón config
 	e_btAudio.bind("MouseUp", function() {
@@ -232,26 +230,21 @@ Crafty.defineScene("menuPrincipal", function() {
 	});
 	
 	// Like en facebook
-	e_btLike.bind("MouseUp", function() {
+	e_btLike.f_callback = function() {
 		CocoonJS.App.openURL("https://www.facebook.com/historiaspopayan");
-	});
+	};
 	
 	// Al hacer click en btAtras, ocultar el menú de configuración y volver al menú principal
-	e_btAtras.bind("MouseUp", function() {
-		console.log("MouseUp bloqueado=" + this.bloqueado)
-		if (!this.bloqueado) {
-			this.animEsconder(0);
-			animSalirMenuConfig();
-		}
-	});
+	e_btAtras.f_callback = function() {
+		e_btAtras.animEsconder(0);
+		animSalirMenuConfig();
+	};
 
 	// Al hacer click en btJugar, activar la transición a la escena de jugar
-	e_btJugar.bind("MouseUp", function() {
-		if (!this.bloqueado) {
-			this.bloquear();
-			transicionJugar();
-		}
-	});
+	e_btJugar.f_callback = function() {
+		e_btJugar.bloquear();
+		transicionJugar();
+	};
 	
 	// Mostrar diálogo de reestablecer progreso
 	e_btReset.bind("MouseUp", function() {

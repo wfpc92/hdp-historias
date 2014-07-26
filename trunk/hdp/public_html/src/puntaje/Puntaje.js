@@ -94,20 +94,20 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 	//asignar comportamento a los botones
 	var self = this;
 	
-	this.e_btSalir.bind("MouseUp", function() {
+	this.e_btSalir.f_callback = function() {
 		self.reset();
 		gesActividad.terminar();
 		Crafty.scene("MenuCuadros");
-	});
+	};
 	
-	this.e_btRepetir.bind("MouseUp", function() {
+	this.e_btRepetir.f_callback = function() {
 		gesActividad.reiniciar();
-	});
+	};
 	
-	this.e_btSiguiente.bind("MouseUp", function() {
+	this.e_btSiguiente.f_callback = function() {
 		self.ocultar();
 		gesActividad.siguienteActiv();
-	});
+	};
 };
 
 // Configuramos el texto e imagen del dato a mostrar

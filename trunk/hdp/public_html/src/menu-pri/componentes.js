@@ -1,24 +1,26 @@
 // Agrupa algunas funcionalidades comunes a los botones laterales de esta escena
 Crafty.c("MI_btLateral", {
 	init: function() {
-		this.requires("Boton, Tweener, Delay");
+		this.requires("Boton, Tweener");
 	},
 	
 	// Deslizarse desde su lado de la pantalla a su posición visible
 	animMostrar: function(retardo) {
 		this.ocultarLateral();
 		this.visible = true;
-		this.delay(function() {
-			this.addTween({ x:this.xIni }, "easeOutBack", 60, function() { this.habilitar(); }); 
+		var self = this;
+		Crafty.e("DelayFrame").delay(function() {
+			self.addTween({ x: self.xIni }, "easeOutBack", 60, function() { this.habilitar(); }); 
 		}, retardo);
 	},
 	
 	// Deslizarse desde su lado de la pantalla a su posición visible
 	animEsconder: function(retardo) {
-		this.bloquear()
-			.delay(function() {
-				this.addTween({ x:1280 }, "easeInCubic", 40, function() { this.visible = false; }); 
-			}, retardo);
+		this.bloquear();
+		var self = this;
+		Crafty.e("DelayFrame").delay(function() {
+			self.addTween({ x: 1280 }, "easeInCubic", 40, function() { this.visible = false; }); 
+		}, retardo);
 	},
 	
 	// Inmediatamente mueve al lado de la pantalla y vuelve invisible
@@ -38,7 +40,7 @@ Crafty.c("MI_btJugar", {
 	// desliza hacia abajo y desvanece
 	animEsconder: function() {
 		this.bloquear()
-			.addTween({ y:488, alpha:0.0 }, "easeInCubic", 60, function() {
+			.addTween({ y:488, alpha: 0 }, "easeInCubic", 60, function() {
 				this.visible = false;
 			});
 		return this;

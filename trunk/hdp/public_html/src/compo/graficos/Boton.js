@@ -8,6 +8,7 @@ Crafty.c("Boton", {
 	yIni: 0,
 	e_btActivo: null, // Entidad que temporalmente aparece mostrando el estado activo
 	bloqueado: false, // poner en true cuando no debería responder a eventos
+	f_callback: null, // Opcional: función a invocar al terminar el toque en el botón
 	
 	init: function() {
 		this.requires("2D, Canvas, Mouse");
@@ -41,6 +42,7 @@ Crafty.c("Boton", {
 		this.attach(this.e_btActivo);
 		
 		this.bind("MouseDown", function(e) {
+			console.log("MouseDown bloqueado:" + this.bloqueado);
 			if (!this.bloqueado) {
 				this.mostrarActivo();
 			}
@@ -58,19 +60,31 @@ Crafty.c("Boton", {
 	},
 	
 	mostrarActivo: function() {
-		this.e_btActivo.attr({ visible: true }).addTween({ alpha: 1.0 }, "linear", 5);
+		var self = this;
+		this.bloquear();
+		this.e_btActivo.visible =  true;
+		this.e_btActivo.addTween({ alpha: 1 }, "linear", 5, function() {
+			self.ocultarActivo();
+		});
 		return this;
 	},
 	ocultarActivo: function() {
 		if (this.e_btActivo._visible && this.e_btActivo._alpha > 0) {
-			this.e_btActivo.attr({ alpha: 1.0 }).addTween({ alpha: 0.0 }, "linear", 5, function() { this.visible = false; });
+			this.e_btActivo.cancelTweener();
+			this.e_btActivo.alpha = 1;
+			
+			var self = this;
+			this.e_btActivo.addTween({ alpha: 0 }, "linear", 10, function() {
+				this.visible = false;
+				if (self.f_callback) self.f_callback();
+			});
 		}
 		return this;
 	},
 	
 	// muestra el botón en un fadeIn
 	aparecer: function() {
-		this.attr({ alpha: 0, visible: true }).addTween({ alpha: 1.0 }, "linear", 5);
+		this.attr({ alpha: 0, visible: true }).addTween({ alpha: 1 }, "linear", 5);
 		return this;
 	},
 	
