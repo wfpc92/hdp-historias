@@ -16,10 +16,10 @@ function spritesPuente2() {
 		sprH2_pAdulto: [0, 0]//hay 23 adultos
 	});
 	Crafty.sprite("img/act/puente/1/personajes.png", {
-		sprH2_pNino0: [922, 20, 33, 43],
-		sprH2_pNino1: [956, 20, 33, 43],
-		sprH2_pNino2: [985, 20, 33, 43],
-		sprH2_pNino3: [1015, 20, 33, 43]
+		sprH2_pNino23: [922, 20, 33, 43],
+		sprH2_pNino24: [956, 20, 33, 43],
+		sprH2_pNino25: [985, 20, 33, 43],
+		sprH2_pNino26: [1015, 20, 33, 43]
 
 	});
 }

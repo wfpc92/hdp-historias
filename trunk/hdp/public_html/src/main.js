@@ -29,7 +29,7 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		//gesActividad.ejecutar(0, 3); // Nivel de 0 a 4, Subnivel de 0 a 5
+		//gesActividad.ejecutar(3,3); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		Crafty.enterScene("Inicio");
 		//Crafty.enterScene("MenuCuadros");

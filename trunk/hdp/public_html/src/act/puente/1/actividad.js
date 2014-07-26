@@ -21,9 +21,6 @@ function ActPuente1() {
 
 	this.arcos = [true, false, false, false, false]
 
-
-
-
 	this.init = function() {
 		Crafty.e("2D, Canvas, Image").image("img/act/puente/1/fondo.jpg");
 		var pri_plano = Crafty.e("2D, Canvas, Image").image("img/act/puente/1/primer_plano.png");
@@ -220,7 +217,7 @@ function ActPuente1() {
 		var self = this;
 		//esperar a que los personajes caminen
 		Crafty.e("Delay").delay(function() {
-			//gesActividad.mostrarPuntaje();
+			gesActividad.mostrarPuntaje();
 		}, 2000);
 		return this;
 	};
