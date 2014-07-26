@@ -30,15 +30,14 @@ Crafty.c('AreaRotacion', {
 			// Opcional: colorear los cuadros
 			//cuadros[i].addComponent("Color").color(colores[i]).attr({ alpha: 0.5 });
 			
-			cuadros[i].bind('MouseOver',
-					function() {
-						if (!Crafty.isPaused()) {
-							estaArea.cuadroActual = this.cuadro;
-							if (estaArea.cuadroActual === estaArea.siguienteCuadroActual) {
-								estaArea.ventilador.girar();//se avanza con el ventilador.
-							}
-						}
-					});
+			cuadros[i].bind('MouseOver', function() {
+				if (!Crafty.isPaused()) {
+					estaArea.cuadroActual = this.cuadro;
+					if (estaArea.cuadroActual === estaArea.siguienteCuadroActual) {
+						estaArea.ventilador.girar();//se avanza con el ventilador.
+					}
+				}
+			});
 			cuadros[i].bind('MouseOut',
 					function() {
 						estaArea.siguienteCuadroActual = this.siguienteCuadro;

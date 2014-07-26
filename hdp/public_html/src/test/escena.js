@@ -6,20 +6,20 @@ Crafty.defineScene("TestPregunta", function() {
 	var texto = ""; // Texto de la pregunta
 	var textosTrampa = []; // Arreglo de textos de opciones trampa
 	var inicializar;
+	var e_txtInicio; // Entidad de texto de bienvenida
 	
 	et = Crafty.e("BloqueTexto").attr({ x: 100, y: 180 });
 	
 	// Creamos entidades decorativas
+	e_txtInicio = Crafty.e("2D, Canvas, Image, Tweener").attr({ x: 430, y: 230, z: 600 }).image("img/test/txt-inicio.png");
 	var e_fondo = Crafty.e("2D, Canvas, Color").attr({w: 1280, h: 800});
-	var e_llave = Crafty.e("2D, Canvas, Image").attr({ x: 1080, y: 48 }).image("img/test/llave.png");
-	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 20, y: 566});
-	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 531, y: 566});
-	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 1042, y: 566}).crop(0, 0, 211, 14);
-	gestorTest.e_numero = Crafty.e("TE_Numero").attr({x: 95, y: 70});
+	var e_llave = Crafty.e("2D, Canvas, Image").attr({ x: 1080, y: 48, visible: false }).image("img/test/llave.png");
+	var e_linea1 = Crafty.e("2D, Canvas, sprTE_linea").attr({x: 20, y: 566, visible: false });
+	var e_linea2 = Crafty.e("2D, Canvas, sprTE_linea").attr({x: 531, y: 566, visible: false });
+	var e_linea3 = Crafty.e("2D, Canvas, sprTE_linea").attr({x: 1042, y: 566, visible: false }).crop(0, 0, 211, 14);
+	gestorTest.e_numero = Crafty.e("TE_Numero").attr({x: 95, y: 70, visible: false });
 	
 	//Crafty.e("2D, Canvas, Color, Mouse").color("#FFFFFF").attr({ w: 30, h: 30, z: 5566}).bind("MouseUp", function() { inicializar(); });
-	
-	
 	
 	// *** FUNCIONES DE LA ESCENA ***
 	
@@ -44,7 +44,30 @@ Crafty.defineScene("TestPregunta", function() {
 	};
 	
 	gestorTest.f_inicializar = inicializar;
-	inicializar();
+	
+	// Primero mostramos el letrero de bienvenida, luego mostramos la primer pregunta
+	elegirColor();
+	e_fondo.color(colorFondo);
+		
+	e_txtInicio.alpha = 0.5;
+	e_txtInicio.y = -190;
+	e_txtInicio.addTween({ alpha: 1 }, "linear", 10);
+	e_txtInicio.addTween({ y: 280 }, "easeInOutBack", 60, function() {
+		Crafty.e("DelayFrame").delay(function() {
+			e_txtInicio.addTween({ y: 600, alpha: 0 }, "easeInCubic", 30, function() {
+				Crafty.e("DelayFrame").delay(function() {
+					e_llave.visible = true;
+					e_linea1.visible = true;
+					e_linea2.visible = true;
+					e_linea3.visible = true;
+					gestorTest.e_numero.visible = true;
+					inicializar();
+				}, 20);
+			});
+		}, 60);
+		
+	});
+	
 	
 	// Establece el color de frente y de fondo de la pregunta actual
 	function elegirColor() {

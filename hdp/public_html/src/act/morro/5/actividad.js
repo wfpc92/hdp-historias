@@ -5,6 +5,7 @@ var ActMorro5 = function() {
 	this.duracion = 0;
 	//si se ha ganado la actividad
 	this.actividadGanada = false;
+	this.e_barra = null;
 
 	this.init = function() {
 		this.attrPasto = {x: 0, y: 1174 - 301, z: 3};
@@ -23,6 +24,8 @@ var ActMorro5 = function() {
 			[686, 716], [709, 715], [766, 690],
 			[966, 671], [1164, 657], [1271, 655]
 		];
+		
+		this.e_barra = Crafty.e("M5_Barra").attr({ x: 919, y: 175 });
 
 		var posp = 305;
 		this.attrPiedras = [
@@ -32,7 +35,7 @@ var ActMorro5 = function() {
 		this.attrShapePiedras = [
 			[[1, 5], [8, 1], [24, 0], [45, 13], [45, 20], [39, 22], [10, 24], [0, 15]],
 			[[2, 61], [35, 15], [65, 0], [82, 2], [109, 19], [113, 38], [91, 64], [50, 76], [8, 72]],
-			[[19, 2], [48, 3], [65, 11], [67, 16], [59, 28], [40, 39], [24, 40], [7, 34], [1, 25]],
+			[[19, 2], [65, 11], [67, 16], [59, 28], [40, 39], [7, 34], [1, 25]],
 			[[2, 22], [20, 4], [49, 5], [64, 23], [50, 37], [11, 46], [1, 41]]
 		];
 
@@ -46,22 +49,24 @@ var ActMorro5 = function() {
 
 		this.polea = Crafty.e('Ventilador, sprM5_manivela');
 		this.polea.attr(this.attrPolea).origin(89, 118);
-		this.polea.va = 4; //this.velocidadAngular;
-		this.polea.af = -0.1; //this.aceleracionFriccion;
+		this.polea.incremento = 0.1;
+		this.polea.va = 2; //this.velocidadAngular;
+		this.polea.af = -0.015; //this.aceleracionFriccion;
 		this.polea.base = Crafty.e('2D, Canvas');
 
 		this.cuerda = Crafty.e('sprM5_cuerdaAnimada')
-				.addComponent('CuerdaAnimada')
-				.attr(this.attrCuerda);
+							.addComponent('CuerdaAnimada')
+							.attr(this.attrCuerda);
 		this.cuerda.maxH = this.cuerda.h;
 
 		this.cuerdaEntrePoleas = Crafty.e('sprM5_cuerdaEntrePoleasAnimada')
-				.addComponent('CuerdaAnimada')
-				.attr(this.attrCuerdaEntrePoleas);
+										.addComponent('CuerdaAnimada')
+										.attr(this.attrCuerdaEntrePoleas);
 		this.cuerdaEntrePoleas.rotation = -39;
 
 		this.vasija = Crafty.e('Vasija')
-				.Vasija(this.attrVasija, this.attrNudo, this.polea, this.cuerda, this.cuerdaEntrePoleas, this);
+							.Vasija(this.attrVasija, this.attrNudo, this.polea, this.cuerda, this.cuerdaEntrePoleas, this);
+		this.vasija.fuerzaMax = 4;
 
 		Crafty.e('2D, Canvas, Box2D')
 				.box2d({
@@ -77,7 +82,7 @@ var ActMorro5 = function() {
 
 		this.piedras = [];
 		for (var i = 0; i < 4; i++) {
-			this.piedras[i] = Crafty.e('2D, Canvas, piedraCollision,  Collision, sprM5_piedra' + (1 + i));
+			this.piedras[i] = Crafty.e('2D, Canvas, piedraCollision, sprM5_piedra' + (1 + i));
 			this.piedras[i].attr(this.attrPiedras[i]);
 			this.fondo.attach(this.piedras[i]);
 		}
@@ -93,12 +98,17 @@ var ActMorro5 = function() {
 		this.fondo.piedras = this.piedras;
 		this.fondo.vasija = this.vasija;
 		this.fondo.polea = this.polea;
+		
 		//animacion principal y colocar piedras con fisica//200
-		this.fondo.addTween({x: this.fondo.x, y: this.fondo.y - 301}, 'easeInOutCubic', 200, this.asignarFisica);
+		var self = this;
+		this.fondo.addTween({ x: this.fondo.x, y: this.fondo.y - 301 }, 'easeInOutCubic', 165, function() {
+			self.e_barra.mostrar();
+			self.asignarFisica();
+		});
 
-		var e_fondo = this.fondo;
-		var eg = Crafty.e("Gesto")
-				.Gesto(3, {coords: [1012, 632], duracion: 155, retardo: 40, radio: 90, desplY: -2.5});
+		Crafty.e("Gesto")
+				.Gesto(3, {coords: [1012, 632], duracion: 155, retardo: 40, radio: 90, desplY: -3.2 });
+		
 		return this;
 	};
 
@@ -108,11 +118,10 @@ var ActMorro5 = function() {
 			this.piedras[i].box2d({
 				bodyType: 'dynamic',
 				shape: this.attrShapePiedras[i],
-				friction: 0.3,
-				density: 1.2,
+				friction: 1,
+				density: 0.5,
 				restitution: 0.1
 			});
-			this.piedras[i].collision(new Crafty.polygon(this.attrShapePiedras[i]));
 		}
 
 		this.vasija.crearVolumen();

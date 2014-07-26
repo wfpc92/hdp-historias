@@ -44,7 +44,7 @@ var ActMorro3 = function() {
 		this.nube.attr({x: -10, y: 18, z: 2})
 					.bind('EnterFrame', function() {
 						//con esta velocidad la nube avanza
-						this.velocidad = this.e_padre.ventilador.va / 2.0;
+						this.velocidad = this.e_padre.ventilador.va * 0.2;
 						//con el acierto de esta condicion se gana la actividad
 						if (this.x + 397 >= nubeMaxX) {
 							this.unbind("EnterFrame");

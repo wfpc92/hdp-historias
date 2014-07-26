@@ -30,7 +30,7 @@ niveles[2] = {
 			duracion: 32000,
 			fondo: 'img/act/parque/3/fondo.jpg',
 			dato: "Las \bplacas\b que adornan el\n monumento al sabio Caldas exponen\nsu \bfirma\b, una muestra de la planta\n trepadora \bBomarea caldasii\b (llamada\n así en su honor), la figura de un\n \boctante\b y un \bhipsómetro\b, un invento\n suyo.",
-			pista: { ladoIzq: false, y: 260 },
+			pista: { ladoIzq: false, y: 285 },
 			actividad: function() {
 				var actividad = new ActParque3();
 				return actividad;
@@ -41,7 +41,7 @@ niveles[2] = {
 			duracion: 15000,
 			fondo: 'img/act/parque/4/fondo.jpg',
 			dato: 'A 10 metros del parque se encuentra\n el \bPanteón de los Próceres\b, un\n monumento que contiene las cenizas\n de \b15 hijos ilustres\b de Popayán,\n entre los que se encuentran Camilo\n Torres, Tomás Cipriano de Mosquera\n y Francisco José de Caldas.',
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: true, y: 120 },
 			actividad: function() {
 				var actividad = new ActParque4();
 				actividad.totAciertos = 15;
@@ -53,7 +53,7 @@ niveles[2] = {
 			duracion: 15000,
 			fondo: 'img/act/parque/5/fondo.jpg',
 			dato: 'Frente al parque se encuentra la\n \bTorre del Reloj\b, uno de los símbolos\n representativos de Popayán.\n Terminó de construirse en 1682 y en\n 1737 se le instaló un \breloj inglés\b,\n que funcionaría hasta 1814, cuando\n se le extrajeron sus \bpesas de plomo\b\n para hacer \bmuniciones\b durante las\n guerras de la Independencia.',
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: false, y: 120 },
 			actividad: function() {
 				var actividad = new ActParque5();
 				return actividad;
@@ -64,7 +64,7 @@ niveles[2] = {
 			duracion: 34000,
 			fondo: 'img/act/parque/6/fondo.jpg',
 			dato: 'En el parque se encuentra la \bCatedral \nBasílica Nuestra Señora de la Asunción\b, \nuna iglesia católica ofrendada a la \n\bVirgen María\b, construída en 1906 sobre \nlos cimientos de antiguas iglesias. \nHa sido afectada por varios \bterremotos\b, \nque le han requerido reconstrucciones. \nEn ella se centran varios actos \nreligiosos de la \bSemana Santa\b.',
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: true, y: 35 },
 			actividad: function() {
 				var actividad = new ActParque6();
 				actividad.totAciertos = 10;

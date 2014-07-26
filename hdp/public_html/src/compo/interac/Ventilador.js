@@ -1,16 +1,21 @@
 Crafty.c("Ventilador", {
+	// incremento al valor por cada giro
+	incremento: 1,
 	//velocidad angular
 	va: 0,
 	//aceleracion angular
 	aa: 0,
 	//aceleracion friccion
 	af: 0,
+	
 	baseX: 0, // Desplazamiento de la base (opcional9
 	baseY: 0,
 	//referencia a la ProgressBar que refleja el avance 
 	barra: null,
 	//imagen de fondo del ventilador
 	base: null,
+	
+	
 	init: function() {
 		this.requires('2D, Canvas');
 		this.bind('EnterFrame', function() {
@@ -50,7 +55,7 @@ Crafty.c("Ventilador", {
 		return this;
 	},
 	girar: function() {
-		this.aa += 0.4;
+		this.aa += this.incremento;
 		return this;
 	},
 	
@@ -62,5 +67,3 @@ Crafty.c("Ventilador", {
 	}
 
 });
-
-

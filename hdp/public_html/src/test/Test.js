@@ -5,6 +5,7 @@ var Test = function() {
 	this.contRespuestasOK = 0;
 	this.numPreguntas = 0; // Número de preguntas que se debe aprobar para concluir el test
 	this.f_inicializar = null; // Función a ejecutar para inicializar la pregunta
+	
 	this.e_numero = null; // Referencia al número de test
 };
 

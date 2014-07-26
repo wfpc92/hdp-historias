@@ -19,9 +19,8 @@ var ActBelalcaz2 = function() {
 		this.iniciarComponentes();
 
 		var self = this;
-		this.e_caballo.espada("sprB2_espada")
-		this.e_caballo.addComponent("Mouse").bind("MouseDown", function() { console.log("asdfg"); self.ganarActividad(); });
-
+		this.e_caballo.espada("sprB2_espada");
+		
 		var tr = this.tronco;
 		this.e_caballo.caminar({x: 80, y: this.e_caballo.y}, 20, function() {
 			//this.pauseAnimation();

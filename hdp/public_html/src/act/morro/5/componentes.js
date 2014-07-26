@@ -1,11 +1,72 @@
+// Barra indicadora que acompaña la polea
+Crafty.c("M5_Barra", {
+	e_barra: null,
+	positivo: true, // false si el valor de al barra es negativo
+	vMax: 3,
+	
+	init: function() {
+		this.requires("2D, Canvas, Color").attr({ w: 200, h: 20, z: 49, alpha: 0.5 }).color("#271300");
+		
+		this.e_barra = Crafty.e("2D, Canvas, Color").color("#B58010").attr({ x: 2, y: 2, h: 16, z: 50 });
+		this.e_barra.origin(0, 8);
+		this.e_barra.rotation = 0;
+		this.e_barra.color("#4DB849");
+		
+		this.attach(this.e_barra);
+		
+		// iniciar invisible
+		this.visible = false;
+		this.e_barra.visible = false;
+	},
+	
+	mostrar: function() {
+		this.visible = true;
+		this.e_barra.visible = true;
+		return this;
+	},
+	
+	// Actualiza el tamaño de la barra según el valor
+	actualizar: function(v) {
+		var anchoBarra = v * 44;
+		
+		if (anchoBarra > 0) {
+			if (!this.positivo) {
+				this.e_barra.rotation = 0;
+				this.positivo = true;
+			}
+			
+			if (v > this.vMax) {
+				this.e_barra.color("#CF2800");
+			}
+			else {
+				this.e_barra.color("#4DB849");
+			}
+				
+			this.e_barra.w = anchoBarra;
+				
+		}
+		else {
+			if (this.positivo) {
+				this.e_barra.rotation = 180;
+				this.e_barra.color("#AF2800");
+				this.positivo = false;
+			}
+			this.e_barra.w = -anchoBarra;
+		}
+	}
+});
+
+
 Crafty.c("Vasija", {
 	cuerpoVasija: null,
 	mJoint: null,
 	cuerda: null,
-	polea: null,
+	polea: null, // Referencia a la polea (Interactiva)
 	e_nudo: null,
 	e_vasijaSola: null, // Vasija que se muestra sola, sin romperse
 	suelta: false, // true al soltarse, bandera para evitar bucles
+	e_barra: null, // Referencia a barra de velocidad
+	fuerzaMax: 3, // Valor máximo antes de romper la cuerda
 		
 	init: function() {
 		this.requires('2D, Canvas, sprM5_vasija');
@@ -28,6 +89,7 @@ Crafty.c("Vasija", {
         this.cuerda = cuerda;
         this.cuerdaEntrePoleas = cuerdaEntrePoleas;
         this.actividad = padre;
+		this.e_barra = this.actividad.e_barra;
 		
 		this.cuerda.attach(this.e_nudo);
 		this.e_nudo.y = this.cuerda.h + 233;
@@ -37,8 +99,10 @@ Crafty.c("Vasija", {
 	
 	//disminuir tamaño de la cuerda, subir vasija y verificar momento de romper la vasija
 	aumentar: function(fuerza) {
-		var pot = 5;
+		var pot = 6;
 		fuerza *= pot;
+		this.e_barra.actualizar(fuerza);
+		
 		if (fuerza > 0) {
 			if (this.cuerda.h - fuerza > 0 &&
 					this.cuerda.h - fuerza < this.cuerda.maxH &&
@@ -49,7 +113,7 @@ Crafty.c("Vasija", {
 			}
 			if (this.visible) {
 				this.actualizarJoint();
-				if (fuerza > 0.8 * pot) { //2 maximo
+				if (fuerza > this.fuerzaMax) { //2 maximo
 					if (!this.suelta) this.soltarse();
 				}
 			}
@@ -89,6 +153,7 @@ Crafty.c("Vasija", {
 		this.suelta = true;
 		this.e_nudo.visible = true;
 		this.e_nudo.animate('soltarse', 1);
+		this.polea.bloquear();
 		
 		this.removeComponent("sprM5_vasija").addComponent("sprM5_vasijaSola");
 		
@@ -166,9 +231,10 @@ Crafty.c("Vasija", {
 				.attr({x: this.x, y: this.y + 65, z: 2})
 				.box2d({
 					bodyType: 'dynamic',
-					shape: [[20, 0], [46, 0], [81, 0], [100, 16],[93, 64], [75, 102], [49, 121],[31, 106], [3, 49], [1, 20]],		
-					density: 1,
-					restitution: 0
+					shape: [[20, 3], [46, 0], [81, 6], [100, 16],[93, 64], [75, 102], [49, 121],[31, 106], [3, 49], [1, 20]],		
+					density: 10,
+					restitution: 0.5,
+					friction: 0
 				});
 		
 		var ljd = new Box2D.Dynamics.Joints.b2MouseJointDef();

@@ -2,6 +2,8 @@
 function ActPuntaje() {
 	this.puntos = -1; // puntuación a mostrar
 	this.puntosMax = -1; // máxima puntuación del nivel
+	this.baudiliosObtenidos = 0; // baudilios obtenidos
+	this.rangoBaudilios = [500, 1500, 2500]; // Puntaje mínimo para obtener 1, 2 o 3 baudilios
 
 	this.e_cortinaSup = null;
 	this.e_cortinaInf = null;
@@ -149,6 +151,16 @@ ActPuntaje.prototype.reset = function ocultar() {
 	this.ocultar();
 };
 
+// Retorna el número de baudilios calculado a partir de los puntos
+ActPuntaje.prototype.calcBaudilios = function(puntosObtenidos) {
+	var baudilios = 0;
+	if (puntosObtenidos > this.rangoBaudilios[0]) baudilios = 3;
+	else if (puntosObtenidos > this.rangoBaudilios[1]) baudilios = 2;
+	else if (puntosObtenidos > this.rangoBaudilios[2]) baudilios = 1;
+	
+	return baudilios;	
+};
+
 // Animaciòn para mostrar la interfaz de puntaje y dato
 // invocada en mostrarPuntaje()
 ActPuntaje.prototype.animMostrar = function() {
@@ -197,7 +209,7 @@ ActPuntaje.prototype.animMostrar = function() {
 		self.e_baudilio3.animAparecer(14);
 
 		// Contamos hasta el puntaje total
-		self.e_numPuntos.contar(self.puntos, self.puntosMax);
+		self.e_numPuntos.contar(self.puntos, self.rangoBaudilios);
 	});
 
 	return this;
