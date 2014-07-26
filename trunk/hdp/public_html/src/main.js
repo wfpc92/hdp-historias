@@ -20,7 +20,7 @@ window.onload = function() {
 	// Inicializamos el objeto único global Box2D
 	Crafty.box2D.init(0, 10, 32, true);
 	world = Crafty.box2D.world;
-	//if (!cocoon) Crafty.box2D.showDebugInfo();
+	if (!cocoon) Crafty.box2D.showDebugInfo();
 	gesSonido = new Sonido();
 
 	// Cargamos recursos globales (incluídos sprites) antes de hacer cualquier cosa
@@ -29,11 +29,11 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		//gesActividad.ejecutar(3,3); // Nivel de 0 a 4, Subnivel de 0 a 5
+		//gesActividad.ejecutar(0, 1); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		Crafty.enterScene("Inicio");
 		//Crafty.enterScene("MenuCuadros");
-		//gesSonido.silenciar();
+		gesSonido.silenciar();
 	});
 
 	// Desbloquear todos los niveles en modo debug

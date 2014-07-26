@@ -7,8 +7,9 @@ Crafty.c("AP_Baudilio", {
 	h0: 0,
 	
 	init: function() {
-		this.requires("2D, Canvas, sprAP_baudilio, Tweener");
+		this.requires("2D, Canvas, sprAP_baudilio, SpriteAnimation, Tweener");
 		this.attr({ z: 1020, alpha: 0, visible: false });
+		this.reel("llenar", 200, [[0,0],[0,99],[0,198],[0,297],[0,396],[0,495]]);
 	},
 	
 	AP_Baudilio: function(x0, y0) {
@@ -21,14 +22,9 @@ Crafty.c("AP_Baudilio", {
 		return this;
 	},
 	
-	avanzar: function() {
-		this.frame++;
-		this.sprite(0, (this.frame * 99));
-		return this;
-	},
-	
 	// Destacar el baudilio
 	brillar: function() {
+		this.animate("llenar", 1);
 		this.cancelTweener().addTween({
 				x: this.x0 - 5,
 				y: this.y0 - 5,
@@ -133,11 +129,10 @@ Crafty.c("AP_Numero", {
 	maximo: 0, // Puntaje para 3 baudilios llenos
 	total: 0, // Puntaje total obtenido
 	cuenta: 0, // Cuenta del número hasta el total
-	puntosBaudilio: 0, // puntos aprox. necesarios para llenar un baudilio completo
 	puntosLlenar: 0, // puntos aprox. necesarios para avanzar 1 fotograma la animación de llenado
-	puntosFinal: 0, // puntos faltantes de los cálculos aproximados para agregar al tercer baudilio
 	cuentaLlenar: 0, // cuenta de animación de baudilio
 	baudiliosLlenos: 0, // baudilios que ya se han llenado durante el conteo
+	rangoBaudilios: null, // Arreglo procedente de Puntaje con los rangos de puntaje de baudilios
 
 	init: function() {
 		this.requires("2D");
@@ -167,10 +162,10 @@ Crafty.c("AP_Numero", {
 		else if (dif > 100) incr = 10;
 		else incr = 1;
 
-		// incrementar contadores
+		// incrementar contadores de puntaje y animación
 		this.cuenta += incr;
 		this.cuentaLlenar += incr;
-
+		
 		var d3 = Math.floor(this.cuenta % 10);
 		var d2 = Math.floor((this.cuenta / 10) % 10);
 		var d1 = Math.floor((this.cuenta / 100) % 10);
@@ -184,31 +179,22 @@ Crafty.c("AP_Numero", {
 		
 		// actualizar sprite de baudilios
 		if (this.baudiliosLlenos < 3) {
-			if (this.baudiliosLlenos === 2 && this.e_baud3.frame === 4) {
-				if (this.cuenta >= this.maximo) {
-					this.e_baud3.avanzar();
-					this.e_baud3.brillar();
+			if (this.baudiliosLlenos === 0) {
+				if (this.cuenta >= this.rangoBaudilios[0]) {
+					this.e_baud1.brillar();
 					this.baudiliosLlenos++;
 				}
 			}
-			else {
-				if (this.cuentaLlenar >= this.puntosLlenar) {
-					var refBaud;
-					if (this.baudiliosLlenos === 0) {
-						refBaud = this.e_baud1;
-					} else if (this.baudiliosLlenos === 1) {
-						refBaud = this.e_baud2;
-					} else if (this.baudiliosLlenos === 2) {
-						refBaud = this.e_baud3;
-					}
-
-					refBaud.avanzar();
-					if (refBaud.lleno()) {
-						refBaud.brillar();
-						this.baudiliosLlenos++;
-					}
-
-					this.cuentaLlenar = this.puntosLlenar - this.cuentaLlenar;
+			else if (this.baudiliosLlenos === 1) {
+				if (this.cuenta >= this.rangoBaudilios[1]) {
+					this.e_baud2.brillar();
+					this.baudiliosLlenos++;
+				}
+			}
+			else if (this.baudiliosLlenos === 2) {
+				if (this.cuenta >= this.rangoBaudilios[2]) {
+					this.e_baud3.brillar();
+					this.baudiliosLlenos++;
 				}
 			}
 		}
@@ -216,18 +202,14 @@ Crafty.c("AP_Numero", {
 		return this;
 	},
 	// Inicia el conteo hasta el número total
-	contar: function(total, max) {
+	contar: function(total, rangoBaudilios) {
 		console.log("Contar hasta " + total);
 		this.cuenta = 0;
 		this.baudiliosLlenos = 0;
+		this.rangoBaudilios = rangoBaudilios;
 		
 		this.total = total;
-		this.maximo = max;
-
-		this.puntosBaudilio = Math.floor(max * 0.33);
-		this.puntosLlenar = Math.round(this.puntosBaudilio * 0.2);
-		this.puntosFinal = this.puntosLlenar + max - (this.puntosLlenar * 15);
-
+		
 		this.visible = true;
 		this.e_digito0.visible = true;
 		this.e_digito1.visible = true;

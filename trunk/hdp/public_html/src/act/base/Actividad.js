@@ -93,7 +93,7 @@ Actividad.prototype.siguienteActiv = function() {
 	}
 };
 
-// Calcula y muestra la interfaz de puntaje
+// Calcula el puntaje obtenido y muestra la interfaz de puntaje
 Actividad.prototype.mostrarPuntaje = function() {
 	if (!this.terminada) {
 		this.terminada = true;
@@ -101,12 +101,17 @@ Actividad.prototype.mostrarPuntaje = function() {
 
 		// Calculamos el número de puntos a partir del t restante
 		var tRestante = this.temporizador.getTiempoRestante();
-		var calificacion = tRestante / this.temporizador.tiempoInicial; // [0:1]
-		var puntosObtenidos = Math.floor(calificacion * 6000);
+		var porcentaje = tRestante / this.temporizador.tiempoInicial; // de 0 a 1 cuánto porcentaje quedó restante
+		var puntosObtenidos = Math.floor(porcentaje * actPuntaje.puntosMax);
+		
+		// Calculamos los baudilios obtenidos
+		actPuntaje.baudiliosObtenidos = actPuntaje.calcBaudilios(puntosObtenidos);
 
 		// Actualizamos progreso
-		progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
-		progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
+		if (puntosObtenidos > progreso[this.nivel].puntaje[this.subnivel]) {
+			progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
+			progreso[this.nivel].baudilios[this.subnivel] = actPuntaje.baudiliosObtenidos;
+		}
 
 		// Desbloquear siguiente nivel si es el caso
 		if (this.subnivel === 5) {
