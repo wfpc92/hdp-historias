@@ -4,8 +4,10 @@ Crafty.c("H4_Ficha", {
 	numSimbolo: -1, // Número de simbolo
 	e_padre: null,
 	e_tapa: null,
-	tapada: true, // true si está tapada
-	bloqueado: true, // false si recibe eventos del mouse
+	tapada: true, // true si la ficha está tapada
+	bloqueado: true, // true para reaccionar a eventos del mouse
+	ganada: false, // True si la ficha ya ha sido enparejada (esperando animación de salida)
+	y0: 0, // pos Y inicial
 	
 	init: function() {
 		this.requires("2D, Canvas, sprH4_ficha, Tweener, Mouse");
@@ -13,17 +15,19 @@ Crafty.c("H4_Ficha", {
 		this.attach(this.e_tapa);
 		
 		// Al hacer click, destapar
-		this.bind("MouseUp", this.destapar);
+		this.bind("MouseDown", this.destapar);
 		
 		return this;
 	},
 	
+	// Invocar luego de posicionar
 	H4_Ficha: function(num, numSimbolo, e_padre) {
+		this.y0 = this._y;
 		this.num = num;
 		this.e_padre = e_padre;
 		this.simbolo(numSimbolo);
 		var self = this;
-		this.e_tapa.addTween({ alpha: 0.5 }, "linear", 25, function() {
+		this.e_tapa.addTween({ alpha: 1 }, "linear", 25, function() {
 			self.bloqueado = false;
 			self.alpha = 1;
 		});
@@ -32,35 +36,56 @@ Crafty.c("H4_Ficha", {
 	
 	// Muestra el símbolo
 	destapar: function() {
-		console.log("destapadas: " + this.e_padre.numDestapadas)
-		if (!this.bloqueado && this.tapada && this.e_padre.numDestapadas < 2) {
+		if (!this.bloqueado && this.tapada) {
+			console.log("Iniciando DEStapar ficha " + this.num)
+			// Si ya hay 2 destapadas, taparlas antes de destapar esta
 			this.alpha = 1;
-			this.tapada = false;
 			this.bloqueado = true; // bloqueamos hasta que sevuelva a tapar
 			this.visible = true;
-			this.e_tapa.addTween({ alpha: 0 }, "linear", 5);
-			this.addTween({ y: this._y - 30 }, "easeOutCubic", 8, function() {
-				this.addTween({ y: this._y + 30 }, "easeOutElastic", 26);
-			});
+			this.tapada = false;
 			
-			this.e_padre.fichaDestapada(this);
-		}
-		return this;
-	},
-	
-	// Esconde el símbolo
-	tapar: function() {
-		if (!this.tapada) {
-			this.tapada = true;
-			this.e_tapa.alpha = 0;
-			this.e_tapa.visible = true;
-			this.e_tapa.addTween({ alpha: 1 }, "linear", 5);
-			this.addTween({ y: this._y - 30 }, "easeOutCubic", 8, function() {
-				this.addTween({ y: this._y + 30 }, "easeOutElastic", 20, function() {
+			console.log(this.y0)
+			var y0 = this.y0;
+			this.cancelTweener();
+			this.e_tapa.cancelTweener();
+			
+			this.e_tapa.addTween({ alpha: 0 }, "linear", 5);
+			this.addTween({ y: y0 - 30 }, "easeOutCubic", 8, function() {
+				this.addTween({ y: y0 }, "easeOutElastic", 26, function() {
 					this.bloqueado = false;
+					console.log("Fin DEStapar ficha " + this.num)
 				});
 			});
 			
+			this.e_padre.fichaDestapada(this);
+			return true;
+		}
+		
+		return false;
+	},
+	
+	// Esconde el símbolo
+	// Retorna true si el simbolo se pudo ordenar esconder
+	tapar: function() {
+		if (!this.tapada) {
+			console.log("Iniciando tapar ficha " + this.num)
+			this.tapada = true;
+			this.bloqueado = true;
+			this.e_tapa.visible = true;
+			var y0 = this.y0;	
+			
+			this.cancelTweener();
+			this.e_tapa.cancelTweener();
+				
+			this.e_tapa.addTween({ alpha: 1 }, "linear", 5);
+			this.addTween({ y: y0 - 30 }, "easeOutCubic", 8, function() {
+				this.addTween({ y: y0 }, "easeOutElastic", 20, function() {
+					this.bloqueado = false;
+					console.log("Terminado tapar ficha " + this.num)
+				});
+			});
+			
+			this.e_padre.numDestapadas--;
 		}
 		return this;
 	},

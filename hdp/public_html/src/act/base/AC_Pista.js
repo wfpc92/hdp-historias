@@ -48,7 +48,7 @@ Crafty.c("AC_Pista", {
 		}
 		this.x = this.xIni;
 		this.y = this.actConfig.y;
-		this.e_msg.y = this.y + 43;
+		this.e_msg.y = this.y + 25;
 		
 		
 		// Cubrimos con una capa transparente que evite interactuar antes de tiempo

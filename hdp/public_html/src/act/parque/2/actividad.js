@@ -162,7 +162,7 @@ var ActParque2 = function() {
 			Crafty("P2Bloque").each(function() {
 				//obteniendo la fuerza necesaria para mover los bloques
 				fX = randomFloat(-1, 1);
-				fY = randomFloat(-1, 0.2);
+				fY =0;// randomFloat(-1, );
 				
 				// Aplicar fuerza personalizada a los bloques de la base para más desorden
 				pos = this.body.GetPosition();
