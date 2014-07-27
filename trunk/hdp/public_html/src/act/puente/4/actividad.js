@@ -164,8 +164,8 @@ var ActPuente4 = function() {
 	};
 
 	this.ganarActividad = function() {
-		/*gesActividad.temporizador.parar();
-		Crafty.e("DelayFrame").delay(function() {
+		gesActividad.temporizador.parar();
+		/*Crafty.e("DelayFrame").delay(function() {
 			gesActividad.mostrarPuntaje();
 		}, 60);*/
 		

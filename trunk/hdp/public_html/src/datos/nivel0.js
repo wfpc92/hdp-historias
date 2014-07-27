@@ -17,7 +17,7 @@ niveles[0] = {
 		},
 		{
 			id: 1,
-			duracion: 22000,
+			duracion: 25000,
 			fondo: 'img/act/morro/2/fondo.png',
 			dato: 'Esta \bpirámide truncada\b fué\n construída por los \baborígenes\b de la\n zona aprovechando una elevación\n natural, moldeada empleando\n \bbloques de adobe y relleno\b,\n cuidadosamente ubicados para\n lograr la estructura final.',
 			pista: { ladoIzq: true, y: 200 },

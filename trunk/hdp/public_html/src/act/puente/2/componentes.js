@@ -20,13 +20,15 @@ Crafty.c("H2_Personaje", {
         return this;
     },
     caminarAleatorio: function() {
-        var despx = (this.pf.dir == -1 ?
+        var despx = this.x + (this.pf.dir == -1 ?
                 Crafty.math.randomInt(-100, -50) :
                 Crafty.math.randomInt(50, 100));
-        var despy = Crafty.math.randomInt(-1, 1) * Crafty.math.randomInt(10, 60);
+        var despy = this.y + Crafty.math.randomInt(-1, 1) * Crafty.math.randomInt(10, 60);
         var despt = Crafty.math.randomInt(70, 100);
-
-        this.caminar({x: this.x + despx, y: this.y + despy, t: despt}, function() {
+        if(despy > 750){
+            despy = 750;
+        }
+        this.caminar({x: despx, y: despy, t: despt}, function() {
             //si llega al final verificar que haya llegado al punto final .pf
             if (this.pf.dir == -1) {//de derecha a izquierda
                 if (this.x < this.pf.x) {

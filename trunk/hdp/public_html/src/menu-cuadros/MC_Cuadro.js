@@ -52,12 +52,12 @@ Crafty.c("MC_Cuadro", {
 		this.e_sombra = sombra;
 		
 		switch (num) {
-			case 1: this.ordenActiv = [3,4,1,6,5,2];
+			case 1: this.ordenActiv = [1,2,3,4,5,6];//[3,4,1,6,5,2];
 					this.attr({ w: 367, h: 254 });
 					this.dirOcultar = 0;
 					this.areaMap([38,38],[273,38],[273,180],[38,180]);
 			break;
-			case 2: this.ordenActiv = [1,3,4,5,2,6];
+			case 2: this.ordenActiv = [1,2,3,4,5,6];//[1,3,4,5,2,6];
 					this.attr({ w: 248, h: 343 });
 					this.dirOcultar = 0;
 					this.areaMap([20,21],[178,21],[178,282],[20,282]);

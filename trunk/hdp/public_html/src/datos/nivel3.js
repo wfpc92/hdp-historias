@@ -15,7 +15,7 @@ niveles[3] = {
 		},
 		{
 			id: 2,
-			duracion: 15000,
+			duracion: 25000,//23000
 			fondo: 'img/puente/2/fondo.png',
 			dato: 'Fue levantado bajo la dirección de\nFray Serafín Barbetti y se inauguró el\n31 de julio de 1873. El obispo de la\nciudad tuvo la idea de agradecer\npúblicamente a Barbetti y 82\npersonalidades firmaron una nota.',
 			pista: {ladoIzq: true, y: 90},
@@ -27,7 +27,7 @@ niveles[3] = {
 		},
 		{
 			id: 3,
-			duracion: 12000,
+			duracion: 17000,
 			fondo: 'img/puente/3/fondo.png',
 			dato: 'Barbetti le dio forma al puente con los\nladrillos que se descartaron de la\nreconstrucción de la Catedral de\nPopayán -destruida por el terremoto\nde 1736- y las obras de la\nTorre del Reloj.',
 			pista: {ladoIzq: true, y: 90},
@@ -38,7 +38,7 @@ niveles[3] = {
 		},
 		{
 			id: 4,
-			duracion: 10000,
+			duracion: 20000,
 			fondo: 'img/puente/4/fondo.png',
 			dato: 'La mezcla usada para pegar los\n ladrillos del puente era de \bcal\b y \bbarro\b,\n pero le agregaron \bsangre de bueyes\b\n para que los ladrillos se adhieran\n más entre sí.',
 			pista: {ladoIzq: false, y: 500},
