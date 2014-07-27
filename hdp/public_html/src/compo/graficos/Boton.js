@@ -61,7 +61,7 @@ Crafty.c("Boton", {
 	
 	mostrarActivo: function() {
 		var self = this;
-		this.bloquear();
+		//this.bloquear();
 		this.e_btActivo.visible =  true;
 		this.e_btActivo.addTween({ alpha: 1 }, "linear", 5, function() {
 			self.ocultarActivo();

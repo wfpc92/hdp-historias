@@ -59,7 +59,8 @@ var Recursos = {
 		rutas: [
 			"img/test/linea.png",
 			"img/test/llave.png",
-			"img/test/prueba_de_nuevo.png"
+			"img/test/prueba_de_nuevo.png",
+                        "img/test/txt-inicio.png"
 		],
 		initSprites: spritesTest
 	},

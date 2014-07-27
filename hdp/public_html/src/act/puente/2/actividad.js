@@ -18,10 +18,10 @@ var ActPuente2 = function() {
         //aqui se define el objeto que genera personajes posicionado aleatoriamente.
         this.genPersonajes = {
             bloqueado: false, //para permitir que genere o no personajes.
-            tInterval: 1000, //timpo de generacion entre personajes.
+            tInterval: 30, //timpo de generacion entre personajes.
             caminos: [//estos son los caminos por donde salen los personajes.
-                {x0min: 1280, x0max: 1280, y0min: 294, y0max: 672, t: 2000, x1min: -64, x1max: -64, y1min: 425, y1max: 732, dir: -1},
-                {x0min: -64, x0max: -64, y0min: 425, y0max: 732, t: 2000, x1min: 1280, x1max: 1280, y1min: 425, y1max: 732, dir: 1}
+                {x0min: 1280, x0max: 1280, y0min: 294, y0max: 672, t: 0, x1min: -64, x1max: -64, y1min: 425, y1max: 732, dir: -1},
+                {x0min: -64, x0max: -64, y0min: 425, y0max: 732, t: 0, x1min: 1280, x1max: 1280, y1min: 425, y1max: 732, dir: 1}
             ],
             //cada cierto tiempo se genera un peraobnje para que salga desde una parte de la pantalla
             genPersonajes: function() {
@@ -31,6 +31,7 @@ var ActPuente2 = function() {
                         var camino = Crafty.math.randomElementOfArray(self.caminos);
                         self.crearPersonaje(camino);
                         self.genPersonajes();
+                        console.log("se esta creando un persoanje")
                     }
                 }, this.tInterval);
                 return this;
@@ -44,7 +45,7 @@ var ActPuente2 = function() {
                         t = camino.t,
                         dir = camino.dir,
                         id = Crafty.math.randomInt(0, 26),
-                        spr = (id < 23 ? "sprH2_pAdulto" : "sprH2_pNino" + id)
+                        spr = (id < 23 ? "sprH2_pAdulto" : "sprH2_pNino" + id);
 
                 var personaje = Crafty.e("H2_Personaje, " + spr)
                         .attr({x: x0, y: y0, z: 15})
@@ -61,29 +62,32 @@ var ActPuente2 = function() {
             },
             indicador: function(personaje) {
                 var posx, posy;
-                if (personaje.esNino) {
+                if (personaje.esNino) {//el indicador varia de posicion segun el tamaño del personaje.
                     posx = personaje.x - 6;
                     posy = personaje.y - 20;
                 } else {
                     posx = personaje.x;
                     posy = personaje.y - 12;
                 }
-                personaje.e_indicador = Crafty.e("2D, Canvas, Image")
+                personaje.e_indicador = Crafty.e("2D, Canvas, Image, Mouse")
                         .image("img/act/puente/2/indicador.png")
                         .attr({x: posx, y: posy, z: personaje.z});
                 personaje.attach(personaje.e_indicador);
                 personaje.indicador = true;//tienen una entidad de indicador.
-                personaje.e_indicador.requires("Mouse")
-                        .bind("MouseDown", function() {
-                            if (personaje.indicador) {
-                                if (personaje.esNino) {
-                                    actividad.ninoIndicador();
-                                } else {
-                                    this.destroy();
-                                    actividad.adultoIndicador();
-                                }
-                            }
-                        });
+                personaje.e_indicador.bind("MouseDown", function() {
+                    if (personaje.indicador) {
+                        if (personaje.esNino) {
+                            var ad = Crafty.e("Advertencia").attr({x: personaje.x + 30, y: personaje.y - 70, z: personaje.z}).mostrar(2, 40);
+                            personaje.attach(ad);
+                            actividad.ninoIndicador();
+                        } else {
+                            var ad = Crafty.e("Advertencia").attr({x: personaje.x + 40, y: personaje.y - 60, z: personaje.z}).mostrar(0, 40);
+                            personaje.attach(ad);
+                            this.destroy();
+                            actividad.adultoIndicador();
+                        }
+                    }
+                });
                 return this;
             },
             parar: function() {
@@ -119,7 +123,7 @@ var ActPuente2 = function() {
                 .attr({x: 557, y: 10})
                 .H2_Contador(this)
                 .bind("EnterFrame", function() {
-                    console.log(Crafty("H2_Personaje").length)
+                    //console.log(Crafty("H2_Personaje").length)
                 });
         return this;
     };

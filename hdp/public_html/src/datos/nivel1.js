@@ -39,7 +39,7 @@ niveles[1] = {
 		},
 		{
 			id: 4,
-			duracion: 4000,
+			duracion: 8000,
 			fondo: 'img/act/belalcaz/4/fondo.png',
 			dato: 'Mientras buscaba el tesoro de\n \bEl Dorado\b, también fundó la ciudades\n de \bQuito\b y \bGuayaquil\b, en Ecuador,\n y \bSantiago de Cali\b y \bNeiva\b, en\n Colombia.',
 			pista: { ladoIzq: true, y: 250 },

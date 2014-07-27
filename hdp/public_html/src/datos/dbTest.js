@@ -79,12 +79,12 @@ tests[1] = {
 			trampa: ["Mayas", "Paeces", "Paellán", "Papaya"]
 		},
 		{
-			texto: 'Mientras conquistaba |Popayán|, Belalcázar Atravesó lo que\n hoy se conoce como |Timbío| -en Octubre de 1535-, donde\n venció a 3,000 indígenas.',
+			texto: 'Mientras conquistaba |Popayán|, Belalcázar Atravesó lo que\n hoy se conoce como |Timbío| -en Octubre de 1535-, donde\n venció a 3.000 indígenas.',
 			trampa: ["Cali", "Neiva", "Quito", "Cartagena"]
 		},
 		{
-			texto: 'Cuentan los historiadores que en Timbío, Belalcázar venció a\n |3,000| indígenas con un Ejército de |100| hombres.',
-			trampa: ["1,000", "2,000", "10"]
+			texto: 'Cuentan los historiadores que en Timbío, Belalcázar venció a\n |3000| indígenas con un Ejército de |100| hombres.',
+			trampa: ["1000", "2000", "10"]
 		},
 		{
 			texto: 'Mientras buscaba el tesoro de El Dorado, también fundó las\nciudades de |Quito y Guayaquil|, en Ecuador, y\n|Santiago de Cali y Neiva|, en Colombia.',

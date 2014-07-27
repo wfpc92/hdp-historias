@@ -29,11 +29,11 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		//gesActividad.ejecutar(0, 1); // Nivel de 0 a 4, Subnivel de 0 a 5
+		//gesActividad.ejecutar(3,1); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		Crafty.enterScene("Inicio");
 		//Crafty.enterScene("MenuCuadros");
-		gesSonido.silenciar();
+		//gesSonido.silenciar();
 	});
 
 	// Desbloquear todos los niveles en modo debug
@@ -43,6 +43,7 @@ window.onload = function() {
 			progreso[i].puntaje = [1, 1, 1, 1, 1, 1];
 		}
 	}
+       
 	/*
 	if (cocoon) {
 		CocoonJS.App.setAppShouldFinishCallback(function() {
