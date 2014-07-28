@@ -110,24 +110,3 @@ Crafty.c("Topo", {
 	}
 });
 
-/*this.bind("EnterFrame", function() {
- //console.log((topo.subiendo) ? 'subiendo' : (topo.bajando ? 'bajando' : 'nothing'));
- if (topo.subiendo) {
- topo.move('n', topo.velocidadSubida);
- if (topo.y < (topo.y_inicial - topo.h)) {
- topo.subiendo = false;
- topo.bajando = true;
- }
- }
- else if (topo.bajando) {
- topo.move('s', topo.velocidadBajada);
- if (topo.y > topo.y_inicial) {
- //Parar movimiento del topo actual y quitar evento clic
- topo.subiendo = true;
- topo.bajando = false;
- //obtener el siguiente topo, asignarle evento clic y ponerlo en movimiento
- topo.posicionAleatoria();
- //si se quiere un tiempo de espera entre topo y topo se coloca un delay aleatorio aqui
- }
- }
- });*/
