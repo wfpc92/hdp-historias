@@ -92,7 +92,7 @@ var ActPuente2 = function() {
                         this.destroy();
                         actividad.siguienteIndicador();
                     }
-                })
+                });
                 return this;
             },
             parar: function() {
