@@ -57,8 +57,7 @@ var ActPuente2 = function() {
                     personaje.sprite(id, 0);
                 }
                 //dibujarle un indicador al personaje
-                this.indicador(personaje);
-                return this;
+                return personaje;
             },
             indicador: function(personaje) {
                 var posx, posy;
@@ -76,18 +75,24 @@ var ActPuente2 = function() {
                 personaje.indicador = true;//tienen una entidad de indicador.
                 personaje.e_indicador.bind("MouseDown", function() {
                     if (personaje.indicador) {
+                        var ad = null;
                         if (personaje.esNino) {
-                            var ad = Crafty.e("Advertencia").attr({x: personaje.x + 30, y: personaje.y - 70, z: personaje.z}).mostrar(2, 40);
-                            personaje.attach(ad);
+                            ad = Crafty.e("Advertencia").attr({x: personaje.x + 30, y: personaje.y - 70, z: personaje.z}).mostrar(2, 40);
                             actividad.ninoIndicador();
                         } else {
-                            var ad = Crafty.e("Advertencia").attr({x: personaje.x + 40, y: personaje.y - 60, z: personaje.z}).mostrar(0, 40);
-                            personaje.attach(ad);
-                            this.destroy();
+                            ad = Crafty.e("Advertencia").attr({x: personaje.x + 40, y: personaje.y - 60, z: personaje.z}).mostrar(0, 40);
                             actividad.adultoIndicador();
+                            this.destroy();
+                            personaje.indicador = false;
                         }
+                        personaje.attach(ad);
                     }
-                });
+                }).bind("EnterFrame", function() {
+                    if (this.x < 0 || this.x > 1260) {
+                        this.destroy();
+                        actividad.siguienteIndicador();
+                    }
+                })
                 return this;
             },
             parar: function() {
@@ -104,7 +109,7 @@ var ActPuente2 = function() {
             var dir = Crafty.math.randomElementOfArray([-1, 1]);
             var x0 = Crafty.math.randomInt(-64, 1200);//posicion en x inicial
             var x1 = (dir == -1 ? -64 : 1280);//posicion final en x
-            this.genPersonajes.crearPersonaje({
+            var pers = this.genPersonajes.crearPersonaje({
                 x0min: x0, x0max: x0,
                 y0min: 425, y0max: 732,
                 t: 2000,
@@ -113,6 +118,8 @@ var ActPuente2 = function() {
                 dir: dir
             });
         }
+
+        this.genPersonajes.indicador(pers);
         return this;
     };
 
@@ -121,10 +128,7 @@ var ActPuente2 = function() {
         this.e_contador = Crafty.e("H2_Contador, Image")
                 .image("img/act/puente/2/hoja.png")
                 .attr({x: 557, y: 10})
-                .H2_Contador(this)
-                .bind("EnterFrame", function() {
-                    //console.log(Crafty("H2_Personaje").length)
-                });
+                .H2_Contador(this);
         return this;
     };
 
@@ -138,11 +142,31 @@ var ActPuente2 = function() {
 
     this.ninoIndicador = function() {
         console.log("tiene indicador pero es un niño, los niños no pueden firmar.");
+        this.siguienteIndicador();
         return this;
     };
 
     this.adultoIndicador = function() {
         this.e_contador.aumentar();
+        this.siguienteIndicador();
+        return this;
+    };
+
+    this.siguienteIndicador = function() {
+        var numPers = Crafty("H2_Personaje").length - 1;
+        var alea = Crafty.math.randomInt(0, numPers);
+        for (var i = 0; i < Crafty("H2_Personaje").length; i++) {
+            if (i == alea) {
+                var personaje = Crafty(Crafty("H2_Personaje")[i]);
+                if (!personaje.indicador &&
+                        (personaje.x > 0 && personaje.x < 1280)) {
+                    this.genPersonajes.indicador(personaje);
+                } else {
+                    this.siguienteIndicador();
+                }
+                break;
+            }
+        }
         return this;
     };
 
