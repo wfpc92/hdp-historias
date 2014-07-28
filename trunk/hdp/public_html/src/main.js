@@ -3,7 +3,7 @@ var gesActividad; // Inicia las actividades
 var actPuntaje; // Muestra el panel de puntaje y dato
 var gesSonido; // Gestor de audios
 var world = null; // Mundo Box2D
-var debug = false; // True para activar el modo desarrollador
+var debug = true; // True para activar el modo desarrollador
 
 window.onload = function() {
 	Crafty.init(1280, 800);
@@ -29,11 +29,11 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		//gesActividad.ejecutar(3,1); // Nivel de 0 a 4, Subnivel de 0 a 5
+		gesActividad.ejecutar(3,1); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
-		Crafty.enterScene("Inicio");
+		//Crafty.enterScene("Inicio");
 		//Crafty.enterScene("MenuCuadros");
-		//gesSonido.silenciar();
+		gesSonido.silenciar();
 	});
 
 	// Desbloquear todos los niveles en modo debug
