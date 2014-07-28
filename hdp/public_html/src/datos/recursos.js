@@ -12,7 +12,7 @@ var Recursos = {
 			"img/puntaje/botones.png", "img/puntaje/blo-rojo.png", "img/puntaje/muy-bien.png", "img/puntaje/txt-puntuacion.png", "img/puntaje/cortinas.png", "img/puntaje/digitos.png", "img/puntaje/baudilio.png",
 			
 			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png",
-			"img/particulas/star.png","img/particulas/triangulo.png","img/particulas/cubo40.png",
+			"img/particulas/star.png","img/particulas/triangulo.png","img/particulas/nube-verde.png","img/particulas/cubo40.png",
 			
 			"img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png", "img/puntaje/titulos.png",
 			
@@ -60,7 +60,7 @@ var Recursos = {
 			"img/test/linea.png",
 			"img/test/llave.png",
 			"img/test/prueba_de_nuevo.png",
-                        "img/test/txt-inicio.png"
+			"img/test/txt-inicio.png"
 		],
 		initSprites: spritesTest
 	},
@@ -467,11 +467,9 @@ var Recursos = {
 				"img/act/puente/6/barra.png",
 				"img/act/puente/6/brazos.png",
 				"img/act/puente/6/indicador.png",
-				"img/act/puente/6/nubes_1.png",
-				"img/act/puente/6/nubes_2.png",
+				"img/act/puente/6/nube.png",
 				"img/act/puente/6/personaje.png",
-				"img/act/puente/6/pimer_plano.png",
-				"img/act/puente/6/rotar.png"
+				"img/act/puente/6/flechas.png"
 			],
 			musica: ["puente6", "audio/act/puente/puente2.ogg"],
 			initSprites: spritesPuente6

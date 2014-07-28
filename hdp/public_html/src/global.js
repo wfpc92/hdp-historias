@@ -16,7 +16,7 @@ function mouseCoords(e) {
 
 // Generates a random float between 2 values
 function randomFloat(min, max) {
-	return Math.random() * (max - min + 1) + min;
+	return Math.min(min + (Math.random() * (max - min)), max);
 }
 ;
 
