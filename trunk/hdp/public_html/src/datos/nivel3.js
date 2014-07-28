@@ -62,7 +62,7 @@ niveles[3] = {
 			id: 6,
 			duracion: 2000000000,
 			fondo: 'img/puente/6/fondo.png',
-			dato: 'Se cree que el nombre "Puente del\nhumilladero" se debe a que las personas\nque por allí subían al centro lo hacían\ncasi de rodillas. En 1883 la Legislatura\ndel Estado lo bautizó como\n"Puente Bolívar".',
+			dato: 'Se cree que el nombre \b"Puente del\n humilladero"\b se debe a que, antes\n de construirlo, la cuesta era tan\n enpinada que quienes por allí subían\n al centro lo hacían casi de rodillas.\n\n En 1883, la Legislatura del Estado\n lo bautizó formalmente \b"Puente\n Bolívar"\b.',
 			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
 				var actividad = new ActPuente6();

@@ -4,6 +4,7 @@ Crafty.c("Gesto", {
 	tipo: 0, // 1.toque rapido, 2.drag, 3.rotar
 	duracion: 0, // Duración máxima en frames
 	retardo: 0, // Frames a esperar antes de aparecer
+	e_delayIniciar: null,
 	e_delayAnim: null,
 	xIni: 0, // Coordenadas iniciales del gesto
 	yIni: 0,
@@ -20,6 +21,13 @@ Crafty.c("Gesto", {
 		this.e_mano.z = 9001;
 		this.e_mano.visible = false;
 		this.e_delayAnim = Crafty.e("DelayFrame");
+		this.e_delayIniciar = Crafty.e("DelayFrame");
+		
+		// Al destruir el gesto, destruir todos los delay
+		this.bind("Remove", function() {
+			this.e_delayAnim.destroy();
+			this.e_delayIniciar.destroy();
+		});
 	},
 	
 	// numTipo = 1.toque rapido, 2.drag, 3.rotar
@@ -48,13 +56,12 @@ Crafty.c("Gesto", {
 		this.attr({ x: conf.coords[0], y: conf.coords[1] });
 		
 		var self = this;
-		Crafty.e("DelayFrame").delay(function() {
+		this.e_delayIniciar.delay(function() {
 			self.animar();
 		}, this.retardo);
 		
 		
 		this.delay(function() {
-			console.log("destroy")
 			this.e_delayAnim.destroy();
 			this.destroy();
 		}, this.duracion);
@@ -136,7 +143,7 @@ Crafty.c("Gesto", {
 		this.e_mano.addTween({ alpha: 1 }, "linear", 12);
 		
 		this.bind("EnterFrame", function() {
-			grados = this.frame * 0.08;
+			grados = this.frame * 0.1;
 			yR = Math.sin(grados);
 			xR = Math.cos(grados);
 			this.x = this.xIni + xR * r;
@@ -200,7 +207,6 @@ Crafty.c("Gesto", {
 	},
 	
 	ocultar: function() {
-		console.log("ocultar")
 		this.visible = false;
 		this.e_mano.visible = false;
 		this.e_delayAnim.destroy();

@@ -3,16 +3,11 @@
 var ActPuente5 = function() {
 	//con esta cantidad se gana la actividad
 	this.totAciertos = 4;
-	//tiempo en que se cambia de un topo a otro (milisegundos)
-	this.duracion = 20000;
-	//si se ha ganado la actividad
-	this.actividadGanada = false;
 	//si se ha ganado la actividad
 	this.aciertos = 0;
 
 	this.init = function() {
-		Crafty.scene("MenuCuadros");
-                return this;
+		
 	};
 
 	this.crearEntidades = function() {

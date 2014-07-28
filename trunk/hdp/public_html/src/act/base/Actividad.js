@@ -49,7 +49,6 @@ Actividad.prototype.ejecutar = function(nivel, subnivel) {
 
 	// Cargar los recursos en RAM antes de iniciar actividad 
 	var self = this;
-
 	cargarRecursos(recursosAct, true, function() {
 		Crafty.enterScene("Actividad", self);
 		//reproducir el audio de fondo
@@ -85,11 +84,11 @@ Actividad.prototype.siguienteActiv = function() {
 		gestorTest.iniciarTest(this.nivel);
 	} else {
 		//caso especifico 
-		if (this.subnivel == 3 && this.nivel == 3) {
-			Crafty.scene("MenuCuadros");
-		} else {
+		//if (this.subnivel == 3 && this.nivel == 3) {
+		//	Crafty.scene("MenuCuadros");
+		//} else {
 			this.ejecutar(this.nivel, this.subnivel + 1);
-		}
+		//}
 	}
 };
 
