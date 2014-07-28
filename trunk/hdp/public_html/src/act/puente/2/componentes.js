@@ -25,8 +25,8 @@ Crafty.c("H2_Personaje", {
                 Crafty.math.randomInt(50, 100));
         var despy = this.y + Crafty.math.randomInt(-1, 1) * Crafty.math.randomInt(10, 60);
         var despt = Crafty.math.randomInt(70, 100);
-        if(despy > 750){
-            despy = 750;
+        if(despy > 650){
+            despy = 650;
         }
         this.caminar({x: despx, y: despy, t: despt}, function() {
             //si llega al final verificar que haya llegado al punto final .pf
