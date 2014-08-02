@@ -33,10 +33,13 @@ function spritesGlobal() {
 		sprPAU_hoja: [0,0,8,7]
 	});
 
-	// Partículas
-	//se usa en la actividad de bloques-morro
+	// *** PARTICULAS
+	
 	Crafty.sprite("img/particulas/polvo.png", {
 		spr_polvo: [0, 0, 32, 28]
+	});
+	Crafty.sprite("img/particulas/star.png", {
+		spr_partEstrella: [0, 0, 16, 15]
 	});
 	Crafty.sprite("img/particulas/fuegos.png", {
 		spr_fuegosArt: [0, 0, 23, 21]
@@ -74,5 +77,35 @@ function spritesGlobal() {
 		sprGL_advExclama: [0, 152, 75, 76]
 	});
 
+	// CajaDialogo
+	Crafty.sprite("img/global/dialogo-bordes-vert.png", {
+		sprGL_dialBordesVert: [0, 0, 1024, 8]
+	});
+	Crafty.sprite("img/global/dialogo-borde-der.png", {
+		sprGL_dialBordeDer: [0, 0, 8, 1024]
+	});
+	Crafty.sprite("img/global/dialogo-borde-der.png", {
+		sprGL_dialBordeDer: [0, 0, 8, 1024]
+	});
+	Crafty.sprite("img/global/dialogo-digitos.png", {
+		sprGL_dialDigito: [0, 0, 24, 32]
+	});
+	Crafty.sprite("img/global/bt-dialogo.png", {
+		sprGL_btAceptar: [0, 0, 67, 67],
+		sprGL_btAceptar2: [0, 69, 67, 67],
+		sprGL_btCancelar: [69, 0, 67, 67],
+		sprGL_btCancelar2: [69, 69, 67, 67],
+		sprGL_btAnterior: [136, 0, 67, 67],
+		sprGL_btAnterior2: [136, 69, 67, 67],
+		sprGL_btSiguiente: [204, 0, 67, 67],
+		sprGL_btSiguiente2: [204, 69, 67, 67]
+	});
+	
+	// Páginas de diálogo: como jugar
+	Crafty.sprite("img/global/como-jugar.png", {
+		sprGL_dialComoJugar: [0, 0, 512, 512]
+	});
+	
+	
 	spritesPuntaje();
 }

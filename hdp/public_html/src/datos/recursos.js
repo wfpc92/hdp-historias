@@ -21,8 +21,13 @@ var Recursos = {
 			"img/global/perdiste.png",
 			"img/global/mano.png", "img/global/gestos.png", "img/global/advertencias.png",
 			"img/test/linea.png", "img/test/numeros.png",
-			"img/carga/pajaro.png", "img/carga/cargando.png", "img/carga/logo.png"
-
+			"img/carga/pajaro.png", "img/carga/cargando.png", "img/carga/logo.png",
+			
+			"img/global/dialogo-esq.png", "img/global/dialogo-bordes-vert.png", "img/global/dialogo-borde-der.png", "img/global/bt-dialogo.png", "img/global/dialogo-digitos.png",
+			
+			"img/global/llave.png",
+			
+			"img/global/como-jugar.png"
 		],
 		initSprites: spritesGlobal
 	},
@@ -32,8 +37,7 @@ var Recursos = {
 		spritesListas: false,
 		rutas: [
 			"img/menu-pri/fondo.png", "img/menu-pri/piso-frente.png", "img/menu-pri/piso-fondo.png", "img/menu-pri/nube-izq.png", "img/menu-pri/nube-der.png", "img/menu-pri/caballo-somb.png", "img/menu-pri/logo.png", "img/menu-pri/logo-config.png", "img/menu-pri/caballo.png", "img/menu-pri/bt-jugar.png", "img/menu-pri/bt-opciones.png", "img/menu-pri/bt-configurac.png",
-			"img/menu-pri/fon-dialogo.png", "img/menu-pri/creditos.png",
-			"img/menu-pri/bt-dialogo.png"
+			"img/menu-pri/creditos.png"
 			
 		],
 		initSprites: spritesMenuPri
@@ -58,7 +62,6 @@ var Recursos = {
 		spritesListas: false,
 		rutas: [
 			"img/test/linea.png",
-			"img/test/llave.png",
 			"img/test/prueba_de_nuevo.png",
 			"img/test/txt-inicio.png"
 		],
@@ -74,8 +77,9 @@ var Recursos = {
 				"img/act/morro/1/fondo.jpg",
 				"img/act/morro/1/morro-verde.png",
 				"img/act/morro/1/obrero.png",
-				"img/act/morro/1/spr-capas-1.png",
-				"img/act/morro/1/spr-capas-2.png"
+				"img/act/morro/1/capas1.png",
+				"img/act/morro/1/capas2.png",
+				"img/act/morro/1/capas3.png"
 			],
 			musica: ["morro1", "audio/act/morro/morro1.ogg"],
 			initSprites: spritesMorro1

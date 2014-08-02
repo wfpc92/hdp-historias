@@ -42,7 +42,6 @@ Crafty.c("Boton", {
 		this.attach(this.e_btActivo);
 		
 		this.bind("MouseDown", function(e) {
-			console.log("MouseDown bloqueado:" + this.bloqueado);
 			if (!this.bloqueado) {
 				this.mostrarActivo();
 			}

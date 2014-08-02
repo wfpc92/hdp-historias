@@ -119,8 +119,8 @@ Actividad.prototype.mostrarPuntaje = function() {
 			}
 		}
 
-		// Guardamos progreso en memoria no volátil
-		Crafty.storage('progreso', progreso);
+		// Guardamos progreso en memoria persistente
+		guardarProgreso();
 
 		actPuntaje.puntos = puntosObtenidos;
 		actPuntaje.animMostrar();

@@ -3,6 +3,33 @@
  * Dato: Es una montaña artificial prehispánica -al parecer data del año 1600 - 600 a.C.- de carácter ceremonial funerario, ubicada en el costado noreste de Popayán, considerado el sitio arqueológico más importante de la ciudad.
  * Interacción: Construir el morro mediante toque rápido
  */
+Crafty.c("ImageCanvas", {
+	url: "",
+	alto: 0,
+	ancho: 0,
+	
+	init: function() {
+		this.requires("2D, Canvas");
+	},
+	
+	_dibujar: function(e) {
+		var ctx = e.ctx;
+		ctx.drawImage(Crafty.assets[this.url], this._x, this._y, this.ancho, this.alto);
+	},
+	
+	image: function(url, ancho, alto) {
+		this.url = url;
+		this.ancho = ancho;
+		this.alto = alto;
+		this.attr({ w: ancho, h: alto });
+		
+		this.bind("Draw", this._dibujar);
+		this.ready = true;
+		
+		return this;
+	}
+});
+
 function ActMorro1() {
 	this.aciertosObjetivo = 0;
 	this.temporizadorActividad = 0;
@@ -17,15 +44,19 @@ function ActMorro1() {
 	this.coordsX = [[164,1280],[0,1280],[0,1280],[0,1257],[0,1195],[0,1217],[0,1167],[0,1129],[0,996],[0,949],[0,930],[0,882],[0,840],[0,795],[0,753],[0,708],[18,642],[39,590],[125,506],[182,454],[239,383]]; // Coordenadas xIni y xFin de las capas en pantalla
 
 	this.init = function() {
-		Crafty.e("2D, Canvas, Image").image("img/act/morro/1/fondo.jpg");
-
+		//Crafty.e("2D, Canvas, Image").image("img/act/morro/1/fondoback.jpg");
+		Crafty.e("ImageCanvas").image("img/act/morro/1/fondo.jpg", 1280, 800);
+		
 		// Inicializamos las capas de la construcción
-		var yMostrar = [743, 660, 632, 608, 613, 582, 556, 490, 475, 457, 438, 421, 406, 385, 365, 349, 308, 279, 265, 250, 248];
+		var yMostrar = [743, 660, 632, 608, 613, 582, 556, 490, 475, 457, 438, 421, 406, 385, 365, 351, 309, 279, 265, 251, 248];
 		var yOcultar = [0, 744, 710, 659, 674, 646, 623, 577, 546, 554, 510, 483, 450, 449, 446, 424, 378, 338, 320, 315, 287];
+		var xCapa = [163,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,121,176,237];
 		for (i = 0; i < 21; i++) {
-			this.arrCapas[i] = Crafty.e("M1Capa").M1Capa("sprM1_capa", i + 1, yMostrar[i] + 4, yOcultar[i]).attr({z: 50 - i});
+			this.arrCapas[i] = Crafty.e("M1Capa")
+									.M1Capa("sprM1_capa", i + 1, yMostrar[i] + 4, yOcultar[i]).attr({ x: xCapa[i], z: 50 - i });
 		}
 
+		var self = this;
 		this.toque = new ToqueRapido();
 		this.toque.incremento = 6;
 		this.toque.vRestar = 1;
@@ -33,7 +64,7 @@ function ActMorro1() {
 		this.toque
 				.init(this)
 				.callbackCambio(this.cambioVal)
-				.callbackMaximo(this.ganarActividad);
+				.callbackMaximo(function() { self.ganarActividad(); });
 		this.toque.val = 10;
 		this.toque.vMin = 10;
 		
@@ -45,12 +76,12 @@ function ActMorro1() {
 		}
 
 		// morro verde
-		this.e_morroVerde = Crafty.e("2D, Canvas, Image, Tween")
-				.image("img/act/morro/1/morro-verde.png")
-				.attr({ z: 200, alpha: 0.0, visible: false });
+		this.e_morroVerde = Crafty.e("ImageCanvas, Tweener")
+				.image("img/act/morro/1/morro-verde.png", 1280, 638)
+				.attr({ y: 162, z: 200, alpha: 0.0, visible: false });
 
 		// obrero
-		this.e_obrero = Crafty.e("2D, Canvas, Image, Delay, Tween")
+		this.e_obrero = Crafty.e("2D, Canvas, Image, Delay, Tweener")
 				.image("img/act/morro/1/obrero.png")
 				.attr({x: 310, y: 265, z: 199, visible: false });
 		
@@ -132,20 +163,25 @@ function ActMorro1() {
 	this.ganarActividad = function ganarActividad() {
 		gesActividad.temporizador.parar();
 		
-		var self = this._padre;
-		this._padre.e_morroVerde.visible = true;
-		this._padre.e_morroVerde.tween({alpha: 1.0}, 1000);
-
-		this._padre.e_obrero.delay(function() {
-			this.visible = true;
-			this.tween({y: 117}, 150);
-		}, 1000);
+		var self = this;
+		var e_verde = this.e_morroVerde;
+		var e_obrero = this.e_obrero;
+		var capas = this.arrCapas;
+		var i;
 		
-		Crafty.e("Delay").delay(function() {
-			gesActividad.mostrarPuntaje();
-			self.terminarActividad();
-		}, 1500);
-		return this;
+		e_verde.visible = true;
+		e_verde.addTween({ alpha: 1.0 }, "linear", 50, function() {
+			// desaparecemos las capas para ahorrar memoria
+			for (i = 0 ; i < 21 ; i++) capas[i].destroy();
+			
+			e_obrero.visible = true;
+			e_obrero.addTween({ y: 117 }, "linear", 10, function() {
+				Crafty.e("DelayFrame").delay(function() {
+					gesActividad.mostrarPuntaje();
+					self.terminarActividad();
+				}, 30);
+			});
+		});
 	};
 }
 ;

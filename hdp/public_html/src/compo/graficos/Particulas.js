@@ -48,6 +48,7 @@ function Particulas(conf) {
 	this.objInterval = conf.objInterval || null; // objeto del setInterval()
 	this.f_crear = conf.f_crear || null; // función a invocar cada vez que se cree una partícula. Recibe la entidad como parametro
 	this.componentes = conf.componentes || ""; // Componentes adicionales de cada partícula (miSprite, SpriteAnimation, etc.)
+	this.e_origen = conf.e_origen || null; // (Opcional) Entidad origen de las partículas
 	
 	this.cuentaParticulas = 0;
 }
@@ -79,11 +80,22 @@ Particulas.prototype.iniciar = function() {
 				clearInterval(self.objInterval);
 			}
 			else {
+				// Si es necesario, actualizamos las coordenadas de origen
+				if(self.e_origen) {
+					self.x = self.e_origen._x;
+					self.y = self.e_origen._y;
+				}
+				
 				self.crear(self);
 				self.cuentaParticulas++;
 			}
 		}, this.periodo);
 	}
+};
+
+// Detiene el disparo de partículas
+Particulas.prototype.detener = function() {
+	clearInterval(this.objInterval);
 };
 
 // Dispara una partícula desde el origen

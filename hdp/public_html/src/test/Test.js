@@ -2,27 +2,41 @@ var Test = function() {
 	this.nivel = 0;
 	this.banco = null;
 	this.preguntaActual = null;
-	this.contRespuestasOK = 0;
-	this.numPreguntas = 0; // Número de preguntas que se debe aprobar para concluir el test
+	this.cuentaPreguntas = 0; // Preguntas ya respondidas
+	this.totalPreguntas = 0; // Número de preguntas que se debe aprobar para concluir el test
 	this.f_inicializar = null; // Función a ejecutar para inicializar la pregunta
+	this.f_animFinalizar = null; // Referencia a función de finalización en la escena
+	this.arrPreguntasAnt = []; // Almacena los números de pregunta que ya se contestaron
 	
 	this.e_numero = null; // Referencia al número de test
 };
 
-// Elige una pregunta aleatoria
+// Elige una pregunta aleatoria y la almacena en el arreglo de preguntas anteriores
 Test.prototype.elegirPregunta = function() {
-	this.preguntaActual = Crafty.math.randomElementOfArray(this.banco);
+	var numPregunta;
+	
+	// si se acaban las preguntas, resetear
+	if (this.arrPreguntasAnt.length >= this.banco.length) {
+		this.arrPreguntasAnt = [];
+	} 
+	
+	do {
+		numPregunta = randomInt(0, this.banco.length - 1);
+	} while (this.arrPreguntasAnt.indexOf(numPregunta) >= 0);
+	
+	this.arrPreguntasAnt.push(numPregunta);
+	this.preguntaActual = this.banco[numPregunta];
 };
 
 // Inicia la escena de test
+//obtener las preugntas de la base de datos
+//obtener aleatoriamente la pregunta
+//mosrtar la pregunta
 Test.prototype.iniciarTest = function(nivel) {
-	//obtener las preugntas de la base de datos
-	//obtener aleatoriamente la pregunta
-	//mosrtar la pregunta
 	this.nivel = nivel;
 	this.banco = tests[nivel].pregunta;
-	this.numPreguntas = tests[nivel].numPreguntas;
-	this.contRespuestasOK = 0;
+	this.totalPreguntas = tests[nivel].totalPreguntas;
+	this.cuentaPreguntas = 0;
 	gesSonido.pararMusica();
 	
 	cargarRecursos(Recursos.test, true, function() {
@@ -31,42 +45,35 @@ Test.prototype.iniciarTest = function(nivel) {
 };
 
 Test.prototype.siguientePregunta = function() {
-	//obtener aleatoriamente la pregunta
-	//mosrtar la pregunta
-	var sigP = Crafty.math.randomElementOfArray(this.banco);
-	if (sigP === this.preguntaActual) {
-		this.siguientePregunta();
-	}
-	else {
-		this.preguntaActual = sigP;
-		this.f_inicializar();
-	}
+	this.elegirPregunta();
+	this.f_inicializar();
 	return this;
 };
 
 Test.prototype.verificarPregunta = function(num) {
 	//verificar que los campos correspondan con las opciones
-	var contR = 0;
-	var contRT = 0;
+	var camposLlenos = 0; // campos que ya han sido respondidos
+	var camposCorrectos = 0; // campos con la respuesta correcta
+	
 	Crafty("TestEspacio").each(function() {
 		if (this.resultado !== null) {
-			contR += 1;
+			camposLlenos += 1;
 			if (this.resultado) {
-				contRT += 1;
+				camposCorrectos += 1;
 			}
 		}
 	});
-	if (contR >= num) {
-		//en caso que este completo el test se muestran los resultados
-		//mostrar los resultados con imagenes chulito y equis
+	
+	if (camposLlenos >= num) {
+		//en caso que se llenen todos los espacios de la pregunta, se muestran los resultados
 		Crafty("TestEspacio").each(function() {
 			this.mostrarResultado();
 		});
 		
-		if (contRT === contR) {
-			this.contRespuestasOK += 1;
+		if (camposCorrectos === camposLlenos) {
+			this.cuentaPreguntas += 1;
 			
-			if (this.contRespuestasOK >= this.numPreguntas) {
+			if (this.cuentaPreguntas >= this.totalPreguntas) {
 				this.finalizarTest();
 			}
 			else {
@@ -89,7 +96,7 @@ Test.prototype.mostrarPantallaRepetir = function() {
 	//obtener los componentes para hacer una pregunta nueva
 	//en caso de pregunta nueva se escoje aleatoriamente
 	//sino se va a la escena de postal
-	this.contRespuestasOK = 0;
+	this.cuentaPreguntas = 0;
 	var fondo = Crafty.e("2D, Canvas, Color, Tweener")
 			.attr({x: 0, y: 0, z: 1000, w: 1280, h: 800, alpha: 0})
 			.color("#3F3B2F");
@@ -98,10 +105,10 @@ Test.prototype.mostrarPantallaRepetir = function() {
 			.image("img/test/prueba_de_nuevo.png");
 	var e_btAceptar = Crafty.e("Boton, Tweener")
 			.attr({x: 514, y: 595, z: 9001, alpha: 0})
-			.Boton("sprTE_btAceptar", "sprTE_btAceptar2");
+			.Boton("sprGL_btAceptar", "sprGL_btAceptar2");
 	var e_btCancelar = Crafty.e("Boton, Tweener")
 			.attr({x: 651, y: 595, z: 9001, alpha: 0})
-			.Boton("sprTE_btCancelar", "sprTE_btCancelar2");
+			.Boton("sprGL_btCancelar", "sprGL_btCancelar2");
 	
 	var self = this;
 	e_btAceptar.bind("MouseUp", function() {
@@ -133,10 +140,6 @@ Test.prototype.mostrarPantallaRepetir = function() {
 
 // Cuando se aprueban todas las preguntas del test...
 Test.prototype.finalizarTest = function() {
-	var self = this;
-	Crafty.e("Delay").delay(function() {
-		progreso[self.nivel + 1].bloqueado = false;
-		Crafty.enterScene("MenuCuadros");
-	}, 2000);
+	this.f_animFinalizar();
 	return this;
 };

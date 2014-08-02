@@ -150,7 +150,25 @@ function resetProgreso() {
 	}
 	progreso[0].bloqueado = false; // primer nivel
 	
+	progreso[5].mostrarComoJugar = true;
+	progreso[5].mostrarDialogoTerminado = true;
+	
+	guardarProgreso();
+}
+
+// Guarda el progreso en memoria persistente
+function guardarProgreso() {
 	Crafty.storage('progreso', progreso);
 }
 
-
+// Siempre hay que revisar si el arreglo de progreso y configuración ha cambiado por actualizaciones
+function actualizaciones() {
+	if (progreso[5]) {
+		// Si progreso[5] existe, al menos estamos en la versión 1.1
+	}
+	else {
+		// si progreso[5] no existe, crearlo y guardar (sincronizar este con progreso.js)
+		progreso[5] = { version: 1.1, mostrarComoJugar: true, mostrarDialogoTerminado: true };
+		guardarProgreso();
+	}
+}

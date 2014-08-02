@@ -16,11 +16,12 @@ window.onload = function() {
 	// Cargamos progreso de memoria
 	var progresoGuardado = Crafty.storage('progreso');
 	if (progresoGuardado) { progreso = progresoGuardado; }
+	actualizaciones(); // Actualizar el arreglo de progreso si han habido actualizaciones
 
 	// Inicializamos el objeto único global Box2D
 	Crafty.box2D.init(0, 10, 32, true);
 	world = Crafty.box2D.world;
-	if (!cocoon) Crafty.box2D.showDebugInfo();
+	//if (!cocoon) Crafty.box2D.showDebugInfo();
 	gesSonido = new Sonido();
 
 	// Cargamos recursos globales (incluídos sprites) antes de hacer cualquier cosa
@@ -29,7 +30,7 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		gesActividad.ejecutar(3,1); // Nivel de 0 a 4, Subnivel de 0 a 5
+		gesActividad.ejecutar(0, 0); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		//Crafty.enterScene("Inicio");
 		//Crafty.enterScene("MenuCuadros");
@@ -47,7 +48,7 @@ window.onload = function() {
 	/*
 	if (cocoon) {
 		CocoonJS.App.setAppShouldFinishCallback(function() {
-			alert("Hola mundo!");
+			alert("¿Deseas salir del juego?");
 			return false;
 		});
 	}*/

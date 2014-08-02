@@ -29,13 +29,6 @@ function spritesMenuPri() {
 		sprMI_btCreditos2: [0,392,201,55]
 	});
 	
-	Crafty.sprite("img/menu-pri/bt-dialogo.png", {
-		sprMI_btAceptar: [0, 0, 69, 69],
-		sprMI_btAceptar2: [0, 69, 69, 69],
-		sprMI_btCancelar: [69, 0, 69, 69],
-		sprMI_btCancelar2: [69, 69, 69, 69]
-	});
-	
 	Crafty.sprite("img/menu-pri/creditos.png", {
 		sprMI_creditos: [0, 0, 512, 548]
 	});

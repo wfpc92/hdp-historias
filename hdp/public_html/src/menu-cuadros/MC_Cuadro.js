@@ -23,6 +23,7 @@ Crafty.c("MC_Cuadro", {
 	hIni: 0,
 	xCentro: 0, // coords donde se "centraría" el cuadro
 	yCentro: 0,
+	centroMarco: { x: 0, y: 0 }, // coordenadas relativas donde estaría el centro visual del marco del cuadro
 	
 	e_cGrande: null, // entidad del cuadro grande
 	ordenActiv: null, // Orden de las actividades
@@ -56,27 +57,32 @@ Crafty.c("MC_Cuadro", {
 					this.attr({ w: 367, h: 254 });
 					this.dirOcultar = 0;
 					this.areaMap([38,38],[273,38],[273,180],[38,180]);
+					this.centroMarco = { x: 156, y: 112 };
 			break;
 			case 2: this.ordenActiv = [1,2,3,4,5,6];//[1,3,4,5,2,6];
 					this.attr({ w: 248, h: 343 });
 					this.dirOcultar = 0;
 					this.areaMap([20,21],[178,21],[178,282],[20,282]);
+					this.centroMarco = { x: 96, y: 150 };
 					this.vertical = true;
 			break;
 			case 3: this.ordenActiv = [1,2,3,4,5,6];
 					this.attr({ w: 395, h: 256 });	
 					this.dirOcultar = 1;
 					this.areaMap([41,29],[294,29],[294,183],[41,183]);
+					this.centroMarco = { x: 167, y: 106 };
 			break;
 			case 4: this.ordenActiv = [1,2,3,4,5,6];
 					this.attr({ w: 376, h: 256 });	
 					this.dirOcultar = 3;
 					this.areaMap([40,39],[280,39],[280,185],[40,185]);
+					this.centroMarco = { x: 158, y: 108 };
 			break;
 			case 5: this.ordenActiv = [1,2,3,4,5,6];
 					this.attr({ w: 350, h: 242 });
 					this.dirOcultar = 1;
 					this.areaMap([36,36],[259,36],[259,172],[36,172]);
+					this.centroMarco = { x: 145, y: 106 };
 					break;
 		}
 		

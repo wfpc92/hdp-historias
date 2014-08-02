@@ -1,64 +1,3 @@
-// Diálogo de reestablecer progreso
-Crafty.c("MP_DialogReset", {
-	e_texto: null,
-	e_btAceptar: null,
-	e_btCancelar: null,
-	f_callback: null, // Invocar al hacer ocultar este diálogo
-	
-	init: function() {
-		this.requires("2D, Canvas, Image, Tweener")
-				.attr({ x: 315, y: 200, z: 9000, alpha: 0, visible: false })
-				.image("img/menu-pri/fon-dialogo.png");
-		
-		this.e_texto = Crafty.e("BloqueTexto")
-						.attr({ x: this._x + 85, y: this._y + 130, z: 9001 })
-						.BloqueTexto("Se eliminará todo tu progreso.\n\b¿Estás de acuerdo?", false)
-						.ocultar();
-		this.e_btAceptar = Crafty.e("Boton")
-						.attr({ x: this._x + 226, y: this._y + 302, z: 9001 })
-						.Boton("sprMI_btAceptar", "sprMI_btAceptar2")
-						.ocultar();
-		this.e_btCancelar = Crafty.e("Boton")
-						.attr({ x: this._x + 353, y: this._y + 302, z: 9001 })
-						.Boton("sprMI_btCancelar", "sprMI_btCancelar2")
-						.ocultar();
-				
-		// Acciones
-		var self = this;
-		
-		this.e_btCancelar.bind("MouseUp", function() {
-			self.ocultar();
-		});
-		
-		this.e_btAceptar.bind("MouseUp", function() {
-			resetProgreso();
-			self.ocultar();
-		});
-	},
-	
-	mostrar: function() {
-		this.visible = true;
-		this.addTween({ alpha: 1 }, "linear", 5, function() {
-			this.e_texto.mostrar();
-			this.e_btAceptar.visible = true;
-			this.e_btCancelar.visible = true;
-		});
-		
-		return this;
-	},
-	
-	ocultar: function() {
-		this.visible = false;
-		this.alpha = 0;
-		this.e_texto.ocultar();
-		this.e_btAceptar.ocultar();
-		this.e_btCancelar.ocultar();
-		this.f_callback();
-		return this;
-	}
-});
-
-
 Crafty.c("Scroller", {
 	scrY: 0,
 	altoReal: 0,
@@ -120,7 +59,7 @@ Crafty.c("MP_DialogCredi", {
 						.Scroller("sprMI_creditos", 0.6, 320);
 		this.e_btAceptar = Crafty.e("Boton")
 						.attr({ x: this._x + 290, y: this._y + 375, z: 9001 })
-						.Boton("sprMI_btAceptar", "sprMI_btAceptar2")
+						.Boton("sprGL_btAceptar", "sprGL_btAceptar2")
 						.ocultar();
 		
 		// Acciones
