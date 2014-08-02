@@ -56,23 +56,31 @@ Crafty.defineScene("menuPrincipal", function() {
 				.image("img/menu-pri/logo-config.png");
 
 		// Botones menú configuración
-		e_btReset = Crafty.e("MI_btReset")
-				.attr({z: 25, alpha: 0.0, visible: false}).posIni(461, 309);
-		/*
-		e_btFaq = Crafty.e("MI_btFaq")
-				.attr({z: 25, alpha: 0.0, visible: false}).posIni(469, 380);
-		e_btTutorial = Crafty.e("MI_btTutorial")
-				.attr({z: 25, alpha: 0.0, visible: false}).posIni(519, 451);
-		*/
-		e_btCreditos = Crafty.e("MI_btCreditos")
-				//.attr({z: 25, alpha: 0.0, visible: false}).posIni(541, 519);
-				.attr({z: 25, alpha: 0.0, visible: false}).posIni(541, 380);
+		e_btTutorial = Crafty.e("MI_btTutorial");
+		e_btReset = Crafty.e("MI_btReset");
+		//e_btFaq = Crafty.e("MI_btFaq");
+		e_btCreditos = Crafty.e("MI_btCreditos");
+		var arrBotConfig = [e_btTutorial, e_btReset, e_btCreditos];
+		for (i = 0 ; i < 3 ; i++) {
+			arrBotConfig[i].attr({z: 25, alpha: 0.0, visible: false}).posIni((1280 - arrBotConfig[i]._w) / 2, 309 + 70 * i);
+		}
 		
 		e_btAtras = Crafty.e("MI_btAtras")
 				.attr({z: 25}).posIni(1165, 185).ocultar();
 		
-		// Diálogos
-		e_dialogReset = Crafty.e("MP_DialogReset");
+		// Diálogo de resetear progreso
+		e_dialogReset = Crafty.e("CajaDialogo");
+		e_dialogReset.CajaDialogo(1, "Se eliminará todo tu progreso.\n \b¿Estás de acuerdo?\b", {
+			aceptar: function() {
+				resetProgreso();
+				desbloquearBtConfig();
+				Crafty.e("CajaDialogo").CajaDialogo(0, "Tu progreso en el juego\n fué \beliminado\b.").mostrar();
+			},
+			cancelar: function() {
+				desbloquearBtConfig();
+			}
+		});
+		
 		e_dialogCredi = Crafty.e("MP_DialogCredi");
 		
 	}
@@ -96,9 +104,9 @@ Crafty.defineScene("menuPrincipal", function() {
 			this.oscilarX(20, 450);
 		});
 		// el logo aparece con fadein
-		e_logo.delay(function() {
-			this.addTween({alpha: 1.0}, "linear", 100);
-		}, 1000);
+		Crafty.e("DelayFrame").delay(function() {
+			e_logo.addTween({alpha: 1.0}, "linear", 70);
+		}, 60);
 
 		// luego de un momento, los botones aparecen
 		Crafty.e("DelayFrame").delay(function() {
@@ -126,15 +134,13 @@ Crafty.defineScene("menuPrincipal", function() {
 		});
 
 		// aparecen los botones de config. desde abajo
-		Crafty.e("Delay").delay(function() {
-			e_btReset.animMostrar(70, 0);
+		Crafty.e("DelayFrame").delay(function() {
+			e_btTutorial.animMostrar(70, 0);
+			e_btReset.animMostrar(90, 80);
 			//e_btFaq.animMostrar(90, 100);
-			//e_btTutorial.animMostrar(110, 200);
-			//e_btCreditos.animMostrar(130, 300);
-			e_btCreditos.animMostrar(90, 100);
-
+			e_btCreditos.animMostrar(110, 160);
 			e_btAtras.animMostrar(0);
-		}, 1400);
+		}, 50);
 
 		// los pisos y las nubes se mueven para crear ilusión de perspectiva
 		e_nubeIzq.addTween({x: (e_nubeIzq._x - 6)}, "easeOutCubic", 70);
@@ -146,17 +152,17 @@ Crafty.defineScene("menuPrincipal", function() {
 	// Animación de transición desde el menú de configuración al menú principal
 	function animSalirMenuConfig() {
 		// Desvanecer el logo pequeño y aparecer el grande
-		e_logoConfig.addTween({alpha: 0.0}, "linear", 60, function() {
+		e_logoConfig.addTween({alpha: 0.0}, "linear", 50, function() {
 			this.visible = false;
-			e_logo.attr({visible: true}).addTween({alpha: 1.0}, "linear", 60);
+			e_logo.attr({visible: true}).addTween({alpha: 1.0}, "linear", 50);
 		});
 
 		// Deslizar abajo y desvanecer los botones de configuración
+		
+		e_btTutorial.animEsconder(100, 120);
+		//e_btFaq.animEsconder(90, 120);
+		e_btReset.animEsconder(120, 60);
 		e_btCreditos.animEsconder(130, 0);
-		/*e_btTutorial.animEsconder(110, 60);
-		e_btFaq.animEsconder(90, 120);
-		e_btReset.animEsconder(70, 180);*/
-		e_btReset.animEsconder(110, 60);
 
 		// Regresamos las montañas y nubes a su ubicación original
 		e_nubeIzq.addTween({x: (e_nubeIzq._x + 6)}, "easeOutCubic", 70);
@@ -201,14 +207,14 @@ Crafty.defineScene("menuPrincipal", function() {
 	function bloquearBtConfig() {
 		e_btReset.bloquear();
 		e_btCreditos.bloquear();
-		//e_btTutorial.bloquear();
+		e_btTutorial.bloquear();
 		//e_btFaq.bloquear();
 	}
 	// Habilitar los botones del menú de configuración
 	function desbloquearBtConfig() {
 		e_btReset.habilitar();
 		e_btCreditos.habilitar();
-		//e_btTutorial.habilitar();
+		e_btTutorial.habilitar();
 		//e_btFaq.habilitar();
 	}
 
@@ -246,23 +252,21 @@ Crafty.defineScene("menuPrincipal", function() {
 		transicionJugar();
 	};
 	
+	e_btTutorial.f_callback = function() {
+		dialComoJugar();
+	};
+	
 	// Mostrar diálogo de reestablecer progreso
-	e_btReset.bind("MouseUp", function() {
-		if (!this.bloqueado) {
-			bloquearBtConfig();
-			e_dialogReset.f_callback = desbloquearBtConfig;
-			e_dialogReset.mostrar();
-		}
-	});
+	e_btReset.f_callback = function() {
+		e_dialogReset.mostrar();
+	};
 	
 	// Mostrar diálogo de créditos
-	e_btCreditos.bind("MouseUp", function() {
-		if (!this.bloqueado) {
-			bloquearBtConfig();
-			e_dialogCredi.f_callback = desbloquearBtConfig;
-			e_dialogCredi.mostrar();
-		}
-	});
+	e_btCreditos.f_callback = function() {
+		bloquearBtConfig();
+		e_dialogCredi.f_callback = desbloquearBtConfig;
+		e_dialogCredi.mostrar();
+	};
 
 	animEntradaIni();
 });

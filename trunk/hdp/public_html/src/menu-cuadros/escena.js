@@ -1,4 +1,4 @@
-Crafty.defineScene("MenuCuadros", function() {
+Crafty.defineScene("MenuCuadros", function(config) {
 	//boton de atras para la postal
 	var e_btAtrasFondo, e_btAtrasCuadro;
 	var e_fondo, e_logo; // Fondo
@@ -10,7 +10,6 @@ Crafty.defineScene("MenuCuadros", function() {
 	var e_btAtras;
 	var objCortina = new Cortina();
 	
-
 	function crearEntidades() {
 		e_fondo = Crafty.e("2D, Canvas, Image, Tweener")
 				.image("img/menu-cuadros/fondo.jpg")
@@ -102,6 +101,29 @@ Crafty.defineScene("MenuCuadros", function() {
 
 	// Animación de entrada del menú principal
 	function animEntradaIni() {
+		// Desbloquear un nivel si es necesario
+		if (config) {
+			if (config.desbloquear) {
+				var nivelDesbl = config.desbloquear;
+				
+				// Desbloquear nivel correspondiente o mostrar un mensaje felicitando si ya terminó el juego
+				if (nivelDesbl < 5) {
+					if (progreso[nivelDesbl].bloqueado) {
+						desbloquearNivel(nivelDesbl);
+					}
+				}
+				else {
+					if (progreso[5].mostrarDialogoTerminado) {
+						progreso[5].mostrarDialogoTerminado = false;
+						guardarProgreso();
+						Crafty.e("CajaDialogo")
+								.CajaDialogo(0, "\bFelicitaciones!\b\nHas superado todos los niveles del juego.\n¿Lograrás obtener \b18 monedas\b en todos los niveles?")
+								.mostrar();
+					}
+				}
+			}
+		}
+		
 		// Deslizamos los cuadrados desde arriba
 		for (i = 0 ; i < 5 ; i++) {
 			cuadros[i].bloquear()
@@ -161,6 +183,64 @@ Crafty.defineScene("MenuCuadros", function() {
 			cuadros[i].actualizarProgreso();
 		}
 	}
+	
+	// Ejecuta la animación de desbloquear nivel y lo desbloquea
+	function desbloquearNivel(nivel) {
+		// Cubrimos con cubierta invisible para evitar eventos
+		var e_cubierta = Crafty.e("2D, Canvas, Mouse").attr({ w: 1280, h: 800, alpha: 0, z: 9000 });
+		
+		var e_cuadro = cuadros[nivel];
+		var e_llave = Crafty.e("2D, Canvas, Image, Tweener")
+						.attr({ x: e_cuadro._x + e_cuadro.centroMarco.x - 48, y: -100 })
+						.image("img/global/llave.png");
+		var e_cortinaBlanca = new Cortina();
+		
+		var particulasLlave = new Particulas({
+			componentes: "spr_partEstrella, SpriteAnimation",
+			e_origen: e_llave,
+			z: 600,
+			deltaOriX: e_llave._w,
+			deltaOriY: e_llave._h,
+			vx: 0,
+			deltaVx: 2,
+			periodo: 35,
+			numParticulas: 100,
+			magnitud: 35,
+			duracion: 60,
+			atenuacion: 12,
+			f_crear: function(ent) {
+				ent.reel("girar", 400, [[0,0],[16,0],[32,0],[64,0]]).animate("girar", -1);
+			}
+		});
+		
+		Crafty.e("DelayFrame").delay(function() {
+			particulasLlave.iniciar();
+
+			// Animamos la llave
+			e_llave.addTween({ y: e_cuadro._y + e_cuadro.centroMarco.y - 50 }, "easeOutBack", 60, function() {
+				Crafty.e("DelayFrame").delay(function() {
+					particulasLlave.detener();
+					this.destroy();
+					e_cuadro.quitarCandado();
+					e_llave.destroy();
+					progreso[nivel].bloqueado = false;
+					guardarProgreso();
+
+					e_cortinaBlanca.desaparecer(18, function() {
+						Crafty.e("DelayFrame").delay(function() {
+							e_cubierta.destroy();
+							Crafty.e("CajaDialogo")
+									.CajaDialogo(0, "Ahora puedes acceder al\n siguiente nivel:\n\b-" + niveles[nivel].nombre + "-\b")
+									.mostrar();
+						}, 30);
+					});
+				}, 60);
+			});
+		}, 50);
+	}
+	
+	// ********** FIN FUNCIONES
+
 
 
 	// Cargamos recursos del menú de cuadros y luego iniciamos la escena
@@ -174,7 +254,15 @@ Crafty.defineScene("MenuCuadros", function() {
 
 		objCortina.desaparecer(50);
 		Crafty.e("Delay").delay(function() {
-			animEntradaIni();
+			// Mostrar el diálogo de cómo jugar la primera vez, o pasar diréctamente a la animación de entrada
+			if (progreso[5].mostrarComoJugar) {
+				progreso[5].mostrarComoJugar = false;
+				guardarProgreso();
+				dialComoJugar(animEntradaIni);
+			}
+			else {
+				animEntradaIni();
+			}
 		}, 700);
 		gesSonido.reproducirMusica('m_inicio');
 	});

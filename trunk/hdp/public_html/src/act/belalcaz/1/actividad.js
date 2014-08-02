@@ -42,7 +42,7 @@ var ActBelalcaz1 = function() {
 			duracion: 63,
 			atenuacion: 22,
 			f_crear: function(ent) {
-				ent.reel("quemar", 400, [[0, 0], [23, 0], [46, 0], [69, 0]]).animate("quemar", -1);
+				ent.reel("quemar", 400, [[0,0],[23,0],[46,0],[69,0]]).animate("quemar", -1);
 			}
 		});
 		

@@ -49,7 +49,7 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 	this.e_cortinaInf = Crafty.e("2D, Canvas, sprAP_cortinaInf, Tweener, Persist")
 			.attr({x: 0, y: 800, z: 1005, visible: false});
 	this.e_titulo = Crafty.e("2D, Canvas, sprAP_titulo, Tweener, Persist")
-			.attr({x: 400, y: -180, z: 1006, visible: false});
+			.attr({x: 400, y: -170, z: 1006, visible: false});
 	this.e_cortinaSup.attach(this.e_titulo);
 	
 	this.e_bloTexto = Crafty.e("2D, Canvas, Image, Tweener, Persist")
@@ -114,8 +114,21 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 ActPuntaje.prototype.initDato = function() {
 	this.e_dato.reset();
 	this.config = gesActividad.config;
-	this.e_dato.BloqueTexto(this.config.dato, true);
-	this.e_comillaFin.attr({x: this.e_dato.ultPosX + 25, y: this.e_dato._y + this.e_dato.altoBloque - 50 });
+	this.e_dato.BloqueTexto(this.config.dato, true, 1);
+	this.e_dato.y = 155 + (465 - this.e_dato._h) / 2;
+	
+	// Posicionamos las comillas
+	var e_letraIni = this.e_dato._arrLetras[0];
+	var e_letraFin = this.e_dato._arrLetras[this.e_dato._arrLetras.length - 1];
+	this.e_comillaIni.attr({
+		x: e_letraIni._x - e_letraIni._w - 35,
+		y: e_letraIni._y
+	});
+	this.e_comillaFin.attr({
+		x: e_letraFin._x + e_letraFin._w + 25,
+		y: e_letraFin._y
+	});
+	
 	this.e_datoImg.sprite(gesActividad.subnivel * 170, gesActividad.nivel * 204);
 	return this;
 };

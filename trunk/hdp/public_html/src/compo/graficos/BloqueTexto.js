@@ -6,6 +6,7 @@ Crafty.c("BloqueTexto", {
 	bold: false, // true si se usa la fuente bold+
 	anchoBloque: 0, // dimensiones MBR
 	altoBloque: 0,
+	alineacion: 0, // 0: izquierda, 1: derecha, 2: justificar
 	animar: false,
 	ultPosX: 0, // posX del último caracter escrito
 	anchoCajaOpcion: 10, // Ancho de la caja donde se encaja la opción
@@ -47,7 +48,13 @@ Crafty.c("BloqueTexto", {
 		this._arrOpciones = [];
 	},
 	
-	BloqueTexto: function(txt, animar) {
+	/**
+	 * Genera todas las entidades de las letras
+	 * @param {string} txt Texto del bloque. Usar "\n" para saltos de linea y "\b" para activar o desactivar negrita.
+	 * @param {boolean} animar TRUE si las letras aparecerán una por una.
+	 * @param {int} alineacion (Opcional) 0: izquierda, 1: derecha, 2: centrado
+	 */
+	BloqueTexto: function(txt, animar, alineacion) {
 		var i = 0;
 		var letra = '';
 		var fila = 0;
@@ -60,7 +67,7 @@ Crafty.c("BloqueTexto", {
 		var anchoLetra;
 		this.animar = animar;
 		this.anchoBloque = 0;
-		this.altoBloque = this._y + this.lineHeight;
+		this.altoBloque = this.lineHeight;
 		var espaciado;
 		var sigLetra;
 		var e_letra;
@@ -68,6 +75,8 @@ Crafty.c("BloqueTexto", {
 		var e_espacio;
 		var anchoEspacio, longitudOpcion;
 		var numOpciones;
+		
+		if (alineacion) this.alineacion = alineacion;
 
 		for (i = 0 ; i < len ; i++) {
 			// obtenemos el código correspondiente
@@ -92,6 +101,9 @@ Crafty.c("BloqueTexto", {
 				
 				anchoEspacio = this.anchoCajaOpcion;
 				e_espacio.attr({ x: posX, y: posY + 2, w: anchoEspacio, h: this.altoCelda - 4, z: this._z, visible: (!this.animar) });
+				
+				var nuevoAncho = posX + anchoEspacio - this._x;
+				if (nuevoAncho > this.anchoBloque) this.anchoBloque = nuevoAncho;
 				
 				numOpciones++;
 				i += longitudOpcion + 1;
@@ -138,7 +150,7 @@ Crafty.c("BloqueTexto", {
 								z: this._z,
 								w: anchoLetra,
 								h: this.altoCelda,
-								visible: (!this.animar),
+								visible: (this._visible && !this.animar),
 								alpha: 1 })
 							.sprite(col * this.anchoCelda, fila * this.altoCelda, anchoLetra, this.altoCelda);
 					
@@ -172,21 +184,28 @@ Crafty.c("BloqueTexto", {
 					posX += espaciado;
 				}
 				
-				if ((posX - this._x) > this.anchoBloque)
-					this.anchoBloque = posX - this._x;
+				var nuevoAncho = posX - this._x;
+				if (nuevoAncho > this.anchoBloque) this.anchoBloque = nuevoAncho;
 			}
 		}
 		
 		this.w = this.anchoBloque;
 		this.h = this.altoBloque;
 		
-		// Ya que tenemos las dimensiones del bloque, amarramos las letras
+		// Ya que tenemos las dimensiones del bloque, amarramos las letras y los espacios
 		var numEntLetras = this._arrLetras.length;
 		for (i = 0 ; i < numEntLetras ; i++) {
 			this.attach(this._arrLetras[i]);
 		}
+		for (i = 0 ; i < this._arrEspacios.length ; i++) {
+			this.attach(this._arrEspacios[i]);
+		}
+		
 		
 		this.ultPosX = this._arrLetras[numEntLetras - 1]._x;
+		
+		// Aplicamos alineación si es necesario
+		if (this.alineacion !== 0) this.alinearLetras();
 		
 		return this;
 	},
@@ -209,14 +228,48 @@ Crafty.c("BloqueTexto", {
 		return this;
 	},
 	
+	// Aplica alineación
+	alinearLetras: function() {
+		var ancho = this.anchoBloque;
+		var letras = this._arrLetras;
+		var numLetras = letras.length;
+		var i = 0, j = 0;
+		var numLetraIni = 0; // ínsdice de la primera letra de la línea
+		var yLetraIni = letras[0]._y;
+		var e_letraFin;
+		var espacio;
+		
+		var factor = 1;
+		if (this.alineacion === 2) factor = 0.5;
+		
+		for (i = 0 ; i < numLetras ; i++) {
+			if (yLetraIni < letras[i]._y) {
+				// salto de línea detectado
+				e_letraFin = letras[i - 1];
+				espacio = (ancho - (e_letraFin._x + e_letraFin._w - letras[numLetraIni]._x)) * factor;
+
+				for (j = numLetraIni ; j < i ; j++) { letras[j].x += espacio; }
+
+				// cambiamos de línea
+				numLetraIni = i;
+			}
+			yLetraIni = letras[i]._y;
+		}
+
+		// Alineamos la última línea
+		e_letraFin = letras[i - 1];
+		espacio = (ancho - (e_letraFin._x + e_letraFin._w - letras[numLetraIni]._x)) * factor;
+		for (j = numLetraIni ; j < i ; j++) { letras[j].x += espacio; }
+		
+		
+		return this;
+	},
+	
 	// Muestra los espacios disponibles
 	mostrarEspacios: function() {
 		var numEsp = this._arrEspacios.length;
-		var e_esp;
 		for (i = 0 ; i < numEsp ; i++) {
-			e_esp = this._arrEspacios[i];
-			e_esp.attr({ alpha: 0, visible: true })
-					.addTween({ alpha: 1 }, "linear", 10);
+			this._arrEspacios[i].aparecer();
 		}
 		return this;
 	},

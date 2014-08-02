@@ -166,7 +166,7 @@ Crafty.c("P6Parte", {
 		if (this.b2shape.length > 0) {
 			this.box2d({
 				bodyType: 'dynamic',
-				density: 0.001,
+				density: 0.01,
 				friction: 0.5,
 				restitution: 0.2,
 				shape: this.b2shape

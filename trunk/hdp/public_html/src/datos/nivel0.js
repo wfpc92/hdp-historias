@@ -1,7 +1,7 @@
 var niveles = [];
 
 niveles[0] = {
-	nombre: 'El morro',
+	nombre: 'El morro de Tulcán', // No quitar! Usado cuando se require el nombre de un nivel en los mensajes de diálogo
 	subnivel: [
 		{
 			id: 0,
@@ -19,7 +19,7 @@ niveles[0] = {
 			id: 1,
 			duracion: 25000,
 			fondo: 'img/act/morro/2/fondo.png',
-			dato: 'Esta \bpirámide truncada\b fué\n construída por los \baborígenes\b de la\n zona aprovechando una elevación\n natural, moldeada empleando\n \bbloques de adobe y relleno\b,\n cuidadosamente ubicados para\n lograr la estructura final.',
+			dato: 'Esta \bpirámide truncada\b fue\n construída por los \baborígenes\b de la\n zona aprovechando una elevación\n natural, moldeada empleando\n \bbloques de adobe y relleno\b,\n cuidadosamente ubicados para\n lograr la estructura final.',
 			pista: { ladoIzq: true, y: 200 },
 			actividad: function() {
 				var actividad = new ActMorro2();

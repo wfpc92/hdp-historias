@@ -4,7 +4,7 @@
 
 //el Morro
 tests[0] = {
-	numPreguntas: 3,
+	totalPreguntas: 1,
 	pregunta: [
 		{
 			texto: "El Morro |de Tulcán| es una montaña |Artificial|\nprehispánica.",
@@ -60,7 +60,7 @@ tests[0] = {
 
 //Sebastian de Belalcazar
 tests[1] = {
-	numPreguntas: 3,
+	totalPreguntas: 3,
 	pregunta: [
 		{
 			texto: 'Sebastián de Belalcázar fué el |Conquistador| que\n |Fundó| la ciudad de Popayán.',
@@ -95,8 +95,8 @@ tests[1] = {
 			trampa: ["Ecuador", "Portugal", "acciones"]
 		},
 		{
-			texto: 'Belalcázar fue declarado primer |Gobernador| de la Provincia\nde Popayán en la corte de |Carlos I| de España.',
-			trampa: ["Carlos V", "Enrique II", "Campeón", "Caballero"]
+			texto: 'Belalcázar fué declarado primer |Gobernador| de la Provincia\n de Popayán en la corte del |Emperador| de España.',
+			trampa: ["Alcalde", "Ministro", "Caballero", "Juez"]
 		},
 		{
 			texto: 'Belalcázar murió de avanzada edad, a causa de una \benfermedad\b\n mientras preparaba su último viaje a |España|, en la\n ciudad de |Cartagena| en 1551.',
@@ -107,7 +107,7 @@ tests[1] = {
 
 //Puente de Humilladero
 tests[2] = {
-	numPreguntas: 3,
+	totalPreguntas: 3,
 	pregunta: [
 		{
 			texto: 'El Puente del Humilladero fue |Construido| bajo la dirección de\nFray Serafín Barbetti y se inauguró el |31 de julio| de 1873.',
@@ -151,7 +151,7 @@ tests[2] = {
 
 //Parque Francisco Jose de Caldas
 tests[3] = {
-	numPreguntas: 4,
+	totalPreguntas: 4,
 	pregunta: [
 		{
 			texto: 'El Parque Francisco José de Caldas se creó con la fundación\nde Popayán, en |1537|.',
@@ -200,7 +200,7 @@ tests[3] = {
 
 //Guillermo Valencia
 tests[4] = {
-	numPreguntas: 5,
+	totalPreguntas: 5,
 	pregunta: [
 		{
 			texto: 'La |Casona| donde vivió y murió Guillermo Valencia\nes monumento nacional por Ley 80 de diciembre de 1943.\nFunciona allí el Museo |Nacional| Guillermo Valencia\ny exhibe, entre otras reliquias, |retratos| de amigos y\npersonajes que él admiraba, obras de arte de La Colonia y\nLa Independencia, y una biblioteca con más de |7.000|\nlibros.',

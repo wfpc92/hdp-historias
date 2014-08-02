@@ -31,8 +31,11 @@ Cortina.prototype.aparecer = function(duracion, escena) {
 };
 
 // Desaparece la cortina
-Cortina.prototype.desaparecer = function(duracion) {
+Cortina.prototype.desaparecer = function(duracion, callback) {
 	this.e_cortina
 			.attr({ alpha:1.0, visible:true })
-			.addTween({ alpha:0.0 }, "easeOutCubic", duracion, function() { this.visible = false; });
+			.addTween({ alpha:0.0 }, "easeOutCubic", duracion, function() {
+				this.visible = false;
+				if(callback) callback();
+	});
 };

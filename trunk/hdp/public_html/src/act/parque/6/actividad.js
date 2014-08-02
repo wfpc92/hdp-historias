@@ -63,9 +63,9 @@ var ActParque6 = function() {
 		var pos;
 		
 		pos = this.e_piezas[4].body.GetPosition();	
-		this.e_piezas[4].body.ApplyImpulse(new b2Vec2(-1, -1), pos);
+		this.e_piezas[4].body.ApplyImpulse(new b2Vec2(-6, -5), pos);
 		pos = this.e_piezas[5].body.GetPosition();	
-		this.e_piezas[5].body.ApplyImpulse(new b2Vec2(1, -1), pos);
+		this.e_piezas[5].body.ApplyImpulse(new b2Vec2(6, -5), pos);
 		
 
 		Crafty.e("DelayFrame").delay(function() {

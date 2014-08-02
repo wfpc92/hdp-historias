@@ -37,9 +37,10 @@ Crafty.c("TestOpcion", {
 								e_espacio.bloqueado = true;
 								
 								var xCentro = e_espacio._x + (e_espacio._w - this._w) / 2;
-								this.addTween({ x: xCentro, y: e_espacio._y }, "easeInOutCubic", 12, function() {
+								this.addTween({ x: xCentro, y: e_espacio._y - 4, alpha: 0 }, "easeInOutCubic", 12, function() {
 									e_espacio.visible = false;
 									e_espacio.e_opcion = this;
+									e_espacio.mostrarParticulas();
 									
 									this.noHover();
 									this.e_sombra.visible = false;
@@ -71,18 +72,16 @@ Crafty.c("TestOpcion", {
 		if (colorCubierta) this.e_cubierta.color(colorCubierta);
 		
 		this.e_bloTexto = Crafty.e("BloqueTexto");
+		this.e_bloTexto.x = 10;
+		this.e_bloTexto.y = 2;
 		this.e_bloTexto.z = this._z + 1;
 		this.e_bloTexto.bold = true;
 		this.e_bloTexto.BloqueTexto(texto, false);
-		this.e_bloTexto.x = 10;
-		this.e_bloTexto.y = -2;
 		
-		var dim = this.e_bloTexto.getDimensiones();
-		this.w = dim[0] + 20;
-		this.h = dim[1] - 6;
+		
+		this.w = this.e_bloTexto._w + 20;
+		this.h = this.e_bloTexto._h;
 		this.attach(this.e_bloTexto);
-		
-		
 		
 		this.color(this.colorNormal);
 		this.e_sombra.attr({ x: 2, y: 2, w: this._w, h: this._h, z: 0 });
@@ -159,6 +158,19 @@ Crafty.c("TestOpcion", {
 		this.addTween({ y: y0 }, "easeOutBack", 12);
 		this.e_cubierta.addTween({ alpha: 0 }, "linear", 5, function() { this.visible = false; });
 		return this;
+	},
+	
+	// Anima la desaparición de la opción
+	animOcultar: function() {
+		var self = this;
+		this.e_cubierta.visible = false;
+		this.e_cubierta.addTween({ alpha: 1 }, "linear", 5, function() {
+			self.e_bloTexto.ocultar();
+			self.visible = false;
+			self.e_sombra.visible = false;
+			this.visible = false;
+		});
+		return this;
 	}
 });
 
@@ -170,7 +182,8 @@ Crafty.c("TestEspacio", {
 	
 	init: function() {
 		this.requires("2D, Canvas, Color, Mouse, Tweener")
-			.color("#F6F0BB");
+			.color("#F6F0BB")
+			.attr({ alpha: 0.8 });
 	
 		this.e_resultado = Crafty.e("Advertencia")
 									.attr({ z: 30 });
@@ -179,6 +192,21 @@ Crafty.c("TestEspacio", {
 			this.e_resultado.destroy();
 			return this;
 		});
+	},
+	
+	aparecer: function() {
+		this.attr({ alpha: 0, visible: true })
+			.addTween({ alpha: 0.4 }, "linear", 10);
+		return this;
+	},
+	
+	// dispara partículas desde este espacio
+	mostrarParticulas: function() {
+		this.particulas.x = this._x;
+		this.particulas.y = this._y;
+		this.particulas.deltaOriX = this._w;
+		this.particulas.iniciar();
+		return this;
 	},
 	
 	// dibujar si esta bien o si esta mal en las respuestas.
@@ -201,7 +229,7 @@ Crafty.c("TE_Numero", {
 	num: 0, // número actualmente representado por esta entidad
 	
 	init: function() {
-		this.requires("2D, Canvas, sprTE_numeros");
+		this.requires("2D, Canvas, sprTE_numeros, Tweener");
 	},
 	
 	TE_Numero: function(num) {
@@ -210,8 +238,16 @@ Crafty.c("TE_Numero", {
 		return this;
 	},
 	
+	// Aumenta el número en 1 de forma animada
 	incrementar: function() {
-		this.TE_Numero(this.num + 1);
+		var y0 = this.y;
+		this.addTween({ y: y0 - 30 }, "easeOutCubic", 8, function() {
+			this.TE_Numero(this.num + 1);
+			this.addTween({ y: y0 }, "easeOutElastic", 26, function() {
+				
+			});
+		});
+		
 		return this;
 	}
 });

@@ -24,5 +24,11 @@ var progreso = [
 		bloqueado: true,
 		baudilios: [0,0,0,0,0,0],
 		puntaje: [0,0,0,0,0,0]
+	},
+	{
+		// Posición 5 del arreglo de progreso: Configuración persistente
+		version: 1.1, // Necesario para comparar datos en cada nueva actualización
+		mostrarComoJugar: true, // Mostrar el diálogo de cómo jugar al hacer click en jugar por primera vez
+		mostrarDialogoTerminado: true // Mostrar la felicitación al completar todos los niveles
 	}
 ];

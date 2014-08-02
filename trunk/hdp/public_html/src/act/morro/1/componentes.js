@@ -5,7 +5,7 @@
 Crafty.c("M1Capa", {
 	posYmostrar: 0, // Posición Y de la capa en su lugar adecuado
 	posYocultar: 0, // Posición Y de la capa oculta
-	tiempoTween: 25, // ms de duración del tween completo de aparecer / desaparecer
+	tiempoTween: 20, // ms de duración del tween completo de aparecer / desaparecer
 	estado: -2, // -2: oculto e invisible. -1: ocultando. 1: mostrando. 2: mostrandose y visible
 
 	init: function() {
@@ -29,7 +29,7 @@ Crafty.c("M1Capa", {
 		this.cancelTweener();
 
 		this.estado = 1;
-		this.addTween({y: this.posYmostrar}, 'easeInOutQuad', this.tiempoTween, function() {
+		this.addTween({y: this.posYmostrar}, 'easeOutCubic', this.tiempoTween, function() {
 			this.estado = 2;
 		});
 

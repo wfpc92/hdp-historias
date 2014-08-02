@@ -5,7 +5,7 @@ niveles[2] = {
 			id: 1,
 			duracion: 23000,
 			fondo: '',
-			dato: "Apareció con la fundación de la ciudad,\nen \b1537\b.\n Como era costumbre en las \bciudades\n coloniales españolas\b, los\n conquistadores elegían un espacio\n amplio y trazaban las calles de forma\n \bperpendicular\b para construir los\n edificios que representaban los\n poderes en España.",
+			dato: "Apareció con la fundación\n de la ciudad, en \b1537\b.\n Como era costumbre en las\n \bciudades coloniales españolas\b, los\n conquistadores eligieron un espacio\n amplio y trazaron las calles en\n forma \bperpendicular\b para construir\n los edificios que representaban\n los poderes en España.",
 			pista: { ladoIzq: true, y: 570 },
 			actividad: function() {
 				var actividad = new ActParque1();
@@ -17,7 +17,7 @@ niveles[2] = {
 			id: 2,
 			duracion: 12000,
 			fondo: 'img/act/parque/2/fondo.jpg',
-			dato: 'En el centro del parque hay un\n monumento a Francisco José de Caldas\n (también llamado \b"Sabio Caldas"\b),\n  reconocido botánico, astrónomo y\nprócer colombiano; uno de los\n hijos ilustres de Popayán.\n El monumento se construyó para\n conmemorar los \b100 años de la\n independencia\b de Colombia.',
+			dato: 'En el centro del parque, hay un\n monumento a Francisco José de\n Caldas (apodado \b"Sabio Caldas"\b),\n  reconocido botánico, astrónomo y\nprócer colombiano; uno de los\n hijos ilustres de Popayán.\n El monumento se construyó para\n conmemorar los \b100 años de la\n independencia\b de Colombia.',
 			pista: { ladoIzq: false, y: 550 },
 			actividad: function() {
 				var actividad = new ActParque2();
@@ -63,7 +63,7 @@ niveles[2] = {
 			id: 6,
 			duracion: 51000,
 			fondo: 'img/act/parque/6/fondo.jpg',
-			dato: 'En el parque se encuentra la \bCatedral \nBasílica Nuestra Señora de la Asunción\b, \nuna iglesia católica ofrendada a la \n\bVirgen María\b, construída en 1906 sobre \nlos cimientos de antiguas iglesias. \nHa sido afectada por varios \bterremotos\b, \nque le han requerido reconstrucciones. \nEn ella se centran varios actos \nreligiosos de la \bSemana Santa\b.',
+			dato: 'Frente al parque está la \bCatedral \nBasílica Nuestra Señora de la\n Asunción\b, una iglesia católica\n ofrendada a la \bVirgen María\b,\n construída en 1906 sobre cimientos\n de antiguas iglesias. Ha requerido\n reconstrucciones a causa de varios\n \bterremotos\b. En ella se centran actos\n de la \bSemana Santa\b.',
 			pista: { ladoIzq: true, y: 35 },
 			actividad: function() {
 				var actividad = new ActParque6();

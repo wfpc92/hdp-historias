@@ -10,7 +10,7 @@ Crafty.c("MI_btLateral", {
 		this.visible = true;
 		var self = this;
 		Crafty.e("DelayFrame").delay(function() {
-			self.addTween({ x: self.xIni }, "easeOutBack", 60, function() { this.habilitar(); }); 
+			self.addTween({ x: self.xIni }, "easeOutBack", 50, function() { this.habilitar(); }); 
 		}, retardo);
 	},
 	
@@ -19,7 +19,7 @@ Crafty.c("MI_btLateral", {
 		this.bloquear();
 		var self = this;
 		Crafty.e("DelayFrame").delay(function() {
-			self.addTween({ x: 1280 }, "easeInCubic", 40, function() { this.visible = false; }); 
+			self.addTween({ x: 1280 }, "easeInCubic", 30, function() { this.visible = false; }); 
 		}, retardo);
 	},
 	
@@ -40,7 +40,7 @@ Crafty.c("MI_btJugar", {
 	// desliza hacia abajo y desvanece
 	animEsconder: function() {
 		this.bloquear()
-			.addTween({ y:488, alpha: 0 }, "easeInCubic", 60, function() {
+			.addTween({ y:488, alpha: 0 }, "easeInCubic", 40, function() {
 				this.visible = false;
 			});
 		return this;
@@ -49,7 +49,7 @@ Crafty.c("MI_btJugar", {
 	// desliza hacia arriba y aparece
 	animMostrar: function() {
 		this.attr({ y: 488, alpha: 0, visible: true })
-			.addTween({ y: 388, alpha: 1.0 }, "easeOutCubic", 80, function() { this.habilitar(); });
+			.addTween({ y: 388, alpha: 1.0 }, "easeOutCubic", 60, function() { this.habilitar(); });
 		return this;
 	}
 });
@@ -120,7 +120,7 @@ Crafty.c("MI_btMenuConfig", {
 	animMostrar: function (deltaY, atraso) {
 		this.attr({y: (this.yIni + deltaY), visible: true});
 		this.delay(function() {
-			this.addTween({y:this.yIni, alpha:1.0}, "easeOutCubic", 50, function() {
+			this.addTween({ y: this.yIni, alpha: 1.0 }, "easeOutCubic", 50, function() {
 				this.habilitar();
 			});
 		}, atraso);
@@ -130,7 +130,9 @@ Crafty.c("MI_btMenuConfig", {
 	animEsconder: function (deltaY, atraso) {
 		this.bloquear();
 		this.delay(function() {
-			this.addTween({y: (this.yIni + deltaY), alpha: 0.0}, "easeInQuad", 30, function() {
+			
+			this.addTween({ alpha: 0.0 }, "easeOutCubic", 28);
+			this.addTween({ y: (this.yIni + deltaY) }, "easeInQuad", 28, function() {
 				this.visible = false;
 			});
 		}, atraso);
