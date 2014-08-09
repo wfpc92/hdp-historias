@@ -10,23 +10,17 @@ var Recursos = {
 			"img/global/temporizador.png",
 			"img/global/fondo-pistas.png", "img/global/pistas.png",
 			"img/puntaje/botones.png", "img/puntaje/blo-rojo.png", "img/puntaje/muy-bien.png", "img/puntaje/txt-puntuacion.png", "img/puntaje/cortinas.png", "img/puntaje/digitos.png", "img/puntaje/baudilio.png",
-			
-			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png",
-			"img/particulas/star.png","img/particulas/triangulo.png","img/particulas/nube-verde.png","img/particulas/cubo40.png",
-			
+			"img/particulas/corazon.png", "img/particulas/fuegos.png", "img/particulas/nube.png", "img/particulas/polvo.png",
+			"img/particulas/star.png", "img/particulas/triangulo.png", "img/particulas/nube-verde.png", "img/particulas/cubo40.png",
 			"img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png", "img/puntaje/titulos.png",
-			
 			"img/global/myriad.png", "img/global/font-asap36.png", "img/global/font-asap36bold.png",
 			"img/global/pau-botones.png", "img/global/pau-arbol.png", "img/global/pau-hoja.png", "img/global/pau-leyenda.png",
 			"img/global/perdiste.png",
 			"img/global/mano.png", "img/global/gestos.png", "img/global/advertencias.png",
 			"img/test/linea.png", "img/test/numeros.png",
 			"img/carga/pajaro.png", "img/carga/cargando.png", "img/carga/logo.png",
-			
 			"img/global/dialogo-esq.png", "img/global/dialogo-bordes-vert.png", "img/global/dialogo-borde-der.png", "img/global/bt-dialogo.png", "img/global/dialogo-digitos.png",
-			
 			"img/global/llave.png",
-			
 			"img/global/como-jugar.png"
 		],
 		initSprites: spritesGlobal
@@ -38,7 +32,7 @@ var Recursos = {
 		rutas: [
 			"img/menu-pri/fondo.png", "img/menu-pri/piso-frente.png", "img/menu-pri/piso-fondo.png", "img/menu-pri/nube-izq.png", "img/menu-pri/nube-der.png", "img/menu-pri/caballo-somb.png", "img/menu-pri/logo.png", "img/menu-pri/logo-config.png", "img/menu-pri/caballo.png", "img/menu-pri/bt-jugar.png", "img/menu-pri/bt-opciones.png", "img/menu-pri/bt-configurac.png",
 			"img/menu-pri/creditos.png"
-			
+
 		],
 		initSprites: spritesMenuPri
 	},
@@ -485,6 +479,11 @@ var Recursos = {
 			cargado: false,
 			spritesListas: false,
 			rutas: [
+				"img/act/valencia/1/fondo.png",
+				"img/act/valencia/1/numeros.png",
+				"img/act/valencia/1/spr-aplauso.png",
+				"img/act/valencia/1/cara-mal.png",
+				"img/act/valencia/1/animacion-aplauso-expl.png"
 			],
 			musica: ["valencia1", "audio/act/valencia/valencia1.ogg"],
 			initSprites: spritesValencia1
@@ -533,6 +532,6 @@ var Recursos = {
 			],
 			musica: ["valencia6", "audio/act/valencia/valencia6.ogg"],
 			initSprites: spritesValencia6
-		},
+		}
 	]
 };

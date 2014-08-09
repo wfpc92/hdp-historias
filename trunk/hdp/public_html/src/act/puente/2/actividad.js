@@ -125,11 +125,20 @@ var ActPuente2 = function() {
 
 	this.crearEntidades = function() {
 		Crafty.e("2D, Canvas, Image").image("img/act/puente/2/fondo.jpg");
-		this.e_contador = Crafty.e("H2_Contador, Image")
+		this.e_contador = Crafty.e("Contador, Image")
 				.image("img/act/puente/2/hoja.png")
-				.attr({x: 557, y: 10})
-				.H2_Contador(this);
-		this.e_indicador = Crafty.e("2D, Canvas, Image, Mouse").image("img/act/puente/2/indicador.png").attr({visible: false})
+				.attr({x: 557, y: 10});
+		this.e_contador.despx = function(i) {
+			return this.x + (this.contador < 10 ? 67 : 40) + i * (this.e_numeros[i].w + 6);
+		};
+		this.e_contador.despy = function() {
+			return this.y + 30;
+		};
+		this.e_contador.Contador("sprH2_numero", this.aumentaContador);
+
+		this.e_indicador = Crafty.e("2D, Canvas, Image, Mouse")
+				.image("img/act/puente/2/indicador.png")
+				.attr({visible: false})
 		return this;
 	};
 

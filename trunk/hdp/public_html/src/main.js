@@ -30,11 +30,11 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		gesActividad.ejecutar(0, 0); // Nivel de 0 a 4, Subnivel de 0 a 5
+		gesActividad.ejecutar(4, 0); gesSonido.silenciar();// Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		//Crafty.enterScene("Inicio");
 		//Crafty.enterScene("MenuCuadros");
-		gesSonido.silenciar();
+		
 	});
 
 	// Desbloquear todos los niveles en modo debug
