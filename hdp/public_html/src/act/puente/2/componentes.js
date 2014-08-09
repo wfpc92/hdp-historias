@@ -48,38 +48,3 @@ Crafty.c("H2_Personaje", {
     }
 });
 
-Crafty.c("H2_Contador", {
-    e_numeros: [], //entidades de numeros.
-    init: function() {
-        this.requires("2D, Canvas, Tweener");
-    },
-    H2_Contador: function(actividad) {
-        this.actividad = actividad;
-        this.contador = 0;
-        this.dibujar();
-        return this;
-    },
-    aumentar: function() {
-        this.contador += 1;
-        this.dibujar();
-        this.actividad.aumentaContador();
-        return this;
-    },
-    dibujar: function() {
-        if (this.e_numeros.length > 0) {//borrar los numeros que esten dibujados.
-            for (var i = 0; i < this.e_numeros.length; i++) {
-                this.e_numeros[i].destroy();
-            }
-            this.e_numeros = [];
-        }
-        var strContador = this.contador + "";//convertir el contador en cadena
-        for (var i = 0; i < strContador.length; i++) {
-            var intNumero = strContador[i];
-            this.e_numeros[i] = Crafty.e("2D, Canvas, H2_Numero, sprH2_numero" + intNumero);
-            //posicion del numero: posicion de la hoja de contador mas un desplazamiento segun si el numero es de una o dos cifras
-            var despx = this.x + (this.contador < 10 ? 67 : 40) + i * (this.e_numeros[i].w + 6);
-            this.e_numeros[i].attr({x: despx, y: this.y + 30});
-        }
-        return this;
-    }
-});

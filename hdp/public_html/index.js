@@ -1,5 +1,5 @@
 
-/*C:\uniserver\www\hdp\public_html\lib/CocoonJS.js*/
+/*C:\UniServer\www\hdp\public_html\lib/CocoonJS.js*/
 (function() {
     // There should not be a CocoonJS object when this code is executed.
     // if (typeof window.CocoonJS !== 'undefined') throw("This is strange, a CocoonJS object already exists when trying to create it.");
@@ -313,7 +313,7 @@
     };
 
 })();
-/*C:\uniserver\www\hdp\public_html\lib/CocoonJS_App.js*/
+/*C:\UniServer\www\hdp\public_html\lib/CocoonJS_App.js*/
 (function () {
     // The CocoonJS must exist before creating the extension.
     if (typeof window.CocoonJS === 'undefined' || window.CocoonJS === null) throw("The CocoonJS object must exist and be valid before creating any extension object.");
@@ -1537,7 +1537,7 @@
 
 })();
 
-/*C:\uniserver\www\hdp\public_html\lib/CocoonJS_App_ForCocoonJS.js*/
+/*C:\UniServer\www\hdp\public_html\lib/CocoonJS_App_ForCocoonJS.js*/
 (function()
 {
     if (typeof window.CocoonJS === 'undefined' || window.CocoonJS === null) throw("The CocoonJS object must exist and be valid before adding more functionalities to an extension.");
@@ -1900,7 +1900,7 @@
     
 })();
 
-/*C:\uniserver\www\hdp\public_html\lib/m-crafty.js*/
+/*C:\UniServer\www\hdp\public_html\lib/m-crafty.js*/
 /**
  * crafty 0.6.2
  * http://craftyjs.com/
@@ -14530,7 +14530,7 @@ Crafty.extend({
 });
 
 
-/*C:\uniserver\www\hdp\public_html\lib/Tweener.js*/
+/*C:\UniServer\www\hdp\public_html\lib/Tweener.js*/
 /*============================================================
 TERMS OF USE - EASING EQUATIONS
 a
@@ -14962,7 +14962,7 @@ function tweenerEnterFrame(e) {
 	}
 }
 
-/*C:\uniserver\www\hdp\public_html\lib/Box2dWeb-2.1.a.3.min.js*/
+/*C:\UniServer\www\hdp\public_html\lib/Box2dWeb-2.1.a.3.min.js*/
 var Box2D={};
 (function(F,G){function K(){}if(!(Object.prototype.defineProperty instanceof Function)&&Object.prototype.__defineGetter__ instanceof Function&&Object.prototype.__defineSetter__ instanceof Function)Object.defineProperty=function(y,w,A){A.get instanceof Function&&y.__defineGetter__(w,A.get);A.set instanceof Function&&y.__defineSetter__(w,A.set)};F.inherit=function(y,w){K.prototype=w.prototype;y.prototype=new K;y.prototype.constructor=y};F.generateCallback=function(y,w){return function(){w.apply(y,arguments)}};
 F.NVector=function(y){if(y===G)y=0;for(var w=Array(y||0),A=0;A<y;++A)w[A]=0;return w};F.is=function(y,w){if(y===null)return false;if(w instanceof Function&&y instanceof w)return true;if(y.constructor.__implements!=G&&y.constructor.__implements[w])return true;return false};F.parseUInt=function(y){return Math.abs(parseInt(y))}})(Box2D);var Vector=Array,Vector_a2j_Number=Box2D.NVector;if(typeof Box2D==="undefined")Box2D={};if(typeof Box2D.Collision==="undefined")Box2D.Collision={};
@@ -15409,7 +15409,7 @@ F.prototype.DrawPolygon=function(G,K,y){if(K){var w=this.m_ctx,A=this.m_drawScal
 this._color(w.color,this.m_fillAlpha);A.arc(p,B,K*U,0,Math.PI*2,true);A.moveTo(p,B);A.lineTo((G.x+y.x*K)*U,(G.y+y.y*K)*U);A.closePath();A.fill();A.stroke()}};F.prototype.DrawSegment=function(G,K,y){var w=this.m_ctx,A=this.m_drawScale;w.strokeStyle=this._color(y.color,this.m_alpha);w.beginPath();w.moveTo(G.x*A,G.y*A);w.lineTo(K.x*A,K.y*A);w.closePath();w.stroke()};F.prototype.DrawTransform=function(G){var K=this.m_ctx,y=this.m_drawScale;K.beginPath();K.strokeStyle=this._color(16711680,this.m_alpha);
 K.moveTo(G.position.x*y,G.position.y*y);K.lineTo((G.position.x+this.m_xformScale*G.R.col1.x)*y,(G.position.y+this.m_xformScale*G.R.col1.y)*y);K.strokeStyle=this._color(65280,this.m_alpha);K.moveTo(G.position.x*y,G.position.y*y);K.lineTo((G.position.x+this.m_xformScale*G.R.col2.x)*y,(G.position.y+this.m_xformScale*G.R.col2.y)*y);K.closePath();K.stroke()}})();var i;for(i=0;i<Box2D.postDefs.length;++i)Box2D.postDefs[i]();delete Box2D.postDefs;
 
-/*C:\uniserver\www\hdp\public_html\lib/box2d.js*/
+/*C:\UniServer\www\hdp\public_html\lib/box2d.js*/
 var   b2Vec2 = Box2D.Common.Math.b2Vec2
          	,	b2BodyDef = Box2D.Dynamics.b2BodyDef
          	,	b2Body = Box2D.Dynamics.b2Body
@@ -15871,7 +15871,7 @@ Crafty.extend({
 	}
 });
 
-/*C:\uniserver\www\hdp\public_html\src/global.js*/
+/*C:\UniServer\www\hdp\public_html\src/global.js*/
 // *** Funciones disponibles globalmente para todo el proyecto
 
 // Extrae las coordenadas del mouse de un evento de mouse, esté lanzándose desde Cocoon o en PC
@@ -16029,7 +16029,7 @@ function resetProgreso() {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/datos/progreso.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/progreso.js*/
 // Conserva el progreso del jugador en el videojuego
 var progreso = [
 	{	// morro
@@ -16059,7 +16059,7 @@ var progreso = [
 	}
 ];
 
-/*C:\uniserver\www\hdp\public_html\src/datos/dbTest.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/dbTest.js*/
 //banco de preguntas del test
 ﻿var tests = [];
 //esta corresponde al banco de preguntas de la primera postal
@@ -16141,12 +16141,12 @@ tests[1] = {
 			trampa: ["Mayas", "Paeces", "Paellán", "Papaya"]
 		},
 		{
-			texto: 'Mientras conquistaba |Popayán|, Belalcázar Atravesó lo que\n hoy se conoce como |Timbío| -en Octubre de 1535-, donde\n venció a 3,000 indígenas.',
+			texto: 'Mientras conquistaba |Popayán|, Belalcázar Atravesó lo que\n hoy se conoce como |Timbío| -en Octubre de 1535-, donde\n venció a 3.000 indígenas.',
 			trampa: ["Cali", "Neiva", "Quito", "Cartagena"]
 		},
 		{
-			texto: 'Cuentan los historiadores que en Timbío, Belalcázar venció a\n |3,000| indígenas con un Ejército de |100| hombres.',
-			trampa: ["1,000", "2,000", "10"]
+			texto: 'Cuentan los historiadores que en Timbío, Belalcázar venció a\n |3000| indígenas con un Ejército de |100| hombres.',
+			trampa: ["1000", "2000", "10"]
 		},
 		{
 			texto: 'Mientras buscaba el tesoro de El Dorado, también fundó las\nciudades de |Quito y Guayaquil|, en Ecuador, y\n|Santiago de Cali y Neiva|, en Colombia.',
@@ -16294,7 +16294,7 @@ tests[4] = {
 		}
 	]
 };
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel0.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel0.js*/
 var niveles = [];
 
 niveles[0] = {
@@ -16302,7 +16302,7 @@ niveles[0] = {
 	subnivel: [
 		{
 			id: 0,
-			duracion: 8000,
+			duracion: 30000,
 			//esto se podria simplificar a una variable que se llame PATH
 			fondo: 'img/act/morro/1/fondo.png',
 			dato: "Es una \bmontaña artificial\b\n prehispánica -al parecer data del\n año \b1600 - 600 a.C.\b- de carácter\n \bceremonial funerario\b, ubicada en el\n costado noreste de Popayán,\n considerada el \bsitio arqueológico\b\n más importante de la ciudad.",
@@ -16314,7 +16314,7 @@ niveles[0] = {
 		},
 		{
 			id: 1,
-			duracion: 21000,
+			duracion: 25000,
 			fondo: 'img/act/morro/2/fondo.png',
 			dato: 'Esta \bpirámide truncada\b fué\n construída por los \baborígenes\b de la\n zona aprovechando una elevación\n natural, moldeada empleando\n \bbloques de adobe y relleno\b,\n cuidadosamente ubicados para\n lograr la estructura final.',
 			pista: { ladoIzq: true, y: 200 },
@@ -16325,7 +16325,7 @@ niveles[0] = {
 		},
 		{
 			id: 2,
-			duracion: 5000,
+			duracion: 15000,
 			fondo: 'img/act/morro/3/fondo.jpg',
 			dato: 'En \b1957\b, fuertes lluvias causaron\n un derrumbe en uno de sus costados\n y dejó a la vista \btumbas, cerámicas\n y osarios\b. También encontraron una\n \bmoneda\b al parecer de la época de\n \bFernando VII\b, pues tenía grabada\n una flor de lis que indicaba la\n dinastía de los \bBorbón\b.',
 			pista: { ladoIzq: false, y: 350 },
@@ -16342,7 +16342,7 @@ niveles[0] = {
 		},
 		{
 			id: 3,
-			duracion: 15000,
+			duracion: 25000,
 			fondo: 'img/act/morro/4/fondo.jpg',
 			dato: 'Investigaciones arqueológicas\n encontraron el interior del morro,\n enterramientos de \b14 tumbas\b con\n esqueletos de niños y adultos de\n hace más de 700 años.\n El arqueólogo \bJulio Cubillos\b entregó\n los restos al Instituto Etnológico de\n la Universidad del Cauca, que\n comprobó su autenticidad.',
 			pista: { ladoIzq: false, y: 510 },
@@ -16354,7 +16354,7 @@ niveles[0] = {
 		},
 		{
 			id: 4,
-			duracion: 8000,
+			duracion: 20000,
 			fondo: 'img/act/morro/5/fondo.png',
 			dato: 'Al parecer, este cerro era \bsagrado\b\n y en él se hacían \britos fúnebres\b,\n pues además de tumbas, se\n encontraron en su cima restos de\n \bvasijas de cerámica\b.',
 			pista: { ladoIzq: true, y: 300 },
@@ -16370,7 +16370,7 @@ niveles[0] = {
 		},
 		{
 			id: 5,
-			duracion: 7000,
+			duracion: 10000,
 			fondo: 'img/act/morro/6/fondo.png',
 			dato: 'En \b1937\b, para celebrar el\n cumpleaños \b400 de Popayán\b, se\n niveló su cima para hacer una\n plataforma donde se ubicaría la\n estatua de \bSebastián de Belalcázar\b,\n lo que causó el daño total de la\n cúspide original de la pirámide.',
 			pista: { ladoIzq: true, y: 100 },
@@ -16382,14 +16382,14 @@ niveles[0] = {
 	]
 };
 
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel1.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel1.js*/
 
 niveles[1] = {
 	nombre: 'Sebastian de Belalcazar',
 	subnivel: [
 		{
 			id: 1,
-			duracion: 5000,
+			duracion: 6000,
 			fondo: 'img/act/belalcaz/1/fondo.png',
 			dato: 'Fué el conquistador español que el \b13\nde enero de 1537\b fundó la ciudad de\n\bPopayán\b, en inmediaciones del valle de\nPubenza.\n\n Su verdadero nombre fué \bSebastián\n Moyano\b y adoptó el nombre del pueblo\n donde nació (Belalcazar, Andalucía).',
 			pista: { ladoIzq: true, y: 90 },
@@ -16413,7 +16413,7 @@ niveles[1] = {
 		},
 		{
 			id: 3,
-			duracion: 15000,
+			duracion: 16000,
 			fondo: 'img/act/belalcaz/3/fondo.png',
 			dato: 'Mientras conquistaba Popayán, atravesó\nlo que hoy se conoce como Timbío -en\noctubre de 1535- y venció a \b3000\nindígenas\b con un ejército de tan solo\n\b100 hombres\b.',
 			pista: { ladoIzq: true, y: 250 },
@@ -16424,7 +16424,7 @@ niveles[1] = {
 		},
 		{
 			id: 4,
-			duracion: 4000,
+			duracion: 8000,
 			fondo: 'img/act/belalcaz/4/fondo.png',
 			dato: 'Mientras buscaba el tesoro de\n \bEl Dorado\b, también fundó la ciudades\n de \bQuito\b y \bGuayaquil\b, en Ecuador,\n y \bSantiago de Cali\b y \bNeiva\b, en\n Colombia.',
 			pista: { ladoIzq: true, y: 250 },
@@ -16446,7 +16446,7 @@ niveles[1] = {
 		},
 		{
 			id: 6,
-			duracion: 25000,
+			duracion: 23000,
 			fondo: 'img/act/belalcaz/6/fondo.jpg',
 			dato: 'Murió de avanzada edad, a causa de\n una \benfermedad\b mientras preparaba\n su último viaje a España, en\n \bCartagena de Indias\b en 1551.',
 			pista: { ladoIzq: false, y: 30 },
@@ -16459,13 +16459,13 @@ niveles[1] = {
 };
 
 
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel2.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel2.js*/
 niveles[2] = {
 	nombre: 'Parque Caldas',
 	subnivel: [
 		{
 			id: 1,
-			duracion: 15000,
+			duracion: 23000,
 			fondo: '',
 			dato: "Apareció con la fundación de la ciudad,\nen \b1537\b.\n Como era costumbre en las \bciudades\n coloniales españolas\b, los\n conquistadores elegían un espacio\n amplio y trazaban las calles de forma\n \bperpendicular\b para construir los\n edificios que representaban los\n poderes en España.",
 			pista: { ladoIzq: true, y: 570 },
@@ -16477,7 +16477,7 @@ niveles[2] = {
 		},
 		{
 			id: 2,
-			duracion: 7000,
+			duracion: 12000,
 			fondo: 'img/act/parque/2/fondo.jpg',
 			dato: 'En el centro del parque hay un\n monumento a Francisco José de Caldas\n (también llamado \b"Sabio Caldas"\b),\n  reconocido botánico, astrónomo y\nprócer colombiano; uno de los\n hijos ilustres de Popayán.\n El monumento se construyó para\n conmemorar los \b100 años de la\n independencia\b de Colombia.',
 			pista: { ladoIzq: false, y: 550 },
@@ -16492,7 +16492,7 @@ niveles[2] = {
 			duracion: 32000,
 			fondo: 'img/act/parque/3/fondo.jpg',
 			dato: "Las \bplacas\b que adornan el\n monumento al sabio Caldas exponen\nsu \bfirma\b, una muestra de la planta\n trepadora \bBomarea caldasii\b (llamada\n así en su honor), la figura de un\n \boctante\b y un \bhipsómetro\b, un invento\n suyo.",
-			pista: { ladoIzq: false, y: 260 },
+			pista: { ladoIzq: false, y: 285 },
 			actividad: function() {
 				var actividad = new ActParque3();
 				return actividad;
@@ -16500,10 +16500,10 @@ niveles[2] = {
 		},
 		{
 			id: 4,
-			duracion: 15000,
+			duracion: 32000,
 			fondo: 'img/act/parque/4/fondo.jpg',
 			dato: 'A 10 metros del parque se encuentra\n el \bPanteón de los Próceres\b, un\n monumento que contiene las cenizas\n de \b15 hijos ilustres\b de Popayán,\n entre los que se encuentran Camilo\n Torres, Tomás Cipriano de Mosquera\n y Francisco José de Caldas.',
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: true, y: 120 },
 			actividad: function() {
 				var actividad = new ActParque4();
 				actividad.totAciertos = 15;
@@ -16515,7 +16515,7 @@ niveles[2] = {
 			duracion: 15000,
 			fondo: 'img/act/parque/5/fondo.jpg',
 			dato: 'Frente al parque se encuentra la\n \bTorre del Reloj\b, uno de los símbolos\n representativos de Popayán.\n Terminó de construirse en 1682 y en\n 1737 se le instaló un \breloj inglés\b,\n que funcionaría hasta 1814, cuando\n se le extrajeron sus \bpesas de plomo\b\n para hacer \bmuniciones\b durante las\n guerras de la Independencia.',
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: false, y: 120 },
 			actividad: function() {
 				var actividad = new ActParque5();
 				return actividad;
@@ -16523,10 +16523,10 @@ niveles[2] = {
 		},
 		{
 			id: 6,
-			duracion: 40000,
+			duracion: 51000,
 			fondo: 'img/act/parque/6/fondo.jpg',
 			dato: 'En el parque se encuentra la \bCatedral \nBasílica Nuestra Señora de la Asunción\b, \nuna iglesia católica ofrendada a la \n\bVirgen María\b, construída en 1906 sobre \nlos cimientos de antiguas iglesias. \nHa sido afectada por varios \bterremotos\b, \nque le han requerido reconstrucciones. \nEn ella se centran varios actos \nreligiosos de la \bSemana Santa\b.',
-			pista: { ladoIzq: true, y: 90 },
+			pista: { ladoIzq: true, y: 35 },
 			actividad: function() {
 				var actividad = new ActParque6();
 				actividad.totAciertos = 10;
@@ -16537,14 +16537,14 @@ niveles[2] = {
 };
 
 
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel3.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel3.js*/
 
 niveles[3] = {
 	nombre: 'Puente Humilladero',
 	subnivel: [
 		{
 			id: 1,
-			duracion: 10000,
+			duracion: 7000,
 			fondo: '',
 			dato: 'Es un viaducto estilo romano con doce\narcos y una longitud de 240 metros,\nconstruido para unir el sector de\nEl Callejón -hoy barrio Bolívar- y el\ncentro de la ciudad, que se encuentra\natravesado por el Río Molino.',
 			pista: {ladoIzq: true, y: 90},
@@ -16555,18 +16555,19 @@ niveles[3] = {
 		},
 		{
 			id: 2,
-			duracion: 200000,
+			duracion: 25000,//23000
 			fondo: 'img/puente/2/fondo.png',
 			dato: 'Fue levantado bajo la dirección de\nFray Serafín Barbetti y se inauguró el\n31 de julio de 1873. El obispo de la\nciudad tuvo la idea de agradecer\npúblicamente a Barbetti y 82\npersonalidades firmaron una nota.',
 			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
 				var actividad = new ActPuente2();
+                                actividad.totAciertos = 82;
 				return actividad;
 			}
 		},
 		{
 			id: 3,
-			duracion: 200000,
+			duracion: 17000,
 			fondo: 'img/puente/3/fondo.png',
 			dato: 'Barbetti le dio forma al puente con los\nladrillos que se descartaron de la\nreconstrucción de la Catedral de\nPopayán -destruida por el terremoto\nde 1736- y las obras de la\nTorre del Reloj.',
 			pista: {ladoIzq: true, y: 90},
@@ -16577,10 +16578,10 @@ niveles[3] = {
 		},
 		{
 			id: 4,
-			duracion: 2000000000,
+			duracion: 20000,
 			fondo: 'img/puente/4/fondo.png',
-			dato: 'La mezcla usada para pegar los ladrillos\ndel puente era de cal y barro, pero le\nagregaron sangre de bueyes para que\nlos ladrillos se adhieran más entre sí.',
-			pista: {ladoIzq: true, y: 90},
+			dato: 'La mezcla usada para pegar los\n ladrillos del puente era de \bcal\b y \bbarro\b,\n pero le agregaron \bsangre de bueyes\b\n para que los ladrillos se adhieran\n más entre sí.',
+			pista: {ladoIzq: false, y: 500},
 			actividad: function() {
 				var actividad = new ActPuente4();
 				return actividad;
@@ -16612,7 +16613,7 @@ niveles[3] = {
 };
 
 
-/*C:\uniserver\www\hdp\public_html\src/datos/nivel4.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/nivel4.js*/
 
 niveles[4] = {
 	nombre: '',
@@ -16681,7 +16682,7 @@ niveles[4] = {
 };
 
 
-/*C:\uniserver\www\hdp\public_html\src/compo/Sonido.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/Sonido.js*/
 /**
  * Helper para la gestión de sonidos en Crafty
  */
@@ -16761,7 +16762,7 @@ Sonido.prototype.limpiarTodo = function() {
 	//@TODO: remover de memoria de cocoon todos los audios
 	this.idMusicaActual = "";
 };
-/*C:\uniserver\www\hdp\public_html\src/compo/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/sprites.js*/
 function spritesGlobal() {
 	Crafty.sprite("img/global/temporizador.png", {
 		sprBarraFondo: [0, 0, 628, 26],
@@ -16808,6 +16809,9 @@ function spritesGlobal() {
 	Crafty.sprite("img/particulas/nube.png", {
 		spr_nube: [0, 0, 96, 94]
 	});
+	Crafty.sprite("img/particulas/cubo40.png", {
+		spr_partCubo: [0, 0, 40, 40]
+	});
 	Crafty.sprite(23, 21, "img/particulas/corazon.png", {
 		spr_partCorazon: [0, 0]
 	});
@@ -16834,7 +16838,7 @@ function spritesGlobal() {
 
 	spritesPuntaje();
 }
-/*C:\uniserver\www\hdp\public_html\src/compo/Caballo.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/Caballo.js*/
 Crafty.c('Caballo', {
     saltos: 0,
     
@@ -16951,7 +16955,7 @@ Crafty.c('Caballo', {
     },
 });
 
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Gesto.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Gesto.js*/
 // Gesto de indicación en actividad
 Crafty.c("Gesto", {
 	e_mano: null, // Mano del gesto
@@ -17162,7 +17166,7 @@ Crafty.c("Gesto", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Boton.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Boton.js*/
 // Describe un botón con una posición inicial almacenada, que al hacerle click muestra una sprite diferente
 // Tiene un posible estado de bloqueo
 // inicializar con Boton(nomSprNormal, nomSprActivo)
@@ -17173,6 +17177,7 @@ Crafty.c("Boton", {
 	yIni: 0,
 	e_btActivo: null, // Entidad que temporalmente aparece mostrando el estado activo
 	bloqueado: false, // poner en true cuando no debería responder a eventos
+	f_callback: null, // Opcional: función a invocar al terminar el toque en el botón
 	
 	init: function() {
 		this.requires("2D, Canvas, Mouse");
@@ -17206,6 +17211,7 @@ Crafty.c("Boton", {
 		this.attach(this.e_btActivo);
 		
 		this.bind("MouseDown", function(e) {
+			console.log("MouseDown bloqueado:" + this.bloqueado);
 			if (!this.bloqueado) {
 				this.mostrarActivo();
 			}
@@ -17223,13 +17229,31 @@ Crafty.c("Boton", {
 	},
 	
 	mostrarActivo: function() {
-		this.e_btActivo.attr({ visible: true }).addTween({ alpha: 1.0 }, "linear", 5);
+		var self = this;
+		//this.bloquear();
+		this.e_btActivo.visible =  true;
+		this.e_btActivo.addTween({ alpha: 1 }, "linear", 5, function() {
+			self.ocultarActivo();
+		});
 		return this;
 	},
 	ocultarActivo: function() {
 		if (this.e_btActivo._visible && this.e_btActivo._alpha > 0) {
-			this.e_btActivo.attr({ alpha: 1.0 }).addTween({ alpha: 0.0 }, "linear", 5, function() { this.visible = false; });
+			this.e_btActivo.cancelTweener();
+			this.e_btActivo.alpha = 1;
+			
+			var self = this;
+			this.e_btActivo.addTween({ alpha: 0 }, "linear", 10, function() {
+				this.visible = false;
+				if (self.f_callback) self.f_callback();
+			});
 		}
+		return this;
+	},
+	
+	// muestra el botón en un fadeIn
+	aparecer: function() {
+		this.attr({ alpha: 0, visible: true }).addTween({ alpha: 1 }, "linear", 5);
 		return this;
 	},
 	
@@ -17240,7 +17264,7 @@ Crafty.c("Boton", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Advertencia.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Advertencia.js*/
 // Globo de advertencia para mostrar
 // Puede mostrar un chulo, una equis o una exclamación, según el estado solicitado
 // Aviso que se anexa al caballo
@@ -17291,7 +17315,7 @@ Crafty.c("Advertencia", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Cortina.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Cortina.js*/
 function Cortina() {
 	this.e_cortina = null; // Referencia a la entidad de la cortina en crafty
 	
@@ -17330,7 +17354,7 @@ Cortina.prototype.desaparecer = function(duracion) {
 			.attr({ alpha:1.0, visible:true })
 			.addTween({ alpha:0.0 }, "easeOutCubic", duracion, function() { this.visible = false; });
 };
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Oscilador.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Oscilador.js*/
 // Agregar este componente para ponerlo a oscilar en una dirección
 Crafty.c("Oscilador", {
 	t: 0, // Cuenta interna para la función
@@ -17408,7 +17432,7 @@ Crafty.c("Oscilador", {
 	}
 	
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/CajaTexto.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/CajaTexto.js*/
 
 Crafty.c("CajaTexto", {
 	colsSprite: 32,
@@ -17743,7 +17767,7 @@ var wPalabra = function(cajaTexto, x0, y0) {
  });*/
 
     
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/BloqueTexto.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/BloqueTexto.js*/
 Crafty.c("BloqueTexto", {
 	anchoCelda: 37,
 	altoCelda: 47,
@@ -17787,7 +17811,7 @@ Crafty.c("BloqueTexto", {
 	_arrOpciones: null, // arreglo de opciones de test
 	
 	init: function() {
-		this.requires("2D, Canvas");
+		this.requires("2D");
 		this._arrLetras = [];
 		this._arrEspacios = [];
 		this._arrOpciones = [];
@@ -17796,7 +17820,6 @@ Crafty.c("BloqueTexto", {
 	BloqueTexto: function(txt, animar) {
 		var i = 0;
 		var letra = '';
-		var code = 0;
 		var fila = 0;
 		var col = 0;
 		this._texto = txt;
@@ -17827,7 +17850,7 @@ Crafty.c("BloqueTexto", {
 				while (texto.charAt(j) !== '|' && j < len) {
 					j++;
 				}
-				txtOpcion = texto.slice(i+1, j);
+				txtOpcion = texto.slice(i + 1, j);
 				longitudOpcion = txtOpcion.length;
 				
 				// Construimos la opción y su correspondiente espacio
@@ -17879,11 +17902,17 @@ Crafty.c("BloqueTexto", {
 					if (!this.bold) e_letra.addComponent(this.sprNormal);
 					else e_letra.addComponent(this.sprBold);
 					
-					e_letra.attr({ x: posX, y: posY, z: this._z, w: anchoLetra, h: this.altoCelda, visible: (!this.animar), alpha: 1 })
+					e_letra.attr({
+								x: posX,
+								y: posY,
+								z: this._z,
+								w: anchoLetra,
+								h: this.altoCelda,
+								visible: (!this.animar),
+								alpha: 1 })
 							.sprite(col * this.anchoCelda, fila * this.altoCelda, anchoLetra, this.altoCelda);
 					
 					this._arrLetras.push(e_letra);
-					//console.log(this._arrLetras)
 					
 					// espaciado de letra
 					espaciado = (this.bold) ? anchoLetra + 3.2 : anchoLetra + 3.6;
@@ -17933,19 +17962,19 @@ Crafty.c("BloqueTexto", {
 	},
 	
 	animMostrar: function(f_cBack) {
-		var self = this;
 		this._numLetraAnim = 0;
-		this._animInterval = setInterval(function() {
-			if (self._numLetraAnim < self._arrLetras.length) {
-				self._arrLetras[self._numLetraAnim].visible = true;
-				self._numLetraAnim++;
+		
+		this.bind("EnterFrame", function() {
+			if (this._numLetraAnim < this._arrLetras.length) {
+				this._arrLetras[this._numLetraAnim].visible = true;
+				this._numLetraAnim++;
 				
 			} else {
-				clearInterval(self._animInterval);
-				self.mostrarEspacios();
+				this.unbind("EnterFrame");
+				this.mostrarEspacios();
 				if (f_cBack) f_cBack();
 			}
-		}, 5);
+		});
 		
 		return this;
 	},
@@ -18044,7 +18073,7 @@ Crafty.c("BloqueTexto", {
 	
 	getArrEspacios: function() { return this._arrEspacios; }
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Fondo.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Fondo.js*/
 Crafty.c('Fondo', {
 	init: function() {
 		this.requires('2D, Canvas, Image')
@@ -18053,7 +18082,7 @@ Crafty.c('Fondo', {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Particulas.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Particulas.js*/
 Crafty.c("Particula", {
 	yIni: 0, // Posición inicial Y de la partícula
 	vx: 0, // Velocidad en x
@@ -18179,7 +18208,7 @@ Particulas.prototype.crear = function(self) {
 		this.f_crear(e_part);
 	}
 };
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/Iluminador.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/Iluminador.js*/
 // Permite iluminar un elemento con un overlay semitransparente
 // Evanece y desvanece un bloque de las mismas medidas de la entidad a la que se agrega el iluminador
 // Para usar, invocar la función "iluminar()" con el color HEX, la opacidad (0-1) y el número de frames de animación
@@ -18210,7 +18239,7 @@ Crafty.c("Iluminador", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/graficos/DelayFrame.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/graficos/DelayFrame.js*/
 /* Retardo basado en un contador de frames
  * Si se destruye esta entidad, no se ejecuta el callback
  * Ejemplo de uso:
@@ -18267,7 +18296,7 @@ Crafty.c("DelayFrame", {
 		}
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/interac/AreaRotacion.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/interac/AreaRotacion.js*/
 Crafty.c('AreaRotacion', {
 	siguienteCuadroActual: 0,
 	cuadroActual: 0,
@@ -18300,15 +18329,14 @@ Crafty.c('AreaRotacion', {
 			// Opcional: colorear los cuadros
 			//cuadros[i].addComponent("Color").color(colores[i]).attr({ alpha: 0.5 });
 			
-			cuadros[i].bind('MouseOver',
-					function() {
-						if (!Crafty.isPaused()) {
-							estaArea.cuadroActual = this.cuadro;
-							if (estaArea.cuadroActual === estaArea.siguienteCuadroActual) {
-								estaArea.ventilador.girar();//se avanza con el ventilador.
-							}
-						}
-					});
+			cuadros[i].bind('MouseOver', function() {
+				if (!Crafty.isPaused()) {
+					estaArea.cuadroActual = this.cuadro;
+					if (estaArea.cuadroActual === estaArea.siguienteCuadroActual) {
+						estaArea.ventilador.girar();//se avanza con el ventilador.
+					}
+				}
+			});
 			cuadros[i].bind('MouseOut',
 					function() {
 						estaArea.siguienteCuadroActual = this.siguienteCuadro;
@@ -18329,20 +18357,25 @@ Crafty.c('AreaRotacion', {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/interac/Ventilador.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/interac/Ventilador.js*/
 Crafty.c("Ventilador", {
+	// incremento al valor por cada giro
+	incremento: 1,
 	//velocidad angular
 	va: 0,
 	//aceleracion angular
 	aa: 0,
 	//aceleracion friccion
 	af: 0,
+	
 	baseX: 0, // Desplazamiento de la base (opcional9
 	baseY: 0,
 	//referencia a la ProgressBar que refleja el avance 
 	barra: null,
 	//imagen de fondo del ventilador
 	base: null,
+	
+	
 	init: function() {
 		this.requires('2D, Canvas');
 		this.bind('EnterFrame', function() {
@@ -18382,7 +18415,7 @@ Crafty.c("Ventilador", {
 		return this;
 	},
 	girar: function() {
-		this.aa += 0.4;
+		this.aa += this.incremento;
 		return this;
 	},
 	
@@ -18394,10 +18427,7 @@ Crafty.c("Ventilador", {
 	}
 
 });
-
-
-
-/*C:\uniserver\www\hdp\public_html\src/compo/interac/Arrastrable.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/interac/Arrastrable.js*/
 /**
  * Juego de componentes que permite arrastrar y soltar entidades
  */
@@ -18432,7 +18462,6 @@ Crafty.c('Arrastrable', {
 		
 				Crafty.addEvent(this, Crafty.stage.elem, this.eventoMove, this.Art_arrastrar);
 				Crafty.addEvent(this, Crafty.stage.elem, this.eventoUp, this.Art_soltar);
-
 				
 				var pos = mouseCoords(e);
 				this.mouseIniX = pos.x;
@@ -18522,7 +18551,7 @@ Crafty.c('Arrastrable', {
 				this.unbind("MouseUp");
 				
 				// ajustarse al cajón
-				this.addTween({x: this.areaCajon.x, y: this.areaCajon.y, rotation: 0}, 'easeOutCubic', 15, function() {
+				this.addTween({x: this.areaCajon.x, y: this.areaCajon.y, rotation: 0}, 'easeOutCubic', 10, function() {
 					this.addComponent("Completo");
 					if (act.arrastreCompleto) {
 						act.arrastreCompleto(this);
@@ -18544,7 +18573,7 @@ Crafty.c('AreaCajon', {
 		this.requires('2D, Canvas');
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/interac/ToqueRapido.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/interac/ToqueRapido.js*/
 var ToqueRapido = function() {
 	this.val = 0; // Valor actual
 	this.vMax = 100; // Valor máximo
@@ -18618,7 +18647,7 @@ var ToqueRapido = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/compo/fisica/PisoBox2D.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/fisica/PisoBox2D.js*/
 Crafty.c('PisoBox2D', {
 	coordenadas: [],
 	piso: [],
@@ -18636,7 +18665,7 @@ Crafty.c('PisoBox2D', {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/fisica/B2arrastre.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/fisica/B2arrastre.js*/
 /* 
  * Permite arrastrar una entidad box2D
  * Suponemos que box2D ya se ha inicializado y que "world" es una var. global con Crafty.world
@@ -18760,7 +18789,7 @@ Crafty.c("B2arrastre", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/debug/PuntoCoordenada.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/debug/PuntoCoordenada.js*/
 /*Componenete que permite obtener un array con todos los puntos
  * por los que se ha pasado, presionar una tecla cualquiera para 
  * guardar la coordenada, presionar la tecla E para imprimir las coordenadas */
@@ -18789,7 +18818,7 @@ Crafty.c('PuntoCoordenada', {
 
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/debug/PuntoCoordRel.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/debug/PuntoCoordRel.js*/
 /* Componenete que permite obtener un array con todos los puntos
  * por los que se ha pasado, presionar ESPACIO para 
  * guardar la coordenada, presionar la tecla E para imprimir las coordenadas
@@ -18830,7 +18859,7 @@ Crafty.c('PuntoCoordRel', {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/compo/debug/Ubicador.js*/
+/*C:\UniServer\www\hdp\public_html\src/compo/debug/Ubicador.js*/
 /* 
  * Debug: permite arrastrar la entidad e imprime la posición en la que se encuentra
  * También dibuja unas marcas en las esquinas del rectángulo contenedor
@@ -18851,7 +18880,7 @@ Crafty.c("Ubicador", {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/menu-pri/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-pri/sprites.js*/
 // Sprites del menú principal
 function spritesMenuPri() {
 	Crafty.sprite("img/menu-pri/caballo.png", {
@@ -18894,7 +18923,7 @@ function spritesMenuPri() {
 		sprMI_creditos: [0, 0, 512, 548]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/menu-pri/comp-config.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-pri/comp-config.js*/
 // Diálogo de reestablecer progreso
 Crafty.c("MP_DialogReset", {
 	e_texto: null,
@@ -19047,28 +19076,30 @@ Crafty.c("MP_DialogCredi", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-pri/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-pri/componentes.js*/
 // Agrupa algunas funcionalidades comunes a los botones laterales de esta escena
 Crafty.c("MI_btLateral", {
 	init: function() {
-		this.requires("Boton, Tweener, Delay");
+		this.requires("Boton, Tweener");
 	},
 	
 	// Deslizarse desde su lado de la pantalla a su posición visible
 	animMostrar: function(retardo) {
 		this.ocultarLateral();
 		this.visible = true;
-		this.delay(function() {
-			this.addTween({ x:this.xIni }, "easeOutBack", 60, function() { this.habilitar(); }); 
+		var self = this;
+		Crafty.e("DelayFrame").delay(function() {
+			self.addTween({ x: self.xIni }, "easeOutBack", 60, function() { this.habilitar(); }); 
 		}, retardo);
 	},
 	
 	// Deslizarse desde su lado de la pantalla a su posición visible
 	animEsconder: function(retardo) {
-		this.bloquear()
-			.delay(function() {
-				this.addTween({ x:1280 }, "easeInCubic", 40, function() { this.visible = false; }); 
-			}, retardo);
+		this.bloquear();
+		var self = this;
+		Crafty.e("DelayFrame").delay(function() {
+			self.addTween({ x: 1280 }, "easeInCubic", 40, function() { this.visible = false; }); 
+		}, retardo);
 	},
 	
 	// Inmediatamente mueve al lado de la pantalla y vuelve invisible
@@ -19088,7 +19119,7 @@ Crafty.c("MI_btJugar", {
 	// desliza hacia abajo y desvanece
 	animEsconder: function() {
 		this.bloquear()
-			.addTween({ y:488, alpha:0.0 }, "easeInCubic", 60, function() {
+			.addTween({ y:488, alpha: 0 }, "easeInCubic", 60, function() {
 				this.visible = false;
 			});
 		return this;
@@ -19096,8 +19127,8 @@ Crafty.c("MI_btJugar", {
 	
 	// desliza hacia arriba y aparece
 	animMostrar: function() {
-		this.attr({ y:488, alpha:0.0, visible:true })
-			.addTween({ y:388, alpha:1.0 }, "easeOutCubic", 80, function() { this.habilitar(); });
+		this.attr({ y: 488, alpha: 0, visible: true })
+			.addTween({ y: 388, alpha: 1.0 }, "easeOutCubic", 80, function() { this.habilitar(); });
 		return this;
 	}
 });
@@ -19220,7 +19251,7 @@ Crafty.c("MI_btAtras", {
 			.Boton("sprGL_btAtras", "sprGL_btAtras2");
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-pri/escena.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-pri/escena.js*/
 Crafty.defineScene("menuPrincipal", function() {
 	// Menú principal
 	var e_fondo, e_cielo, e_pisoFondo, e_pisoFrente, e_caballo, e_caballoSomb, e_nubeIzq, e_nubeDer, e_logo; // decoración
@@ -19324,23 +19355,23 @@ Crafty.defineScene("menuPrincipal", function() {
 		}, 1000);
 
 		// luego de un momento, los botones aparecen
-		Crafty.e("Delay").delay(function() {
+		Crafty.e("DelayFrame").delay(function() {
 			// btJugar sube detrás de las montañas
 			e_btJugar.animMostrar();
 
 			// Los botones laterales se deslizan desde su borde de la pantalla
 			e_btConfig.animMostrar(0);
-			e_btAudio.animMostrar(200);
-			e_btLike.animMostrar(400);
-		}, 2000);
+			e_btAudio.animMostrar(10);
+			e_btLike.animMostrar(20);
+		}, 120);
 	}
 
 	// Animación de transición desde el menú principal al menú de configuración
 	function animEntrarMenuConfig() {
 		// Los botones se repliegan de donde salieron
-		e_btAudio.animEsconder(120);
-		e_btLike.animEsconder(240);
-		e_btJugar.animEsconder();
+		e_btAudio.animEsconder(10);
+		e_btLike.animEsconder(20);
+		e_btJugar.animEsconder(0);
 
 		// el logo se desvanece, y aparece su versión del menú de config
 		e_logo.addTween({alpha: 0.0}, "linear", 50, function() {
@@ -19388,12 +19419,12 @@ Crafty.defineScene("menuPrincipal", function() {
 		e_pisoFrente.addTween({x: (e_pisoFrente._x - 35)}, "easeOutCubic", 70);
 
 		// Mostramos el boton jugar y los botones de opciones
-		Crafty.e("Delay").delay(function() {
+		Crafty.e("DelayFrame").delay(function() {
 			e_btConfig.animMostrar(0);
-			e_btAudio.animMostrar(200);
-			e_btLike.animMostrar(400);
+			e_btAudio.animMostrar(10);
+			e_btLike.animMostrar(20);
 			e_btJugar.animMostrar();
-		}, 1200);
+		}, 70);
 	}
 
 
@@ -19402,8 +19433,8 @@ Crafty.defineScene("menuPrincipal", function() {
 	function transicionJugar() {
 		// Escondemos los botones laterales
 		e_btConfig.animEsconder(0);
-		e_btAudio.animEsconder(40);
-		e_btLike.animEsconder(80);
+		e_btAudio.animEsconder(10);
+		e_btLike.animEsconder(20);
 
 		// desplazamos los terrenos y las nubes hacia abajo
 		e_pisoFrente.addTween({y: 1000}, "easeInCubic", 75);
@@ -19415,9 +19446,9 @@ Crafty.defineScene("menuPrincipal", function() {
 		e_btJugar.animEsconder();
 		e_logo.addTween({alpha: 0.0}, "linear", 40);
 
-		Crafty.e("Delay").delay(function() {
+		Crafty.e("DelayFrame").delay(function() {
 			objCortina.aparecer(60, "MenuCuadros");
-		}, 250);
+		}, 15);
 	}
 	
 	// Bloquear los botones del menú de configuración
@@ -19441,12 +19472,10 @@ Crafty.defineScene("menuPrincipal", function() {
 	crearEntidades();
 
 	// Mostrar menu de configuracíon al hacer click en el botón config
-	e_btConfig.bind("MouseUp", function() {
-		if (!this.bloqueado) {
-			this.animEsconder(30);
-			animEntrarMenuConfig();
-		}
-	});
+	e_btConfig.f_callback = function() {
+		e_btConfig.animEsconder(0);
+		animEntrarMenuConfig();
+	};
 
 	// Mostrar menu de configuracíon al hacer click en el botón config
 	e_btAudio.bind("MouseUp", function() {
@@ -19454,26 +19483,22 @@ Crafty.defineScene("menuPrincipal", function() {
 		this.cambiarSprite(mute);
 	});
 	
-	// Like en facebook?
-	e_btLike.bind("MouseUp", function() {
+	// Like en facebook
+	e_btLike.f_callback = function() {
 		CocoonJS.App.openURL("https://www.facebook.com/historiaspopayan");
-	});
+	};
 	
 	// Al hacer click en btAtras, ocultar el menú de configuración y volver al menú principal
-	e_btAtras.bind("MouseUp", function() {
-		if (!this.bloqueado) {
-			this.animEsconder(0);
-			animSalirMenuConfig();
-		}
-	});
+	e_btAtras.f_callback = function() {
+		e_btAtras.animEsconder(0);
+		animSalirMenuConfig();
+	};
 
 	// Al hacer click en btJugar, activar la transición a la escena de jugar
-	e_btJugar.bind("MouseUp", function() {
-		if (!this.bloqueado) {
-			this.bloquear();
-			transicionJugar();
-		}
-	});
+	e_btJugar.f_callback = function() {
+		e_btJugar.bloquear();
+		transicionJugar();
+	};
 	
 	// Mostrar diálogo de reestablecer progreso
 	e_btReset.bind("MouseUp", function() {
@@ -19495,7 +19520,7 @@ Crafty.defineScene("menuPrincipal", function() {
 
 	animEntradaIni();
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/sprites.js*/
 // Sprites del menú de cuadros
 function spritesMenuCuadros() {
 	Crafty.sprite("img/menu-cuadros/candado.png", {
@@ -19552,7 +19577,7 @@ function spritesMenuCuadros() {
 		sprMC_c5desv: [0,0,320,280]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/MC_Cuadro.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/MC_Cuadro.js*/
 /*
  * MC_Cuadro(num, xi, yi, xc, yc, act, grilla)
  * posIni(x, y)
@@ -19580,7 +19605,7 @@ Crafty.c("MC_Cuadro", {
 	yCentro: 0,
 	
 	e_cGrande: null, // entidad del cuadro grande
-	ordenActiv: new Array(6), // Orden de las actividades
+	ordenActiv: null, // Orden de las actividades
 	_actividades: null, // Referencia al arreglo de entidades de actividades
 	dirOcultar: 0, // Dirección hacia la cual se desliza el cuadro para ocultarse
 	e_grilla: null, // Referencia a la grilla
@@ -19592,6 +19617,9 @@ Crafty.c("MC_Cuadro", {
 
 	init: function() {
 		this.requires("2D, Canvas, Tint, Tweener, Mouse");
+		this.e_baudilios = Crafty.e("MC_Baudilios");
+		
+		this.ordenActiv = new Array(6);
 	},
 
 	MC_Cuadro: function(num, xi, yi, xc, yc, act, grilla, sombra) {
@@ -19603,38 +19631,37 @@ Crafty.c("MC_Cuadro", {
 		this.e_grilla = grilla;
 		this.e_sombra = sombra;
 		
-		this.requires("sprMC_c" + num);
-		
-		this.e_baudilios = Crafty.e("MC_Baudilios");
-		
 		switch (num) {
-			case 1: this.ordenActiv = [3,4,1,6,5,2];
+			case 1: this.ordenActiv = [1,2,3,4,5,6];//[3,4,1,6,5,2];
+					this.attr({ w: 367, h: 254 });
 					this.dirOcultar = 0;
 					this.areaMap([38,38],[273,38],[273,180],[38,180]);
-					this.e_baudilios.attr({x: this.x + 78, y: this.y + 190}).MC_Baudilios();
 			break;
-			case 2: this.ordenActiv = [1,3,4,5,2,6];
+			case 2: this.ordenActiv = [1,2,3,4,5,6];//[1,3,4,5,2,6];
+					this.attr({ w: 248, h: 343 });
 					this.dirOcultar = 0;
 					this.areaMap([20,21],[178,21],[178,282],[20,282]);
-					this.e_baudilios.attr({x: this.x + 20, y: this.y + 290}).MC_Baudilios();
 					this.vertical = true;
 			break;
 			case 3: this.ordenActiv = [1,2,3,4,5,6];
-					this.dirOcultar = 3;
+					this.attr({ w: 395, h: 256 });	
+					this.dirOcultar = 1;
 					this.areaMap([41,29],[294,29],[294,183],[41,183]);
-					this.e_baudilios.attr({x: this.x + 86, y: this.y + 190}).MC_Baudilios();
 			break;
 			case 4: this.ordenActiv = [1,2,3,4,5,6];
-					this.dirOcultar = 1;
+					this.attr({ w: 376, h: 256 });	
+					this.dirOcultar = 3;
 					this.areaMap([40,39],[280,39],[280,185],[40,185]);
-					this.e_baudilios.attr({x: this.x + 77, y: this.y + 190}).MC_Baudilios();
 			break;
 			case 5: this.ordenActiv = [1,2,3,4,5,6];
+					this.attr({ w: 350, h: 242 });
 					this.dirOcultar = 1;
 					this.areaMap([36,36],[259,36],[259,172],[36,172]);
-					this.e_baudilios.attr({x: this.x + 70, y: this.y + 180}).MC_Baudilios();
 					break;
 		}
+		
+		this.e_baudilios.MC_Baudilios(this.num);
+		this.attach(this.e_baudilios);
 
 		var props = { x: 128, y: 85, z: 90, alpha: 0.0, visible: false };
 		if (this.vertical) props = { x: 385, y: 8, z: 90, alpha: 0.0, visible: false };
@@ -19644,8 +19671,6 @@ Crafty.c("MC_Cuadro", {
 								.attr(props);
 		this.wIni = this._w;
 		this.hIni = this._h;
-		
-		this.attach(this.e_baudilios);
 		
 		return this;
 	},
@@ -19774,7 +19799,7 @@ Crafty.c("MC_Cuadro", {
 	// Desliza el cuadro desde un lado para mostrarlo en su posicion normal
 	animMostrar: function() {
 		this.visible = true;
-		this.addTween({ x:this.xIni, y:this.yIni}, "easeInQuad", 18, function() {
+		this.addTween({ x: this.xIni, y:  this.yIni }, "easeInQuad", 18, function() {
 			if (!this.candado) this.habilitar();
 		});
 	},
@@ -19791,7 +19816,7 @@ Crafty.c("MC_Cuadro", {
 		this.e_baudilios.numBaudilios(b);
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/MC_btActiv.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/MC_btActiv.js*/
 // Botón de actividad
 Crafty.c("MC_btActiv", {
 	num: 0, // 1-6, ubicación de botón en el sprite
@@ -19814,7 +19839,6 @@ Crafty.c("MC_btActiv", {
 		
 		this.bind("MouseUp", function() {
 			if (!this.bloqueado) {
-				console.log("Abriendo actividad " + this.numC + " - " + this.numAct);
 				this.bloqueado = true;
 				
 				this.iluminar("#FFFFFF", 0.5, 5, function() {
@@ -19908,7 +19932,7 @@ Crafty.c("MC_btActiv", {
 	// actualiza el número de baudilios activados para este botón
 	actualizarBaudAct: function() {
 		this.e_baudiliosActiv.numBaudilios(progreso[this.numC - 1].baudilios[this.numAct]);
-		this.e_numAct.sprite(0, (this.numAct) * 60);
+		this.e_numAct.sprite(0, (this.numAct) * 61);
 		return this;
 	},
 	
@@ -19945,10 +19969,8 @@ Crafty.c("MC_btActiv", {
 		
 		return this;
 	}
-	
-	
 });
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/componentes.js*/
 // Sombra del cuadro grande
 Crafty.c("MC_Sombra", {
 	e_sup: null, e_inf: null, e_izq: null, e_der: null,
@@ -20079,22 +20101,37 @@ Crafty.c("MC_BaudiliosAct", {
 
 /* Medidor de baudilios de cada cuadro */
 Crafty.c("MC_Baudilios", {
+	e_monedas: null, // imagen de monedas
 	e_numBaud: null, // numero de baudilios
 	e_numTotal: null, // entidad de num total
 
 	init: function() {
+		this.requires("2D");
+		
 		this.requires("2D, Canvas, Image, Tweener")
 					.image("img/menu-cuadros/monedas.png")
-					.attr({z: 90});
+					.attr({ z: 90 });
+		
 		this.e_numTotal = Crafty.e("2D, Canvas, Image").image("img/menu-cuadros/num-total.png");
 		this.e_numBaud = Crafty.e("MC_NumBaud");
+		
+		this.attach(this.e_numBaud);
+		this.attach(this.e_numTotal);
 	},
 	
-	MC_Baudilios: function() {
-		this.e_numBaud.attr({ x:this.x + 73, y: this.y + 18 });
-		this.attach(this.e_numBaud);
+	MC_Baudilios: function(numCuadro) {
+		// Posicionamos los baudilios relativamente al cuadro
+		switch (numCuadro) {
+			case 1: this.x += 78; this.y += 190; break;
+			case 2: this.x += 20; this.y += 290; break;
+			case 3: this.x += 86; this.y += 190; break;
+			case 4: this.x += 77; this.y += 190; break;
+			case 5: this.x += 70; this.y += 180; break;
+		}
+		
+		this.e_numBaud.attr({ x:this.x + 73, y: this.y + 20 });
 		this.e_numTotal.attr({ x:this.x + 105, y: this.y + 18 });
-		this.attach(this.e_numTotal);
+		
 		return this;
 	},
 	
@@ -20135,23 +20172,26 @@ Crafty.c("MC_NumBaud", {
 
 	init: function() {
 		this.requires("2D");
-		this.e_digito0 = Crafty.e("2D, Canvas, sprMC_numBaud").attr({ visible: false, h:21 });
-		this.e_digito1 = Crafty.e("2D, Canvas, sprMC_numBaud").attr({ visible: true, x:14, h:21 });
+		this.h = 20;
+		this.e_digito0 = Crafty.e("2D, Canvas, sprMC_numBaud");
+		this.e_digito1 = Crafty.e("2D, Canvas, sprMC_numBaud");
 		this.attach(this.e_digito0);
 		this.attach(this.e_digito1);
+		
+		this.e_digito0.attr({ visible: false });
+		this.e_digito1.attr({ visible: true, x: 14 });
 	},
 	
 	MC_NumBaud: function(num) {
 		this.num = num;
 		
-		this.e_digito1.h = 21; // corregir bug de escalado en attach
 		if (num < 10) {
 			this.e_digito0.visible = false;
-			this.e_digito1.sprite(0, num * 21); // sólo mostrar el segundo dígito
+			this.e_digito1.sprite(0, num * this.e_digito1._h); // sólo mostrar el segundo dígito
 		}
 		else {
-			this.e_digito0.sprite(0, 21).attr({ visible: true, h:21 });
-			this.e_digito1.sprite(0, (num - 10) * 21);
+			this.e_digito0.sprite(0, this.e_digito1._h).attr({ visible: true });
+			this.e_digito1.sprite(0, (num - 10) * this.e_digito1._h);
 		}
 
 		return this;
@@ -20168,7 +20208,7 @@ Crafty.c("MC_NumBaud", {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/menu-cuadros/escena.js*/
+/*C:\UniServer\www\hdp\public_html\src/menu-cuadros/escena.js*/
 Crafty.defineScene("MenuCuadros", function() {
 	//boton de atras para la postal
 	var e_btAtrasFondo, e_btAtrasCuadro;
@@ -20204,23 +20244,23 @@ Crafty.defineScene("MenuCuadros", function() {
 		// Cuadros en la pared
 		cuadros[0] = Crafty.e("MC_Cuadro")
 							.MC_Cuadro(1, 200, 80, 500, 291, actividades, e_grillaH, e_sombraH)
-							.attr({x: 200, y: -480, w: 367, h: 254})
+							.attr({ x: 200, y: -480, w: 367, h: 254})
 							.crearCandado(2, 0);
 		cuadros[1] = Crafty.e("MC_Cuadro")
-							.MC_Cuadro(2, 550, 50, 542, 248, actividades, e_grillaV, null)
-							.attr({x: 550, y: -400, w: 248, h: 343})
+							.MC_Cuadro(2, 550, 30, 542, 248, actividades, e_grillaV, null)
+							.attr({ x: 550, y: -400, w: 248, h: 343})
 							.crearCandado(-17, -18);
 		cuadros[2] = Crafty.e("MC_Cuadro")
-							.MC_Cuadro(3, 241, 343, 473, 290, actividades, e_grillaH, e_sombraH)
-							.attr({x: 241, y: -300, w: 395, h: 256})
+							.MC_Cuadro(3, 770, 120, 473, 290, actividades, e_grillaH, e_sombraH)
+							.attr({ x: 770, y: -500, w: 395, h: 256})
 							.crearCandado(2, 0);
 		cuadros[3] = Crafty.e("MC_Cuadro")
-							.MC_Cuadro(4, 782, 120, 481, 292, actividades, e_grillaH, e_sombraH)
-							.attr({x: 782, y: -500, w: 376, h: 260})
+							.MC_Cuadro(4, 241, 343, 481, 292, actividades, e_grillaH, e_sombraH)
+							.attr({ x: 241, y: -300, w: 376, h: 260})
 							.crearCandado(2, 0);
 		cuadros[4] = Crafty.e("MC_Cuadro")
-							.MC_Cuadro(5, 741, 365, 494, 304, actividades, e_grillaH, e_sombraH)
-							.attr({x: 741, y: -300, w: 350, h: 242})
+							.MC_Cuadro(5, 730, 365, 494, 304, actividades, e_grillaH, e_sombraH)
+							.attr({ x: 730, y: -300, w: 350, h: 242})
 							.crearCandado(1, 0);
 
 		
@@ -20350,7 +20390,7 @@ Crafty.defineScene("MenuCuadros", function() {
 		gesSonido.reproducirMusica('m_inicio');
 	});
 });
-/*C:\uniserver\www\hdp\public_html\src/escenas/EscInicio.js*/
+/*C:\UniServer\www\hdp\public_html\src/escenas/EscInicio.js*/
 Crafty.defineScene("Inicio", function() {
 	
 	// Cargamos recursos de esta escena antes de renderizar
@@ -20375,7 +20415,7 @@ Crafty.defineScene("Inicio", function() {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/test/Test.js*/
+/*C:\UniServer\www\hdp\public_html\src/test/Test.js*/
 var Test = function() {
 	this.nivel = 0;
 	this.banco = null;
@@ -20383,6 +20423,7 @@ var Test = function() {
 	this.contRespuestasOK = 0;
 	this.numPreguntas = 0; // Número de preguntas que se debe aprobar para concluir el test
 	this.f_inicializar = null; // Función a ejecutar para inicializar la pregunta
+	
 	this.e_numero = null; // Referencia al número de test
 };
 
@@ -20517,7 +20558,7 @@ Test.prototype.finalizarTest = function() {
 	}, 2000);
 	return this;
 };
-/*C:\uniserver\www\hdp\public_html\src/test/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/test/componentes.js*/
 Crafty.c("TestOpcion", {
 	e_espacioVerdad: null, // referencia su espacio correspondiente en el test (null si no tiene)
 	e_bloTexto: null, // bloque de texto
@@ -20706,10 +20747,10 @@ Crafty.c("TestEspacio", {
 		this.e_resultado.attr({ x: this.e_opcion._x + this.e_opcion._w, y: this._y - 75 });
 		
 		if (this.resultado) {
-			this.e_resultado.mostrar(0, 60);
+			this.e_resultado.mostrar(0, 90);
 		}
 		else {
-			this.e_resultado.mostrar(1, 60);
+			this.e_resultado.mostrar(1, 90);
 		}
 		
 		return this;
@@ -20735,7 +20776,7 @@ Crafty.c("TE_Numero", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/test/escena.js*/
+/*C:\UniServer\www\hdp\public_html\src/test/escena.js*/
 //en esta escena se muestra la pregunta actual del gestor de test
 Crafty.defineScene("TestPregunta", function() {
 	var colorFrente, colorFondo;
@@ -20744,20 +20785,20 @@ Crafty.defineScene("TestPregunta", function() {
 	var texto = ""; // Texto de la pregunta
 	var textosTrampa = []; // Arreglo de textos de opciones trampa
 	var inicializar;
+	var e_txtInicio; // Entidad de texto de bienvenida
 	
 	et = Crafty.e("BloqueTexto").attr({ x: 100, y: 180 });
 	
 	// Creamos entidades decorativas
+	e_txtInicio = Crafty.e("2D, Canvas, Image, Tweener").attr({ x: 430, y: 230, z: 600 }).image("img/test/txt-inicio.png");
 	var e_fondo = Crafty.e("2D, Canvas, Color").attr({w: 1280, h: 800});
-	var e_llave = Crafty.e("2D, Canvas, Image").attr({ x: 1080, y: 48 }).image("img/test/llave.png");
-	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 20, y: 566});
-	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 531, y: 566});
-	Crafty.e("2D, Canvas, sprTE_linea").attr({x: 1042, y: 566}).crop(0, 0, 211, 14);
-	gestorTest.e_numero = Crafty.e("TE_Numero").attr({x: 95, y: 70});
+	var e_llave = Crafty.e("2D, Canvas, Image").attr({ x: 1080, y: 48, visible: false }).image("img/test/llave.png");
+	var e_linea1 = Crafty.e("2D, Canvas, sprTE_linea").attr({x: 20, y: 566, visible: false });
+	var e_linea2 = Crafty.e("2D, Canvas, sprTE_linea").attr({x: 531, y: 566, visible: false });
+	var e_linea3 = Crafty.e("2D, Canvas, sprTE_linea").attr({x: 1042, y: 566, visible: false }).crop(0, 0, 211, 14);
+	gestorTest.e_numero = Crafty.e("TE_Numero").attr({x: 95, y: 70, visible: false });
 	
 	//Crafty.e("2D, Canvas, Color, Mouse").color("#FFFFFF").attr({ w: 30, h: 30, z: 5566}).bind("MouseUp", function() { inicializar(); });
-	
-	
 	
 	// *** FUNCIONES DE LA ESCENA ***
 	
@@ -20782,7 +20823,30 @@ Crafty.defineScene("TestPregunta", function() {
 	};
 	
 	gestorTest.f_inicializar = inicializar;
-	inicializar();
+	
+	// Primero mostramos el letrero de bienvenida, luego mostramos la primer pregunta
+	elegirColor();
+	e_fondo.color(colorFondo);
+		
+	e_txtInicio.alpha = 0.5;
+	e_txtInicio.y = -190;
+	e_txtInicio.addTween({ alpha: 1 }, "linear", 10);
+	e_txtInicio.addTween({ y: 280 }, "easeInOutBack", 60, function() {
+		Crafty.e("DelayFrame").delay(function() {
+			e_txtInicio.addTween({ y: 600, alpha: 0 }, "easeInCubic", 30, function() {
+				Crafty.e("DelayFrame").delay(function() {
+					e_llave.visible = true;
+					e_linea1.visible = true;
+					e_linea2.visible = true;
+					e_linea3.visible = true;
+					gestorTest.e_numero.visible = true;
+					inicializar();
+				}, 20);
+			});
+		}, 60);
+		
+	});
+	
 	
 	// Establece el color de frente y de fondo de la pregunta actual
 	function elegirColor() {
@@ -20905,7 +20969,7 @@ Crafty.defineScene("TestPregunta", function() {
 	}
 });
 
-/*C:\uniserver\www\hdp\public_html\src/test/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/test/sprites.js*/
 function spritesTest() {
 	Crafty.sprite("img/test/linea.png", {"sprTE_linea": [0, 0, 511, 14]});
 	Crafty.sprite("img/test/numeros.png", {"sprTE_numeros": [0, 0, 63, 60]});
@@ -20918,7 +20982,7 @@ function spritesTest() {
 	});
 }
 
-/*C:\uniserver\www\hdp\public_html\src/act/base/AC_Perdiste.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/AC_Perdiste.js*/
 Crafty.c("AC_Perdiste", {
 	e_fondo: null, // transparencia que cubre toda la pantalla
 	e_btSalir: null,
@@ -20981,11 +21045,12 @@ Crafty.c("AC_Perdiste", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/base/AC_Pista.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/AC_Pista.js*/
 // Representa el mensaje emergente de pista al principio de cada escena
 Crafty.c("AC_Pista", {
 	e_msg: null, // Sprite de mensaje
 	e_cubierta: null, // Cubierta de pantalla completa
+	e_delay: null, // Referencia a delay (útil para destruirlo manualmente)
 	xIni: 0, // Coords de inicio
 	xFin: 0, // Coords de finalización
 	actConfig: null, // Referencia a la configuración de la pista en la actividad
@@ -20993,14 +21058,27 @@ Crafty.c("AC_Pista", {
 	init: function() {
 		this.requires("2D, Canvas, sprAC_fonPistaIzq, Tweener, Persist");
 		this.e_msg = Crafty.e("2D, Canvas, sprAC_msgPista, Persist");
+		//this.e_msg.addComponent("Color").color("#FFFFFF")
 		this.attach(this.e_msg);
 		
 		this.z = 9000;
 		this.e_msg.z = this._z;
 		
-		this.e_cubierta = Crafty.e("2D, Canvas, Mouse, Persist")
-								.attr({ w: 1280, h: 800, z: 900, visible: false });
+		this.e_cubierta = Crafty.e("2D, Canvas, Mouse, Persist").attr({ w: 1280, h: 800, z: 900, visible: false });
+		this.e_cubierta._padre = this;
+		this.e_cubierta.bind("MouseDown", this._removerPista);
+		
 		this.ocultar(); // Inicia oculto
+	},
+	
+	// Remueve forzosamente la pista y cualquier gesto existente, e iniciamos la actividad
+	_removerPista: function() {
+		Crafty("Gesto").each(function() { this.destroy(); });
+		this._padre.cancelTweener();
+		this._padre.ocultar();
+		this._padre.e_delay.destroy();
+		gesActividad.temporizador.mostrar().iniciar();
+		return this;
 	},
 	
 	// Muestra y luego esconde la pista
@@ -21009,31 +21087,31 @@ Crafty.c("AC_Pista", {
 		this.actConfig = gesActividad.config.pista;
 		var izquierda = this.actConfig.ladoIzq;
 		
+		this.e_delay = Crafty.e("DelayFrame"); // Reconstruir por si fué destruído
 		this.mensajePista(gesActividad.nivel, gesActividad.subnivel);
 		this.visible = true;
 		this.e_msg.visible = true;
 		
 		// ponemos la pista a la izquierda o a la derecha
 		if (izquierda) {
-			this.removeComponent("sprAC_fonPistaDer").addComponent("sprAC_fonPistaIzq");
+			this.sprite(0, 0);
 			this.xIni = -this._w;
 			this.xFin = -20;
 			// Temporalmente volvemos a x=0 para no alterar el offset
 			this.x = 0;
-			this.e_msg.x = 225;
+			this.e_msg.x = 205;
 		}
 		else {
-			this.removeComponent("sprAC_fonPistaIzq").addComponent("sprAC_fonPistaDer");
+			this.sprite(0, 256);
 			this.xIni = 1280 + this._w;
 			this.xFin = 1280 - this._w + 20;
 			
 			this.x = 0;
-			this.e_msg.x = 95;
+			this.e_msg.x = 100;
 		}
 		this.x = this.xIni;
 		this.y = this.actConfig.y;
-		this.e_msg.y = this.y + 43;
-		
+		this.e_msg.y = this.y + 37;
 		
 		// Cubrimos con una capa transparente que evite interactuar antes de tiempo
 		this.e_cubierta.visible = true;
@@ -21044,13 +21122,13 @@ Crafty.c("AC_Pista", {
 		
 		this.addTween({ x: xMid }, "easeInCubic", 20, function() {
 			this.addTween({ x: this.xFin }, "easeOutElastic", 50, function() {
-				Crafty.e("DelayFrame").delay(function() {
+				self.e_delay.delay(function() {
 					self.addTween({ x: self.xIni }, "easeInCubic", 15, function() {
 						this.ocultar();
 						// Mostramos e iniciamos el temporizador
 						gesActividad.temporizador.mostrar().iniciar();
 					});
-				}, 55);
+				}, 65);
 			});
 		});
 		
@@ -21083,7 +21161,7 @@ Crafty.c("AC_Pista", {
 	}
 });
 
-/*C:\uniserver\www\hdp\public_html\src/act/base/Temporizador.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/Temporizador.js*/
 /**
  * Componente de temporizacion de actividades, esta fuertemente acoplado 
  * con juego.actividad, envia mensajes de terminacion o pausa.
@@ -21270,7 +21348,7 @@ Crafty.c('Temporizador', {
 		return tRestante;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/base/Pausa.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/Pausa.js*/
 Crafty.c("Pausa", {
 	_objTempo: null, // Referencia al objeto Temporizador (creador)
 	
@@ -21453,7 +21531,7 @@ Crafty.c("PAU_Hoja", {
 		});
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/base/Actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/Actividad.js*/
 /**
  * Objeto global que gestiona las actividades del videojuego
  * Encargado de iniciar y detener las actividades con su puntaje e interfaces
@@ -21523,7 +21601,6 @@ Actividad.prototype.reiniciar = function() {
 		this.objAct.terminarActividad();
 
 	this.objAct = this.config.actividad();
-	console.log("reiniciar actividad " + this.nivel + " - " + this.subnivel);
 
 	this.temporizador.reset();
 	var duracionAct = (debug) ? 100000 : this.config.duracion;
@@ -21532,18 +21609,17 @@ Actividad.prototype.reiniciar = function() {
 	actPuntaje.ocultar();
 	this.terminada = false;
 	Crafty.enterScene("Actividad", this);
-
 };
 
 Actividad.prototype.siguienteActiv = function() {
 	this.terminar();
-	actPuntaje.ocultar();
+	
 	//verificar si la siguiente actividad corresponde a un test
 	if (this.subnivel >= 5) {
 		gestorTest.iniciarTest(this.nivel);
 	} else {
 		//caso especifico 
-		if (this.subnivel == 0 && this.nivel == 3) {
+		if (this.subnivel == 3 && this.nivel == 3) {
 			Crafty.scene("MenuCuadros");
 		} else {
 			this.ejecutar(this.nivel, this.subnivel + 1);
@@ -21551,7 +21627,7 @@ Actividad.prototype.siguienteActiv = function() {
 	}
 };
 
-// Calcula y muestra la interfaz de puntaje
+// Calcula el puntaje obtenido y muestra la interfaz de puntaje
 Actividad.prototype.mostrarPuntaje = function() {
 	if (!this.terminada) {
 		this.terminada = true;
@@ -21559,13 +21635,17 @@ Actividad.prototype.mostrarPuntaje = function() {
 
 		// Calculamos el número de puntos a partir del t restante
 		var tRestante = this.temporizador.getTiempoRestante();
-		var calificacion = tRestante / this.temporizador.tiempoInicial; // [0:1]
-		var puntosObtenidos = Math.floor(calificacion * 6000);
+		var porcentaje = tRestante / this.temporizador.tiempoInicial; // de 0 a 1 cuánto porcentaje quedó restante
+		var puntosObtenidos = Math.floor(porcentaje * actPuntaje.puntosMax);
+		
+		// Calculamos los baudilios obtenidos
+		actPuntaje.baudiliosObtenidos = actPuntaje.calcBaudilios(puntosObtenidos);
 
 		// Actualizamos progreso
-		progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
-		progreso[this.nivel].baudilios[this.subnivel] = Math.floor(puntosObtenidos / (actPuntaje.puntosMax * 0.33));
-
+		if (puntosObtenidos > progreso[this.nivel].puntaje[this.subnivel]) {
+			progreso[this.nivel].puntaje[this.subnivel] = puntosObtenidos;
+			progreso[this.nivel].baudilios[this.subnivel] = actPuntaje.baudiliosObtenidos;
+		}
 
 		// Desbloquear siguiente nivel si es el caso
 		if (this.subnivel === 5) {
@@ -21618,7 +21698,7 @@ Actividad.prototype.terminar = function() {
 	this.temporizador.ocultar();
 	return this;
 };
-/*C:\uniserver\www\hdp\public_html\src/act/base/esc-actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/base/esc-actividad.js*/
 // Escena que representa una de las actividades (subniveles)
 Crafty.defineScene("Actividad", function(objActividad) {
 	// Inicializamos esta actividad
@@ -21626,7 +21706,7 @@ Crafty.defineScene("Actividad", function(objActividad) {
 	
 	objActividad.mostrarPista(); // Mostramos la pista (al ocultarse la pista inicia el temporizador)
 });
-/*C:\uniserver\www\hdp\public_html\src/puntaje/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/puntaje/sprites.js*/
 function spritesPuntaje() {
 	Crafty.sprite("img/puntaje/cortinas.png", {
 		sprAP_cortinaInf: [0, 0, 951, 195],
@@ -21667,24 +21747,44 @@ function spritesPuntaje() {
 		sprAP_btSig2: [12, 305, 55, 54]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/puntaje/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/puntaje/componentes.js*/
 // Un baudilio
 Crafty.c("AP_Baudilio", {
 	frame: 0, // fotograma de la animación de llenado [0:5]
+	x0: 0, // Coords. iniciales para resetear
+	y0: 0,
+	w0: 0,
+	h0: 0,
+	
 	init: function() {
-		this.requires("2D, Canvas, sprAP_baudilio, Delay, Tweener");
+		this.requires("2D, Canvas, sprAP_baudilio, SpriteAnimation, Tweener");
+		this.attr({ z: 1020, alpha: 0, visible: false });
+		this.reel("llenar", 200, [[0,0],[0,99],[0,198],[0,297],[0,396],[0,495]]);
 	},
-	avanzar: function() {
-		this.frame++;
-		this.sprite(0, (this.frame * 99));
+	
+	AP_Baudilio: function(x0, y0) {
+		this.x0 = x0;
+		this.y0 = y0;
+		this.w0 = 107;
+		this.h0 = 99;
+		this.x = x0;
+		this.y = y0;
 		return this;
 	},
+	
 	// Destacar el baudilio
 	brillar: function() {
-		this.addTween({x: this._x - 5, y: this._y - 5, w: this._w + 10, h: this._h + 10}, "easeOutBounce", 30);
+		this.animate("llenar", 1);
+		this.cancelTweener().addTween({
+				x: this.x0 - 5,
+				y: this.y0 - 5,
+				w: this.w0 + 10,
+				h: this.h0 + 10
+			}, "easeOutBounce", 30);
+		
 		var part = new Particulas({
 			componentes: "sprAP_particula, SpriteAnimation",
-			x: this._x + 5, y: this._y, z: this._z,
+			x: this.x0 + 5, y: this.y0, z: this._z,
 			vx: 0,
 			deltaVx: 2,
 			periodo: 25,
@@ -21698,17 +21798,38 @@ Crafty.c("AP_Baudilio", {
 			}
 		});
 		part.iniciar();
+		
+		return this;
 	},
+	
 	lleno: function() {
 		return (this.frame >= 5);
+	},
+	
+	// animación de aparecer
+	// incluye un retardo en delay
+	animAparecer: function(frames) {
+		this.reset();
+		this.visible = true;
+		
+		var self = this;
+		Crafty.e("DelayFrame").delay(function() {
+			self.alpha = 1;
+		}, frames);
+		
+		return this;
 	},
 	
 	// Vacía el baudilio para poder volverse a llenar desde el principio
 	reset: function() {
 		this.frame = 0;
 		this.sprite(0, 0);
-		this.w = 107;
-		this.h = 99;
+		this.x = this.x0;
+		this.y = this.y0;
+		this.w = this.w0;
+		this.h = this.h0;
+		this.alpha = 0;
+		this.visible = false;
 		return this;
 	}
 });
@@ -21743,14 +21864,6 @@ Crafty.c("AP_Digito", {
 
 		this.numero = num;
 		return this;
-	},
-	// Proxy de funciones de incremento variable
-	incrementar: function(n) {
-		var incr = this.numero + n;
-		if (incr > 9)
-			incr = 0;
-		this.digito(incr);
-		return incr;
 	}
 });
 
@@ -21766,11 +21879,10 @@ Crafty.c("AP_Numero", {
 	maximo: 0, // Puntaje para 3 baudilios llenos
 	total: 0, // Puntaje total obtenido
 	cuenta: 0, // Cuenta del número hasta el total
-	puntosBaudilio: 0, // puntos aprox. necesarios para llenar un baudilio completo
 	puntosLlenar: 0, // puntos aprox. necesarios para avanzar 1 fotograma la animación de llenado
-	puntosFinal: 0, // puntos faltantes de los cálculos aproximados para agregar al tercer baudilio
 	cuentaLlenar: 0, // cuenta de animación de baudilio
 	baudiliosLlenos: 0, // baudilios que ya se han llenado durante el conteo
+	rangoBaudilios: null, // Arreglo procedente de Puntaje con los rangos de puntaje de baudilios
 
 	init: function() {
 		this.requires("2D");
@@ -21790,60 +21902,49 @@ Crafty.c("AP_Numero", {
 		this.e_digito3 = Crafty.e("AP_Digito, Persist").attr({x: this._x + 150, y: this._y, z: this._z, visible: false});
 		return this;
 	},
+	
 	// Incrementar la cuenta del número completo
 	aumentar: function() {
 		var dif = this.total - this.cuenta;
-		var incr;
-		if (dif > 300)
-			incr = 10;
-		else if (dif > 50)
-			incr = 5;
-		else
-			incr = 1;
+		
+		var incr, num;
+		if (dif > 1000) incr = 50;
+		else if (dif > 100) incr = 10;
+		else incr = 1;
 
-		// incrementar contadores
-		this.cuenta = this.cuenta + incr;
-		this.cuentaLlenar = this.cuentaLlenar + incr;
-
-		// actualizar sprite de digitos
-		num = this.e_digito3.incrementar(incr);
-		if (num === 0) {
-			num = this.e_digito2.incrementar(1);
-			if (num === 0) {
-				num = this.e_digito1.incrementar(1);
-				if (num === 0) {
-					this.e_digito0.incrementar(1);
-				}
-			}
-		}
-
+		// incrementar contadores de puntaje y animación
+		this.cuenta += incr;
+		this.cuentaLlenar += incr;
+		
+		var d3 = Math.floor(this.cuenta % 10);
+		var d2 = Math.floor((this.cuenta / 10) % 10);
+		var d1 = Math.floor((this.cuenta / 100) % 10);
+		var d0 = Math.floor((this.cuenta / 1000) % 10);
+		
+		// actualizar sprites de los 4 digitos
+		this.e_digito0.digito(d0);
+		this.e_digito1.digito(d1);
+		this.e_digito2.digito(d2);
+		this.e_digito3.digito(d3);
+		
 		// actualizar sprite de baudilios
 		if (this.baudiliosLlenos < 3) {
-			if (this.baudiliosLlenos === 2 && this.e_baud3.frame === 4) {
-				if (this.cuenta >= this.maximo) {
-					this.e_baud3.avanzar();
-					this.e_baud3.brillar();
+			if (this.baudiliosLlenos === 0) {
+				if (this.cuenta >= this.rangoBaudilios[0]) {
+					this.e_baud1.brillar();
 					this.baudiliosLlenos++;
 				}
 			}
-			else {
-				if (this.cuentaLlenar >= this.puntosLlenar) {
-					var refBaud;
-					if (this.baudiliosLlenos === 0) {
-						refBaud = this.e_baud1;
-					} else if (this.baudiliosLlenos === 1) {
-						refBaud = this.e_baud2;
-					} else if (this.baudiliosLlenos === 2) {
-						refBaud = this.e_baud3;
-					}
-
-					refBaud.avanzar();
-					if (refBaud.lleno()) {
-						refBaud.brillar();
-						this.baudiliosLlenos++;
-					}
-
-					this.cuentaLlenar = this.puntosLlenar - this.cuentaLlenar;
+			else if (this.baudiliosLlenos === 1) {
+				if (this.cuenta >= this.rangoBaudilios[1]) {
+					this.e_baud2.brillar();
+					this.baudiliosLlenos++;
+				}
+			}
+			else if (this.baudiliosLlenos === 2) {
+				if (this.cuenta >= this.rangoBaudilios[2]) {
+					this.e_baud3.brillar();
+					this.baudiliosLlenos++;
 				}
 			}
 		}
@@ -21851,17 +21952,14 @@ Crafty.c("AP_Numero", {
 		return this;
 	},
 	// Inicia el conteo hasta el número total
-	contar: function(total, max) {
+	contar: function(total, rangoBaudilios) {
+		console.log("Contar hasta " + total);
 		this.cuenta = 0;
 		this.baudiliosLlenos = 0;
+		this.rangoBaudilios = rangoBaudilios;
 		
 		this.total = total;
-		this.maximo = max;
-
-		this.puntosBaudilio = Math.floor(max * 0.33);
-		this.puntosLlenar = Math.round(this.puntosBaudilio * 0.2);
-		this.puntosFinal = this.puntosLlenar + max - (this.puntosLlenar * 15);
-
+		
 		this.visible = true;
 		this.e_digito0.visible = true;
 		this.e_digito1.visible = true;
@@ -21900,11 +21998,13 @@ Crafty.c("AP_Numero", {
 	}
 	
 });
-/*C:\uniserver\www\hdp\public_html\src/puntaje/Puntaje.js*/
+/*C:\UniServer\www\hdp\public_html\src/puntaje/Puntaje.js*/
 // Objeto que gestiona la pantalla de puntaje
 function ActPuntaje() {
 	this.puntos = -1; // puntuación a mostrar
 	this.puntosMax = -1; // máxima puntuación del nivel
+	this.baudiliosObtenidos = 0; // baudilios obtenidos
+	this.rangoBaudilios = [500, 1500, 2500]; // Puntaje mínimo para obtener 1, 2 o 3 baudilios
 
 	this.e_cortinaSup = null;
 	this.e_cortinaInf = null;
@@ -21939,12 +22039,8 @@ ActPuntaje.prototype.init = function init() {
 
 // Crear las entidades de la interfaz de puntaje
 ActPuntaje.prototype.crearEntidades = function crearEntidades() {
-	this.e_fondo = Crafty.e("2D, Canvas, Color, Persist, Mouse")//esta entidad no va a permitir que se ejecuten eventos de clic sobre la actividad
-			.attr({x:0, y:0, z:1010, w:1280, h:800, alpha:0.0, visible:false})
-			.color("#000000")
-			.bind("MouseDown", function(){})
-			.bind("MouseUp", function(){})
-			.bind("MouseMove", function(){})
+	this.e_fondo = Crafty.e("2D, Canvas, Persist, Mouse") //esta entidad no va a permitir que se ejecuten eventos de clic sobre la actividad
+			.attr({ x:0, y:0, z:1000, w:1280, h:800, alpha: 0, visible: false });
 	// contenedores
 	this.e_bloRojo = Crafty.e("2D, Canvas, Image, Tweener, Persist")
 			.attr({x: 1280, y: 0, z: 1010, visible: false})
@@ -21969,9 +22065,9 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 			.attr({x: 1012, y: 369, z: 1020, alpha: 0.0, visible: false})
 			.image("img/puntaje/txt-puntuacion.png");
 
-	this.e_baudilio1 = Crafty.e("AP_Baudilio, Persist").attr({x: 1000, y: 520, z: 1020, alpha: 0.0, visible: false});
-	this.e_baudilio2 = Crafty.e("AP_Baudilio, Persist").attr({x: 1132, y: 520, z: 1020, alpha: 0.0, visible: false});
-	this.e_baudilio3 = Crafty.e("AP_Baudilio, Persist").attr({x: 1067, y: 627, z: 1020, alpha: 0.0, visible: false});
+	this.e_baudilio1 = Crafty.e("AP_Baudilio, Persist").AP_Baudilio(1000, 520);
+	this.e_baudilio2 = Crafty.e("AP_Baudilio, Persist").AP_Baudilio(1132, 520);
+	this.e_baudilio3 = Crafty.e("AP_Baudilio, Persist").AP_Baudilio(1067, 627);
 
 	this.e_numPuntos = Crafty.e("AP_Numero, Persist")
 			.attr({x: 1020, y: 417, z: 1020})
@@ -21998,17 +22094,21 @@ ActPuntaje.prototype.crearEntidades = function crearEntidades() {
 	
 	//asignar comportamento a los botones
 	var self = this;
-	this.e_btSalir.bind("MouseUp", function() {
+	
+	this.e_btSalir.f_callback = function() {
 		self.reset();
 		gesActividad.terminar();
 		Crafty.scene("MenuCuadros");
-	});
-	this.e_btRepetir.bind("MouseUp", function() {
+	};
+	
+	this.e_btRepetir.f_callback = function() {
 		gesActividad.reiniciar();
-	});
-	this.e_btSiguiente.bind("MouseUp", function() {
+	};
+	
+	this.e_btSiguiente.f_callback = function() {
+		self.ocultar();
 		gesActividad.siguienteActiv();
-	});
+	};
 };
 
 // Configuramos el texto e imagen del dato a mostrar
@@ -22023,6 +22123,8 @@ ActPuntaje.prototype.initDato = function() {
 
 // Resetea el estado y contenido del panel de puntaje
 ActPuntaje.prototype.ocultar = function() {
+	Crafty("DelayFrame").destroy();
+	
 	// Evitamos que se sigan disparando partículas
 	this.e_fondo.attr({ x: 1280, visible: false });
 	this.e_bloRojo.attr({ x: 1280, visible: false });
@@ -22031,23 +22133,33 @@ ActPuntaje.prototype.ocultar = function() {
 	this.e_bloTexto.attr({ x: 1280, visible: false });
 	this.e_muyBien.attr({ alpha: 0.0, visible: false });
 	this.e_lblPuntuacion.attr({ alpha: 0.0, visible: false });
-	this.e_baudilio1.attr({ alpha: 0.0, visible: false }).reset();
-	this.e_baudilio2.attr({ alpha: 0.0, visible: false }).reset();
-	this.e_baudilio3.attr({ alpha: 0.0, visible: false }).reset();
+	this.e_numPuntos.ocultar(); // También resetea los baudilios
 	this.e_datoImg.attr({ x: 980, visible: false });
 	this.e_dato.ocultar();
+	
 	this.e_btSalir.ocultar();
 	this.e_btRepetir.ocultar();
 	this.e_btSiguiente.ocultar();
-	this.e_numPuntos.ocultar();
+	
 	this.e_comillaIni.visible = false;
 	this.e_comillaFin.visible = false;
+	
 	return this;
 };
 
 ActPuntaje.prototype.reset = function ocultar() {
 	this.e_dato.reset();
 	this.ocultar();
+};
+
+// Retorna el número de baudilios calculado a partir de los puntos
+ActPuntaje.prototype.calcBaudilios = function(puntosObtenidos) {
+	var baudilios = 0;
+	if (puntosObtenidos > this.rangoBaudilios[0]) baudilios = 3;
+	else if (puntosObtenidos > this.rangoBaudilios[1]) baudilios = 2;
+	else if (puntosObtenidos > this.rangoBaudilios[2]) baudilios = 1;
+	
+	return baudilios;	
 };
 
 // Animaciòn para mostrar la interfaz de puntaje y dato
@@ -22058,7 +22170,8 @@ ActPuntaje.prototype.animMostrar = function() {
 	// configuramos el título correcto
 	this.e_titulo.sprite(0, 50 * gesActividad.nivel);
 	//mostramos el fondo transparente para evitar eventos no deseados sobre la actividad en primer plano
-	this.e_fondo.attr({x:0, visible: true});
+	this.e_fondo.visible = true;
+	
 	// primero deslizamos el bloque rojo
 	this.e_bloRojo.attr({visible: true}).addTween({x: 938}, "easeOutCubic", 25, function() {
 		// deslizamos las cortinas
@@ -22069,19 +22182,18 @@ ActPuntaje.prototype.animMostrar = function() {
 			self.e_bloTexto.attr({visible: true}).addTween({x: 179}, "easeOutCubic", 20, function() {
 				// Mostramos el texto y la imagen del dato
 				self.e_comillaIni.attr({ visible: true });
+				
 				self.e_dato.animMostrar(function() {
 					self.e_comillaFin.visible = true;
-					self.e_btSalir.attr({ visible: true }).addTween({ alpha:1 }, "linear", 15);
-					self.e_btRepetir.attr({ visible: true }).addTween({ alpha:1 }, "linear", 15);
-					self.e_btSiguiente.attr({ visible: true }).addTween({ alpha:1 }, "linear", 15);
+					self.e_btSalir.aparecer();
+					self.e_btRepetir.aparecer();
+					self.e_btSiguiente.aparecer();
 				});	
 	
 				self.e_datoImg.attr({visible: true})
 						.addTween({x: 1280 - self.e_bloRojo.w - self.e_datoImg.w + 15}, "easeOutCubic", 50);
 			});
 		});
-
-		
 		
 		// mostramos el "muy bien" y la información de puntaje
 		var yIni = self.e_muyBien._y;
@@ -22093,16 +22205,12 @@ ActPuntaje.prototype.animMostrar = function() {
 		self.e_lblPuntuacion.attr({visible: true}).addTween({alpha: 1.0}, "linear", 10);
 
 		// Mostramos los baudilios
-		self.e_baudilio1.attr({visible: true}).addTween({alpha: 1.0}, "linear", 20);
-		self.e_baudilio2.attr({visible: true}).delay(function() {
-			this.addTween({alpha: 1.0}, "linear", 20);
-		}, 100);
-		self.e_baudilio3.attr({visible: true}).delay(function() {
-			this.addTween({alpha: 1.0}, "linear", 20);
-		}, 200);
+		self.e_baudilio1.animAparecer(0);
+		self.e_baudilio2.animAparecer(7);
+		self.e_baudilio3.animAparecer(14);
 
 		// Contamos hasta el puntaje total
-		self.e_numPuntos.contar(self.puntos, self.puntosMax);
+		self.e_numPuntos.contar(self.puntos, self.rangoBaudilios);
 	});
 
 	return this;
@@ -22110,7 +22218,7 @@ ActPuntaje.prototype.animMostrar = function() {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/morro/1/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/1/sprites.js*/
 function spritesMorro1() {
 	Crafty.sprite("img/act/morro/1/spr-capas-1.png", {
 		sprM1_capa1: [0,0,1280,59],
@@ -22138,7 +22246,7 @@ function spritesMorro1() {
 		sprM1_capa21: [0,1218,1280,38]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/1/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/1/componentes.js*/
 /**
  * Componentes de Morro - Actividad 1
  */
@@ -22187,7 +22295,7 @@ Crafty.c("M1Capa", {
 	}
 });
 
-/*C:\uniserver\www\hdp\public_html\src/act/morro/1/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/1/actividad.js*/
 /**
  * Actividad 1 Morro
  * Dato: Es una montaña artificial prehispánica -al parecer data del año 1600 - 600 a.C.- de carácter ceremonial funerario, ubicada en el costado noreste de Popayán, considerado el sitio arqueológico más importante de la ciudad.
@@ -22217,7 +22325,9 @@ function ActMorro1() {
 		}
 
 		this.toque = new ToqueRapido();
-		this.toque.incremento = ((debug) ? 40 : 7);
+		this.toque.incremento = 6;
+		this.toque.vRestar = 1;
+		this.toque.numFrames = 5;
 		this.toque
 				.init(this)
 				.callbackCambio(this.cambioVal)
@@ -22259,7 +22369,7 @@ function ActMorro1() {
 		});
 		
 		Crafty.e("Gesto")
-				.Gesto(1, { coords: [600, 300], duracion: 200, retardo: 40 });
+				.Gesto(1, { coords: [600, 350], duracion: 150, retardo: 40 });
 		
 		return this;
 	};
@@ -22269,6 +22379,8 @@ function ActMorro1() {
 	this.cambioVal = function cambioVal() {
 		var val = this.val;
 		var numCapa = Math.floor(val / 5);
+		if (numCapa > 20) numCapa = 20; // Evitar error JS por seleccionar capas no existentes
+		
 		this._padre.mostrarCapa(numCapa);
 		this._padre.numCapaActual = numCapa;
 		
@@ -22335,7 +22447,7 @@ function ActMorro1() {
 	};
 }
 ;
-/*C:\uniserver\www\hdp\public_html\src/act/morro/2/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/2/sprites.js*/
 function spritesMorro2() {
 	Crafty.sprite("img/act/morro/2/piezas.png", {
 		sprM2_pieza0: [20, 0, 256, 176],
@@ -22397,7 +22509,7 @@ function spritesMorro2() {
 		sprM2_fijo6: [110, 741, 76, 81]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/2/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/2/componentes.js*/
 /**
  * Componentes de Morro - Actividad 2
  */
@@ -22595,7 +22707,7 @@ Crafty.c("M2Hueco", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/2/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/2/actividad.js*/
 /**
  * Actividad 2 Morro
  * Dato: 
@@ -22712,7 +22824,7 @@ var ActMorro2 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/morro/3/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/3/sprites.js*/
 function spritesMorro3() {
 	Crafty.sprite("img/act/morro/3/piedras.png", {
 		sprM3_piedra1: [0, 4, 84, 83],
@@ -22747,7 +22859,7 @@ function spritesMorro3() {
 		sprM3_LluviaAnimada: [0, 0]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/3/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/3/componentes.js*/
 
 Crafty.c('Nube', {
 	ventilador: null,
@@ -22829,7 +22941,7 @@ Crafty.c('Piedras', {
 		this.pisoBox2D.dibujarPiso();
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/3/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/3/actividad.js*/
 // Actividad lluvia
 
 var ActMorro3 = function() {
@@ -22876,7 +22988,7 @@ var ActMorro3 = function() {
 		this.nube.attr({x: -10, y: 18, z: 2})
 					.bind('EnterFrame', function() {
 						//con esta velocidad la nube avanza
-						this.velocidad = this.e_padre.ventilador.va / 2.0;
+						this.velocidad = this.e_padre.ventilador.va * 0.2;
 						//con el acierto de esta condicion se gana la actividad
 						if (this.x + 397 >= nubeMaxX) {
 							this.unbind("EnterFrame");
@@ -22918,22 +23030,31 @@ var ActMorro3 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/morro/4/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/4/sprites.js*/
 function spritesMorro4() {
 	Crafty.sprite("img/act/morro/4/calaca.png", {
-		sprM4_calavera: [18, 59, 73, 75],
-		sprM4_hueco: [115, 74, 96, 65]
+		sprM4_calavera: [0, 0, 78, 74],
+		sprM4_hueco: [102, 0, 94, 71]
 	});
 
 	Crafty.sprite("img/act/morro/4/morrito.png", {
 		sprM4_morrito: [0, 0, 106, 189]
 	});
 
-	Crafty.sprite(150, 288, "img/act/morro/4/numeros.png", {
-		sprM4_numero: [0, 0]
+	Crafty.sprite("img/act/morro/4/numeros.png", {
+		sprM4_num0: [0, 0, 101, 196],
+		sprM4_num1: [101, 0, 60, 196],
+		sprM4_num2: [161, 0, 102, 196],
+		sprM4_num3: [266, 0, 110, 196],
+		sprM4_num4: [376, 0, 112, 196],
+		sprM4_num5: [488, 0, 109, 196],
+		sprM4_num6: [597, 0, 107, 196],
+		sprM4_num7: [707, 0, 99, 196],
+		sprM4_num8: [807, 0, 108, 196],
+		sprM4_num9: [918, 0, 106, 196]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/4/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/4/componentes.js*/
 Crafty.c("Morrito", {
 	nid: 0, // Identificador del morrito, util para debugging
 	yIni: 0, // Posición y inicial
@@ -22950,9 +23071,9 @@ Crafty.c("Morrito", {
 		this.e_hueco = Crafty.e('2D, Canvas, sprM4_hueco').attr({ visible: false });
 		this.e_calaca = Crafty.e('2D, Canvas, sprM4_calavera, Tweener').attr({ visible: false });
 		this.reel("saleRaiz", 250, [[0,0],[106,0],[212,0],[318,0],[424,0],[530,0]]);
-		
 		this.areaMap(new Crafty.polygon([5,66], [61,25], [109,86], [101,118], [28,119]));
-		this.bind('MouseUp', this.arrancar);
+		
+		this.bind('MouseDown', this.arrancar);
 	},
 	
 	Morrito: function(nid, e_punt, yIni, objPart) {
@@ -22960,6 +23081,15 @@ Crafty.c("Morrito", {
 		this.nid = nid;
 		this.e_puntaje = e_punt;
 		this.yIni = yIni;
+		return this;
+	},
+	
+	// animación de elevar y desaparecer la calavera (para el final)
+	elevarCalaca: function() {
+		this.unbind('MouseUp');
+		if (!this.trampa) {
+			this.e_calaca.addTween({ y: this._y - 100, alpha: 0 }, "easeInCubic", 38, function() { this.destroy(); });
+		}
 		return this;
 	},
 	
@@ -22977,13 +23107,15 @@ Crafty.c("Morrito", {
 					
 			//animar morrito, direccion de movimiento
 			this.bloqueado = true;
+			this.removeComponent("Mouse");
 			this.animate("saleRaiz", 1);
-			this.addTween({ y: (this.yIni - 150), alpha: 0 }, 'easeOutCubic', 35, function() {	
+			this.addTween({ y: (this.yIni - 150), alpha: 0 }, 'easeOutCubic', 30, function() {	
+				this.visible = false;
 				if (!this.trampa) {
-					this.e_calaca.addTween({ y: (this.e_calaca.y - 20) }, 'easeOutCubic', 15);
+					this.e_calaca.addTween({ y: (this.e_calaca.y - 20) }, 'easeOutCubic', 10);
 					this.arrancado = true;
 				}
-				this.visible = false;
+				
 				this.e_puntaje.reportarArranque(this);
 			});
 		}
@@ -23000,32 +23132,78 @@ Crafty.c("Morrito", {
 		this.arrancado = false;
 		this.visible = true;
 		this.reelPosition(0).pauseAnimation();
-		this.e_calaca.addTween({ y: (this.e_calaca.y + 20) }, 'easeInCubic', 10);
-		this.addTween({ y: this.yIni, alpha: 1 }, 'easeInCubic', 15, function() {
+		this.e_calaca.addTween({ y: (this.e_calaca.y + 20) }, 'easeInCubic', 8);
+		this.addTween({ y: this.yIni, alpha: 1 }, 'easeInCubic', 10, function() {
 			this.e_hueco.visible = false;
 			this.e_calaca.visible = false;
 			this.bloqueado = false;
+			this.addComponent("Mouse");
 		});
 		return this;
 	}
 });
 
+// Un dígito del puntaje
+Crafty.c("M4_Digito", {
+	num: 1, // número que muestra este dígito
+	y0: 0,
+	
+	init: function() {
+		this.requires("2D, Canvas, Tweener, sprM4_num1");
+	},
+	
+	M4_Digito: function() {
+		// almacena el y inicial
+		this.y0 = this.y;
+		return this;
+	},
+	
+	setDigito: function(num) {
+		
+		if (this.num !== num) {
+			this.cancelTweener();
+			
+			this.addTween({ y: this.y0 - 10, alpha: 0.1 }, "easeInCubic", 5, function() {
+				this.removeComponent("sprM4_num" + this.num).addComponent("sprM4_num" + num);
+				this.num = num;
+				this.addTween({ y: this.y0, alpha: 1 }, "easeOutCubic", 5);
+			});
+		}
+		
+		return this;
+	}
+});
 
-Crafty.c('Puntaje', {
+
+Crafty.c('M4_Puntaje', {
 	numFaltan: 0, // Calaveras que faltan por desenterrar
 	morritos: null, // referencia al arreglo de morritos
 	numArrancados: 0, // cuenta morritos ya arrancados
 	maxEnterrar: 3, // número máximo de morritos a volver a enterrar
 	_padre: null,
 	
+	e_error: null, // Entidad alerta que se muestra en error
+	e_digito0: null, // entidades de los 2 digitos
+	e_digito1: null,
+	
 	init: function() {
 		this.requires("2D");
+		this.e_digito0 = Crafty.e("M4_Digito");
+		this.e_digito1 = Crafty.e("M4_Digito");
+		this.e_error = Crafty.e("Advertencia");
+		this.e_digito1.x += 75;
+		
+		this.attach(this.e_digito0);
+		this.attach(this.e_digito1);
 	},
 	
 	Puntaje: function(padre, numIni) {
 		this._padre = padre;
 		this.morritos = padre.morritos;
 		this.numFaltan = numIni;
+		
+		this.e_digito0.M4_Digito();
+		this.e_digito1.M4_Digito();
 		this.actualizar();
 	},
 	
@@ -23046,6 +23224,9 @@ Crafty.c('Puntaje', {
 		else {
 			// trampa: volver a enterrar este morro y otros 3 destapados aleatorios
 			var i;
+			
+			// Mostramos la alerta de error
+			this.e_error.attr({ x: morro._x + 70, y: morro._y + 110 }).mostrar(1, 60);
 			
 			morro.enterrar();
 			
@@ -23068,18 +23249,27 @@ Crafty.c('Puntaje', {
 	},
 	
 	actualizar: function() {
-		Crafty("PuntajeLetra").destroy();
-		var numString = this.numFaltan + '';
-		for (var i = 0; i < numString.length; i++) {
-			var letra = Crafty.e('PuntajeLetra, 2D, Canvas, Sprite, sprM4_numero, PosicionXY');
-			letra.attr({x: this._x + (letra.w * i), y: this._y, z: this._z});
-			letra.sprite(numString[i], 0);
+		console.log("actualizar numFaltan = " + this.numFaltan)
+		if (this.numFaltan > 9) {
+			// Número de 2 digitos
+			if (this.e_digito0.num !== 1) {
+				this.e_digito0.setDigito(1);
+			}
+			
+			var decimas = this.numFaltan - 10;
+			this.e_digito1.visible = true;
+			this.e_digito1.setDigito(decimas);
+		}
+		else {
+			// Número de 1 digito
+			this.e_digito0.setDigito(this.numFaltan);
+			this.e_digito1.visible = false;
 		}
 		
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/4/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/4/actividad.js*/
 var ActMorro4 = function() {
 	this.totAciertos = 0; //con esta cantidad se gana la actividad
 	this.duracion = 0;
@@ -23092,11 +23282,8 @@ var ActMorro4 = function() {
 	    
     this.init = function() {
 		Crafty.e('Fondo').image(gesActividad.config.fondo);
-		Crafty.e('2D, Canvas, Image')
-				.attr({ z: 2 })
-				.image('img/act/morro/4/montana.png');
 		
-		this.e_puntaje = Crafty.e('Puntaje').attr({ x: 960, y: 21, z: 1 });
+		this.e_puntaje = Crafty.e('M4_Puntaje').attr({ x: 1020, y: 40, z: 1 });
 		this.e_puntaje.numero = 14;
 
 		this.particulas = new Particulas({
@@ -23167,7 +23354,15 @@ var ActMorro4 = function() {
 
 	this.ganarActividad = function() {
 		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
+		
+		for (i = 0 ; i < 18 ; i++) {
+			this.morritos[i].elevarCalaca();
+		}
+		
+		Crafty.e("DelayFrame").delay(function() {
+			gesActividad.mostrarPuntaje();
+		}, 60);
+		
 	};
 
 	//se invoca cuando se termina el tiempo, se gana o se pierde la actividad
@@ -23176,7 +23371,7 @@ var ActMorro4 = function() {
 	};
 };
 
-/*C:\uniserver\www\hdp\public_html\src/act/morro/5/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/5/sprites.js*/
 function spritesMorro5() {
 	Crafty.sprite(1280, 301, "img/act/morro/5/pasto.png", {
 		sprM5_pasto: [0, 0]
@@ -23232,15 +23427,76 @@ function spritesMorro5() {
 		sprM5_piedra4: [225, 30, 63, 46]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/5/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/5/componentes.js*/
+// Barra indicadora que acompaña la polea
+Crafty.c("M5_Barra", {
+	e_barra: null,
+	positivo: true, // false si el valor de al barra es negativo
+	vMax: 3,
+	
+	init: function() {
+		this.requires("2D, Canvas, Color").attr({ w: 200, h: 20, z: 49, alpha: 0.5 }).color("#271300");
+		
+		this.e_barra = Crafty.e("2D, Canvas, Color").color("#B58010").attr({ x: 2, y: 2, h: 16, z: 50 });
+		this.e_barra.origin(0, 8);
+		this.e_barra.rotation = 0;
+		this.e_barra.color("#4DB849");
+		
+		this.attach(this.e_barra);
+		
+		// iniciar invisible
+		this.visible = false;
+		this.e_barra.visible = false;
+	},
+	
+	mostrar: function() {
+		this.visible = true;
+		this.e_barra.visible = true;
+		return this;
+	},
+	
+	// Actualiza el tamaño de la barra según el valor
+	actualizar: function(v) {
+		var anchoBarra = v * 44;
+		
+		if (anchoBarra > 0) {
+			if (!this.positivo) {
+				this.e_barra.rotation = 0;
+				this.positivo = true;
+			}
+			
+			if (v > this.vMax) {
+				this.e_barra.color("#CF2800");
+			}
+			else {
+				this.e_barra.color("#4DB849");
+			}
+				
+			this.e_barra.w = anchoBarra;
+				
+		}
+		else {
+			if (this.positivo) {
+				this.e_barra.rotation = 180;
+				this.e_barra.color("#AF2800");
+				this.positivo = false;
+			}
+			this.e_barra.w = -anchoBarra;
+		}
+	}
+});
+
+
 Crafty.c("Vasija", {
 	cuerpoVasija: null,
 	mJoint: null,
 	cuerda: null,
-	polea: null,
+	polea: null, // Referencia a la polea (Interactiva)
 	e_nudo: null,
 	e_vasijaSola: null, // Vasija que se muestra sola, sin romperse
 	suelta: false, // true al soltarse, bandera para evitar bucles
+	e_barra: null, // Referencia a barra de velocidad
+	fuerzaMax: 3, // Valor máximo antes de romper la cuerda
 		
 	init: function() {
 		this.requires('2D, Canvas, sprM5_vasija');
@@ -23263,6 +23519,7 @@ Crafty.c("Vasija", {
         this.cuerda = cuerda;
         this.cuerdaEntrePoleas = cuerdaEntrePoleas;
         this.actividad = padre;
+		this.e_barra = this.actividad.e_barra;
 		
 		this.cuerda.attach(this.e_nudo);
 		this.e_nudo.y = this.cuerda.h + 233;
@@ -23272,8 +23529,10 @@ Crafty.c("Vasija", {
 	
 	//disminuir tamaño de la cuerda, subir vasija y verificar momento de romper la vasija
 	aumentar: function(fuerza) {
-		var pot = 5;
+		var pot = 6;
 		fuerza *= pot;
+		this.e_barra.actualizar(fuerza);
+		
 		if (fuerza > 0) {
 			if (this.cuerda.h - fuerza > 0 &&
 					this.cuerda.h - fuerza < this.cuerda.maxH &&
@@ -23284,7 +23543,7 @@ Crafty.c("Vasija", {
 			}
 			if (this.visible) {
 				this.actualizarJoint();
-				if (fuerza > 0.8 * pot) { //2 maximo
+				if (fuerza > this.fuerzaMax) { //2 maximo
 					if (!this.suelta) this.soltarse();
 				}
 			}
@@ -23324,6 +23583,7 @@ Crafty.c("Vasija", {
 		this.suelta = true;
 		this.e_nudo.visible = true;
 		this.e_nudo.animate('soltarse', 1);
+		this.polea.bloquear();
 		
 		this.removeComponent("sprM5_vasija").addComponent("sprM5_vasijaSola");
 		
@@ -23401,9 +23661,10 @@ Crafty.c("Vasija", {
 				.attr({x: this.x, y: this.y + 65, z: 2})
 				.box2d({
 					bodyType: 'dynamic',
-					shape: [[20, 0], [46, 0], [81, 0], [100, 16],[93, 64], [75, 102], [49, 121],[31, 106], [3, 49], [1, 20]],		
-					density: 1,
-					restitution: 0
+					shape: [[20, 3], [46, 0], [81, 6], [100, 16],[93, 64], [75, 102], [49, 121],[31, 106], [3, 49], [1, 20]],		
+					density: 10,
+					restitution: 0.5,
+					friction: 0
 				});
 		
 		var ljd = new Box2D.Dynamics.Joints.b2MouseJointDef();
@@ -23435,7 +23696,7 @@ Crafty.c('CuerdaAnimada', {
 		this.pauseAnimation();
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/5/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/5/actividad.js*/
 var ActMorro5 = function() {
 	//con esta cantidad se gana la actividad
 	this.totAciertos = 0;
@@ -23443,6 +23704,7 @@ var ActMorro5 = function() {
 	this.duracion = 0;
 	//si se ha ganado la actividad
 	this.actividadGanada = false;
+	this.e_barra = null;
 
 	this.init = function() {
 		this.attrPasto = {x: 0, y: 1174 - 301, z: 3};
@@ -23461,6 +23723,8 @@ var ActMorro5 = function() {
 			[686, 716], [709, 715], [766, 690],
 			[966, 671], [1164, 657], [1271, 655]
 		];
+		
+		this.e_barra = Crafty.e("M5_Barra").attr({ x: 919, y: 175 });
 
 		var posp = 305;
 		this.attrPiedras = [
@@ -23470,7 +23734,7 @@ var ActMorro5 = function() {
 		this.attrShapePiedras = [
 			[[1, 5], [8, 1], [24, 0], [45, 13], [45, 20], [39, 22], [10, 24], [0, 15]],
 			[[2, 61], [35, 15], [65, 0], [82, 2], [109, 19], [113, 38], [91, 64], [50, 76], [8, 72]],
-			[[19, 2], [48, 3], [65, 11], [67, 16], [59, 28], [40, 39], [24, 40], [7, 34], [1, 25]],
+			[[19, 2], [65, 11], [67, 16], [59, 28], [40, 39], [7, 34], [1, 25]],
 			[[2, 22], [20, 4], [49, 5], [64, 23], [50, 37], [11, 46], [1, 41]]
 		];
 
@@ -23484,22 +23748,24 @@ var ActMorro5 = function() {
 
 		this.polea = Crafty.e('Ventilador, sprM5_manivela');
 		this.polea.attr(this.attrPolea).origin(89, 118);
-		this.polea.va = 4; //this.velocidadAngular;
-		this.polea.af = -0.1; //this.aceleracionFriccion;
+		this.polea.incremento = 0.1;
+		this.polea.va = 2; //this.velocidadAngular;
+		this.polea.af = -0.015; //this.aceleracionFriccion;
 		this.polea.base = Crafty.e('2D, Canvas');
 
 		this.cuerda = Crafty.e('sprM5_cuerdaAnimada')
-				.addComponent('CuerdaAnimada')
-				.attr(this.attrCuerda);
+							.addComponent('CuerdaAnimada')
+							.attr(this.attrCuerda);
 		this.cuerda.maxH = this.cuerda.h;
 
 		this.cuerdaEntrePoleas = Crafty.e('sprM5_cuerdaEntrePoleasAnimada')
-				.addComponent('CuerdaAnimada')
-				.attr(this.attrCuerdaEntrePoleas);
+										.addComponent('CuerdaAnimada')
+										.attr(this.attrCuerdaEntrePoleas);
 		this.cuerdaEntrePoleas.rotation = -39;
 
 		this.vasija = Crafty.e('Vasija')
-				.Vasija(this.attrVasija, this.attrNudo, this.polea, this.cuerda, this.cuerdaEntrePoleas, this);
+							.Vasija(this.attrVasija, this.attrNudo, this.polea, this.cuerda, this.cuerdaEntrePoleas, this);
+		this.vasija.fuerzaMax = 4;
 
 		Crafty.e('2D, Canvas, Box2D')
 				.box2d({
@@ -23515,7 +23781,7 @@ var ActMorro5 = function() {
 
 		this.piedras = [];
 		for (var i = 0; i < 4; i++) {
-			this.piedras[i] = Crafty.e('2D, Canvas, piedraCollision,  Collision, sprM5_piedra' + (1 + i));
+			this.piedras[i] = Crafty.e('2D, Canvas, piedraCollision, sprM5_piedra' + (1 + i));
 			this.piedras[i].attr(this.attrPiedras[i]);
 			this.fondo.attach(this.piedras[i]);
 		}
@@ -23531,12 +23797,17 @@ var ActMorro5 = function() {
 		this.fondo.piedras = this.piedras;
 		this.fondo.vasija = this.vasija;
 		this.fondo.polea = this.polea;
+		
 		//animacion principal y colocar piedras con fisica//200
-		this.fondo.addTween({x: this.fondo.x, y: this.fondo.y - 301}, 'easeInOutCubic', 200, this.asignarFisica);
+		var self = this;
+		this.fondo.addTween({ x: this.fondo.x, y: this.fondo.y - 301 }, 'easeInOutCubic', 165, function() {
+			self.e_barra.mostrar();
+			self.asignarFisica();
+		});
 
-		var e_fondo = this.fondo;
-		var eg = Crafty.e("Gesto")
-				.Gesto(3, {coords: [1012, 632], duracion: 155, retardo: 40, radio: 90, desplY: -2.5});
+		Crafty.e("Gesto")
+				.Gesto(3, {coords: [1012, 632], duracion: 155, retardo: 40, radio: 90, desplY: -3.2 });
+		
 		return this;
 	};
 
@@ -23546,11 +23817,10 @@ var ActMorro5 = function() {
 			this.piedras[i].box2d({
 				bodyType: 'dynamic',
 				shape: this.attrShapePiedras[i],
-				friction: 0.3,
-				density: 1.2,
+				friction: 1,
+				density: 0.5,
 				restitution: 0.1
 			});
-			this.piedras[i].collision(new Crafty.polygon(this.attrShapePiedras[i]));
 		}
 
 		this.vasija.crearVolumen();
@@ -23572,7 +23842,7 @@ var ActMorro5 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/morro/6/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/6/sprites.js*/
 function spritesMorro6() {
 	Crafty.sprite("img/act/morro/6/spr-piezas.png", {
 		// nombrado: spr_M6f<num. fila de abajo a arriba, de 0 a 4>c<num. columna de 0 a 6>
@@ -23595,7 +23865,7 @@ function spritesMorro6() {
 		sprM6_f0c5: [0, 946, 100, 85]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/morro/6/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/6/componentes.js*/
 /**
  * Componentes de Morro - Actividad 6
  */
@@ -23648,7 +23918,7 @@ Crafty.c("M6Bloque", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/morro/6/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/morro/6/actividad.js*/
 /**
  * Actividad 6 Morro
  * Dato: 
@@ -23820,7 +24090,7 @@ var ActMorro6 = function() {
 		}
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/1/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/1/sprites.js*/
 function spritesBelalcaz1() {
 	Crafty.sprite("img/act/belalcaz/1/fondo.png", {
 		sprB1_fondo: [0, 0, 1280, 634]
@@ -23859,7 +24129,7 @@ function spritesBelalcaz1() {
 	});
         
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/1/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/1/componentes.js*/
 Crafty.c("B1_Numero", {
 	maxY: 450,
 	atenua: 0.4, // (porcentaje) atenuación por choque con el suelo
@@ -23868,7 +24138,7 @@ Crafty.c("B1_Numero", {
 		this.requires("Arrastrable");
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/1/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/1/actividad.js*/
 /**
  * Actividad de numneros, el jugador debe tomar unos numeros
  * y arrastraslos hacia unas lineas punteadas
@@ -24049,7 +24319,7 @@ var ActBelalcaz1 = function() {
 	};
 
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/2/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/2/sprites.js*/
 function spritesBelalcaz2() {
 	Crafty.sprite("img/act/belalcaz/2/fondo.png", {
         sprB2_fondo: [0, 0, 1280, 578]
@@ -24109,7 +24379,7 @@ function spritesBelalcaz2() {
         sprB2_cocodrilo: [0, 0]
     });//fin recursos usados de otras actividades
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/2/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/2/componentes.js*/
 Crafty.c("Cocodrilo", {
     emerger: false,
     init: function() {
@@ -24233,7 +24503,7 @@ Crafty.c("Tronco", {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/2/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/2/actividad.js*/
 /**
  * Actividad de los troncos, el jugador debe tomar unos troncos
  * y hacerlos encajar en sobre una figura punteada,
@@ -24255,9 +24525,8 @@ var ActBelalcaz2 = function() {
 		this.iniciarComponentes();
 
 		var self = this;
-		this.e_caballo.espada("sprB2_espada")
-		this.e_caballo.addComponent("Mouse").bind("MouseDown", function() { console.log("asdfg"); self.ganarActividad(); });
-
+		this.e_caballo.espada("sprB2_espada");
+		
 		var tr = this.tronco;
 		this.e_caballo.caminar({x: 80, y: this.e_caballo.y}, 20, function() {
 			//this.pauseAnimation();
@@ -24315,7 +24584,7 @@ var ActBelalcaz2 = function() {
 					recursion--;
 				}
 			}
-		}, 40);
+		}, 35);
 		
 		Crafty.e("Gesto")
 				.Gesto(2, { coords: [466, 606], coordsFin: [467, 231], repetir: 2, retardo: 40, desplX: 304 });
@@ -24394,7 +24663,7 @@ var ActBelalcaz2 = function() {
 		}, 180);
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/B3_Guerra.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/3/B3_Guerra.js*/
 // Gestor de la guerra entre Belalcazar y los indìgenas
 Crafty.c("B3_Guerra", {
 	posBalance: 640, // Posición de choque entre belal y los indios. 0 = equilibrio (1280 / 2).
@@ -24502,7 +24771,7 @@ Crafty.c("B3_Guerra", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/3/sprites.js*/
 function spritesBelalcaz3() {
 	Crafty.sprite("img/act/belalcaz/3/elementos.png", {
         sprB3_lanzaCae: [0, 0, 130, 173],
@@ -24525,7 +24794,7 @@ function spritesBelalcaz3() {
     });
 }
 
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/3/componentes.js*/
 // Barra indicadora que acompaña al caballo
 Crafty.c("B3_Barra", {
 	e_barra: null,
@@ -24636,7 +24905,7 @@ Crafty.c("B3_Arma", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/3/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/3/actividad.js*/
 /** Actividad de guerra de Belalcazar
  */
 var ActBelalcaz3 = function() {
@@ -24770,7 +25039,7 @@ var ActBelalcaz3 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/4/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/4/sprites.js*/
 function spritesBelalcaz4() {
 	Crafty.sprite("img/act/belalcaz/4/fondo.jpg", {
 		sprB4_fondo: [0, 0, 380, 798]
@@ -24824,7 +25093,7 @@ function spritesBelalcaz4() {
             sprB4_espada: [0, 0, 30, 87]
         });
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/4/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/4/componentes.js*/
 Crafty.c("B4_Fecha", {
 	ano: 0,
 	x0: 0,
@@ -24980,7 +25249,7 @@ Crafty.c("B4_Boton", {
 		this.actualizarFiguras(false);
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/4/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/4/actividad.js*/
 /**
  * @returns {ActBelalcaz4}
  */
@@ -25114,7 +25383,7 @@ var ActBelalcaz4 = function() {
 	};
 };
 
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/5/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/5/sprites.js*/
 function spritesBelalcaz5() {
 	Crafty.sprite(333, 249, "img/act/belalcaz/5/barco.png", {
 		sprB5_barco: [0, 0]
@@ -25139,7 +25408,7 @@ function spritesBelalcaz5() {
 	});
 
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/5/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/5/componentes.js*/
 
 //Componente del barco, debe poder detectar algunos componentes
 Crafty.c("B5_Barco", {
@@ -25468,7 +25737,7 @@ Crafty.c("B5_Ojo", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/5/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/5/actividad.js*/
 /**
  * Actividad 5 actividad del barco.
  * @returns {ActBelalcaz5}
@@ -25603,7 +25872,7 @@ var ActBelalcaz5 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/6/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/6/sprites.js*/
 function spritesBelalcaz6() {
 	Crafty.sprite("img/act/belalcaz/6/elementos.png", {
 		sprB6_corazon: [81, 77, 59, 48],
@@ -25616,7 +25885,7 @@ function spritesBelalcaz6() {
 		sprB6_cabeza: [0, 0]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/6/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/6/componentes.js*/
 Crafty.c("Laberinto_cabeza", {
 	fila: -1,
 	columna: -1,
@@ -25977,7 +26246,7 @@ Crafty.c("B6_Cartagena", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/belalcaz/6/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/belalcaz/6/actividad.js*/
 /**
  * Actividad de laberinto de belalcazar
  * @returns {ActBelalcaz6}
@@ -26074,7 +26343,7 @@ var ActBelalcaz6 = function() {
 				});
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/parque/1/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/1/sprites.js*/
 function spritesParque1() {
         Crafty.sprite("img/act/parque/1/nubes.png", {
                 sprP1_nube0: [0, 0, 213, 77],
@@ -26103,7 +26372,7 @@ function spritesParque1() {
 
 
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/1/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/1/componentes.js*/
 
 Crafty.c("P1BloqueManz", {
 	juego: {}, //referencia a la matriz representacion matricial del juego
@@ -26245,7 +26514,7 @@ Crafty.c("P1BloqueManz", {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/1/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/1/actividad.js*/
 /**
  * Actividad parque caldas, armar la estructura monumento del FJCaldas
  * @returns {ActParque1}
@@ -26413,7 +26682,7 @@ var ActParque1 = function() {
 		gesActividad.mostrarPuntaje();
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/parque/2/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/2/sprites.js*/
 function spritesParque2() {
 	Crafty.sprite("img/act/parque/2/partes.png", {
 		sprP1_estatua0: [0, 0, 128, 171],
@@ -26433,7 +26702,7 @@ function spritesParque2() {
 		sprP1_sombra3: [0, 514, 308, 207]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/2/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/2/componentes.js*/
 /**
  * Componentes de Parque - Actividad 2
  */
@@ -26630,7 +26899,7 @@ Crafty.c("P2Hueco", {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/2/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/2/actividad.js*/
 /**
  * Actividad parque caldas, armar la estructura monumento del FJCaldas
  * @returns {ActParque2}
@@ -26795,7 +27064,7 @@ var ActParque2 = function() {
 			Crafty("P2Bloque").each(function() {
 				//obteniendo la fuerza necesaria para mover los bloques
 				fX = randomFloat(-1, 1);
-				fY = randomFloat(-1, 0.2);
+				fY =0;// randomFloat(-1, );
 				
 				// Aplicar fuerza personalizada a los bloques de la base para más desorden
 				pos = this.body.GetPosition();
@@ -26843,7 +27112,7 @@ var ActParque2 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/parque/3/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/3/sprites.js*/
 function spritesParque3() {
 	Crafty.sprite(119, 95, "img/act/parque/3/hormiga_camina.png", {
 		sprP3_hcamina: [0, 0]
@@ -26874,7 +27143,7 @@ function spritesParque3() {
 		sprP3_crunch: [10, 289, 135, 130],
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/3/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/3/componentes.js*/
 Crafty.c("P3_GeneradorHormigas", {
 	bloqueado: false,
 	x0: 670, //POSICION x DONDE DEBE IR A PARAR LA HORMIGA
@@ -27230,7 +27499,7 @@ Crafty.c("Onomatopeya", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/parque/3/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/3/actividad.js*/
 /**
  * Actividad parque caldas, armar la estructura monumento del FJCaldas
  * @returns {ActParque1}
@@ -27322,7 +27591,7 @@ var ActParque3 = function() {
 	};
 };
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/4/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/4/sprites.js*/
 function spritesParque4() {
 	Crafty.sprite("img/act/parque/4/barras.png", {
 		sprP4_barraE0: [0, 0, 442, 56],
@@ -27334,7 +27603,7 @@ function spritesParque4() {
 		sprP4_cofre: [0, 0, 74, 46]
 	})
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/4/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/4/componentes.js*/
 Crafty.c("P4Barras", {
 	e_barras: [],
 	vx: 1,
@@ -27554,101 +27823,109 @@ Crafty.c("P4Hueco", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/parque/4/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/4/actividad.js*/
 /**
  * Actividad de los ataudes, consiste en arrastrar los ataudes sobre una serie de obstaculos
  * intentar no tocarlos para hacerlos enchoclar sobre los huecos.
  * @returns {ActParque4}
  */
 var ActParque4 = function() {
-	this.e_piso = null; // Entidad que se pasa como referencia para el MouseBind
-	//con esta cantidad se gana la actividad
-	this.totAciertos = 4;
-	//tiempo en que se cambia de un topo a otro (milisegundos)
-	this.duracion = 20000;
-	//si se ha ganado la actividad
-	this.actividadGanada = false;
-	//si se ha ganado la actividad
-	this.aciertos = 0;
-	this.b2a = new B2arrastre();
-	this.grupoBarras = new Array(4); // Arreglo de entidades P4Barras
-	
-	this.init = function() {
-		this.crearEntidades();
-		this.b2a.init(this.e_piso);
-		Crafty("P4Barra").each(function() {
-			this.arrancar();
-		});
-		Crafty.e("2D, Canvas, Image").attr({x: 568, y: -6, z: 20}).image("img/act/parque/4/lampara.png");
-		Crafty.e("2D, Canvas, Image").attr({x: 132, y: -48, z: 20}).image("img/act/parque/4/lampara.png");
-		return this;
-	};
-	this.crearEntidades = function() {
-		var self = this;
-		//crear fondo
-		Crafty.e("2D, Canvas, Image").image("img/act/parque/4/fondo.jpg").attr({x: 0, y: 0, z: 0});
-		var piso = Crafty.e("2D, Canvas, Image").image("img/act/parque/4/piso.png");
-		piso.attr({y: Crafty.viewport.height - piso.h, z: 10});
-		
-		//aqui van 4 barras grandes
-		this.grupoBarras[0] = Crafty.e("P4Barras").P4Barras("sprP4_barraM0", 3, 33, 140, 1, 184, 1);
-		//aqui van 4 barras pequeñas
-		this.grupoBarras[1] = Crafty.e("P4Barras").P4Barras("sprP4_barraM1", 4, 93, 270, 1.5, 225, -1);
-		//aqui van 2 barras grandes estaticas
-		this.grupoBarras[2] = Crafty.e("P4Barras").P4Barras("sprP4_barraE0", 2, 38, 370, 0, 320, 0);
-		//aqui van 5 barras pequeñas 
-		this.grupoBarras[3] = Crafty.e("P4Barras").P4Barras("sprP4_barraM1", 5, 39, 500, 2, 118, 1);
-		
-		this.posCofres = [
-			{x: 11, y: 622}, {x: 95, y: 631}, {x: 177, y: 638},
-			{x: 258, y: 643}, {x: 340, y: 644}, {x: 425, y: 643},
-			{x: 515, y: 642}, {x: 595, y: 634}, {x: 678, y: 626},
-			{x: 772, y: 620}, {x: 856, y: 615}, {x: 941, y: 609},
-			{x: 1025, y: 608}, {x: 1105, y: 607}, {x: 1190, y: 613}
-		];
-		this.cofres = [];
-		var numCofres = this.posCofres.length;
-		for (var i = 0; i < numCofres; i++) {
-			var forma = [[0,9],[37,0],[74,8],[70,46],[7,46]];
-			var hueco = Crafty.e("P4Hueco").P4Hueco(this);
-			this.cofres[i] = Crafty.e("P4Cofre").attr(this.posCofres[i]).P4Cofre(this, forma);
-			var posx = 61 + (this.cofres[i].w + 1) * i; //posicion en el ejex
-			hueco.attr({x: posx, y: 68, w: this.cofres[i].w, h: this.cofres[i].h});
-		}
+    this.e_piso = null; // Entidad que se pasa como referencia para el MouseBind
+    //con esta cantidad se gana la actividad
+    this.totAciertos = 4;
+    //tiempo en que se cambia de un topo a otro (milisegundos)
+    this.duracion = 20000;
+    //si se ha ganado la actividad
+    this.actividadGanada = false;
+    //si se ha ganado la actividad
+    this.aciertos = 0;
+    this.b2a = new B2arrastre();
+    this.grupoBarras = new Array(4); // Arreglo de entidades P4Barras
 
-		var piso = Crafty.e("PisoBox2D");
-		piso.coordenadas = [
-			[0, 668], [130, 682], [296, 692], [524, 688],
-			[718, 670], [940, 656], [1110, 654], [1276, 666]
-		];
-		piso.dibujarPiso();
-		Crafty.e('2D, Canvas, Box2D').attr({x:0,y:-800,w:1280,h:800}).box2d({bodyType: 'static', shape: 'box'});
-		Crafty.e('2D, Canvas, Box2D').attr({x:-800,y:0,w:800,h:800}).box2d({bodyType: 'static', shape: 'box'});
-		Crafty.e('2D, Canvas, Box2D').attr({x:1280,y:0,w:800,h:800}).box2d({bodyType: 'static', shape: 'box'});
-		this.e_piso = Crafty.e('2D, Canvas, Box2D').attr({x:0,y:800,w:1280,h:800}).box2d({bodyType: 'static', shape: 'box'});
-		if (!cocoon) {
-			//Crafty.box2D.showDebugInfo();
-		}
-	};
-	//verificar si ya se han colocados todos los numeros.
-	// Invocada por cada bloque al ser fijado
-	this.bloqueFijado = function() {
-		this.aciertos++;
-		if (this.aciertos >= this.totAciertos) {
-			this.ganarActividad();
-		}
-	};
-	// Siempre invocada al terminar la actividad
-	this.terminarActividad = function() {
-		return this;
-	};
-	this.ganarActividad = function() {
-		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
-		return this;
-	};
+    this.init = function() {
+        this.crearEntidades();
+        this.b2a.init(this.e_piso);
+        Crafty("P4Barra").each(function() {
+            this.arrancar();
+        });
+        Crafty.e("2D, Canvas, Image").attr({x: 568, y: -6, z: 20}).image("img/act/parque/4/lampara.png");
+        Crafty.e("2D, Canvas, Image").attr({x: 132, y: -48, z: 20}).image("img/act/parque/4/lampara.png");
+
+        Crafty.e("Gesto, Ubicador").Gesto(2, {coords: [632, 644], coordsFin: [494, 505], duracion: 200, retardo: 40});
+        Crafty.e("DelayFrame").delay(function() {
+            Crafty.e("Gesto, Ubicador").Gesto(2, {coords: [494, 505], coordsFin: [669, 203], duracion: 200, retardo: 0});
+            Crafty.e("DelayFrame").delay(function() {
+                Crafty.e("Gesto, Ubicador").Gesto(2, {coords: [669, 203], coordsFin: [491, 74], duracion: 200, retardo: 0});
+            }, 40);
+        }, 80);
+        return this;
+    };
+    this.crearEntidades = function() {
+        var self = this;
+        //crear fondo
+        Crafty.e("2D, Canvas, Image").image("img/act/parque/4/fondo.jpg").attr({x: 0, y: 0, z: 0});
+        var piso = Crafty.e("2D, Canvas, Image").image("img/act/parque/4/piso.png");
+        piso.attr({y: Crafty.viewport.height - piso.h, z: 10});
+
+        //aqui van 4 barras grandes
+        this.grupoBarras[0] = Crafty.e("P4Barras").P4Barras("sprP4_barraM0", 3, 33, 140, 1, 184, 1);
+        //aqui van 4 barras pequeñas
+        this.grupoBarras[1] = Crafty.e("P4Barras").P4Barras("sprP4_barraM1", 4, 93, 270, 1.5, 225, -1);
+        //aqui van 2 barras grandes estaticas
+        this.grupoBarras[2] = Crafty.e("P4Barras").P4Barras("sprP4_barraE0", 2, 38, 370, 0, 320, 0);
+        //aqui van 5 barras pequeñas 
+        this.grupoBarras[3] = Crafty.e("P4Barras").P4Barras("sprP4_barraM1", 5, 39, 500, 2, 118, 1);
+
+        this.posCofres = [
+            {x: 11, y: 622}, {x: 95, y: 631}, {x: 177, y: 638},
+            {x: 258, y: 643}, {x: 340, y: 644}, {x: 425, y: 643},
+            {x: 515, y: 642}, {x: 595, y: 634}, {x: 678, y: 626},
+            {x: 772, y: 620}, {x: 856, y: 615}, {x: 941, y: 609},
+            {x: 1025, y: 608}, {x: 1105, y: 607}, {x: 1190, y: 613}
+        ];
+        this.cofres = [];
+        var numCofres = this.posCofres.length;
+        for (var i = 0; i < numCofres; i++) {
+            var forma = [[0, 9], [37, 0], [74, 8], [70, 46], [7, 46]];
+            var hueco = Crafty.e("P4Hueco").P4Hueco(this);
+            this.cofres[i] = Crafty.e("P4Cofre").attr(this.posCofres[i]).P4Cofre(this, forma);
+            var posx = 61 + (this.cofres[i].w + 1) * i; //posicion en el ejex
+            hueco.attr({x: posx, y: 68, w: this.cofres[i].w, h: this.cofres[i].h});
+        }
+
+        var piso = Crafty.e("PisoBox2D");
+        piso.coordenadas = [
+            [0, 668], [130, 682], [296, 692], [524, 688],
+            [718, 670], [940, 656], [1110, 654], [1276, 666]
+        ];
+        piso.dibujarPiso();
+        Crafty.e('2D, Canvas, Box2D').attr({x: 0, y: -800, w: 1280, h: 800}).box2d({bodyType: 'static', shape: 'box'});
+        Crafty.e('2D, Canvas, Box2D').attr({x: -800, y: 0, w: 800, h: 800}).box2d({bodyType: 'static', shape: 'box'});
+        Crafty.e('2D, Canvas, Box2D').attr({x: 1280, y: 0, w: 800, h: 800}).box2d({bodyType: 'static', shape: 'box'});
+        this.e_piso = Crafty.e('2D, Canvas, Box2D').attr({x: 0, y: 800, w: 1280, h: 800}).box2d({bodyType: 'static', shape: 'box'});
+        if (!cocoon) {
+            //Crafty.box2D.showDebugInfo();
+        }
+    };
+    //verificar si ya se han colocados todos los numeros.
+    // Invocada por cada bloque al ser fijado
+    this.bloqueFijado = function() {
+        this.aciertos++;
+        if (this.aciertos >= this.totAciertos) {
+            this.ganarActividad();
+        }
+    };
+    // Siempre invocada al terminar la actividad
+    this.terminarActividad = function() {
+        return this;
+    };
+    this.ganarActividad = function() {
+        gesActividad.temporizador.parar();
+        gesActividad.mostrarPuntaje();
+        return this;
+    };
 };
-/*C:\uniserver\www\hdp\public_html\src/act/parque/5/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/5/sprites.js*/
 function spritesParque5() {
 	Crafty.sprite("img/act/parque/5/engranajes.png", {
 		sprP5_engranaje0: [0, 0, 66, 66],
@@ -27672,7 +27949,7 @@ function spritesParque5() {
 		sprP5_hSubeDer: [4, 0]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/5/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/5/componentes.js*/
 Crafty.c("P5_AreaToque", {
 	init: function() {
 		this.requires("2D, Canvas, Mouse");
@@ -27965,7 +28242,7 @@ Crafty.c("P5_Carro", {
 });
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/5/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/5/actividad.js*/
 /**
  * Actividad 5 de parque, la idea es con toque rapido generar engranajes para
  * llevarlos hacia una canastica ubicada en el suelo, el juego termina 
@@ -27973,95 +28250,97 @@ Crafty.c("P5_Carro", {
  * @returns {ActParque5}
  */
 var ActParque5 = function() {
-	//con esta cantidad se gana la actividad
-	this.totAciertos = 4;
-	//tiempo en que se cambia de un topo a otro (milisegundos)
-	this.duracion = 20000;
-	//si se ha ganado la actividad
-	this.actividadGanada = false;
-	//si se ha ganado la actividad
-	this.aciertos = 0;
+    //con esta cantidad se gana la actividad
+    this.totAciertos = 4;
+    //tiempo en que se cambia de un topo a otro (milisegundos)
+    this.duracion = 20000;
+    //si se ha ganado la actividad
+    this.actividadGanada = false;
+    //si se ha ganado la actividad
+    this.aciertos = 0;
 
-	this.init = function() {
-		this.crearEntidades();
-		this.nubes.bind("EnterFrame", function() {
-			var av = 0.1;
-			if (!this.dir) {
-				this.dir = 1;
-			}
-			if (this.x > 0) {
-				this.dir = -1;
-			}
-			if (this.x < -30) {
-				this.dir = 1;
-			}
-			this.x += av * this.dir;
-		});
+    this.init = function() {
+        this.crearEntidades();
+        this.nubes.bind("EnterFrame", function() {
+            var av = 0.1;
+            if (!this.dir) {
+                this.dir = 1;
+            }
+            if (this.x > 0) {
+                this.dir = -1;
+            }
+            if (this.x < -30) {
+                this.dir = 1;
+            }
+            this.x += av * this.dir;
+        });
 
-		this.carro.mover(1117);
-		return this;
-	};
+        this.carro.mover(1117);
+        Crafty.e("Gesto, Ubicador")
+                .Gesto(1, {coords: [626, 526], duracion: 200, retardo: 40});
+        return this;
+    };
 
-	this.crearEntidades = function() {
-		var self = this;
-		//objeto indicador de posiciones del juego
-		Crafty.e("2D, Canvas, Image").image("img/act/parque/5/fondo.jpg").attr({z: 0});
-		this.nubes = Crafty.e("2D, Canvas, Image").image("img/act/parque/5/nubes.png").attr({x: -30, z: 0})
+    this.crearEntidades = function() {
+        var self = this;
+        //objeto indicador de posiciones del juego
+        Crafty.e("2D, Canvas, Image").image("img/act/parque/5/fondo.jpg").attr({z: 0});
+        this.nubes = Crafty.e("2D, Canvas, Image").image("img/act/parque/5/nubes.png").attr({x: -30, z: 0})
 
-		this.torre = Crafty.e("2D, Canvas, Image").image("img/act/parque/5/torre.png");
-		this.torre.attr({x: 0, y: 800 - this.torre.h, z: 10});
+        this.torre = Crafty.e("2D, Canvas, Image").image("img/act/parque/5/torre.png");
+        this.torre.attr({x: 0, y: 800 - this.torre.h, z: 10});
 
-		Crafty.e("2D, Canvas, Image").image("img/act/parque/5/cuerda.png").attr({x: 614, y: 304, z: 20});
-		Crafty.e("2D, Canvas, Image").image("img/act/parque/5/cuerda.png").attr({x: 660, y: 296, z: 20});
-		Crafty.e("2D, Canvas, Image").image("img/act/parque/5/cubo.jpg").attr({x: 551, y: 611, z: 25});
-		Crafty.e("2D, Canvas, Image").image("img/act/parque/5/cubo.jpg").attr({x: 661, y: 611, z: 25});
-		Crafty.e("P5_Engranaje, sprP5_engranaje0").attr({x: 606, y: 275, z: 25}).P5_Engranaje(false, 1.5, 1);
-		Crafty.e("P5_Engranaje, sprP5_engranaje1").attr({x: 628, y: 231, z: 25}).P5_Engranaje(false, 0.5, -1);
-		Crafty.e("P5_Engranaje, sprP5_engranaje2").attr({x: 610, y: 237, z: 22}).P5_Engranaje(false, 0.8, 1);
-		Crafty.e("P5_Engranaje, sprP5_engranaje3").attr({x: 619, y: 223, z: 22}).P5_Engranaje(false, 1.5, 1);
-		Crafty.e("P5_Engranaje, sprP5_engranaje3").attr({x: 608, y: 253, z: 22}).P5_Engranaje(false, 0.5, -1);
-		Crafty.e("P5_Engranaje, sprP5_engranaje3").attr({x: 603, y: 270, z: 22}).P5_Engranaje(false, 0.8, 1);
-		Crafty.e("P5_Engranaje, sprP5_engranaje4").attr({x: 628, y: 267, z: 25}).P5_Engranaje(false, 1.5, 1);
+        Crafty.e("2D, Canvas, Image").image("img/act/parque/5/cuerda.png").attr({x: 614, y: 304, z: 20});
+        Crafty.e("2D, Canvas, Image").image("img/act/parque/5/cuerda.png").attr({x: 660, y: 296, z: 20});
+        Crafty.e("2D, Canvas, Image").image("img/act/parque/5/cubo.jpg").attr({x: 551, y: 611, z: 25});
+        Crafty.e("2D, Canvas, Image").image("img/act/parque/5/cubo.jpg").attr({x: 661, y: 611, z: 25});
+        Crafty.e("P5_Engranaje, sprP5_engranaje0").attr({x: 606, y: 275, z: 25}).P5_Engranaje(false, 1.5, 1);
+        Crafty.e("P5_Engranaje, sprP5_engranaje1").attr({x: 628, y: 231, z: 25}).P5_Engranaje(false, 0.5, -1);
+        Crafty.e("P5_Engranaje, sprP5_engranaje2").attr({x: 610, y: 237, z: 22}).P5_Engranaje(false, 0.8, 1);
+        Crafty.e("P5_Engranaje, sprP5_engranaje3").attr({x: 619, y: 223, z: 22}).P5_Engranaje(false, 1.5, 1);
+        Crafty.e("P5_Engranaje, sprP5_engranaje3").attr({x: 608, y: 253, z: 22}).P5_Engranaje(false, 0.5, -1);
+        Crafty.e("P5_Engranaje, sprP5_engranaje3").attr({x: 603, y: 270, z: 22}).P5_Engranaje(false, 0.8, 1);
+        Crafty.e("P5_Engranaje, sprP5_engranaje4").attr({x: 628, y: 267, z: 25}).P5_Engranaje(false, 1.5, 1);
 
-		this.carro = Crafty.e("P5_Carro").attr({x: 791, y: 596, z: 30}).P5_Carro(this);
-		this.personajeIzq = Crafty.e("P5_Personaje").attr({x: 563, y: 496, z: 30}).P5_Personaje(-1);
-		this.personajeDer = Crafty.e("P5_Personaje").attr({x: 652, y: 496, z: 30}).P5_Personaje(1);
+        this.carro = Crafty.e("P5_Carro").attr({x: 791, y: 596, z: 30}).P5_Carro(this);
+        this.personajeIzq = Crafty.e("P5_Personaje").attr({x: 563, y: 496, z: 30}).P5_Personaje(-1);
+        this.personajeDer = Crafty.e("P5_Personaje").attr({x: 652, y: 496, z: 30}).P5_Personaje(1);
 
-		//esta area se coloca sobre los personajes para generen los engranajes y aplicar animacion sobre los personajes
-		this.areaToque = Crafty.e("P5_AreaToque").attr({x: 518, y: 450, w: 250, h: 230, z: 50})
-				.P5_AreaToque(this.carro, this.personajeIzq, this.personajeDer);
-		return this;
+        //esta area se coloca sobre los personajes para generen los engranajes y aplicar animacion sobre los personajes
+        this.areaToque = Crafty.e("P5_AreaToque").attr({x: 518, y: 450, w: 250, h: 230, z: 50})
+                .P5_AreaToque(this.carro, this.personajeIzq, this.personajeDer);
+        return this;
 
-	};
+    };
 
-	// Siempre invocada al terminar la actividad
-	this.terminarActividad = function() {
-		Crafty("P5_Engranaje").each(function() {
-			if (this.fisica) {
-				this.destroy();
-			}
-		});
-		Crafty("P5_AreaToque").each(function() {
-			this.destroy();
-		});
-		return this;
-	};
-	this.ganarActividad = function() {
-		Crafty("P5_Engranaje").each(function() {
-			if (this.fisica) {
-				this.destroy();
-			}
-		});
-		Crafty("P5_AreaToque").each(function() {
-			this.destroy();
-		});
-		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
-		return this;
-	};
+    // Siempre invocada al terminar la actividad
+    this.terminarActividad = function() {
+        Crafty("P5_Engranaje").each(function() {
+            if (this.fisica) {
+                this.destroy();
+            }
+        });
+        Crafty("P5_AreaToque").each(function() {
+            this.destroy();
+        });
+        return this;
+    };
+    this.ganarActividad = function() {
+        Crafty("P5_Engranaje").each(function() {
+            if (this.fisica) {
+                this.destroy();
+            }
+        });
+        Crafty("P5_AreaToque").each(function() {
+            this.destroy();
+        });
+        gesActividad.temporizador.parar();
+        gesActividad.mostrarPuntaje();
+        return this;
+    };
 };
 
-/*C:\uniserver\www\hdp\public_html\src/act/parque/6/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/6/sprites.js*/
 function spritesParque6() {
 	Crafty.sprite("img/act/parque/6/catedral_partes.png", {
 		sprP6_parteCupula: [110, 272, 171, 240],
@@ -28090,7 +28369,7 @@ function spritesParque6() {
 		sprP6_parteColH: [63, 258, 35, 253]
 	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/parque/6/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/6/componentes.js*/
 // Hueco donde se inserta el bloque
 Crafty.c("P6Hueco", {
 	num: 0, // ID del bloque corespondiente
@@ -28373,7 +28652,7 @@ Crafty.c("P6Parte", {
 		return true;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/parque/6/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/parque/6/actividad.js*/
 /**
  * @returns {ActParque6}
  */
@@ -28643,7 +28922,7 @@ var ActParque6 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/puente/1/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/1/sprites.js*/
 function spritesPuente1() {
 	Crafty.sprite("img/act/puente/1/partes_puente.png", {
 		sprH1_puente16: [0, 0, 1420, 79],
@@ -28669,12 +28948,9 @@ function spritesPuente1() {
 	Crafty.sprite(40, 63, "img/act/puente/1/personajes.png", {
 		sprH1_personajeAdulto: [0, 0]
 	});
-	Crafty.sprite(32, 63, "img/act/puente/1/personajes.png", {
-		sprH1_personajeNino: [0, 0]
-	});
 
 }
-/*C:\uniserver\www\hdp\public_html\src/act/puente/1/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/1/componentes.js*/
 
 
 Crafty.c("H1_Personaje", {
@@ -28687,7 +28963,7 @@ Crafty.c("H1_Personaje", {
 		return this;
 	}
 });
-/*C:\uniserver\www\hdp\public_html\src/act/puente/1/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/1/actividad.js*/
 /**
  * Actividad Puente Humilladero 1:
  * Tocar la pantalla para construir el puente, la actividad finaliza cuando 
@@ -28705,8 +28981,11 @@ function ActPuente1() {
 		[-136, 1280], [-136, 1280], [-136, 1280], [-136, 1257], [-136, 1195],
 		[-136, 1217], [-136, 1167], [-136, 1129], [-136, 996], [-136, 949],
 		[-136, 930], [-136, 882], [-136, 840], [-136, 795], [-136, 753],
-		[-136, 708], [-136, 642],
+		[-136, 708], [-136, 642]
 	]; // Coordenadas xIni y xFin de las capas en pantalla
+
+
+	this.arcos = [true, false, false, false, false]
 
 	this.init = function() {
 		Crafty.e("2D, Canvas, Image").image("img/act/puente/1/fondo.jpg");
@@ -28714,9 +28993,8 @@ function ActPuente1() {
 		pri_plano.attr({x: 0, y: 800 - pri_plano.h, z: 100});
 		for (var i = 0; i < 23; i++) {
 			var y0 = Crafty.math.randomInt(313, 333);
-			Crafty.e("H1_Personaje, Ubicador, sprH1_personajeAdulto").sprite(i, 0).attr({x: -63, y: y0});
+			Crafty.e("H1_Personaje, sprH1_personajeAdulto").sprite(i, 0).attr({x: -63, y: y0});
 		}
-
 
 		// Inicializamos las capas de la construcción
 		var yMostrar = [680, 659, 638, 624, 611, 594, 580, 567, 540, 525, 496, 471, 441, 423, 393, 376, 320];
@@ -28747,13 +29025,17 @@ function ActPuente1() {
 
 		this.toque = new ToqueRapido();
 		this.toque.incremento = ((debug) ? 10 : 4);
-		this.toque
-				.init(this)
+		this.toque.init(this)
 				.callbackCambio(this.cambioVal)
 				.callbackMaximo(this.ganarActividad);
 		this.toque.val = 10;
 		this.toque.vMin = 10;
-		this.toque.vMax = 440;
+		this.toque.vMax = 440; //este valor es el maximo al completar el morro hasta el final.
+
+		this.toque.e_area.requires("Color, Tweener").color("#bab94c");
+		this.toque.e_area.attr({y: 320, w: 280, h: 400, alpha: 0.1});
+		this.toque.e_area.attrAreaToque = [0, 280, 280 * 2, 280 * 3, 280 * 4];
+		
 		//Inicialmente mostramos las primeras capas
 		for (i = 0; i < 2; i++) {
 			this.arrCapas[i].visible = true;
@@ -28776,26 +29058,25 @@ function ActPuente1() {
 				ent.reel("giro", 400, [[0, 0], [32, 0], [64, 0], [96, 0]]).animate("giro", -1);
 			}
 		});
-		Crafty.e("Gesto")
-				.Gesto(1, {coords: [600, 300], duracion: 200, retardo: 40});
+		Crafty.e("Gesto").Gesto(1, {coords: [200, 450], duracion: 200, retardo: 40});
 		//para que los personajes se puedan mover se disponen de estas variables
 		var bAvanz = 4;
-		//por cada arco (el ultimo arco lo "ejecuta" this.ganarActividad), se establece un sprite limite para hacer avanzar los personajes
-		this.arrPuntosAvance = [17 + bAvanz, 17 * 2 + bAvanz, 17 * 3 + bAvanz, 17 * 4 + bAvanz];
+		//por cada arco se establece una capa limite para hacer avanzar los personajes
+		//17 es el numero de capas por arco, bAvanz se coloca para que haya tiempo de que los personajes avancen y retrocedan
+		this.arrPuntosAvance = [0, 17 + bAvanz, 17 * 2 + bAvanz, 17 * 3 + bAvanz, 17 * 4 + bAvanz, 17 * 5];
+		//posiciones limites de los personajes sobre el arco del puente.
 		this.attrPersonajes = [
 			//por cada arco hay unos attr de ubicacion de los personajes
-			{xmin: 0, xmax: 279 - 39, ymin: 319, ymax: 327},
-			{xmin: 287, xmax: 557 - 39, ymin: 307, ymax: 312},
-			{xmin: 568, xmax: 835 - 39, ymin: 299, ymax: 309},
-			{xmin: 846, xmax: 1112 - 39, ymin: 291, ymax: 301}
+			{xmin: -63, xmax: -63, ymin: 319, ymax: 327}, //para la parte inferior izquierda
+			{xmin: 0, xmax: 279 - 39, ymin: 319, ymax: 327}, //arco 1
+			{xmin: 287, xmax: 557 - 39, ymin: 307, ymax: 312}, //arco2
+			{xmin: 568, xmax: 835 - 39, ymin: 299, ymax: 309}, //arco3
+			{xmin: 846, xmax: 1112 - 39, ymin: 291, ymax: 301}//arco4
 		];
-		//por cada arco hay unos attr de ubicacion de los personajes
-
-		this.attrPersonajesOcultar = [{xmin: -63, xmax: -63, ymin: 319, ymax: 327}].concat(this.attrPersonajes);
 		return this;
 	};
-	// función a ejecutar cuando cambia el valor del ToqueRapido
-	// su ámbito es el objeto ToqueRapido (referirse a este objeto con this._padre)
+	//función a ejecutar cuando cambia el valor del ToqueRapido
+	//su ámbito es el objeto ToqueRapido (referirse a este objeto con this._padre)
 	this.cambioVal = function cambioVal() {
 		var val = this.val;
 		var numCapa = Math.floor(val / 5);
@@ -28804,7 +29085,7 @@ function ActPuente1() {
 	this.mostrarCapa = function mostrarCapa(n) {
 		var i, mostrandose = true;
 		if (n > this.arrCapas.length - 1)
-			n = this.arrCapas.length - 1; // máximo 20
+			n = this.arrCapas.length - 1; // máximo 17*5-1
 
 		if (this.arrCapas[n].estado === 2) {
 			// capa ya visible; asegurarnos de que las capas de arriba se oculten
@@ -28834,21 +29115,58 @@ function ActPuente1() {
 			this.particulas.iniciar();
 		}
 
-
 		//verificar si los personajes deben avanzar o se deben devolver 
 		//si se encuentra dentro de los puntos de avance.
-		var nArco = this.arrPuntosAvance.indexOf(n);
-		if (nArco != -1) { // si el elemento se encuentra en el array
-			var attrP = mostrandose ? this.attrPersonajes[nArco] : this.attrPersonajesOcultar[nArco];
+		var nArco = this.buscarArco(n);
+		if (!this.arcos[nArco]) {
+			//array de banderas que me dice en que arco me encuentro situado.
+			for (var i = 0; i < this.arcos.length; i++) {
+				this.arcos[i] = (i == nArco ? true : false);
+			}
+			//incrementar el numero de capas para que el area de toque permanezca mas tiempo en el nuevo sitio
+			if (mostrandose) {
+				//si el puente va subiendo entonces se incrementan las capas 
+				this.toque.incrementar();
+				this.toque.incrementar();
+				this.toque.incrementar();
+			}
+			this.moverAreaToque(this.toque.e_area.attrAreaToque[nArco]);
+			var attrP = this.attrPersonajes[nArco];
 			Crafty("H1_Personaje").each(function() {
-				this.caminar({
-					//numeros aleatorios
+				this.caminar({//numeros aleatorios
 					x: Crafty.math.randomInt(attrP.xmin, attrP.xmax),
 					y: Crafty.math.randomInt(attrP.ymin, attrP.ymax),
 					t: Crafty.math.randomInt(30, 60)
 				});
-			})
-		}/**/
+			});
+		}
+
+	};
+	//hacer que el area de toque haga un fadeout fadein.
+	this.moverAreaToque = function(newx) {
+		var area = this.toque.e_area;
+		var tTween = 5;
+		var self = this;
+		//area.x = newx;//esto es lo que se quiere al final.
+		area.addTween({alpha: 0.0}, "easeInCubic", tTween, function() {
+			this.x = newx;
+			//this.alpha = 0.1//asi esta ok
+			this.addTween({alpha: 0.1}, "easeInCubic", tTween, function() {
+				Crafty.e("Gesto").Gesto(1, {coords: [newx + 70, 450], duracion: 40, retardo: 0});
+			});
+		});
+		return this;
+	};
+	//buscar dentro del array de puntos de avance para ver donde se encuentra el arco.
+	this.buscarArco = function(capa) {
+		var arco = 0;
+		for (var i = 0; i < this.arrPuntosAvance.length - 1; i++) {
+			if (capa >= this.arrPuntosAvance[i] && capa < this.arrPuntosAvance[i + 1]) {
+				return arco;
+			}
+			arco++;
+		}
+		return -1;
 	};
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
@@ -28857,11 +29175,13 @@ function ActPuente1() {
 	// Sólo invocada al ganar la actividad
 	this.ganarActividad = function ganarActividad() {
 		gesActividad.temporizador.parar();
+		//hacer que los personajes caminen hacia la parte izquierda para que desaparezcan
 		Crafty("H1_Personaje").each(function() {
 			var newt = Crafty.math.randomInt(100, 250);
 			this.caminar({x: 1280, y: 300, t: newt});
-		})
+		});
 		var self = this;
+		//esperar a que los personajes caminen
 		Crafty.e("Delay").delay(function() {
 			gesActividad.mostrarPuntaje();
 		}, 2000);
@@ -28872,114 +29192,1087 @@ function ActPuente1() {
 
 
 
-/*C:\uniserver\www\hdp\public_html\src/act/puente/2/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/2/sprites.js*/
 function spritesPuente2() {
-}
-/*C:\uniserver\www\hdp\public_html\src/act/puente/2/componentes.js*/
+	Crafty.sprite("img/act/puente/2/numeros.png", {
+		sprH2_numero0: [0, 0, 51, 75],
+		sprH2_numero1: [0, 78, 48, 74],
+		sprH2_numero2: [0, 155, 49, 75],
+		sprH2_numero3: [0, 233, 47, 75],
+		sprH2_numero4: [0, 311, 55, 75],
+		sprH2_numero5: [0, 389, 48, 74],
+		sprH2_numero6: [0, 466, 50, 75],
+		sprH2_numero7: [0, 544, 49, 74],
+		sprH2_numero8: [0, 621, 51, 76],
+		sprH2_numero9: [0, 700, 50, 74]
+	});
 
-/*C:\uniserver\www\hdp\public_html\src/act/puente/2/actividad.js*/
+	Crafty.sprite(40, 63, "img/act/puente/1/personajes.png", {
+		sprH2_pAdulto: [0, 0]//hay 23 adultos
+	});
+	Crafty.sprite("img/act/puente/1/personajes.png", {
+		sprH2_pNino23: [922, 20, 33, 43],
+		sprH2_pNino24: [956, 20, 33, 43],
+		sprH2_pNino25: [985, 20, 33, 43],
+		sprH2_pNino26: [1015, 20, 33, 43]
+
+	});
+}
+/*C:\UniServer\www\hdp\public_html\src/act/puente/2/componentes.js*/
+Crafty.c("H2_Personaje", {
+    indicador: false,
+    init: function() {
+        this.requires("2D, Canvas, Tweener");
+    },
+    H2_Personaje: function() {
+        return this;
+    },
+    caminar: function(attr, cll) {
+        this.cancelTweener();
+        if (cll != null) {
+            this.addTween({x: attr.x, y: attr.y}, "linear", attr.t, cll);
+        } else {
+            this.addTween({x: attr.x, y: attr.y}, "linear", attr.t);
+        }
+        return this;
+    },
+    puntoFinal: function(pf) {
+        this.pf = pf;
+        return this;
+    },
+    caminarAleatorio: function() {
+        var despx = this.x + (this.pf.dir == -1 ?
+                Crafty.math.randomInt(-100, -50) :
+                Crafty.math.randomInt(50, 100));
+        var despy = this.y + Crafty.math.randomInt(-1, 1) * Crafty.math.randomInt(10, 60);
+        var despt = Crafty.math.randomInt(70, 100);
+        if(despy > 650){
+            despy = 650;
+        }
+        this.caminar({x: despx, y: despy, t: despt}, function() {
+            //si llega al final verificar que haya llegado al punto final .pf
+            if (this.pf.dir == -1) {//de derecha a izquierda
+                if (this.x < this.pf.x) {
+                    this.destroy();
+                } else {
+                    this.caminarAleatorio();
+                }
+            } else if (this.pf.dir == 1) { //de izquierda a derecha
+                if (this.x > this.pf.x) {
+                    this.destroy();
+                } else {
+                    this.caminarAleatorio();
+                }
+            }
+        });
+        return this;
+    }
+});
+
+Crafty.c("H2_Contador", {
+    e_numeros: [], //entidades de numeros.
+    init: function() {
+        this.requires("2D, Canvas, Tweener");
+    },
+    H2_Contador: function(actividad) {
+        this.actividad = actividad;
+        this.contador = 0;
+        this.dibujar();
+        return this;
+    },
+    aumentar: function() {
+        this.contador += 1;
+        this.dibujar();
+        this.actividad.aumentaContador();
+        return this;
+    },
+    dibujar: function() {
+        if (this.e_numeros.length > 0) {//borrar los numeros que esten dibujados.
+            for (var i = 0; i < this.e_numeros.length; i++) {
+                this.e_numeros[i].destroy();
+            }
+            this.e_numeros = [];
+        }
+        var strContador = this.contador + "";//convertir el contador en cadena
+        for (var i = 0; i < strContador.length; i++) {
+            var intNumero = strContador[i];
+            this.e_numeros[i] = Crafty.e("2D, Canvas, H2_Numero, sprH2_numero" + intNumero);
+            //posicion del numero: posicion de la hoja de contador mas un desplazamiento segun si el numero es de una o dos cifras
+            var despx = this.x + (this.contador < 10 ? 67 : 40) + i * (this.e_numeros[i].w + 6);
+            this.e_numeros[i].attr({x: despx, y: this.y + 30});
+        }
+        return this;
+    }
+});
+/*C:\UniServer\www\hdp\public_html\src/act/puente/2/actividad.js*/
 /**
- * Actividad parque caldas, armar la estructura monumento del FJCaldas
- * @returns {ActParque1}
+ * Actividad 2 Puente: recoger 82 firmas de personajes.
  */
 var ActPuente2 = function() {
-	//con esta cantidad se gana la actividad
-	this.totAciertos = 4;
-	//tiempo en que se cambia de un topo a otro (milisegundos)
-	this.duracion = 20000;
-	//si se ha ganado la actividad
-	this.actividadGanada = false;
-	//si se ha ganado la actividad
-	this.aciertos = 0;
+    //con esta cantidad se gana la actividad
+    this.totAciertos = 4;
+    //tiempo en que se cambia de un topo a otro (milisegundos)
+    this.duracion = 20000;
+    //si se ha ganado la actividad
+    this.actividadGanada = false;
+    //si se ha ganado la actividad
+    this.aciertos = 0;
 
-	this.init = function() {
-		this.crearEntidades();
-		this.ganarActividad();
-		return this;
-	};
+    this.init = function() {
+        var actividad = this;
+        this.crearEntidades();
 
-	this.crearEntidades = function() {
+        //aqui se define el objeto que genera personajes posicionado aleatoriamente.
+        this.genPersonajes = {
+            bloqueado: false, //para permitir que genere o no personajes.
+            tInterval: 30, //timpo de generacion entre personajes.
+            caminos: [//estos son los caminos por donde salen los personajes.
+                {x0min: 1280, x0max: 1280, y0min: 294, y0max: 672, t: 0, x1min: -64, x1max: -64, y1min: 425, y1max: 732, dir: -1},
+                {x0min: -64, x0max: -64, y0min: 425, y0max: 732, t: 0, x1min: 1280, x1max: 1280, y1min: 425, y1max: 732, dir: 1}
+            ],
+            //cada cierto tiempo se genera un peraobnje para que salga desde una parte de la pantalla
+            genPersonajes: function() {
+                var self = this;
+                Crafty.e("DelayFrame").delay(function() {
+                    if (!self.bloqueado) {
+                        var camino = Crafty.math.randomElementOfArray(self.caminos);
+                        self.crearPersonaje(camino);
+                        self.genPersonajes();
+                        console.log("se esta creando un persoanje")
+                    }
+                }, this.tInterval);
+                return this;
+            },
+            crearPersonaje: function(camino) {
+                //posiciones iniciales de los personajes.
+                var x0 = Crafty.math.randomInt(camino.x0min, camino.x0max),
+                        y0 = Crafty.math.randomInt(camino.y0min, camino.y0max),
+                        x1 = Crafty.math.randomInt(camino.x1min, camino.x1max),
+                        y1 = Crafty.math.randomInt(camino.y1min, camino.y1max),
+                        t = camino.t,
+                        dir = camino.dir,
+                        id = Crafty.math.randomInt(0, 26),
+                        spr = (id < 23 ? "sprH2_pAdulto" : "sprH2_pNino" + id);
 
-	};
+                var personaje = Crafty.e("H2_Personaje, " + spr)
+                        .attr({x: x0, y: y0, z: 15})
+                        .puntoFinal({x: x1, y: y1, t: t, dir: dir})
+                        .caminarAleatorio();
 
-	// Siempre invocada al terminar la actividad
-	this.terminarActividad = function() {
-		return this;
-	};
+                personaje.esNino = (id < 23 ? false : true);
+                if (id < 23) {
+                    personaje.sprite(id, 0);
+                }
+                //dibujarle un indicador al personaje
+                return personaje;
+            },
+            indicador: function(personaje) {
+                var posx, posy;
+                if (personaje.esNino) {//el indicador varia de posicion segun el tamaño del personaje.
+                    posx = personaje.x - 6;
+                    posy = personaje.y - 20;
+                } else {
+                    posx = personaje.x;
+                    posy = personaje.y - 12;
+                }
+                personaje.e_indicador = Crafty.e("2D, Canvas, Image, Mouse")
+                        .image("img/act/puente/2/indicador.png")
+                        .attr({x: posx, y: posy, z: personaje.z});
+                personaje.attach(personaje.e_indicador);
+                personaje.indicador = true;//tienen una entidad de indicador.
+                personaje.e_indicador.bind("MouseDown", function() {
+                    if (personaje.indicador) {
+                        var ad = null;
+                        if (personaje.esNino) {
+                            ad = Crafty.e("Advertencia").attr({x: personaje.x + 30, y: personaje.y - 70, z: personaje.z}).mostrar(2, 40);
+                            actividad.ninoIndicador();
+                        } else {
+                            ad = Crafty.e("Advertencia").attr({x: personaje.x + 40, y: personaje.y - 60, z: personaje.z}).mostrar(0, 40);
+                            actividad.adultoIndicador();
+                            this.destroy();
+                            personaje.indicador = false;
+                        }
+                        personaje.attach(ad);
+                    }
+                }).bind("EnterFrame", function() {
+                    if (this.x < 0 || this.x > 1260) {
+                        this.destroy();
+                        actividad.siguienteIndicador();
+                    }
+                })
+                return this;
+            },
+            parar: function() {
+                this.bloqueado = true;
+                return this;
+            }
+        };
 
-	this.ganarActividad = function() {
-		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
-		return this;
-	};
+
+        //empezar a generar personajes.
+        this.genPersonajes.genPersonajes();
+        var numPIni = 30; //numero de personajes iniciales.
+        for (var i = 0; i < numPIni; i++) {
+            var dir = Crafty.math.randomElementOfArray([-1, 1]);
+            var x0 = Crafty.math.randomInt(-64, 1200);//posicion en x inicial
+            var x1 = (dir == -1 ? -64 : 1280);//posicion final en x
+            var pers = this.genPersonajes.crearPersonaje({
+                x0min: x0, x0max: x0,
+                y0min: 425, y0max: 732,
+                t: 2000,
+                x1min: x1, x1max: x1,
+                y1min: 425, y1max: 732,
+                dir: dir
+            });
+        }
+
+        this.genPersonajes.indicador(pers);
+        return this;
+    };
+
+    this.crearEntidades = function() {
+        Crafty.e("2D, Canvas, Image").image("img/act/puente/2/fondo.jpg");
+        this.e_contador = Crafty.e("H2_Contador, Image")
+                .image("img/act/puente/2/hoja.png")
+                .attr({x: 557, y: 10})
+                .H2_Contador(this);
+        return this;
+    };
+
+    this.aumentaContador = function() {
+        //cuando se recogen todas las firmas.
+        if (++this.aciertos == this.totAciertos) {
+            this.ganarActividad();
+        }
+        return this;
+    };
+
+    this.ninoIndicador = function() {
+        console.log("tiene indicador pero es un niño, los niños no pueden firmar.");
+        this.siguienteIndicador();
+        return this;
+    };
+
+    this.adultoIndicador = function() {
+        this.e_contador.aumentar();
+        this.siguienteIndicador();
+        return this;
+    };
+
+    this.siguienteIndicador = function() {
+        var numPers = Crafty("H2_Personaje").length - 1;
+        var alea = Crafty.math.randomInt(0, numPers);
+        for (var i = 0; i < Crafty("H2_Personaje").length; i++) {
+            if (i == alea) {
+                var personaje = Crafty(Crafty("H2_Personaje")[i]);
+                if (!personaje.indicador &&
+                        (personaje.x > 0 && personaje.x < 1280)) {
+                    this.genPersonajes.indicador(personaje);
+                } else {
+                    this.siguienteIndicador();
+                }
+                break;
+            }
+        }
+        return this;
+    };
+
+    // Siempre invocada al terminar la actividad
+    this.terminarActividad = function() {
+        this.genPersonajes.parar();
+        return this;
+    };
+
+    this.ganarActividad = function() {
+        this.terminarActividad();
+        gesActividad.temporizador.parar();
+        gesActividad.mostrarPuntaje();
+        return this;
+    };
 };
-/*C:\uniserver\www\hdp\public_html\src/act/puente/3/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/3/sprites.js*/
 function spritesPuente3() {
-}
-/*C:\uniserver\www\hdp\public_html\src/act/puente/3/componentes.js*/
+    Crafty.sprite("img/act/puente/3/torre_dividida.png", {
+        sprH3_torreIzq: [0, 0, 197, 522],
+        sprH3_torreDer: [197, 0, 97, 522]
+    });
 
-/*C:\uniserver\www\hdp\public_html\src/act/puente/3/actividad.js*/
+    Crafty.sprite("img/act/puente/3/puente_partes.png", {
+        sprH3_puente0: [0, 241, 171, 106],
+        sprH3_puente1: [0, 0, 171, 178],
+        sprH3_puente2: [171, 104, 222, 243],
+        sprH3_puente3: [395, 45, 224, 302],
+        sprH3_puente4: [619, 0, 222, 347]
+    });
+}
+/*C:\UniServer\www\hdp\public_html\src/act/puente/3/componentes.js*/
+Crafty.c("H3_GenLadrillos", {
+    init: function() {
+        this.requires("Mouse")
+                .bind("MouseDown", function() {
+                    this.genLadrillo();
+                });
+    },
+    H3_GenLadrillos: function(actividad) {
+        this.actividad = actividad;
+        return this;
+    },
+    posGenerador: function(posx, posy, posz) {
+        this.posx = posx;
+        this.posy = posy;
+        this.posz = posz;
+        this.tInterval = 3500;
+        this.tIntervalMin = 1000;
+        this.bloqueado = false;
+        this.genLadrillos();
+        return this;
+    },
+    genLadrillos: function() {
+        this._intervalos();
+        return this;
+    },
+    //generar 
+    _intervalos: function() {
+        var self = this;
+        var rndNum = Crafty.math.randomInt(this.tInterval, this.tIntervalMin);
+        setTimeout(function() {
+            if (!self.bloqueado) {
+                self.tInterval -= 60;
+                if (self.tInterval <= self.tIntervalMin) {
+                    self.tInterval = self.tIntervalMin;
+                }
+                self.crearLadrillo();
+                self._intervalos();
+            }
+        }, rndNum);
+        return this;
+    },
+    crearLadrillo: function() {
+        var self = this;
+        var ladrillo = Crafty.e("H3_Ladrillo")
+                .attr({x: this.posx, y: this.posy, z: this.posz})
+                .H3_Ladrillo(this.actividad.mesa, this.actividad.puente)
+                .iniciarMovimiento();
+        //inicialmente el ladrillo pasa entre las dos torres del reloj, entonces hacer esto para que el ladrillo quede sobre las torres
+        setTimeout(function() {
+            ladrillo.z = self.posz + 10;
+        }, 100);
+        return this;
+    },
+    pararGenLadillo: function() {
+        this.bloqueado = true;
+        return this;
+    }
+});
+
+Crafty.c("H3_Ladrillo", {
+    init: function() {
+        this.requires("H3_Cuerpo, Image, Tweener")
+                .image("img/act/puente/3/ladrillo.png");
+    },
+    H3_Ladrillo: function(mesa, puente) {
+        this.mesa = mesa;
+        this.puente = puente;
+        return this;
+    },
+    //el ladrillo colisiona con la mesa si se encuentra en sus mismas coodenadas en x y 10 pixeles mas abajo que su primera y
+    colisionMesa: function() {
+        if (this.y + this.h > this.mesa.y)
+            return this.x > this.mesa.x && this.x + this.w < this.mesa.x + this.mesa.w - 20
+                    && this.y + this.h > this.mesa.y && this.y + this.h < this.mesa.y + 10;
+        else
+            return false;
+    },
+    //el ladrillo colisiona con el puente si sus posiciones se encuentran dentro de la misma area.
+    colisionPuente: function() {
+        if (this.x > this.puente.x)
+            return this.y < this.puente.y + this.puente.h;//if (this.y + this.h > this.puente.y)        return this.x + this.w > this.puente.x && this.x < this.puente.x + this.puente.w&& this.y + this.h < this.puente.y + this.puente.h;
+        else
+            return false;
+    },
+    twPuente: function() {
+        this.vy = 0;
+        this.vx = 0;
+        this.ay = 0;
+        this.addTween({x: this.puente.x + 50, y: this.puente.y + 60}, "linear", 60, function() {
+            this.destroy();
+            this.puente.construirPuente();
+        });
+        return this;
+    }
+});
+
+Crafty.c("H3_Cuerpo", {
+    init: function() {
+        this.requires("2D, Canvas")
+    },
+    iniciarMovimiento: function() {
+        this.origin(this.w / 2.0, this.h / 2.0);
+        //velocidad de la rotacion
+        this.vr = 3;
+        this.ar = 0.1;
+        this.vrmin = -10;
+        this.vrmax = 10;
+
+        this.vx = 1.2;
+        //iniciar con una velocidad negativa para que asuma una trayectoria parabolica
+        this.vy = Crafty.math.randomNumber(-6, -1.5);
+        //aceleracion en y constante
+        this.ay = 0.06;
+
+        //porcentaje de atenuacion del movimiento
+        this.atenua = 0.5;//el rango de atenuacion es de 0.5 a 1.5.
+
+        this.bind("EnterFrame", function() {
+            //velocidad en x constante
+            this.x += this.vx;
+            //velocidad en y variable
+            this.y += this.vy;
+            this.vy += this.ay;
+
+            //hacer que el cuerpo gire sobre su eje.
+            this.rotation += this.vr;
+            //aumentar velocidad de giro.
+            if ((this.vr += this.ar) > this.vrmax) {
+                this.vr = this.vrmax;
+            }
+            if (this.vr < this.vrmin) {
+                this.vr = this.vrmin;
+            }
+
+            //collision con la mesa, efecto de rebote
+            if (this.colisionMesa()) {
+                this.vy = -this.vy;//cambio de direccion
+                //el efecto de atenuacion va a depender de donde toque el ladrillo a la mesa.
+                this.vy += this.calcAtenuacion();
+                //cuando la velocidad en Y es bastante baja, entonces hacer que el ladrillo caiga y no siga rebotando.
+                if (this.vy > -1.2 && this.vy < 0.5) {
+                    this.colisionMesa = this.desFunc;
+                } else {
+                    this.y += this.vy; //para que el ladrillo retroceda un poco (rebote instantaneo)
+                }
+            }
+            //collision con el puente, si ocurre una colision entonces se debe construir el puente
+            if (this.colisionPuente()) {
+                this.colisionPuente = this.desFunc;
+                this.twPuente();
+            }
+            //destruir la entidad cuando sobre pase los limites
+            if (this.x > 1280 || this.y > 800) {
+                this.unbind("EnterFrame")
+                this.destroy();
+            }
+            //Seguimiento de trayectoria: borrar la siguiente linea de codigo que provoca lentitud en la aplicacion
+            //Crafty.e("2D, Canvas, Color").color("blue").attr({x: this.x, y: this.y, z: this.z, w: 3, h: 3, alpha: 0.2});
+        });
+        return this;
+    },
+    desFunc: function() {
+        return false;
+    },
+    calcAtenuacion: function() {
+        var choquex = this.x - this.mesa.x;
+        var atenuaR = 0;
+        if (choquex < 20) {//primer caso: el ladrillo rebota en direccion contraria a la que lleva
+            atenuaR = Crafty.math.randomNumber(0.5, 1.0);
+            this.vx -= 2;
+            this.vr = -this.vr;
+            this.ar = -0.1;
+        } else if (choquex < 87) {//segundo caso: el ladrillo 
+            atenuaR = Crafty.math.randomNumber(1.2, 1.5);
+            this.vx += 0.8;
+            this.vr = Math.abs(this.vr);
+            this.ar = 0.1;
+        } else {
+            atenuaR = Crafty.math.randomNumber(0.5, 1.0);
+            this.vx += 0.1;
+            this.vr = Math.abs(this.vr);
+            this.ar = 0.1;
+        }
+        return atenuaR;
+    }
+});
+Crafty.c("H3_Mesa", {
+    init: function() {
+        this.requires("2D, Canvas, Image, Arrastrable")
+                .image("img/act/puente/3/mesa.png")
+                .unbind("EnterFrame");
+    },
+    //argumentos, valores minimos y maximos sobre los que se puede mover la mesa.
+    H3_Mesa: function(xmin, xmax) {
+        this.xmin = xmin;
+        this.xmax = xmax;
+        this.y0 = this.y;
+        this.bind("EnterFrame", function() {
+            this.y = this.y0;
+            if (this.x < this.xmin) {
+                this.x = this.xmin;
+            }
+            if (this.x > this.xmax) {
+                this.x = this.xmax;
+            }
+        });
+        return this;
+    }
+});
+
+Crafty.c("H3_Puente", {
+    init: function() {
+        this.requires("2D, Canvas, Tweener");
+        this.spr = [];
+        this.limites = [];
+        for (var i = 0; i < 5; i++) {
+            this.spr[i] = "sprH3_puente" + i;
+            this.limites[i] = i;
+        }
+        this.spr_cont = 0;
+        this.eng_cont = 0;
+    },
+    H3_Puente: function(actividad) {
+        this.actividad = actividad;
+        this.cambiarSprite();
+        return this;
+    },
+    construirPuente: function() {
+        //criterio para cambiar el sprite.
+        for (var i = 0; i < this.limites.length; i++) {
+            //si el contador es igual al limite.
+            if (this.eng_cont == this.limites[i]) {
+                this.cambiarSprite();
+                i = this.limites.length;
+            }
+        }
+        this.eng_cont++;
+        //si ya se han contado todos los limites entonces se gana la actividad.
+        if (this.eng_cont == this.limites.length - 1) {
+            this.actividad.ganarActividad();
+        }
+        return this;
+    },
+    cambiarSprite: function() {
+        if (this.spr_cont < this.spr.length) {
+            var h_old = this.h;//altura antigua para colocarlo sobre el suelo.
+            this.removeComponent(this.spr[this.spr_cont - 1]);
+            this.addComponent(this.spr[this.spr_cont]);
+            if (h_old) {
+                this.y -= this.h - h_old;//posicion inicial relativa al suelo
+            }
+            this.spr_cont++;
+        }
+        return this;
+    }
+});
+
+/*C:\UniServer\www\hdp\public_html\src/act/puente/3/actividad.js*/
 /**
+ * Actividad Ladrillos, lanzar ladrillos desde la torre del reloj para hacerlos aterrizar a un punto especifico
  */
 var ActPuente3 = function() {
-	//con esta cantidad se gana la actividad
-	this.totAciertos = 4;
-	//tiempo en que se cambia de un topo a otro (milisegundos)
-	this.duracion = 20000;
-	//si se ha ganado la actividad
-	this.actividadGanada = false;
-	//si se ha ganado la actividad
-	this.aciertos = 0;
+    //con esta cantidad se gana la actividad
+    this.totAciertos = 4;
+    //tiempo en que se cambia de un topo a otro (milisegundos)
+    this.duracion = 20000;
+    //si se ha ganado la actividad
+    this.actividadGanada = false;
+    //si se ha ganado la actividad
+    this.aciertos = 0;
 
-	this.init = function() {
-		this.crearEntidades();
-		this.ganarActividad();
-		return this;
-	};
+    this.init = function() {
+        this.crearEntidades();
+        return this;
+    };
 
-	this.crearEntidades = function() {
+    this.crearEntidades = function() {
+        Crafty.e("2D, Canvas, Image").image("img/act/puente/3/fondo.png");
+        Crafty.e("2D, Canvas, Image").image("img/act/puente/3/nube.png").attr({x: 586, y: -22, z: 1});
+        this.priPlano = Crafty.e("2D, Canvas, Image").image("img/act/puente/3/primer_plano.png");
+        this.priPlano.attr({x: 0, y: 800 - this.priPlano.h, z: 10});
 
-	};
+        //la torre del reloj esta dividida en dos partes.
+        this.torreIzq = Crafty.e("2D, Canvas, sprH3_torreIzq")
+                .attr({x: -82, y: 197, z: 30});
+        this.torreDer = Crafty.e("2D, Canvas, sprH3_torreDer")
+                .attr({x: this.torreIzq.x + this.torreIzq.w - 5, y: this.torreIzq.y, z: this.torreIzq.z - 10});
+        //la mesa hace que los ladrillos reboten.
+        this.mesa = Crafty.e("H3_Mesa").attr({x: 554, y: 657, z: 50}).H3_Mesa(-20, 918);
+        //El puente que se va construyendo a medida que los ladrillos caen sobre él.
+        this.puente = Crafty.e("H3_Puente").attr({x: 1070, y: 595, z: 50}).H3_Puente(this);
+        //el generador de ladrillos hace que se creen nuevos ladrillos.
+        this.genLadrillos = Crafty.e("H3_GenLadrillos").H3_GenLadrillos(this).posGenerador(90, 330, 25);//(45, 458, 25);
 
-	// Siempre invocada al terminar la actividad
-	this.terminarActividad = function() {
-		return this;
-	};
+        return this;
+    };
 
-	this.ganarActividad = function() {
-		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
-		return this;
-	};
+    // Siempre invocada al terminar la actividad
+    this.terminarActividad = function() {
+        this.genLadrillos.pararGenLadillo();
+        Crafty("H3_Ladrillo").each(function() {
+            this.unbind("EnterFrame")
+            this.addTween({ alpha: 0 }, "linear", 10);
+        });
+        return this;
+    };
+
+    this.ganarActividad = function() {
+        this.terminarActividad();
+        gesActividad.temporizador.parar();
+        Crafty.e("Delay").delay(function() {
+            gesActividad.mostrarPuntaje();
+        }, 700);
+        return this;
+    };
 };
-/*C:\uniserver\www\hdp\public_html\src/act/puente/4/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/4/sprites.js*/
 function spritesPuente4() {
+	Crafty.sprite("img/act/puente/4/fichas.png", {
+		sprH4_ficha: [0, 0, 135, 136]
+	});
 }
-/*C:\uniserver\www\hdp\public_html\src/act/puente/4/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/4/componentes.js*/
+// Ficha del tablero
+Crafty.c("H4_Ficha", {
+	num: 0, // Número de la ficha en el arreglo de fichas
+	numSimbolo: -1, // Número de simbolo
+	e_padre: null,
+	e_tapa: null,
+	tapada: true, // true si la ficha está tapada
+	bloqueado: true, // true para reaccionar a eventos del mouse
+	ganada: false, // True si la ficha ya ha sido enparejada (esperando animación de salida)
+	y0: 0, // pos Y inicial
+	
+	init: function() {
+		this.requires("2D, Canvas, sprH4_ficha, Tweener, Mouse");
+		this.e_tapa = Crafty.e("2D, Canvas, sprH4_ficha, Tweener").attr({ x: 1, alpha: 0 });
+		this.attach(this.e_tapa);
+		
+		// Al hacer click, destapar
+		this.bind("MouseDown", this.destapar);
+		
+		return this;
+	},
+	
+	// Invocar luego de posicionar
+	H4_Ficha: function(num, numSimbolo, e_padre) {
+		this.y0 = this._y;
+		this.num = num;
+		this.e_padre = e_padre;
+		this.simbolo(numSimbolo);
+		var self = this;
+		this.e_tapa.addTween({ alpha: 1 }, "linear", 25, function() {
+			self.bloqueado = false;
+			self.alpha = 1;
+		});
+		return this;
+	},
+	
+	// Muestra el símbolo
+	destapar: function() {
+		if (!this.bloqueado && this.tapada) {
+			console.log("Iniciando DEStapar ficha " + this.num)
+			// Si ya hay 2 destapadas, taparlas antes de destapar esta
+			this.alpha = 1;
+			this.bloqueado = true; // bloqueamos hasta que sevuelva a tapar
+			this.visible = true;
+			this.tapada = false;
+			
+			console.log(this.y0)
+			var y0 = this.y0;
+			this.cancelTweener();
+			this.e_tapa.cancelTweener();
+			
+			this.e_tapa.addTween({ alpha: 0 }, "linear", 5);
+			this.addTween({ y: y0 - 30 }, "easeOutCubic", 8, function() {
+				this.addTween({ y: y0 }, "easeOutElastic", 26, function() {
+					this.bloqueado = false;
+					console.log("Fin DEStapar ficha " + this.num)
+				});
+			});
+			
+			this.e_padre.fichaDestapada(this);
+			return true;
+		}
+		
+		return false;
+	},
+	
+	// Esconde el símbolo
+	// Retorna true si el simbolo se pudo ordenar esconder
+	tapar: function() {
+		if (!this.tapada) {
+			console.log("Iniciando tapar ficha " + this.num)
+			this.tapada = true;
+			this.bloqueado = true;
+			this.e_tapa.visible = true;
+			var y0 = this.y0;	
+			
+			this.cancelTweener();
+			this.e_tapa.cancelTweener();
+				
+			this.e_tapa.addTween({ alpha: 1 }, "linear", 5);
+			this.addTween({ y: y0 - 30 }, "easeOutCubic", 8, function() {
+				this.addTween({ y: y0 }, "easeOutElastic", 20, function() {
+					this.bloqueado = false;
+					console.log("Terminado tapar ficha " + this.num)
+				});
+			});
+			
+			this.e_padre.numDestapadas--;
+		}
+		return this;
+	},
+	
+	// Animación para remover la ficha del tablero
+	remover: function() {
+		this.addTween({ y: this._y - 40, alpha: 0 }, "easeInBack", 16, function() { this.visible = false; });
+		return this;
+	},
+	
+	// Establece el símbolo de esta ficha
+	simbolo: function(num) {
+		this.numSimbolo = num;
+		if (num < 7) {
+			this.sprite(0, num * 136);
+		}
+		else {
+			this.sprite(135, (num - 7) * 136);
+		}
+		return this;
+	}
+});
 
-/*C:\uniserver\www\hdp\public_html\src/act/puente/4/actividad.js*/
+
+// Gota de ingrediente que cae en la olla
+Crafty.c("H4_Gota", {
+	color: "#FFFFFF",
+	largo: 100, // largo del chorro
+	y0: 0,
+	angulo: 0, // angulo de arco de gota cuando se sumerge
+	maxY: 650,
+	vy: 24, // velocidad de caída (px)
+	estirando: true, // false si ya no se debe estirar la gota
+	
+	init: function() {
+		this.requires("2D, Canvas");
+		
+		this.attr({ x: 620, z: 400, w: 40, h: 800 });
+	},
+	
+	H4_Gota: function(numColor) {
+		switch(numColor) {
+			case 0: this.color = "#FFFFFF"; break;
+			case 1: this.color = "#E84D2E"; break;
+			case 2: this.color = "#70421D"; break;
+		}
+		
+		this.bind("Draw", this._dibujarCaer);
+		this.bind("EnterFrame", this._caer);
+        this.ready = true;
+	},
+	
+	// Movimiento de caída
+	_caer: function() {
+		if (this.estirando && this.largo > this.maxY) {
+			this.estirando = false;
+			this.largo += 20;
+		}
+
+		if (this.estirando) {
+			this.largo += this.vy;
+		}
+		else {
+			this.y0 += this.vy;
+			this.largo -= this.vy;
+			if (this.largo <= 25) {
+				this.unbind("EnterFrame", this._caer);
+				this.unbind("Draw", this._dibujarCaer);
+				
+				this.bind("EnterFrame", this._sumergir);
+				this.bind("Draw", this._dibujarSumergir);
+			}
+		}
+		
+		this.trigger("Invalidate");
+		this.draw();
+	},
+	
+	_sumergir: function() {
+		if (this.angulo >= 1) {
+			this.unbind("EnterFrame", this._sumergir);
+			this.unbind("Draw", this._dibujarSumergir);
+			this.destroy();
+		}
+		this.angulo += 0.2;
+		this.y0 += 4;
+		this.trigger("Invalidate");
+		this.draw();
+		
+	},
+	
+	_dibujarSumergir: function(e) {
+		if (this.angulo < 1) {
+			var ctx = e.ctx;
+			ctx.fillStyle = this.color;
+
+			// dibujar cuerpo del chorro
+			ctx.beginPath();
+			ctx.arc(e.pos._x + 20, e.pos._y + this.y0 + 25, 20, Math.PI * (0.5 - this.angulo), Math.PI * (0.5 + this.angulo), true); 
+			ctx.closePath();
+			ctx.fill();
+		}
+	},
+	
+	_dibujarCaer: function(e) {
+		var ctx = e.ctx;
+		ctx.fillStyle = this.color;
+
+		// dibujar cuerpo del chorro
+		ctx.beginPath();
+		ctx.rect(e.pos._x, e.pos._y + this.y0 + 20, 40, this.largo);
+		ctx.fill();
+
+		// dibujar circulo arriba
+		ctx.beginPath();
+		ctx.arc(e.pos._x + 20, e.pos._y + this.y0 + 20, 20, 0, Math.PI * 2, true); 
+		ctx.closePath();
+		ctx.fill();
+
+		if (this.estirando) {
+			// dibujar circulo abajo
+			ctx.beginPath();
+			ctx.arc(e.pos._x + 20, e.pos._y + this.y0 + 20 + this.largo, 20, 0, Math.PI * 2, true); 
+			ctx.closePath();
+			ctx.fill();
+		}
+    }
+});
+
+
+// Olla en que se mezclan los ingredientes
+Crafty.c("H4_Olla", {
+	e_color: null, // entidad color de la mezcla
+	e_color2: null, // entidad empleada para la animación de cambio de color
+	ingredientes: [], // arreglo boleano de ingredientes [cal, sangre, barro]
+	
+	init: function() {
+		this.requires("2D, Canvas, Image, Tweener")
+			.image("img/act/puente/4/olla.png")
+			.attr({ x:395, y: 670, w: 491, h: 308, z: 10 });
+	
+		this.ingredientes = [false, false, false];
+		
+		this.e_color = Crafty.e("2D, Canvas, Color")
+				.color("#2E2E2E")
+				.attr({ x: 513, y: 704, w: 256, h: 54, z: 8 });
+		this.attach(this.e_color);
+		
+		this.e_color2 = Crafty.e("2D, Canvas, Color, Tweener")
+				.attr({ x: 513, y: 704, w: 256, h: 54, z: 9, visible: false });
+		this.attach(this.e_color2);
+	},
+	
+	mostrar: function() {
+		this.addTween({ y: 620 }, "easeOutBack", 30);
+		return this;
+	},
+	
+	/**
+	 * Notificar que se ha agregado uno de los ingredientes de la mezcla y hay que cambiar el color
+	 * @param int nuevoColor 0:cal, 1:sangre, 2:barro
+	 */
+	agregarIngrediente: function(numIngr) {
+		this.ingredientes[numIngr] = true;
+		var ing = this.ingredientes;
+		var nuevoColor;
+		
+		if		(!ing[0] && !ing[1] && ing[2]) nuevoColor = "#70421D";
+		else if (!ing[0] && ing[1] && !ing[2]) nuevoColor = "#E84D2E";
+		else if (!ing[0] && ing[1] && ing[2]) nuevoColor = "#7A2C1A";
+		else if (ing[0] && !ing[1] && !ing[2]) nuevoColor = "#FFFFFF";
+		else if (ing[0] && !ing[1] && ing[2]) nuevoColor = "#9E8562";
+		else if (ing[0] && ing[1] && !ing[2]) nuevoColor = "#E8725D";
+		else if (ing[0] && ing[1] && ing[2]) nuevoColor = "#7A5433";
+		
+		Crafty.e("H4_Gota").H4_Gota(numIngr);
+		var self = this;
+		Crafty.e("DelayFrame").delay(function() { self.colorMezcla(nuevoColor); }, 10);
+		
+		return this;
+	},
+	
+	// Cambia el color de la mezcla de forma animada
+	colorMezcla: function(nuevoColor) {
+		this.e_color2.visible = false;
+		console.log(this.e_color2);
+		this.e_color2.color(this.e_color._color);
+		this.e_color2.alpha = 1;
+		this.e_color2.visible = true;
+		this.e_color.color(nuevoColor);
+		this.e_color2.addTween({ alpha: 0 }, "linear", 60);
+		
+		return this;
+	}
+});
+/*C:\UniServer\www\hdp\public_html\src/act/puente/4/actividad.js*/
 /**
  */
 var ActPuente4 = function() {
 	//con esta cantidad se gana la actividad
-	this.totAciertos = 4;
-	//tiempo en que se cambia de un topo a otro (milisegundos)
-	this.duracion = 20000;
-	//si se ha ganado la actividad
-	this.actividadGanada = false;
+	this.totAciertos = 12;
 	//si se ha ganado la actividad
 	this.aciertos = 0;
+	
+	this.numDestapadas = 0; // num fichas actualmente destapadas
+	this.e_olla = null;
+	this.e_destapada1 = null; // referencia a ficha destapada 1
+	this.e_destapada2 = null; // referencia a ficha destapada 2
+	this.e_fichas = new Array(24); // arreglo de entidades de fichas
+	
+	this.e_aviso1 = null; // entidades para avisar que se tomò una pareja corecta
+	this.e_aviso2 = null;
 
 	this.init = function() {
 		this.crearEntidades();
-		this.ganarActividad();
+		this.initParticulas();
+		
+		Crafty.e("Gesto")
+				.Gesto(1, { coords: [130, 127], duracion: 145, retardo: 40, deltaX: 145 });
+		
 		return this;
 	};
 
+	// Construir entidades de la escena
 	this.crearEntidades = function() {
-
+		Crafty.e("2D, Canvas, Image").image("img/act/puente/4/fondo.jpg");
+		Crafty.e("2D, Canvas, Image").attr({ x: 42, y: 40 }).image("img/act/puente/4/tablero.png");
+		this.e_olla = Crafty.e("H4_Olla").mostrar();
+		
+		// Avisos
+		this.e_aviso1 = Crafty.e("Advertencia");
+		this.e_aviso2 = Crafty.e("Advertencia");
+		
+		// fichas con símbolos aleatorios
+		var arrSimbolos = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12];
+		var i = 0, posX = 65, posY = 63;
+		var indice, numSimbolo;
+		for (i = 0 ; i < 24 ; i++) {
+			do {
+				indice = randomInt(0, 23);
+				numSimbolo = arrSimbolos[indice];
+				arrSimbolos[indice] = 0;
+			} while (numSimbolo === 0);
+			
+			this.e_fichas[i] = Crafty.e("H4_Ficha")
+									.attr({ x: posX, y: posY })
+									.H4_Ficha(i, numSimbolo, this);
+			posX += 145;
+			if (posX > 1100) {
+				posX = 65;
+				posY += 150;
+			}
+		}
 	};
-
+	
+	// Callback invocado al destapar una ficha
+	this.fichaDestapada = function(e_ficha) {
+		var self = this;
+		this.numDestapadas++;
+		console.log("destapadas: " + this.numDestapadas);
+		
+		if (this.numDestapadas === 1) {
+			this.e_destapada1 = e_ficha;
+		}
+		else if (this.numDestapadas === 2) {
+			// Hay 2 destapadas, hay que compararlas
+			this.e_destapada2 = e_ficha;
+			var e_ficha1 = this.e_destapada1;
+			var e_ficha2 = this.e_destapada2;
+			
+			// comparar y ocultar
+			if (e_ficha1.numSimbolo === e_ficha2.numSimbolo) {
+				this.aciertos++;
+				
+				// Mostrar los avisos de pareja correcta
+				this.e_aviso1.attr({ x: e_ficha1._x + 125, y: e_ficha1._y - 70 }).mostrar(0, 50);
+				this.e_aviso2.attr({ x: e_ficha2._x + 125, y: e_ficha2._y - 70 }).mostrar(0, 50);
+				e_ficha1.ganada = true;
+				e_ficha2.ganada = true;
+				
+				// Si no son sangre cal o barro, ocultarlas
+				var simbolo = e_ficha1.numSimbolo;
+				if (simbolo < 10) {
+					Crafty.e("DelayFrame").delay(function() {
+						e_ficha1.remover();
+						e_ficha2.remover();
+					}, 50);
+				}
+				else {
+					// Si es un ingrediente, agregarlo a la olla
+					Crafty.e("DelayFrame").delay(function() {
+						self.particulas.iniciar();
+					}, 17);
+					
+					this.e_olla.agregarIngrediente(simbolo - 10);
+				}
+				
+				this.numDestapadas -= 2;
+				
+				if (this.aciertos === this.totAciertos) {
+					this.ganarActividad();
+				}
+			}
+			else {
+				// Las fichas son diferentes, volverlas a tapar
+				Crafty.e("DelayFrame").delay(function() {
+					console.log("tapando automaticamente")
+					e_ficha1.tapar();
+					e_ficha2.tapar();
+					
+				}, 60);
+			}
+		} else if (this.numDestapadas === 3) {
+			// Hay varias destapadas y queremos mostrar otra? forzar tapar las 2 anteriores!
+			var e_ficha1 = this.e_destapada1;
+			var e_ficha2 = this.e_destapada2;
+			console.log("forzar tapar!");
+			console.log("ficha 1 tapada: " + e_ficha1.tapada);
+			console.log("ficha 2 tapada: " + e_ficha2.tapada);
+			var numActual = e_ficha.num;
+			for (i = 0 ; i < 24 ; i++) {
+				if (i !== numActual) { 
+					if (!this.e_fichas[i].tapada && !this.e_fichas[i].ganada) {
+						this.e_fichas[i].tapar();
+					}
+				}
+			}
+			
+			this.e_destapada1 = e_ficha;
+		}
+		
+		return this;
+	},
+	
+	
+	// Inicializar partículas
+	this.initParticulas = function() {
+		this.particulas = new Particulas({
+			componentes: "spr_partCubo, SpriteAnimation",
+			x: 570, y: 630, z: 600,
+			vx: 0,
+			deltaVx: 15,
+			periodo: 20,
+			deltaOriX: 70, deltaOriY: 40,
+			numParticulas: 16,
+			magnitud: 180,
+			duracion: 40,
+			atenuacion: 15,
+			f_crear: function(ent) {
+				ent.reel("rotar", 400, [[0, 0], [40, 0], [80, 0], [120, 0]]).animate("rotar", -1);
+			}
+		});
+		
+		return this;
+	};
+	
 	// Siempre invocada al terminar la actividad
 	this.terminarActividad = function() {
 		return this;
@@ -28987,16 +30280,19 @@ var ActPuente4 = function() {
 
 	this.ganarActividad = function() {
 		gesActividad.temporizador.parar();
-		gesActividad.mostrarPuntaje();
+		/*Crafty.e("DelayFrame").delay(function() {
+			gesActividad.mostrarPuntaje();
+		}, 60);*/
+		
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/puente/5/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/5/sprites.js*/
 function spritesPuente5() {
 }
-/*C:\uniserver\www\hdp\public_html\src/act/puente/5/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/5/componentes.js*/
 
-/*C:\uniserver\www\hdp\public_html\src/act/puente/5/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/5/actividad.js*/
 /**
  */
 var ActPuente5 = function() {
@@ -29010,9 +30306,8 @@ var ActPuente5 = function() {
 	this.aciertos = 0;
 
 	this.init = function() {
-		this.crearEntidades();
-		this.ganarActividad();
-		return this;
+		Crafty.scene("MenuCuadros");
+                return this;
 	};
 
 	this.crearEntidades = function() {
@@ -29030,12 +30325,12 @@ var ActPuente5 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/puente/6/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/6/sprites.js*/
 function spritesPuente6() {
 }
-/*C:\uniserver\www\hdp\public_html\src/act/puente/6/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/6/componentes.js*/
 
-/*C:\uniserver\www\hdp\public_html\src/act/puente/6/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/puente/6/actividad.js*/
 /**
  */
 var ActPuente6 = function() {
@@ -29049,8 +30344,7 @@ var ActPuente6 = function() {
 	this.aciertos = 0;
 
 	this.init = function() {
-		this.crearEntidades();
-		this.ganarActividad();
+                Crafty.scene("MenuCuadros");
 		return this;
 	};
 
@@ -29069,12 +30363,12 @@ var ActPuente6 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/1/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/1/sprites.js*/
 function spritesValencia1() {
 }
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/1/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/1/componentes.js*/
 
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/1/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/1/actividad.js*/
 /**
  * 
  */
@@ -29109,12 +30403,12 @@ var ActValencia1 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/2/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/2/sprites.js*/
 function spritesValencia2() {
 }
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/2/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/2/componentes.js*/
 
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/2/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/2/actividad.js*/
 /**
  */
 var ActValencia2 = function() {
@@ -29148,12 +30442,12 @@ var ActValencia2 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/3/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/3/sprites.js*/
 function spritesValencia3() {
 }
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/3/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/3/componentes.js*/
 
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/3/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/3/actividad.js*/
 /**
  */
 var ActValencia3 = function() {
@@ -29187,12 +30481,12 @@ var ActValencia3 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/4/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/4/sprites.js*/
 function spritesValencia4() {
 }
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/4/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/4/componentes.js*/
 
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/4/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/4/actividad.js*/
 /**
  */
 var ActValencia4 = function() {
@@ -29226,12 +30520,12 @@ var ActValencia4 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/5/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/5/sprites.js*/
 function spritesValencia5() {
 }
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/5/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/5/componentes.js*/
 
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/5/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/5/actividad.js*/
 /**
  */
 var ActValencia5 = function() {
@@ -29265,12 +30559,12 @@ var ActValencia5 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/6/sprites.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/6/sprites.js*/
 function spritesValencia6() {
 }
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/6/componentes.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/6/componentes.js*/
 
-/*C:\uniserver\www\hdp\public_html\src/act/valencia/6/actividad.js*/
+/*C:\UniServer\www\hdp\public_html\src/act/valencia/6/actividad.js*/
 /**
  */
 var ActValencia6 = function() {
@@ -29304,7 +30598,7 @@ var ActValencia6 = function() {
 		return this;
 	};
 };
-/*C:\uniserver\www\hdp\public_html\src/datos/recursos.js*/
+/*C:\UniServer\www\hdp\public_html\src/datos/recursos.js*/
 // Contiene arreglos de recursos a cargar y descargar
 var Recursos = {
 	// Recursos que nunca se descargan de memoria (disponibles globalmente)
@@ -29318,7 +30612,8 @@ var Recursos = {
 			"img/global/fondo-pistas.png", "img/global/pistas.png",
 			"img/puntaje/botones.png", "img/puntaje/blo-rojo.png", "img/puntaje/muy-bien.png", "img/puntaje/txt-puntuacion.png", "img/puntaje/cortinas.png", "img/puntaje/digitos.png", "img/puntaje/baudilio.png",
 			
-			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png","img/particulas/star.png","img/particulas/triangulo.png",
+			"img/particulas/corazon.png","img/particulas/fuegos.png","img/particulas/nube.png","img/particulas/polvo.png",
+			"img/particulas/star.png","img/particulas/triangulo.png","img/particulas/cubo40.png",
 			
 			"img/puntaje/fon-texto.png", "img/puntaje/comillas.png", "img/puntaje/spr-datos.png", "img/puntaje/titulos.png",
 			
@@ -29338,7 +30633,9 @@ var Recursos = {
 		spritesListas: false,
 		rutas: [
 			"img/menu-pri/fondo.png", "img/menu-pri/piso-frente.png", "img/menu-pri/piso-fondo.png", "img/menu-pri/nube-izq.png", "img/menu-pri/nube-der.png", "img/menu-pri/caballo-somb.png", "img/menu-pri/logo.png", "img/menu-pri/logo-config.png", "img/menu-pri/caballo.png", "img/menu-pri/bt-jugar.png", "img/menu-pri/bt-opciones.png", "img/menu-pri/bt-configurac.png",
-			"img/menu-pri/fon-dialogo.png", "img/menu-pri/creditos.png"
+			"img/menu-pri/fon-dialogo.png", "img/menu-pri/creditos.png",
+			"img/menu-pri/bt-dialogo.png"
+			
 		],
 		initSprites: spritesMenuPri
 	},
@@ -29363,8 +30660,8 @@ var Recursos = {
 		rutas: [
 			"img/test/linea.png",
 			"img/test/llave.png",
-			"img/menu-pri/bt-dialogo.png",
-			"img/test/prueba_de_nuevo.png"
+			"img/test/prueba_de_nuevo.png",
+                        "img/test/txt-inicio.png"
 		],
 		initSprites: spritesTest
 	},
@@ -29421,7 +30718,6 @@ var Recursos = {
 			spritesListas: false,
 			rutas: [
 				"img/act/morro/4/fondo.jpg",
-				"img/act/morro/4/montana.png",
 				"img/act/morro/4/calaca.png",
 				"img/act/morro/4/morrito.png",
 				"img/act/morro/4/numeros.png"
@@ -29740,18 +31036,10 @@ var Recursos = {
 			cargado: false,
 			spritesListas: false,
 			rutas: [
-				"img/act/puente/4/barro.png",
-				"img/act/puente/4/barro_cal.png",
-				"img/act/puente/4/cal.png",
 				"img/act/puente/4/fondo.jpg",
-				"img/act/puente/4/fondo_azul.png",
-				"img/act/puente/4/iconos.png",
-				"img/act/puente/4/mezcla_final.png",
-				"img/act/puente/4/particula.png",
-				"img/act/puente/4/sangre.png",
-				"img/act/puente/4/sangre_barrro.png",
-				"img/act/puente/4/sangre_cal.png",
-				"img/act/puente/4/vasijas.png"
+				"img/act/puente/4/fichas.png",
+				"img/act/puente/4/olla.png",
+				"img/act/puente/4/tablero.png"
 			],
 			musica: ["puente4", "audio/act/puente/puente4.ogg"],
 			initSprites: spritesPuente4
@@ -29848,7 +31136,7 @@ var Recursos = {
 	]
 };
 
-/*C:\uniserver\www\hdp\public_html\src/main.js*/
+/*C:\UniServer\www\hdp\public_html\src/main.js*/
 var cocoon = (navigator.isCocoonJS);
 var gesActividad; // Inicia las actividades
 var actPuntaje; // Muestra el panel de puntaje y dato
@@ -29866,14 +31154,12 @@ window.onload = function() {
 
 	// Cargamos progreso de memoria
 	var progresoGuardado = Crafty.storage('progreso');
-	if (progresoGuardado) {
-		progreso = progresoGuardado;
-	}
+	if (progresoGuardado) { progreso = progresoGuardado; }
 
 	// Inicializamos el objeto único global Box2D
 	Crafty.box2D.init(0, 10, 32, true);
 	world = Crafty.box2D.world;
-	//if (!cocoon) Crafty.box2D.showDebugInfo();
+	if (!cocoon) Crafty.box2D.showDebugInfo();
 	gesSonido = new Sonido();
 
 	// Cargamos recursos globales (incluídos sprites) antes de hacer cualquier cosa
@@ -29882,9 +31168,10 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		gesActividad.ejecutar(2, 5); // Nivel de 0 a 4, Subnivel de 0 a 5
+		gesActividad.ejecutar(3,1); // Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		//Crafty.enterScene("Inicio");
+		//Crafty.enterScene("MenuCuadros");
 		gesSonido.silenciar();
 	});
 
@@ -29895,6 +31182,7 @@ window.onload = function() {
 			progreso[i].puntaje = [1, 1, 1, 1, 1, 1];
 		}
 	}
+       
 	/*
 	if (cocoon) {
 		CocoonJS.App.setAppShouldFinishCallback(function() {
