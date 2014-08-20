@@ -1,65 +1,81 @@
+
 Crafty.c("V1_Area", {
 	init: function() {
 		this.requires("2D, Canvas, Mouse, Color")
 	},
 	V1_Area: function(acuerdo) {
 		this.acuerdo = acuerdo;
-		if (this.acuerdo) {
-			this.color("green")
-		}
-		else {
-			this.color("red")
-		}
-		this.bind("MouseDown", function() {
-			this.animar();
-		})
+		this.e_figura = Crafty.e("V1_Figura").attr({z: this.z + 1});
+		this.bind("MouseDown", this.eventoMouse);
 		return this;
 	},
-	animar: function() {
-		if (this.acuerdo) {
-			this.animAcuerdo();
-		}
-		else {
-			this.animDesacuerdo();
-		}
-		return this;
+	eventoMouse: function() {
+		//this.unbind("MouseDown");
+		this.animar();
 	},
 	animAcuerdo: function() {
-		alert("animacion acuerdo")
+		this.e_figura.mostrar();
 		return this;
 	},
 	animDesacuerdo: function() {
-		alert("animacion desacuerdo")
+		this.e_figura.mostrar();
 		return this;
 	}
 });
 
-Crafty.c("V1_Contador", {
-	spr: "sprV1_num",
-	cont: 0,
-	contAnt : 0,
+
+
+Crafty.c("V1_Figura", {
+	cllMostrar: null,
+	cllOcultar: null, //funcion que se ejecuta luego de mostrar
+	w0: 0,
+	h0: 0,
 	init: function() {
-		this.requires("2D, Canvas, Mouse, sprV1_num" + this.cont)
-		
-		this.bind("MouseDown", function() {
-			this.aumentar()
-		})
+		this.requires("2D, Canvas, Tweener");
 	},
-	aumentar: function() {
+	V1_Figura: function(spr) {
+		this.requires(spr);
+		this.x0 = this.x;
+		this.y0 = this.y;
+		this.w0 = this.w;
+		this.h0 = this.h;
 		return this;
 	},
-	disminuir : function(){
-		this.contAnt = this.cont;
-		this.cont--;
-		if(this.cont < 0){
-			this.cont = 0;
-		}
+	mostrar: function() {
+		this.attr({
+			x: this.x0,
+			y: this.y0,
+			w: this.w0 * 0.6,
+			h: this.h0 * 0.6,
+			visible: true
+		}).addTween({
+			x: this.x - 40,
+			y: this.y - this.h0,
+			w: this.w0,
+			h: this.h0
+		}, 'easeOutSine', 10, this.cllMostrar)
 		return this;
 	},
-	actualizar:function(){
-		this.removeComponent("sprV1_num" + this.cont);
-		this.addComponent("sprV1_num" + (++this.cont))
+	attrInicial: function() {
+		this.cancelTweener();
+		this.addTween({
+			x: this.x0,
+			y: this.y0,
+			w: this.w0 * 0.6,
+			h: this.h0 * 0.6
+		}, 'easeOutSine', 8);
+		return this;
+	},
+	ocultar: function() {
+		this.cancelTweener();
+		this.addTween({
+			x: this.x0,
+			y: this.y0 + 20,
+			w: this.w0 * 0.6,
+			h: this.h0 * 0.6
+		}, 'easeOutSine', 8, function() {
+			this.visible = false;
+		});
 		return this;
 	}
-
 })

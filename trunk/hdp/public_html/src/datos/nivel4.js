@@ -6,7 +6,7 @@ niveles[4] = {
 			id: 1,
 			duracion: 200000,
 			fondo: 'img/belalcaz/1/fondo.png',
-			dato : 'Uno de los payaneses más ilustres del último siglo. Nació en 1873, y como fue un gran orador obtuvo reconocimiento político desde muy joven, talento que le heredaron sus hijos Guillermo León, presidente de Colombia entre 1962 y 1966, y Josefina, primera mujer en ser gobernadora del Cauca y ministra de Educación.',
+			dato : 'Uno de los payaneses más ilustres del\núltimo siglo. Nació en 1873, y como fue\nun gran orador obtuvo\nreconocimiento político desde muy joven,\ntalento que le heredaron sus hijos\nGuillermo León, presidente de Colombia\nentre 1962 y 1966, y Josefina, primera\nmujer en ser gobernadora del Cauca y\nministra de Educación.',
 			pista: {ladoIzq: true, y: 90},
 			actividad: function() {
 				var actividad = new ActValencia1();

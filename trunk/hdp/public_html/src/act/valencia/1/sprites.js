@@ -10,5 +10,16 @@ function spritesValencia1() {
 		sprV1_numero8: [504, 0, 76, 107],
 		sprV1_numero9: [581, 0, 77, 107],
 		sprV1_numero0: [659, 0, 77, 107]
+	});
+
+	Crafty.sprite("img/act/valencia/1/cara-mal.png", {
+		sprV1_caraMal: [0, 0, 123, 148]
+	});
+
+	Crafty.sprite("img/act/valencia/1/spr-aplauso.png", {
+		sprV1_caraBien: [139, 0, 131, 141],
+		sprV1_aplauso1: [0, 0, 66, 141],
+		sprV1_aplauso2: [78, 0, 58, 141],
+		sprV1_excAplauso: [278, 0, 202, 141]
 	})
 }

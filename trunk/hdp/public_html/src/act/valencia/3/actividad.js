@@ -12,12 +12,11 @@ var ActValencia3 = function() {
 
 	this.init = function() {
 		this.crearEntidades();
-		this.ganarActividad();
 		return this;
 	};
 
 	this.crearEntidades = function() {
-
+		Crafty.e("2D, Canvas, Color").color("#1F1E1E").attr({x:0,y:0,w:1280,h:800,z:0})
 	};
 
 	// Siempre invocada al terminar la actividad
