@@ -15,7 +15,9 @@ window.onload = function() {
 
 	// Cargamos progreso de memoria
 	var progresoGuardado = Crafty.storage('progreso');
-	if (progresoGuardado) { progreso = progresoGuardado; }
+	if (progresoGuardado) {
+		progreso = progresoGuardado;
+	}
 	actualizaciones(); // Actualizar el arreglo de progreso si han habido actualizaciones
 
 	// Inicializamos el objeto único global Box2D
@@ -30,11 +32,11 @@ window.onload = function() {
 		actPuntaje = new ActPuntaje();
 		gestorTest = new Test(); //gestor de tests
 
-		gesActividad.ejecutar(4, 0); gesSonido.silenciar();// Nivel de 0 a 4, Subnivel de 0 a 5
+		gesActividad.ejecutar(4, 0);gesSonido.silenciar();// Nivel de 0 a 4, Subnivel de 0 a 5
 		//gestorTest.iniciarTest(0);
 		//Crafty.enterScene("Inicio");
 		//Crafty.enterScene("MenuCuadros");
-		
+
 	});
 
 	// Desbloquear todos los niveles en modo debug
@@ -44,12 +46,12 @@ window.onload = function() {
 			progreso[i].puntaje = [1, 1, 1, 1, 1, 1];
 		}
 	}
-       
+
 	/*
-	if (cocoon) {
-		CocoonJS.App.setAppShouldFinishCallback(function() {
-			alert("¿Deseas salir del juego?");
-			return false;
-		});
-	}*/
+	 if (cocoon) {
+	 CocoonJS.App.setAppShouldFinishCallback(function() {
+	 alert("¿Deseas salir del juego?");
+	 return false;
+	 });
+	 }*/
 };

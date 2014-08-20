@@ -10,7 +10,7 @@ Crafty.c("Contador", {
 		this.requires("2D, Canvas, Tweener");
 	},
 	Contador: function(spr, cllAum, cllDism) {
-		this.spr = spr;//sprite base de los numeros 
+		this.spr = spr;//sprite base de los numeros ej:"sprV1_num"
 		this.cllAum = cllAum;//callback despues de aumentar
 		this.cllDism = cllDism;//callback despues de disminuir
 		this.contador = 0;
@@ -30,6 +30,10 @@ Crafty.c("Contador", {
 		if (this.cllDism)
 			this.cllDism();
 		return this;
+	},
+	setContador: function(contador) {
+		this.contador = contador;
+		this.dibujar();
 	},
 	dibujar: function() {
 		this.limpiar();

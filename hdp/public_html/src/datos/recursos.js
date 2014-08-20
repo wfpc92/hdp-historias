@@ -482,8 +482,7 @@ var Recursos = {
 				"img/act/valencia/1/fondo.png",
 				"img/act/valencia/1/numeros.png",
 				"img/act/valencia/1/spr-aplauso.png",
-				"img/act/valencia/1/cara-mal.png",
-				"img/act/valencia/1/animacion-aplauso-expl.png"
+				"img/act/valencia/1/cara-mal.png"
 			],
 			musica: ["valencia1", "audio/act/valencia/valencia1.ogg"],
 			initSprites: spritesValencia1
